@@ -9,11 +9,11 @@
 title: "Basic Tasks Using a Jupyter Notebook with Code in Python for Analytical Chemistry Data Analysis"
 
 # Brief description for search results (1-2 sentences)
-description: "This Jupyter notebook can be used to generate code in Python to perform four basic tasks: Basic calculations; Entering data into NumPy arrays; Fitting data in NumPy arrays to a NumPy or SciPy nonlinear model function; Creating a Matplotlib graph of data in NumPy arrays and of a nonlinear model function."
+description: "Generate code in Python to perform four basic tasks: Basic calculations; Entering data into NumPy arrays; Fitting data in NumPy arrays to a NumPy or SciPy nonlinear model function; Creating a Matplotlib graph of data in NumPy arrays and of a nonlinear model function."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  This lesson was used as an introduction to Analytical Chemistry Data Analysis tasks in Python.
+  This lesson can be used as an introduction to Analytical Chemistry Data Analysis tasks in Python.
   The suggested context would be to walk through it together during the first week of Analytical Laboratory.
   About 45 minutes to an hour should be allocated to this lesson.
   
@@ -46,16 +46,16 @@ format: "Single Notebook"
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
-    description: "Brief description of what this notebook covers"
+  - title: "Basic Tasks using a Jupyter Notebook with Code in Python"
+    description: "This Jupyter notebook can be used to generate code in Python to perform four basic tasks: Basic calculations; Entering data into NumPy arrays; Fitting data in NumPy arrays to a NumPy or SciPy nonlinear model function; Creating a Matplotlib graph of data in NumPy arrays and of a nonlinear model function."
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "1 hour"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/your-org/your-lesson-repo/blob/main/01-intro.ipynb"
+    github_url: "https://github.com/act-cms/moralech-umu-public/blob/main/Basic_Tasks_Student_Version.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+    #colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/Basic_Tasks_Student_Version.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -68,15 +68,15 @@ materials:
       - "Process: Use Python code to plot data with a model, and display the plot in a specified format"
   
   # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
-    description: "Description of second notebook"
-    type: "notebook"
-    duration: "90 min"
-    github_url: "https://github.com/your-org/your-lesson-repo/blob/main/02-advanced.ipynb"
-    colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
-    objectives:
-      - "Advanced skill development"
-      - "Application of concepts from Part 1"
+  #- title: "Part 2: Advanced Topics"
+    #description: "Description of second notebook"
+    #type: "notebook"
+    #duration: "90 min"
+    #github_url: "https://github.com/act-cms/moralech-umu-public/blob/main/Basic_Tasks_Student_Version.ipynb"
+    #colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/Basic_Tasks_Student_Version.ipynb"
+    #objectives:
+      #- "Advanced skill development"
+      #- "Application of concepts from Part 1"
 
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
@@ -114,10 +114,10 @@ recommended_platform: "Google Colab"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the main repository students can clone
-student_repo_url: "https://github.com/your-org/your-lesson-repo"
+student_repo_url: "https://github.com/act-cms/moralech-umu-public/Basic_Tasks"
 
 # Link to instructor materials (zip file in private repo)
-instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/main/your-lesson-name.zip"
+instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/main/Basic_Tasks.zip"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
