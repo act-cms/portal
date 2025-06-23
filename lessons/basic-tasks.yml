@@ -13,9 +13,9 @@ description: "This Jupyter notebook can be used to generate code in Python to pe
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  Provide a more detailed description of your lesson here.
-  Explain the context, what students will accomplish, and how this
-  fits into broader molecular science education.
+  This lesson was used as an introduction to Analytical Chemistry Data Analysis tasks in Python.
+  The suggested context would be to walk through it together during the first week of Analytical Laboratory.
+  About 45 minutes to an hour should be allocated to this lesson.
   
   You can use multiple paragraphs to fully describe the lesson scope
   and learning experience.
@@ -41,7 +41,7 @@ authors:
 estimated_time: "1 hour"
 
 # Choose ONE: "Single Notebook", "Multi-Part Materials Module", "Project-Based Module"
-format: "Multi-Part Materials Module"
+format: "Single Notebook"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
@@ -59,9 +59,13 @@ materials:
     
     # Learning objectives specific to this material
     objectives:
-      - "Specific skill students will develop"
-      - "Another concrete learning outcome"
-      - "Third measurable objective"
+      - "Content: Recognize and report significant figures"
+      - "Content: Convert between mass in grams and amount in moles"
+      - "Content: Explain periodic trends in molar masses"
+      - "Process: Use Python code to define values and functions, and to perform calculations"
+      - "Process: Use Python code to report the output of calculations in a specified format"
+      - "Process: Use Python code to fit data to a model, and report the fitted model"
+      - "Process: Use Python code to plot data with a model, and display the plot in a specified format"
   
   # Add more materials as needed
   - title: "Part 2: Advanced Topics"
@@ -77,22 +81,23 @@ materials:
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-  - "Apply programming to solve chemical problems"
-  - "Understand molecular property X through computational analysis"
-  - "Interpret results of computational molecular science calculations"
+  - "Recognize and report significant figures"
+  - "Convert between mass in grams and amount in moles"
+  - "Explain periodic trends in molar masses"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
-  - "Write and execute Python code in Jupyter notebooks"
-  - "Use library X to perform scientific calculations"
-  - "Create visualizations of molecular data"
-  - "Debug common programming errors"
+  - "Use Python code to define values and functions, and to perform calculations"
+  - "Use Python code to report the output of calculations in a specified format"
+  - "Use Python code to fit data to a model, and report the fitted model"
+  - "Use Python code to plot data with a model, and display the plot in a specified format"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
 scientific_prerequisites:
-  - "General chemistry"
-  - "Basic understanding of molecular structure"
+  - "Significant Figures"
+  - "Moles and Molar Masses"
+  - "Periodic Table"
 
 # What programming experience is assumed?
 programming_prerequisites:
@@ -103,8 +108,6 @@ programming_prerequisites:
 # List platforms where you've tested your materials
 platforms:
   - "Google Colab"
-  - "Local Installation"
-  - "ChemCompute"
 
 # Which platform do you recommend for most users?
 recommended_platform: "Google Colab"
@@ -120,6 +123,6 @@ instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/m
 # Tags help with searching - use relevant keywords
 tags:
   - "python"
-  - "molecular-dynamics"
-  - "visualization"
-  - "quantum-chemistry"  # Use appropriate scientific area tags
+  - "analytical-chemistry"
+  - "laboratory"
+  - "data-analysis"  # Use appropriate scientific area tags
