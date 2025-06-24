@@ -25,9 +25,14 @@ expanded_description: |
   biophysical chemistry students, the chemical problem solving exercises
   included in the lesson are posed at the general chemistry level.
 
+
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
 programming_skill: "Beginner"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
@@ -47,44 +52,88 @@ authors:
 # Estimated total time for all materials
 estimated_time: "2-3 hours"
 
-# Choose ONE: "Single Notebook", "Multi-Part Materials Module", "Project-Based Module"
+# Write a description of your module.
+# Single notebook, multi-part module, etc?
 format: "Single Notebook"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "instructor-access@university.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - First Year & Beyond"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 15  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson:
+  
+  - This lesson works well when paired with a traditional lecture on molecular dynamics
+  - Students often struggle with the concept of periodic boundary conditions in Part 2
+  - The visualization exercises are very engaging - allow extra time for exploration
+  - Consider assigning the dataset analysis as homework rather than in-class work
+  
+  Timing notes:
+  - Part 1 typically takes students 45-60 minutes
+  - Part 2 can be rushed in 90 minutes but is better with 2 hours
+  
+  Common student questions:
+  - "I can solve these problems by hand, why do I need to use Python?" - remind students that later materials using calculus may be math they may not be able to do longhand
+
+# Related lessons that complement this one
+related_modules:
+  - "foundational-intro-python"
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/your-lesson-repo"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
+  - title: "Introduction to Symbolic Algebra in Python"
     description: "Brief description of what this notebook covers"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "1 hour"
+    duration: "1.5 hours"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: 
+    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: 
+    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     
     # Learning objectives specific to this material
     objectives:
-      - "Specific skill students will develop"
-      - "Another concrete learning outcome"
-      - "Third measurable objective"
-  
-  # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
-    description: "Description of second notebook"
-    type: "notebook"
-    duration: "90 min"
-    github_url: "https://github.com/your-org/your-lesson-repo/blob/main/02-advanced.ipynb"
-    colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
-    objectives:
-      - "Advanced skill development"
-      - "Application of concepts from Part 1"
+      - "Define algebraic variables and expressions using the `algebra_with_sympy` library"
+      - "Manipulate algebraic expressions to solve for a single variable"
+      - "Substitute numerical values and units to evaluate algebraic expressions"
+      - "Use `algebra_with_sympy` to solve chemical problems at the first-year general chemical level"
 
+  #- title: "Introduction to Symbolic Calculus in Python"
+  #  description: "Brief description of what this notebook covers"
+  #  type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+  #  duration: "1.5 hours"
+  #  
+  #  # REQUIRED: Include at least one URL (preferably both)
+  #  # Direct link to notebook file on GitHub
+  #  github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
+  #  # Google Colab launch link (recommended for accessibility)
+  #  colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+  #  
+  #  # Learning objectives specific to this material
+  #  objectives:
+  #    - "Define algebraic variables and expressions using the `algebra_with_sympy` library"
+  #    - "Manipulate algebraic expressions to solve for a single variable"
+  #    - "Substitute numerical values and units to evaluate algebraic expressions"
+  #    - "Use `algebra_with_sympy` to solve chemical problems at the first-year general chemical level"
+  
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-  - "Apply programming and the `algebra_with_sympy` library to symbolically solve chemical problems"
+  - "Apply symbolic algebra in Python to solve general chemical problems"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
@@ -96,15 +145,14 @@ cyberinfrastructure_objectives:
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
 scientific_prerequisites:
-  - "Familiarity with gas laws, chemical kinetics, and equilibrium at the general chemical level"
+  - "General chemistry: gas laws, chemical kinetics, & equilibrium"
 
 # What programming experience is assumed?
 programming_prerequisites:
-  # - "No prior programming experience required"
   - "Basic Python syntax (variables, loops, functions)"
 
 # PLATFORM SUPPORT (REQUIRED)
-# List platforms where you've tested your materials
+# List platforms where your materials can be used.
 platforms:
   #- "Google Colab"
   - "Local Installation"
@@ -113,17 +161,9 @@ platforms:
 # Which platform do you recommend for most users?
 recommended_platform: "Local Installation"
 
-# REPOSITORY URLS (REQUIRED)
-# Link to the main repository students can clone
-student_repo_url: 
-
-# Link to instructor materials (zip file in private repo)
-instructor_materials_url: 
-
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
 tags:
   - "python"
   - "symbolic-algebra"
   - "general-chemistry"
-
