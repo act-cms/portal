@@ -134,7 +134,8 @@
                 
                 // Initialize search
                 fuse = new Fuse(allLessons, {
-                    keys: ['title', 'description', 'tags', 'authors', 'primary_course'],
+                    // if we don't specify keys, it searches them all
+                    //keys: ['title', 'description', 'tags', 'authors', 'primary_course'],
                     threshold: 0.3
                 });
                 

@@ -26,271 +26,311 @@
                 <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
         </div>
 
-        <div class="lesson-header">
-            <h1 class="lesson-title">{{ title }}</h1>
-            <p class="lesson-summary">{{ description }}</p>
-            
-            <div class="lesson-meta-grid">
-                <div class="meta-item">
-                    <span class="meta-label">Programming Skill:</span>
-                    <span class="meta-value">{{ programming_skill }}</span>
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="meta-item">
-                    <span class="meta-label">Primary Course:</span>
-                    <span class="meta-value">{{ primary_course }}</span>
-                </div>
-                {% if also_for %}
-                <div class="meta-item">
-                    <span class="meta-label">Also for:</span>
-                    <span class="meta-value">{{ also_for | join(', ') }}</span>
-                </div>
-                {% endif %}
-                <div class="meta-item">
-                    <span class="meta-label">Format:</span>
-                    <span class="meta-value">{{ format }}</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Authors:</span>
-                    <span class="meta-value">{{ authors | join(', ') }}</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Estimated Time:</span>
-                    <span class="meta-value">{{ estimated_time }}</span>
-                </div>
-                {% if student_level %}
-                <div class="meta-item">
-                    <span class="meta-label">Piloted with:</span>
-                    <span class="meta-value">{{ student_level }}</span>
-                </div>
-                {% endif %}
-                {% if students_piloted %}
-                <div class="meta-item">
-                    <span class="meta-label">Students Tested:</span>
-                    <span class="meta-value">{{ students_piloted }}</span>
-                </div>
-                {% endif %}
-            </div>
-
-            <div class="lesson-tags">
-                {% for tag in tags %}
-                <span class="tag">{{ tag }}</span>
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Overview</h2>
-            {% if expanded_description %}
-                {% for paragraph in expanded_description.split('\n\n') %}
-                    {% if paragraph.strip() %}
-                    <p>{{ paragraph.strip() }}</p>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    {% if instructor_notes %}
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
                     {% endif %}
-                {% endfor %}
-            {% else %}
-            <p>{{ description }}</p>
-            {% endif %}
-
-            <div class="objectives-list">
-                <h4>Scientific Learning Objectives</h4>
-                <ul>
-                    {% for objective in scientific_objectives %}
-                    <li>{{ objective }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="objectives-list" style="margin-top: 16px;">
-                <h4>Cyberinfrastructure Learning Objectives</h4>
-                <ul>
-                    {% for objective in cyberinfrastructure_objectives %}
-                    <li>{{ objective }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Prerequisites</h2>
-            <div class="prereq-grid">
-                <div class="prereq-box scientific">
-                    <h4>Scientific Prerequisites:</h4>
-                    <ul>
-                        {% for prereq in scientific_prerequisites %}
-                        <li>{{ prereq }}</li>
+                    {% if related_modules %}
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    {% endif %}
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        {% for material in materials %}
+                        <a href="#material-{{ loop.index }}" class="toc-sublink">{{ material.title }}</a>
                         {% endfor %}
-                    </ul>
-                </div>
-                
-                <div class="prereq-box programming">
-                    <h4>Programming Prerequisites:</h4>
-                    <ul>
-                        {% for prereq in programming_prerequisites %}
-                        <li>{{ prereq }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        {% if instructor_notes %}
-        <div class="content-section">
-            <h2>Instructor Notes</h2>
-            <div class="instructor-notes">
-                <div>{{ instructor_notes | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</div>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if related_modules %}
-        <div class="content-section">
-            <h2>Related Lessons</h2>
-            <div class="related-modules">
-                <p>This lesson pairs well with:</p>
-                <ul>
-                    {% for module in related_modules %}
-                    <li><a href="../{{ module }}/">{{ module | replace('-', ' ') | title }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-        {% endif %}
-
-        <div class="content-section">
-            <h2>Course Materials</h2>
-            
-            <div class="materials-list">
-                {% for material in materials %}
-                <div class="material-item">
-                    <div class="material-header">
-                        {% if material.type == "notebook" %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                        </svg>
-                        {% elif material.type == "slides" %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M8.5 8.5L11 6L14 9l3-3.5V19H6V8.5zm11 11V5H4v14.5h15.5z"/>
-                        </svg>
-                        {% elif material.type == "document" %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                        </svg>
-                        {% elif material.type == "video" %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
-                        </svg>
-                        {% elif material.type == "dataset" %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"/>
-                        </svg>
-                        {% else %}
-                        <svg class="material-type-icon" viewBox="0 0 24 24">
-                            <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
-                        </svg>
-                        {% endif %}
-                        <h4 class="material-title">{{ material.title }}</h4>
                     </div>
-                    <p>{{ material.description | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</p>
-                    <div class="material-actions">
-                        {% if material.type == "notebook" %}
-                        <div class="notebook-buttons">
-                            {% if material.colab_url %}
-                            <a href="{{ material.colab_url }}" class="btn btn-primary">Open in Colab</a>
-                            {% endif %}
-                            {% if material.github_url %}
-                            <a href="{{ material.github_url }}" class="btn btn-secondary">View Notebook</a>
-                            {% endif %}
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">{{ title }}</h1>
+                    <p class="lesson-summary">{{ description }}</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">{{ programming_skill }}</span>
                         </div>
-                        {% elif material.type == "slides" %}
-                        {% if material.github_url %}
-                        <a href="{{ material.github_url }}" class="btn btn-secondary">View Slides</a>
-                        {% elif material.colab_url %}
-                        <a href="{{ material.colab_url }}" class="btn btn-secondary">View Slides</a>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">{{ primary_course }}</span>
+                        </div>
+                        {% if also_for %}
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">{{ also_for | join(', ') }}</span>
+                        </div>
                         {% endif %}
-                        {% elif material.type == "video" %}
-                        {% if material.github_url %}
-                        <a href="{{ material.github_url }}" class="btn btn-secondary">Watch Video</a>
-                        {% elif material.colab_url %}
-                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Watch Video</a>
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">{{ format }}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">{{ authors | join(', ') }}</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">{{ estimated_time }}</span>
+                        </div>
+                        {% if student_level %}
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">{{ student_level }}</span>
+                        </div>
                         {% endif %}
-                        {% elif material.type == "dataset" %}
-                        {% if material.github_url %}
-                        <a href="{{ material.github_url }}" class="btn btn-secondary">Access Dataset</a>
-                        {% elif material.colab_url %}
-                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Dataset</a>
+                        {% if students_piloted %}
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">{{ students_piloted }}</span>
+                        </div>
                         {% endif %}
-                        {% else %}
-                        {% if material.github_url %}
-                        <a href="{{ material.github_url }}" class="btn btn-secondary">Access Material</a>
-                        {% elif material.colab_url %}
-                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Material</a>
-                        {% endif %}
-                        {% endif %}
-                        <span class="duration">{{ material.duration }}</span>
                     </div>
-                    {% if material.objectives %}
-                    <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
-                    <div class="material-objectives collapsed">
-                        <h5>Learning Objectives:</h5>
+
+                    <div class="lesson-tags">
+                        {% for tag in tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    {% if expanded_description %}
+                        {% for paragraph in expanded_description.split('\n\n') %}
+                            {% if paragraph.strip() %}
+                            <p>{{ paragraph.strip() }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                    <p>{{ description }}</p>
+                    {% endif %}
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
                         <ul>
-                            {% for objective in material.objectives %}
+                            {% for objective in scientific_objectives %}
                             <li>{{ objective }}</li>
                             {% endfor %}
                         </ul>
                     </div>
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-            
-            <h3 style="margin-top: 32px;">Student Repository</h3>
-            <div class="materials-grid">
-                <div class="material-card">
-                    <h4>Complete Student Materials</h4>
-                    <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
-                    <a href="{{ public_repo_url }}" class="btn btn-primary">
-                        View Repository
-                    </a>
-                </div>
-            </div>
-            
-            <h3 style="margin-top: 32px;">Instructor Materials</h3>
-            <div class="materials-grid">
-                <div class="material-card">
-                    <h4>Complete Instructor Package</h4>
-                    <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
-                    <a href="https://github.com/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary">
-                        Instructor Resources
-                    </a>
-                    <p class="access-note">
-                        Requires instructor verification. 
-                        <a href="mailto:{{ instructor_email }}?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
-                        if you don't have permission.
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <div class="content-section">
-            <h2>Platform Requirements</h2>
-            
-            <div class="platform-options">
-                {% for platform in platforms %}
-                {% set platform_key = platform.lower().replace(' ', '_') %}
-                {% if platform == recommended_platform %}
-                <div class="platform-card recommended">
-                    {% include 'platforms/' + platform_key + '.html' %}
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            {% for objective in cyberinfrastructure_objectives %}
+                            <li>{{ objective }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
-                {% else %}
-                <div class="platform-card">
-                    {% include 'platforms/' + platform_key + '.html' %}
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                {% for prereq in scientific_prerequisites %}
+                                <li>{{ prereq }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                {% for prereq in programming_prerequisites %}
+                                <li>{{ prereq }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {% if instructor_notes %}
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>{{ instructor_notes | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</div>
+                    </div>
                 </div>
                 {% endif %}
-                {% endfor %}
-            </div>
+
+                {% if related_modules %}
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            {% for module in related_modules %}
+                            <li><a href="../{{ module }}/">{{ module | replace('-', ' ') | title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        {% for material in materials %}
+                        <div class="material-item" id="material-{{ loop.index }}">
+                            <div class="material-header">
+                                {% if material.type == "notebook" %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                {% elif material.type == "slides" %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M8.5 8.5L11 6L14 9l3-3.5V19H6V8.5zm11 11V5H4v14.5h15.5z"/>
+                                </svg>
+                                {% elif material.type == "document" %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                </svg>
+                                {% elif material.type == "video" %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+                                </svg>
+                                {% elif material.type == "dataset" %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"/>
+                                </svg>
+                                {% else %}
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
+                                </svg>
+                                {% endif %}
+                                <h4 class="material-title">{{ material.title }}</h4>
+                            </div>
+                            <p>{{ material.description | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</p>
+                            <div class="material-actions">
+                                {% if material.type == "notebook" %}
+                                <div class="notebook-buttons">
+                                    {% if material.colab_url %}
+                                    <a href="{{ material.colab_url }}" class="btn btn-primary">Open in Colab</a>
+                                    {% endif %}
+                                    {% if material.github_url %}
+                                    <a href="{{ material.github_url }}" class="btn btn-secondary">View Notebook</a>
+                                    {% endif %}
+                                </div>
+                                {% elif material.type == "slides" %}
+                                {% if material.github_url %}
+                                <a href="{{ material.github_url }}" class="btn btn-secondary">View Slides</a>
+                                {% elif material.colab_url %}
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary">View Slides</a>
+                                {% endif %}
+                                {% elif material.type == "video" %}
+                                {% if material.github_url %}
+                                <a href="{{ material.github_url }}" class="btn btn-secondary">Watch Video</a>
+                                {% elif material.colab_url %}
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Watch Video</a>
+                                {% endif %}
+                                {% elif material.type == "dataset" %}
+                                {% if material.github_url %}
+                                <a href="{{ material.github_url }}" class="btn btn-secondary">Access Dataset</a>
+                                {% elif material.colab_url %}
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Dataset</a>
+                                {% endif %}
+                                {% else %}
+                                {% if material.github_url %}
+                                <a href="{{ material.github_url }}" class="btn btn-secondary">Access Material</a>
+                                {% elif material.colab_url %}
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Material</a>
+                                {% endif %}
+                                {% endif %}
+                                <span class="duration">{{ material.duration }}</span>
+                            </div>
+                            {% if material.objectives %}
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    {% for objective in material.objectives %}
+                                    <li>{{ objective }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="{{ public_repo_url }}" class="btn btn-primary">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:{{ instructor_email }}?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        {% for platform in platforms %}
+                        {% set platform_key = platform.lower().replace(' ', '_') %}
+                        {% if platform == recommended_platform %}
+                        <div class="platform-card recommended">
+                            {% include 'platforms/' + platform_key + '.html' %}
+                        </div>
+                        {% else %}
+                        <div class="platform-card">
+                            {% include 'platforms/' + platform_key + '.html' %}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
         </div>
 
         <footer class="footer">
-            <p>Lesson Portal - Updated automatically via GitHub Actions</p>
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
         </footer>
     </div>
 
@@ -326,6 +366,44 @@
             }
         }
 
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
         // Toggle objectives function
         function toggleObjectives(button) {
             const objectives = button.nextElementSibling;
@@ -342,6 +420,12 @@
 
         // Initialize
         loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
     </script>
 </body>
 </html>
