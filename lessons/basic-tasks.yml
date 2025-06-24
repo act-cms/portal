@@ -141,7 +141,7 @@ recommended_platform: "Google Colab"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the main repository students can clone
-student_repo_url: "https://github.com/act-cms/moralech-umu-public-basic-tasks"
+public_repo_url: "https://github.com/act-cms/moralech-umu-public-basic-tasks"
 
 # Link to instructor materials (zip file in private repo)
 instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/main/basic-tasks/Basic-Tasks.zip"
