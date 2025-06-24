@@ -50,13 +50,25 @@
                     <span class="meta-value">{{ format }}</span>
                 </div>
                 <div class="meta-item">
-                    <span class="meta-label">Author:</span>
-                    <span class="meta-value">{{ instructor }}</span>
+                    <span class="meta-label">Authors:</span>
+                    <span class="meta-value">{{ authors | join(', ') }}</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Estimated Time:</span>
                     <span class="meta-value">{{ estimated_time }}</span>
                 </div>
+                {% if student_level %}
+                <div class="meta-item">
+                    <span class="meta-label">Piloted with:</span>
+                    <span class="meta-value">{{ student_level }}</span>
+                </div>
+                {% endif %}
+                {% if students_piloted %}
+                <div class="meta-item">
+                    <span class="meta-label">Students Tested:</span>
+                    <span class="meta-value">{{ students_piloted }}</span>
+                </div>
+                {% endif %}
             </div>
 
             <div class="lesson-tags">
@@ -120,10 +132,32 @@
             </div>
         </div>
 
+        {% if instructor_notes %}
+        <div class="content-section">
+            <h2>Instructor Notes</h2>
+            <div class="instructor-notes">
+                <div>{{ instructor_notes | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if related_modules %}
+        <div class="content-section">
+            <h2>Related Lessons</h2>
+            <div class="related-modules">
+                <p>This lesson pairs well with:</p>
+                <ul>
+                    {% for module in related_modules %}
+                    <li><a href="../{{ module }}/">{{ module | replace('-', ' ') | title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
         <div class="content-section">
             <h2>Course Materials</h2>
             
-            {% if materials %}
             <div class="materials-list">
                 {% for material in materials %}
                 <div class="material-item">
@@ -155,7 +189,7 @@
                         {% endif %}
                         <h4 class="material-title">{{ material.title }}</h4>
                     </div>
-                    <p>{{ material.description }}</p>
+                    <p>{{ material.description | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</p>
                     <div class="material-actions">
                         {% if material.type == "notebook" %}
                         <div class="notebook-buttons">
@@ -167,13 +201,29 @@
                             {% endif %}
                         </div>
                         {% elif material.type == "slides" %}
-                        <a href="{{ material.url }}" class="btn btn-secondary">View Slides</a>
+                        {% if material.github_url %}
+                        <a href="{{ material.github_url }}" class="btn btn-secondary">View Slides</a>
+                        {% elif material.colab_url %}
+                        <a href="{{ material.colab_url }}" class="btn btn-secondary">View Slides</a>
+                        {% endif %}
                         {% elif material.type == "video" %}
-                        <a href="{{ material.url }}" class="btn btn-secondary">Watch Video</a>
+                        {% if material.github_url %}
+                        <a href="{{ material.github_url }}" class="btn btn-secondary">Watch Video</a>
+                        {% elif material.colab_url %}
+                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Watch Video</a>
+                        {% endif %}
                         {% elif material.type == "dataset" %}
-                        <a href="{{ material.url }}" class="btn btn-secondary">Access Dataset</a>
+                        {% if material.github_url %}
+                        <a href="{{ material.github_url }}" class="btn btn-secondary">Access Dataset</a>
+                        {% elif material.colab_url %}
+                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Dataset</a>
+                        {% endif %}
                         {% else %}
-                        <a href="{{ material.url }}" class="btn btn-secondary">Access Material</a>
+                        {% if material.github_url %}
+                        <a href="{{ material.github_url }}" class="btn btn-secondary">Access Material</a>
+                        {% elif material.colab_url %}
+                        <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Material</a>
+                        {% endif %}
                         {% endif %}
                         <span class="duration">{{ material.duration }}</span>
                     </div>
@@ -191,48 +241,24 @@
                 </div>
                 {% endfor %}
             </div>
-            {% elif notebooks %}
-            <!-- Legacy notebook support -->
-            <h3>Student Materials</h3>
-            <div class="notebook-sequence">
-                {% for notebook in notebooks %}
-                <div class="notebook-item">
-                    <div class="notebook-header">
-                        <span class="notebook-number">{{ loop.index }}</span>
-                        <h4>{{ notebook.title }}</h4>
-                    </div>
-                    <p>{{ notebook.description }}</p>
-                    <div class="notebook-actions">
-                        <a href="https://colab.research.google.com/github/{{ github_org }}/{{ github_repo }}/blob/main/{{ public_repo_path }}/{{ notebook.filename }}" class="btn btn-primary">Open in Colab</a>
-                        <span class="duration">~{{ notebook.duration }}</span>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-            {% elif notebook %}
-            <!-- Single notebook support -->
-            <h3>Student Materials</h3>
-            <div class="notebook-sequence">
-                <div class="notebook-item">
-                    <div class="notebook-header">
-                        <span class="notebook-number">1</span>
-                        <h4>{{ title }}</h4>
-                    </div>
-                    <p>{{ description }}</p>
-                    <div class="notebook-actions">
-                        <a href="https://colab.research.google.com/github/{{ github_org }}/{{ github_repo }}/blob/main/{{ public_repo_path }}/{{ notebook.filename }}" class="btn btn-primary">Open in Colab</a>
-                        <span class="duration">~{{ notebook.duration }}</span>
-                    </div>
+            
+            <h3 style="margin-top: 32px;">Student Repository</h3>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <h4>Complete Student Materials</h4>
+                    <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                    <a href="{{ public_repo_url }}" class="btn btn-primary">
+                        View Repository
+                    </a>
                 </div>
             </div>
-            {% endif %}
             
             <h3 style="margin-top: 32px;">Instructor Materials</h3>
             <div class="materials-grid">
                 <div class="material-card">
                     <h4>Complete Instructor Package</h4>
                     <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
-                    <a href="https://github.com/{{ github_org }}/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary">
+                    <a href="https://github.com/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary">
                         Instructor Resources
                     </a>
                     <p class="access-note">
