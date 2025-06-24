@@ -20,6 +20,9 @@ expanded_description: |
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
 programming_skill: "None"
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
