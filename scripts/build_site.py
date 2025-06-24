@@ -11,14 +11,9 @@ import shutil
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-# Configuration
-CONFIG = {
-    'github_org': 'your-org',  # Replace with your GitHub org
-    'github_repo': 'public-lessons',  # Replace with your public repo name
-    'instructor_repo': 'instructor-materials',  # Replace with instructor repo name
-    'instructor_email': 'instructor-access@university.edu',  # Replace with your email
-    'base_url': 'https://your-org.github.io/lesson-portal'  # Replace with your site URL
-}
+# Shared instructor repository - same for all lessons
+INSTRUCTOR_REPO = "your-org/instructor-materials"  # Replace with your instructor repo
+DEFAULT_INSTRUCTOR_EMAIL = "instructor-access@university.edu"  # Default contact email
 
 def load_yaml_file(filepath):
     """Load and parse a YAML file"""
@@ -33,27 +28,25 @@ def process_lesson_data(lesson_data, lesson_id):
     """Process lesson data and add computed fields"""
     lesson_data['id'] = lesson_id
     
-    # Handle legacy formats - convert to materials if needed
-    if 'notebook' in lesson_data and 'materials' not in lesson_data:
-        # Convert single notebook to materials format
-        lesson_data['materials'] = [{
-            'title': lesson_data['title'],
-            'description': lesson_data['description'],
-            'type': 'notebook',
-            'url': f"https://github.com/{CONFIG['github_org']}/{CONFIG['github_repo']}/blob/main/{lesson_data.get('public_repo_path', lesson_id)}/{lesson_data['notebook']['filename']}",
-            'duration': lesson_data['notebook']['duration']
-        }]
-    elif 'notebooks' in lesson_data and 'materials' not in lesson_data:
-        # Convert notebooks array to materials format
-        lesson_data['materials'] = []
-        for nb in lesson_data['notebooks']:
-            lesson_data['materials'].append({
-                'title': nb['title'],
-                'description': nb['description'],
-                'type': 'notebook',
-                'url': f"https://github.com/{CONFIG['github_org']}/{CONFIG['github_repo']}/blob/main/{lesson_data.get('public_repo_path', lesson_id)}/{nb['filename']}",
-                'duration': nb['duration']
-            })
+    # Add shared instructor repo
+    lesson_data['instructor_repo'] = INSTRUCTOR_REPO
+    
+    # Automatically set instructor repo path to match lesson ID
+    lesson_data['instructor_repo_path'] = lesson_id
+    
+    # Use fallback for instructor email if not specified
+    if 'instructor_email' not in lesson_data:
+        lesson_data['instructor_email'] = "N/A"
+    
+    # All lessons must now use the materials format with explicit URLs
+    # Legacy formats (notebook/notebooks) are no longer supported
+    if 'materials' not in lesson_data:
+        if 'notebook' in lesson_data or 'notebooks' in lesson_data:
+            print(f"Warning: Lesson {lesson_id} uses legacy format. Please convert to materials format with explicit URLs.")
+            return None
+        else:
+            print(f"Error: Lesson {lesson_id} has no materials section.")
+            return None
     
     return lesson_data
 
@@ -67,9 +60,12 @@ def build_lessons_json(lessons_dir, output_dir):
         
         lesson_data = load_yaml_file(yaml_file)
         lesson_id = get_lesson_id_from_filename(yaml_file.name)
-        lesson_data = process_lesson_data(lesson_data, lesson_id)
+        processed_lesson = process_lesson_data(lesson_data, lesson_id)
         
-        lessons.append(lesson_data)
+        if processed_lesson is not None:
+            lessons.append(processed_lesson)
+        else:
+            print(f"Skipping {yaml_file.name} due to processing errors")
     
     # Sort lessons by title
     lessons.sort(key=lambda x: x['title'])
@@ -101,11 +97,8 @@ def build_lesson_pages(lessons, templates_dir, output_dir):
         lesson_dir = Path(output_dir) / 'lessons' / lesson['id']
         lesson_dir.mkdir(parents=True, exist_ok=True)
         
-        # Prepare template context
-        context = {
-            **lesson,  # All lesson data
-            **CONFIG   # Configuration data
-        }
+        # Prepare template context - just lesson data
+        context = lesson
         
         # Render template
         html_content = template.render(context)
@@ -163,8 +156,17 @@ def validate_lesson_data(lesson_data, filename):
     required_fields = [
         'title', 'description', 'programming_skill', 'primary_course',
         'authors', 'format', 'scientific_objectives', 
-        'cyberinfrastructure_objectives', 'platforms'
+        'cyberinfrastructure_objectives', 'platforms', 'materials',
+        'public_repo_url'
     ]
+    
+    # Optional instructor fields that should be validated if present
+    optional_instructor_fields = {
+        'student_level': str,
+        'students_piloted': (int, float),
+        'instructor_notes': str,
+        'related_modules': list
+    }
     
     missing_fields = []
     for field in required_fields:
@@ -172,41 +174,62 @@ def validate_lesson_data(lesson_data, filename):
             missing_fields.append(field)
     
     if missing_fields:
-        print(f"Warning: {filename} is missing required fields: {missing_fields}")
+        print(f"Error: {filename} is missing required fields: {missing_fields}")
         return False
     
-    # Check for materials OR legacy notebook formats
-    has_materials = 'materials' in lesson_data
-    has_notebooks = 'notebooks' in lesson_data
-    has_notebook = 'notebook' in lesson_data
+    # Validate optional instructor fields if present
+    for field, expected_type in optional_instructor_fields.items():
+        if field in lesson_data:
+            value = lesson_data[field]
+            if not isinstance(value, expected_type):
+                print(f"Error: {filename} field '{field}' should be {expected_type.__name__ if hasattr(expected_type, '__name__') else expected_type}")
+                return False
     
-    if not (has_materials or has_notebooks or has_notebook):
-        print(f"Warning: {filename} has no materials, notebooks, or notebook field")
+    # Validate related_modules if present
+    if 'related_modules' in lesson_data:
+        if not all(isinstance(module, str) for module in lesson_data['related_modules']):
+            print(f"Error: {filename} related_modules should be a list of strings")
+            return False
+    
+    # Check for legacy formats and reject them
+    if 'notebook' in lesson_data or 'notebooks' in lesson_data:
+        print(f"Error: {filename} uses legacy notebook/notebooks format. Please convert to materials format with explicit URLs.")
         return False
     
-    # Validate materials structure if present
-    if has_materials:
-        if not isinstance(lesson_data['materials'], list):
-            print(f"Warning: {filename} materials field must be a list")
+    # Validate materials structure
+    if not isinstance(lesson_data['materials'], list):
+        print(f"Error: {filename} materials field must be a list")
+        return False
+    
+    if len(lesson_data['materials']) == 0:
+        print(f"Error: {filename} materials list cannot be empty")
+        return False
+    
+    for i, material in enumerate(lesson_data['materials']):
+        required_material_fields = ['title', 'description', 'type', 'duration']
+        for field in required_material_fields:
+            if field not in material:
+                print(f"Error: {filename} material {i+1} is missing required field: {field}")
+                return False
+        
+        # Require at least one URL (github_url or colab_url)
+        if 'github_url' not in material and 'colab_url' not in material:
+            print(f"Error: {filename} material {i+1} must have either github_url or colab_url")
             return False
         
-        for i, material in enumerate(lesson_data['materials']):
-            required_material_fields = ['title', 'description', 'type', 'duration']
-            for field in required_material_fields:
-                if field not in material:
-                    print(f"Warning: {filename} material {i+1} is missing required field: {field}")
+        # Validate URL format if present
+        for url_field in ['github_url', 'colab_url']:
+            if url_field in material:
+                url = material[url_field]
+                if not isinstance(url, str) or not url.startswith('http'):
+                    print(f"Error: {filename} material {i+1} {url_field} must be a valid HTTP/HTTPS URL")
                     return False
-            
-            # Check that at least one of github_url or colab_url is present
-            if 'github_url' not in material and 'colab_url' not in material:
-                print(f"Warning: {filename} material {i+1} must have either github_url or colab_url")
-                return False    
     
     # Validate authors field
     if 'authors' in lesson_data:
         authors = lesson_data['authors']
         if not isinstance(authors, (list, str)):
-            print(f"Warning: {filename} authors field must be a list or string")
+            print(f"Error: {filename} authors field must be a list or string")
             return False
     
     return True
@@ -214,6 +237,7 @@ def validate_lesson_data(lesson_data, filename):
 def main():
     """Main build process"""
     print("Building Lesson Portal...")
+    print("Note: Only materials format with explicit URLs is now supported.")
     
     # Define paths
     script_dir = Path(__file__).parent
@@ -252,11 +276,16 @@ def main():
     
     if not valid_lessons:
         print("Error: Some lesson files have validation errors")
+        print("Please fix the errors above and run the build again.")
         return 1
     
     try:
         # Build lessons.json
         lessons = build_lessons_json(lessons_dir, output_dir)
+        
+        if len(lessons) == 0:
+            print("Error: No valid lessons found after processing")
+            return 1
         
         # Build individual lesson pages
         build_lesson_pages(lessons, templates_dir, output_dir)

@@ -126,16 +126,55 @@
             }
         }
 
+        // Function to dynamically detect all searchable keys in lesson data
+        function getSearchableKeys(lessons) {
+            const keys = new Set();
+            
+            function addKeysFromObject(obj, prefix = '') {
+                for (const [key, value] of Object.entries(obj)) {
+                    const fullKey = prefix ? `${prefix}.${key}` : key;
+                    
+                    if (typeof value === 'string' && value.trim() !== '') {
+                        // Add string fields
+                        keys.add(fullKey);
+                    } else if (Array.isArray(value)) {
+                        if (value.length > 0) {
+                            if (typeof value[0] === 'string') {
+                                // Add string arrays
+                                keys.add(fullKey);
+                            } else if (typeof value[0] === 'object' && value[0] !== null) {
+                                // Recursively handle arrays of objects
+                                addKeysFromObject(value[0], fullKey);
+                            }
+                        }
+                    } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+                        // Recursively handle nested objects
+                        addKeysFromObject(value, fullKey);
+                    }
+                }
+            }
+            
+            // Analyze all lessons to find all possible keys
+            lessons.forEach(lesson => addKeysFromObject(lesson));
+            
+            return Array.from(keys).sort();
+        }
+
         // Load lessons data
         async function loadLessons() {
             try {
                 const response = await fetch('lessons.json');
                 allLessons = await response.json();
                 
-                // Initialize search
+                // Dynamically detect searchable keys
+                const searchableKeys = getSearchableKeys(allLessons);
+                console.log('Detected searchable keys:', searchableKeys);
+                
+                // Initialize search with dynamic keys
                 fuse = new Fuse(allLessons, {
-                    keys: ['title', 'description', 'tags', 'authors', 'primary_course'],
-                    threshold: 0.3
+                    keys: searchableKeys,
+                    threshold: 0.3,
+                    includeScore: true
                 });
                 
                 // Populate filter options
