@@ -40,6 +40,10 @@
                 </div>
                 <nav class="toc-nav">
                     <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
                     <a href="#prerequisites" class="toc-link">Prerequisites</a>
                     {% if instructor_notes %}
                     <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
@@ -123,7 +127,7 @@
                     <p>{{ description }}</p>
                     {% endif %}
 
-                    <div class="objectives-list">
+                    <div class="objectives-list" id="scientific-objectives">
                         <h4>Scientific Learning Objectives</h4>
                         <ul>
                             {% for objective in scientific_objectives %}
@@ -132,7 +136,7 @@
                         </ul>
                     </div>
 
-                    <div class="objectives-list" style="margin-top: 16px;">
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
                         <h4>Cyberinfrastructure Learning Objectives</h4>
                         <ul>
                             {% for objective in cyberinfrastructure_objectives %}
