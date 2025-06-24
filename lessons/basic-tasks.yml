@@ -89,9 +89,9 @@ materials:
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/moralech-umu-public/blob/main/Basic_Tasks_Student_Version.ipynb"
+    github_url: "https://github.com/act-cms/moralech-umu-public-basic-tasks/blob/main/Basic_Tasks_Student_Version.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    #colab_url: "https://colab.research.google.com/github/your-org/your-lesson-repo/blob/main/colab-notebooks/Basic_Tasks_Student_Version.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/moralech-umu-public-basic-tasks/blob/main/Basic_Tasks_Student_Version.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -141,10 +141,10 @@ recommended_platform: "Google Colab"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the main repository students can clone
-student_repo_url: "https://github.com/act-cms/moralech-umu-public/basic-tasks/Basic_Tasks"
+student_repo_url: "https://github.com/act-cms/moralech-umu-public-basic-tasks"
 
 # Link to instructor materials (zip file in private repo)
-instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/main/Basic-Tasks.zip"
+instructor_materials_url: "https://github.com/act-cms/instructor-materials/raw/main/basic-tasks/Basic-Tasks.zip"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
