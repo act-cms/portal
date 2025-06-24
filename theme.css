@@ -854,3 +854,222 @@ a:hover {
     }
 }
 
+/* Responsive container width - wider but with reasonable limits */
+.container {
+    max-width: min(80%, 1400px);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.lesson-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Sidebar TOC */
+.sidebar-toc {
+    position: sticky;
+    top: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 2px 8px var(--shadow);
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toc.collapsed {
+    width: 40px;
+    overflow: hidden;
+}
+
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px 12px 0 0;
+}
+
+.toc-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.toc-collapse {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toc-collapse:hover {
+    color: var(--primary-color);
+}
+
+.toc-collapse svg {
+    fill: currentColor;
+}
+
+.sidebar-toc .toc-nav {
+    padding: 12px 0;
+}
+
+.sidebar-toc .toc-link {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-toc .toc-link:hover {
+    background-color: var(--surface);
+    border-left-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.sidebar-toc .toc-link.active {
+    background-color: var(--primary-light);
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.sidebar-toc .toc-submenu {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.sidebar-toc .toc-sublink {
+    display: block;
+    padding: 6px 16px 6px 32px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+}
+
+.sidebar-toc .toc-sublink::before {
+    content: '•';
+    position: absolute;
+    left: 20px;
+    color: var(--text-secondary);
+}
+
+.sidebar-toc .toc-sublink:hover {
+    background-color: var(--surface);
+    color: var(--text-primary);
+    border-left-color: var(--primary-color);
+}
+
+.sidebar-toc .toc-sublink.active {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.sidebar-toc .toc-sublink.active::before {
+    color: var(--primary-color);
+}
+
+/* Main content area */
+.lesson-content {
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+/* Collapsed sidebar styles */
+.sidebar-toc.collapsed .toc-header h3,
+.sidebar-toc.collapsed .toc-nav {
+    display: none;
+}
+
+.sidebar-toc.collapsed .toc-header {
+    justify-content: center;
+    padding: 12px;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .lesson-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .sidebar-toc {
+        position: static;
+        order: -1;
+        max-height: none;
+        margin-bottom: 24px;
+    }
+    
+    .sidebar-toc.collapsed {
+        width: auto;
+        overflow: visible;
+    }
+    
+    .sidebar-toc.collapsed .toc-header h3,
+    .sidebar-toc.collapsed .toc-nav {
+        display: block;
+    }
+    
+    .sidebar-toc.collapsed .toc-header {
+        justify-content: space-between;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lesson-layout {
+        gap: 16px;
+    }
+    
+    .sidebar-toc {
+        margin-bottom: 16px;
+    }
+    
+    .sidebar-toc .toc-link {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .sidebar-toc .toc-sublink {
+        padding: 4px 12px 4px 24px;
+        font-size: 12px;
+    }
+    
+    .sidebar-toc .toc-sublink::before {
+        left: 16px;
+    }
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust scroll margin for better positioning */
+.content-section,
+.material-item {
+    scroll-margin-top: 80px;
+}
+
