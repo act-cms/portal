@@ -85,8 +85,8 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "basic-tasks"
-  - "statistical-testing" 
+  - "moralech-umu-basic-tasks"
+  - "statistical-testing-beta" 
   - "solution-preparation-spectrophotometry"
   - "standard-addition-spectophotometry"
   - "ocean-acidification"
