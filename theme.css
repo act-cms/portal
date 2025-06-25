@@ -141,6 +141,8 @@ body {
     box-shadow: 0 2px 8px var(--shadow);
 }
 
+
+
 .lesson-title {
     font-size: 32px;
     font-weight: 700;
@@ -722,7 +724,7 @@ a:hover {
 /* Lesson Cards */
 .lessons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 20px;
     margin-bottom: 48px;
 }
@@ -862,7 +864,7 @@ a:hover {
 }
 .lesson-layout {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: 24px;
     align-items: start;
 }
