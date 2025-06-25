@@ -65,7 +65,7 @@ instructor_notes: |
 # Related lessons that complement this one
 related_modules:
   - "calibration-of-glassware"
-  - "statistical-testing" 
+  - "statistical-testing-beta" 
   - "solution-preparation-spectrophotometry"
   - "standard-addition-spectophotometry"
   - "ocean-acidification"
