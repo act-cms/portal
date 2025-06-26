@@ -42,7 +42,7 @@ programming_skill: "None"
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
-primary_course: "Foundational Module"
+primary_course: "Advanced Organic Chemistry"
 
 # List other courses where this lesson could be used (optional)
 also_for:
@@ -92,8 +92,6 @@ instructor_notes: |
   - "I don't know what some of these error messages mean or how to address them."
 
 # Related lessons that complement this one
-related_modules:
-  - "computational-chemistry-basics" # ??
 # https://education.molssi.org/python-scripting-experimental/basics.html
 # https://education.molssi.org/python_scripting_cms/01-introduction/index.html
 
