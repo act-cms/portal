@@ -114,7 +114,7 @@ public_repo_url: "https://github.com/act-cms/statistical-testing-beta"
 # List each notebook/material in logical order
 materials:
   - title: "Part 1: Introduction"
-    description: "Brief description of what this notebook covers"
+    description: "This Jupyter notebook can be used to generate code in Python to perform six tasks for statistical analysis: Upload multiple datasets from CSV files; Reorganize and summarize data; Recognize and address outliers; Apply Student's T test; Perform linear least-squares with propagation of uncertainty; Build and plot histograms "
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "2 hours"
     
