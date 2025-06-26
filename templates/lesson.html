@@ -45,18 +45,18 @@
                         <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
                     </div>
                     <a href="#prerequisites" class="toc-link">Prerequisites</a>
-                    {% if instructor_notes %}
-                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
-                    {% endif %}
-                    {% if related_modules %}
-                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
-                    {% endif %}
                     <a href="#course-materials" class="toc-link">Course Materials</a>
                     <div class="toc-submenu">
                         {% for material in materials %}
                         <a href="#material-{{ loop.index }}" class="toc-sublink">{{ material.title }}</a>
                         {% endfor %}
                     </div>
+                    {% if instructor_notes %}
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    {% endif %}
+                    {% if related_modules %}
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    {% endif %}
                     <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
                 </nav>
             </aside>
@@ -169,29 +169,6 @@
                     </div>
                 </div>
 
-                {% if instructor_notes %}
-                <div class="content-section" id="instructor-notes">
-                    <h2>Instructor Notes</h2>
-                    <div class="instructor-notes">
-                        <div>{{ instructor_notes | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</div>
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if related_modules %}
-                <div class="content-section" id="related-lessons">
-                    <h2>Related Lessons</h2>
-                    <div class="related-modules">
-                        <p>This lesson pairs well with:</p>
-                        <ul>
-                            {% for module in related_modules %}
-                            <li><a href="../{{ module }}/">{{ module | replace('-', ' ') | title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                {% endif %}
-
                 <div class="content-section" id="course-materials">
                     <h2>Course Materials</h2>
                     
@@ -231,35 +208,35 @@
                                 {% if material.type == "notebook" %}
                                 <div class="notebook-buttons">
                                     {% if material.colab_url %}
-                                    <a href="{{ material.colab_url }}" class="btn btn-primary">Open in Colab</a>
+                                    <a href="{{ material.colab_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
                                     {% endif %}
                                     {% if material.github_url %}
-                                    <a href="{{ material.github_url }}" class="btn btn-secondary">View Notebook</a>
+                                    <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
                                     {% endif %}
                                 </div>
                                 {% elif material.type == "slides" %}
                                 {% if material.github_url %}
-                                <a href="{{ material.github_url }}" class="btn btn-secondary">View Slides</a>
+                                <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Slides</a>
                                 {% elif material.colab_url %}
-                                <a href="{{ material.colab_url }}" class="btn btn-secondary">View Slides</a>
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Slides</a>
                                 {% endif %}
                                 {% elif material.type == "video" %}
                                 {% if material.github_url %}
-                                <a href="{{ material.github_url }}" class="btn btn-secondary">Watch Video</a>
+                                <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Watch Video</a>
                                 {% elif material.colab_url %}
-                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Watch Video</a>
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Watch Video</a>
                                 {% endif %}
                                 {% elif material.type == "dataset" %}
                                 {% if material.github_url %}
-                                <a href="{{ material.github_url }}" class="btn btn-secondary">Access Dataset</a>
+                                <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Access Dataset</a>
                                 {% elif material.colab_url %}
-                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Dataset</a>
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Access Dataset</a>
                                 {% endif %}
                                 {% else %}
                                 {% if material.github_url %}
-                                <a href="{{ material.github_url }}" class="btn btn-secondary">Access Material</a>
+                                <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Access Material</a>
                                 {% elif material.colab_url %}
-                                <a href="{{ material.colab_url }}" class="btn btn-secondary">Access Material</a>
+                                <a href="{{ material.colab_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Access Material</a>
                                 {% endif %}
                                 {% endif %}
                                 <span class="duration">{{ material.duration }}</span>
@@ -284,7 +261,7 @@
                         <div class="material-card">
                             <h4>Complete Student Materials</h4>
                             <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
-                            <a href="{{ public_repo_url }}" class="btn btn-primary">
+                            <a href="{{ public_repo_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                 View Repository
                             </a>
                         </div>
@@ -295,7 +272,7 @@
                         <div class="material-card">
                             <h4>Complete Instructor Package</h4>
                             <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
-                            <a href="https://github.com/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary">
+                            <a href="https://github.com/{{ instructor_repo }}/tree/main/{{ instructor_repo_path }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                                 Instructor Resources
                             </a>
                             <p class="access-note">
@@ -306,6 +283,29 @@
                         </div>
                     </div>
                 </div>
+
+                {% if instructor_notes %}
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>{{ instructor_notes | replace('\n', '<br>') | replace('<br><br>', '</p><p>') | replace('- ', '• ') | safe }}</div>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if related_modules %}
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            {% for module in related_modules %}
+                            <li><a href="../{{ module }}/">{{ module | replace('-', ' ') | title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
 
                 <div class="content-section" id="platform-requirements">
                     <h2>Platform Requirements</h2>
