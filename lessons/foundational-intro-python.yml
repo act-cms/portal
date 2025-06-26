@@ -35,7 +35,7 @@ instructor_notes: |
   
 
 # REPOSITORY URLS (REQUIRED)
-public_repo_url: "https://github.com/act-cms/foundational-modules"
+public_repo_url: "https://github.com/act-cms/foundational-intro-python"
 
 # MATERIALS SECTION (REQUIRED)
 materials:
@@ -43,8 +43,8 @@ materials:
     description: "Introduction to Python programming language, basic data types, and operations."
     type: "notebook"
     duration: "1 hour"
-    github_url: "https://github.com/act-cms/foundational-modules/blob/main/intro-programming/introduction_to_python.ipynb"
-    colab_url: "https://colab.research.google.com/github/act-cms/foundational-modules/blob/main/intro-programming/colab-notebooks/student/introduction_to_python.ipynb"
+    github_url: "https://github.com/act-cms/foundational-intro-python/blob/main/01-introduction-to-python.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/foundational-intro-python/blob/main/colab_notebooks/01-introduction-to-python.ipynb"
     objectives:
       - "Understand basic Python syntax and data types"
       - "Learn about setting variables, for loops, and conditionals"
