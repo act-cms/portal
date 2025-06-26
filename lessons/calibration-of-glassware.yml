@@ -102,7 +102,7 @@ public_repo_url: "https://github.com/act-cms/moralech-umu-public-calibration-of-
 # List each notebook/material in logical order
 materials:
   - title: "Calibration of Glassware"
-    description: "Brief description of what this notebook covers"
+    description: "Generate code in Python to perform four tasks: Entering and processing data as an array; Creating a publication-quality graph; Reporting results to correct significant figures; Creating and using a lookup table widget."
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "1 hour"
     
