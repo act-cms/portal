@@ -46,7 +46,7 @@ also_for:
 
 # List all authors
 authors: 
-  - "Dr. Dom Sirianni"
+  - "Prof. Dom Sirianni"
 
 # Estimated total time for all materials
 estimated_time: "3 hours" # Currently only for the symbolic-algebra lesson, will grow w/ more
