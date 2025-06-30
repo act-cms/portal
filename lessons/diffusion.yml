@@ -66,24 +66,11 @@ students_piloted: 30  # Number of students
 instructor_notes: |
   Additional context for instructors using this lesson:
 
-  This activity is designed as a lab activity to expose students to some techniques and capabilities of
-  computational materials science with no programming prerequisites. That is, all they have to do with this
-  Jupyter notebook is run existing cells of code and in some cases paste in data or change one number. My goals
-  were to get the students thinking about how computation as a paradigm is distinct from pure theory and can 
-  complement both theory and experiment, e.g. by probing scales of length and time inaccessible in a physical
-  lab, or through massive replication through automation.
+  This activity is designed as a lab activity to expose students to some techniques and capabilities of computational materials science with no programming prerequisites. That is, all they have to do with this Jupyter notebook is run existing cells of code and in some cases paste in data or change one number. My goals were to get the students thinking about how computation as a paradigm is distinct from pure theory and can complement both theory and experiment, e.g. by probing scales of length and time inaccessible in a physical lab, or through massive replication through automation.
   
-  When I piloted this activity (in Carnegie Mellon's introductory materials science course), it was 
-  actually before they had seen anything about diffusion in the associated lecture. I think it could work well
-  in either scenario, though, it would just affect how technical one should expect the students to get in their
-  responses to the reflection prompts, and also what context would be needed in the prelab mini-lecture. My pilot
-  audience was also extremely heterogeneous in programming background, some first-year undergraduates with 
-  essentially no experience, and some more senior computer science students, and it worked just fine.
+  When I piloted this activity (in Carnegie Mellon's introductory materials science course), it was actually before they had seen anything about diffusion in the associated lecture. I think it could work well in either scenario, though, it would just affect how technical one should expect the students to get in their responses to the reflection prompts, and also what context would be needed in the prelab mini-lecture. My pilot audience was also extremely heterogeneous in programming background, some first-year undergraduates with essentially no experience, and some more senior computer science students, and it worked just fine.
 
-  For my course, the deliverable was a standard lab memo that included responses to the reflection prompts within
-  the notebook, as well as this additional prompt: "Please also write at least a few sentences reflecting on 
-  computation as an "experimental" paradigm generally. How do you see it as similar to or different from 
-  experiments? What can we learn about diffusion more easily from one approach compared to the other?"
+  For my course, the deliverable was a standard lab memo that included responses to the reflection prompts within the notebook, as well as this additional prompt: "Please also write at least a few sentences reflecting on computation as an "experimental" paradigm generally. How do you see it as similar to or different from experiments? What can we learn about diffusion more easily from one approach compared to the other?"
   
   Logistical tips, and things to emphasize in prelab mini-lecture:
   - Demonstrate launching the notebook in chosen platform (I suggest ChemCompute), including setting the correct runtime!
@@ -96,11 +83,14 @@ instructor_notes: |
   - Data formatting issues due to either not pasting in the full contents of the data dump, resetting stats during data collection, etc.
 
   Possibilities to "level up" this activity for more advanced students:
-  - Connect to 2D Lennard-Jones phase diagram (conditions here are in the two-phase solid-liquid region!) and thinking about why solid ends up in middle of box and liquid along the edges (see e.g. https://www.researchgate.net/publication/49750821/figure/fig1/AS:667216336936969@1536088179352/Phase-diagram-of-2D-Lennard-Jones-solid-as-given-in-9-The-first-order-boundaries-are.png) 
+  - Connect to 2D Lennard-Jones phase diagram (conditions here are in the two-phase solid-liquid region!) and thinking about why solid ends up in middle of box and liquid along the edges (see e.g. [here](https://www.researchgate.net/publication/49750821/figure/fig1/AS:667216336936969@1536088179352/Phase-diagram-of-2D-Lennard-Jones-solid-as-given-in-9-The-first-order-boundaries-are.png))
   - "Skeletonize" some of the code cells and ask students to fill in some of the analysis or visualization themselves
   - Get more in-depth into what's going on with the MD, understand why temperature drifts, etc.
   - Have them repeat the second portion at another temperature and think about how/why the results change
   - Dive more into some of the PDE stuff at the end
+
+# Related lessons that complement this one
+related_modules:
 
 
 # REPOSITORY URLS (REQUIRED)
