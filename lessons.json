@@ -477,14 +477,14 @@
     "related_modules": [
       "foundational-intro-python"
     ],
-    "public_repo_url": "https://github.com/act-cms/foundations-symbolic-math",
+    "public_repo_url": "https://github.com/act-cms/foundational-symbolic-math",
     "materials": [
       {
         "title": "Foundations of Symbolic Algebra in Python",
         "description": "Basics of using `sympy` and `algebra_with_sympy` libraries to symbolically solve general chemistry problems",
         "type": "notebook",
         "duration": "3 hours",
-        "github_url": "https://github.com/act-cms/foundations-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb",
+        "github_url": "https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb",
         "objectives": [
           "Define algebraic variables and expressions using the `algebra_with_sympy` library",
           "Manipulate algebraic expressions to solve for a single variable",
