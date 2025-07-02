@@ -13,12 +13,6 @@ description: "Students will be introduced to the fundamentals of symbolic mathem
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  #Provide a more detailed description of your lesson here.
-  #Explain the context, what students will accomplish, and how this
-  #fits into broader molecular science education.
-  #
-  #You can use multiple paragraphs to fully describe the lesson scope
-  #and learning experience.
   The lessons in this module are meant to help students develop foundational
   skills in symbolic mathematics, including algebra, calculus, linear algebra,
   differential equations, and beyond --- but decoupled from any particular chemistry
@@ -76,7 +70,8 @@ instructor_notes: |
   - Symbolic algebra lesson can be completed in single 3-hour lab period
   
   Common student questions:
-  - "I can solve these problems by hand, why do I need to use Python?" - Remind students that some chemical problems in sophomore-level courses & beyond are either impossible or backbreakingly difficult to solve by hand, so developing these skills will greatly help their progress through the curriculum
+  - "I can solve these problems by hand, why do I need to use Python?" 
+  - Remind students that some chemical problems in sophomore-level courses & beyond are either impossible or backbreakingly difficult to solve by hand, so developing these skills will greatly help their progress through the curriculum
 
 # Related lessons that complement this one
 related_modules:
@@ -84,7 +79,7 @@ related_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/foundations-symbolic-math"
+public_repo_url: "https://github.com/act-cms/foundational-symbolic-math"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
@@ -96,7 +91,7 @@ materials:
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/foundations-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb"
+    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb"
     # Google Colab launch link (recommended for accessibility)
     #colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     

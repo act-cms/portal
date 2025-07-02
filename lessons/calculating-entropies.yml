@@ -43,7 +43,7 @@ estimated_time: "2-3 hours for each notebook"
 
 # Write a description of your module.
 # Single notebook, multi-part module, etc?
-format: "Two-Part Module"
+format: "Multi-Part Materials Module"
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
@@ -61,13 +61,7 @@ instructor_notes: |
 
   These activities have been used in a Physical Chemistry I course with 5-15 students in a 3-hr laboratory period, 2-3 students per group. Students have had basic instruction on python/Jupyter and are comfortable using spreadsheets, but have had no formal instruction on programming. Students have been introduced to the 1st, 2nd, and 3rd laws of thermodynamics through POGIL exercises. They were familiar with mathematical relationships, but had not applied them to real systems.
 
- Timing notes: Each activity takes 2-3 hrs to complete. However, the notebooks have natural break points to accommodate time constraints. For example, in "How to calculate entropy of a substance", a convenient stopping point would be after the fit equation is integrated, but before starting the Debye extrapolation.
-
-  
-# Related lessons that complement this one
-related_modules:
-  #- "thermodynamics-fundamentals"
-  #- "statistical-mechanics-intro" 
+  Timing notes: Each activity takes 2-3 hrs to complete. However, the notebooks have natural break points to accommodate time constraints. For example, in "How to calculate entropy of a substance", a convenient stopping point would be after the fit equation is integrated, but before starting the Debye extrapolation.
 
 
 # REPOSITORY URLS (REQUIRED)
@@ -86,7 +80,7 @@ materials:
     # Direct link to notebook file on GitHub
     github_url: "https://github.com/act-cms/calculating-entropies/blob/main/01-entropy-single-phase/calculating-entropyorg.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    #colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/calculating-entropies/blob/main/01-entropy-single-phase/calculating-entropyorg.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -100,7 +94,7 @@ materials:
     type: "notebook"
     duration: "2 hrs"
     github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/entropySO2.ipynb"
-    colab_url: ""
+    #colab_url: ""
     objectives:
       - "Application of concepts from Part 1"
       - "Apply the third law of thermodynamics"
@@ -141,10 +135,10 @@ platforms:
   - "Local Installation"
   - "CoCalc"
   - "ChemCompute"
-  - "Collab"
+  - "Google Colab"
 
 # Which platform do you recommend for most users?
-recommended_platform: "Local install, CoCalc"
+recommended_platform: "CoCalc"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
