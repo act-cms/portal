@@ -1,0 +1,172 @@
+# lessons/buffer-solutions.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Buffer Preparation Calculations"
+
+# Brief description for search results (1-2 sentences)
+description: "Calculations to guide reagent use when preparing a buffer solution at a given pH."
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  This lesson can be used to guide reagent use by students when preparing a buffer solution in an analytical chemistry laboratory.
+  The suggested context would be to walk through it together in the analytical laboratory before preparing the buffer solutions.
+  Quantities may need to be revised and recalculated during the laboratory if a student's buffer solution does not meet specifications.
+  About an hour during lab should be allocated to this module; students may also ask questions when recalculating.
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "None"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Analytical Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+  - "Biochemistry"
+  - "Physical Chemistry"
+
+# List all authors
+authors: 
+  - "Dr. Christine Morales"
+
+# Estimated total time for all materials
+estimated_time: "1 hour"
+
+# Write a description of your module.
+# Single notebook, multi-part module, etc?
+format: "Single Notebook"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "moralech@mountunion.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Second Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 10  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  This module provides practice to reinforce programming concepts introduced in prior modules for students with no prior coding experience.
+  
+  Teaching tips:
+  - This lesson reinforces the utility of variables and functions for quickly recalculating important quantities.
+  - Students may safely use a scale factor larger than 25 to achieve sufficient buffer capacity; potentially up to 100.
+    Of course the scale factor can be increased beyond 100, but needing to do so may be a sign of cross-contamination.
+  - After changing the scale factor, students must re-run both Task 3 and Task 4 to recalculate reagent quantities.
+  - For students with a liquid acid, this lesson illustrates the use of commented-out code for contingent use cases.
+  - Students should be reminded to always add acid to water, never water to acid, and preferably to do so in the hood.
+  - While this lesson is not as challenging as others, that can compensate for the technical challenge of buffer preparation.
+    Its ease of use promotes good planning prior to preparation of buffers, which is an important analytical laboratory skill.
+  - Students should be permitted to consult with others, to ensure they are accountable to understand each part.
+  - Encourage students to share ideas but code/answer questions in their own copy of the notebook.
+  - Remind students to save their own copy before they begin work.
+  - Some students may have several Google accounts; remind them to be aware of which account is logged in when they save.
+  
+  Timing notes:
+  - Task 1 typically takes students 5-10 minutes.
+  - Task 2 typically takes students 5-10 minutes.
+  - Task 3 typically takes students 10-15 minutes, as savvy students may debate increasing the scale factor right away.  
+    If they do so, they are less likely to need to recalculate and re-make their solution with a higher buffer capacity.
+  - Task 4 typically takes students 10-15 minutes, as students decide if their acid is a solid or a liquid, decide what
+    to do with the commented-out code for liquid acids, and look up the needed molar masses and (if needed) density.
+  - If necessary, recalculating with a higher scale factor (Tasks 3 and 4) should take students no more than 5 minutes.
+  
+  Common student questions:
+  - Students may ask if they should just start with an increased scale factor.
+  - Students may ask how to dispense liquid acids.  Micropipettes are the most accurate, but MUST be handled very carefully.
+    Please supervise students if they have not yet been trained in safe handling of micropipettes.
+  - Students may ask if the Henderson-Hasselbalch equation is sufficiently accurate.  This does not account for small ionic
+    strength effects on pH, but it greatly simplifies the code, and it should be sufficiently accurate for this purpose.
+
+# Related lessons that complement this one
+related_modules:
+  - "moralech-umu-basic-tasks"
+  - "statistical-testing-beta" 
+  - "solution-preparation-spectrophotometry"
+  - "standard-addition-spectrophotometry"
+  - "calibration-of-glassware"
+  - "ocean-acidification"
+  - "hplc-analysis"
+  - "gc-ms-internal-standard"
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/buffer-solutions"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Buffer Preparation Calculations"
+    description: "Generate code in Python to perform four tasks: Calculate an allowable pH range; Calculate allowable conjugate mole ratios; Calculate adjustable reagent amounts in moles; Convert amounts to measurable quantities."
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "1 hour"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/buffer-solutions/blob/main/Buffer_Preparation_Student_Version.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/buffer-solutions/blob/main/Buffer_Preparation_Student_Version.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Content: Apply the concept of a pKa value to select reagents for a buffer solution"
+      - "Content: Apply the concept of buffer capacity to plan and prepare a buffer solution"
+      - "Process: Use Python code to define variables and functions, and to perform calculations"
+      - "Process: Use Python code to report the output of calculations in a specified format"
+      - "Process: Understand how to redefine variables and re-run code if necessary"
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Apply the concept of a pKa value to select reagents for a buffer solution"
+  - "Apply the concept of buffer capacity to plan and prepare a buffer solution"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Use Python code to define variables and functions, and to perform calculations"
+  - "Use Python code to report the output of calculations in a specified format"
+  - "Understand how to redefine variables and re-run code if necessary"
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+  - "The pH Scale and pKa Values"
+  - "Buffer Solutions"
+  - "The Henderson-Hasselbalch Equation"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "No prior programming experience required"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used.
+platforms:
+  - "Google Colab"
+  - "Local Installation"
+  - "ChemCompute"
+
+# Which platform do you recommend for most users?
+recommended_platform: "Google Colab"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "analytical-chemistry"
+  - "laboratory"
+  - "data-analysis"  # Use appropriate scientific area tags
