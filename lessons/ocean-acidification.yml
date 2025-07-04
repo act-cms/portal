@@ -127,8 +127,8 @@ public_repo_url: "https://github.com/act-cms/ocean-acidification"
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
-    description: "Brief description of what this notebook covers"
+  - title: "Ocean_Acidification Week 2 Student Version"
+    description: "Generate Python code to analyze pH, carbonate and bicarbonate titration data for bottled, CO$_2$-infused, and air-infused seawater"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "60-90 min"
     
@@ -149,8 +149,8 @@ materials:
       - "Process: Work in teams to evaluate outcomes of statistical tests"
   
   # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
-    description: "Description of second notebook"
+  - title: "Ocean_Acidification Week 3 Student Version"
+    description: "Generate Python code to analyze seashell mass changes and calcium and magnesium titration data for CO$_2$-infused and air-infused seawater relative to bottled control"
     type: "notebook"
     duration: "60-90 min"
     github_url: "https://github.com/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W3_Student_Version.ipynb"
