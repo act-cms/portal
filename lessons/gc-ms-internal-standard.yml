@@ -1,0 +1,167 @@
+# lessons/gc-ms-internal-standard.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Gas Chromatography – Mass Spectrometry with Internal Standard"
+
+# Brief description for search results (1-2 sentences)
+description: "Data analysis for a Gas Chromatography – Mass Spectrometry Experiment with an Internal Standard in Analytical Chemistry Laboratory."
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  This lesson can be used to analyze GC-MS peak area data collected by students in an analytical chemistry laboratory.
+  The suggested context would be to walk through it together in the analytical laboratory after data collection, likely in the second week of a 2-week sequence.
+  Even with relatively short run times and an autosampler, it is not feasible to prepare samples, run the GC, and analyze GC data in one lab period.
+  At least an hour at the end of the lab period should be allocated to this data analysis module.
+
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "None"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Analytical Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+  - "Environmental Chemistry"
+
+# List all authors
+authors: 
+  - "Dr. Christine Morales"
+
+# Estimated total time for all materials
+estimated_time: "60-90 minutes"
+
+# Write a description of your module.
+# Single notebook, multi-part module, etc?
+format: "Single Notebook"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "moralech@mountunion.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Second Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 10  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  This module provides practice to reinforce array-based programming skills introduced in prior modules for students with no prior coding experience.
+
+  Teaching tips:
+  - If time permits, consider reviewing internal standard calculations to assist students with interpreting functions in Tasks 3 and 4.
+  - In Task 1, students ideally should decide *as a class* whether to enter single-valued data or a NumPy array of replicate data points,
+    and discuss as a team how to swap the lines of sample-code that are commented out if needed.
+    However, there is no prompt for this in the notebook because our students did not have time to prepare replicate samples.
+  - If time permits, consider asking students to write their own code to perform dilution calculations in Task 2.  This could also be assigned
+    as a pre-lab exercise, with sample code available as a last resort (perhaps at the cost of those pre-lab points).
+  - In Task 4, students ideally should review *as a class* whether to vectorize the defined function, and discuss as a team
+    how to swap the lines of sample-code that are commented out if needed. As in Task 1 however, there is no prompt for this in the notebook
+    because our students did not have time to prepare replicate samples.
+  - Ideally, this module could be good practice for students to think about how to code with NumPy arrays.  If there is time
+    in the first week for students to prepare replicate samples, prompts can be added for students to discuss these decisions as a class.
+  - This increased focus on arrays assumes a prior introduction to NumPy arrays and data entry in prior modules. If that is not the case,
+    the instructor may make all coding decisions for the class and treat the module as more of a basic introduction to array handling.
+  
+  Timing notes:
+  - Task 1 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.
+  - Task 2 typically takes students 5-10 minutes.  Add 15-20 minutes or a pre-lab assignment if asking students to write their own code here.
+  - Task 3 typically takes students 5-10 minutes.  
+  - Task 4 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.
+  
+  Common student questions:
+  - Some students may struggle to recall dilution factors if asked to write their own code in Task 2.
+  - Students may ask why they should use an internal standard instead of a calibration curve when analyzing GC-MS peak areas.
+  - If provided with chromatograms, students may think they need to enter retention times in addition to peak areas.
+  - If Selected Ion Monitoring (SIM) is used and not explained, students may ask why they cannot see the other peaks in chromatograms.
+
+# Related lessons that complement this one
+related_modules:
+  - "moralech-umu-basic-tasks"
+  - "statistical-testing-beta" 
+  - "solution-preparation-spectrophotometry"
+  - "standard-addition-spectrophotometry"
+  - "calibration-of-glassware"
+  - "ocean-acidification"
+  - "buffer-solutions"
+  - "hplc-analysis"
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/gc-ms-internal-standard"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Part 1: Introduction"
+    description: "Brief description of what this notebook covers"
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "1 hour"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Content: Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate"
+      - "Content: Explain how mass spectrometry (MS) permits the selection of an ideal internal standard"
+      - "Content: Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte"
+      - "Process: Use Python code to transform data using structures such as arrays"
+      - "Process: Use Python code to transform data using functions"
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate"
+  - "Explain how mass spectrometry (MS) permits the selection of an ideal internal standard"
+  - "Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Use Python code to transform data using structures such as arrays"
+  - "Use Python code to transform data using functions"
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+  - "Concept of an internal standard for use in calibration of an instrument signal"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "Basic Python syntax (variables, arrays, functions)"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used.
+platforms:
+  - "Google Colab"
+  - "Local Installation"
+  - "ChemCompute"
+
+# Which platform do you recommend for most users?
+recommended_platform: "Google Colab"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:  
+  - "python"
+  - "analytical-chemistry"
+  - "laboratory"
+  - "data-analysis"   # Use appropriate scientific area tags
