@@ -1063,15 +1063,15 @@
     "related_modules": [
       "Introduction-to-programming-and-python"
     ],
-    "public_repo_url": "https://github.com/act-cms/lesson-02-linear-variation-method",
+    "public_repo_url": "https://github.com/act-cms/linear-variation-method",
     "materials": [
       {
         "title": "Part 1: Linear vatiational method - live coding session",
         "description": "Jupyter notebook for instructor-led live coding session to demonstrate the implementation of the linear variation method.",
         "type": "notebook",
         "duration": "3 hours",
-        "github_url": "https://github.com/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
-        "colab_url": "https://colab.research.google.com/github/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
+        "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
         "objectives": []
       },
       {
@@ -1079,8 +1079,8 @@
         "description": "Jupyter notebook to assess student learning. Students are asked to write code to obtain approximate solutions to a double-well potential and examine properties of solutions.",
         "type": "notebook",
         "duration": "Approximately 2-3 hours",
-        "github_url": "https://github.com/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
-        "colab_url": "https://colab.research.google.com/github/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
+        "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
         "objectives": []
       }
     ],
