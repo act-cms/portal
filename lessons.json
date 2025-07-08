@@ -766,11 +766,10 @@
   {
     "title": "How can we calculate the entropy of substances?",
     "description": "In two guided-inquiry Jupyter notebooks, students fit experimental Cp data to calculate third law entropies.",
-    "expanded_description": "In two guided-inquiry Jupyter notebook activities, students import experimental isobaric heat capacity data, fit the data to a polynomial, and calculate the third law entropy of several substances. The introductory notebook focuses on calculating the entropy of a substance in the solid phase. The second notebook introduces entropy calculations with phase changes and the Debye extrapolation.\n\nThe activities were designed using a guided-inquiry framework and targeted for undergraduate physical chemistry course. Students have a basic understanding of using Jupyter notebooks and importing well-formed CSV files for plotting with matplotlib. Parts of the activities are worked individually, but there are frequent prompts to reflect upon or compare results with 2-3 group members.\n",
+    "expanded_description": "In two guided-inquiry Jupyter notebook activities, students import experimental isobaric heat capacity data, fit the data to a polynomial, and calculate the third law entropies for several substances. The introductory notebook focuses on calculating the entropy of a substance in the solid phase using the Debye extrapolation. The second notebook introduces entropy calculations with phase changes.\n\nThe activities were designed using a guided-inquiry framework and targeted for undergraduate physical chemistry course. Students have a basic understanding of using Jupyter notebooks and importing well-formed CSV files for plotting with matplotlib. Parts of the activities are worked individually, but there are frequent prompts to reflect upon or compare results with group members.\n",
     "programming_skill": "Beginner",
     "primary_course": "Physical Chemistry",
     "also_for": [
-      "Physical Chemistry",
       "Materials Science"
     ],
     "authors": [
@@ -781,7 +780,7 @@
     "instructor_email": "ssinglet@coe.edu",
     "student_level": "Undergraduate",
     "students_piloted": 15,
-    "instructor_notes": "\nThese activities have been used in a Physical Chemistry I course with 5-15 students in a 3-hr laboratory period, 2-3 students per group. Students have had basic instruction on python/Jupyter and are comfortable using spreadsheets, but have had no formal instruction on programming. Students have been introduced to the 1st, 2nd, and 3rd laws of thermodynamics through POGIL exercises. They were familiar with mathematical relationships, but had not applied them to real systems.\n\nTiming notes: Each activity takes 2-3 hrs to complete. However, the notebooks have natural break points to accommodate time constraints. For example, in \"How to calculate entropy of a substance\", a convenient stopping point would be after the fit equation is integrated, but before starting the Debye extrapolation.\n",
+    "instructor_notes": "\nThese activities have been used in a Physical Chemistry I course with 5-15\nstudents in a 3-hr laboratory period, 2-3 students per group. Students have\nhad basic instruction on python/Jupyter and are comfortable using\nspreadsheets, but have had no formal instruction on programming. Students\nhave been introduced to the 1st, 2nd, and 3rd laws of thermodynamics through\nPOGIL exercises. They were familiar with mathematical relationships, but had\nnot applied them to real systems.\n\nTiming notes: Each activity takes 2-3 hrs to complete. However, the notebooks\nhave natural break points to accommodate time constraints.\n",
     "public_repo_url": "https://github.com/act-cms/calculating-entropies",
     "materials": [
       {
@@ -801,11 +800,12 @@
         "title": "Part 2: Calculating entropy with phase changes",
         "description": "Calculating the molar entropy of a substance over a temperature range that spans phase changes",
         "type": "notebook",
-        "duration": "2 hrs",
-        "github_url": "https://github.com/act-cms/your-lesson-repo/blob/main/entropySO2.ipynb",
+        "duration": "2.5 hrs",
+        "github_url": "https://github.com/act-cms/your-lesson-repo/blob/main/calculating-multiphase-entropyorg.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/calculating-entropies/blob/main/02-entropy-multi-phase/calculating-multiphase-entropyorg.ipynb",
         "objectives": [
           "Application of concepts from Part 1",
-          "Apply the third law of thermodynamics",
+          "Apply the third law of thermodynamics to calculate entropy of a substance over a temperature range",
           "Calculate S for warming a substance in different phases",
           "Calculate S for phase transitions"
         ]
@@ -820,15 +820,15 @@
       "Write and execute Python code in Jupyter notebooks",
       "Import and visualize structured data using numpy and matplotlib",
       "Fit experimental values to a polynomial",
-      "Numerical integration using trapezoid or Simpson",
-      "Assess the quality of fit using statistical measures RSS or SSE"
+      "Integrate functions numerically with python",
+      "Assess the quality of fit using statistical measures RSS or SSE",
+      "(optional) Use computational chemistry to obtain entropy"
     ],
     "scientific_prerequisites": [
-      "Recognize differential relationships for Cp and S from the first and second laws of thermodynamics",
-      "Recognize that heat capacity is temperature dependent"
+      "Students should recognize differential relationships for Cp and S from the first and second laws of thermodynamics",
+      "Students should recognize that heat capacity is temperature dependent"
     ],
     "programming_prerequisites": [
-      "Importing well-formed CSV files using read_csv()",
       "Basic plotting using matplotlib",
       "Creating and manipulating numpy arrays",
       "Calling library functions"
@@ -839,7 +839,7 @@
       "ChemCompute",
       "Google Colab"
     ],
-    "recommended_platform": "CoCalc",
+    "recommended_platform": "Local installation, CoCalc, ChemCompute",
     "tags": [
       "python",
       "jupyter",

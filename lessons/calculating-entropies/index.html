@@ -79,7 +79,7 @@
                         
                         <div class="meta-item">
                             <span class="meta-label">Also for:</span>
-                            <span class="meta-value">Physical Chemistry, Materials Science</span>
+                            <span class="meta-value">Materials Science</span>
                         </div>
                         
                         <div class="meta-item">
@@ -134,11 +134,11 @@
                     
                         
                             
-                            <p>In two guided-inquiry Jupyter notebook activities, students import experimental isobaric heat capacity data, fit the data to a polynomial, and calculate the third law entropy of several substances. The introductory notebook focuses on calculating the entropy of a substance in the solid phase. The second notebook introduces entropy calculations with phase changes and the Debye extrapolation.</p>
+                            <p>In two guided-inquiry Jupyter notebook activities, students import experimental isobaric heat capacity data, fit the data to a polynomial, and calculate the third law entropies for several substances. The introductory notebook focuses on calculating the entropy of a substance in the solid phase using the Debye extrapolation. The second notebook introduces entropy calculations with phase changes.</p>
                             
                         
                             
-                            <p>The activities were designed using a guided-inquiry framework and targeted for undergraduate physical chemistry course. Students have a basic understanding of using Jupyter notebooks and importing well-formed CSV files for plotting with matplotlib. Parts of the activities are worked individually, but there are frequent prompts to reflect upon or compare results with 2-3 group members.</p>
+                            <p>The activities were designed using a guided-inquiry framework and targeted for undergraduate physical chemistry course. Students have a basic understanding of using Jupyter notebooks and importing well-formed CSV files for plotting with matplotlib. Parts of the activities are worked individually, but there are frequent prompts to reflect upon or compare results with group members.</p>
                             
                         
                     
@@ -166,9 +166,11 @@
                             
                             <li>Fit experimental values to a polynomial</li>
                             
-                            <li>Numerical integration using trapezoid or Simpson</li>
+                            <li>Integrate functions numerically with python</li>
                             
                             <li>Assess the quality of fit using statistical measures RSS or SSE</li>
+                            
+                            <li>(optional) Use computational chemistry to obtain entropy</li>
                             
                         </ul>
                     </div>
@@ -181,9 +183,9 @@
                             <h4>Scientific Prerequisites:</h4>
                             <ul>
                                 
-                                <li>Recognize differential relationships for Cp and S from the first and second laws of thermodynamics</li>
+                                <li>Students should recognize differential relationships for Cp and S from the first and second laws of thermodynamics</li>
                                 
-                                <li>Recognize that heat capacity is temperature dependent</li>
+                                <li>Students should recognize that heat capacity is temperature dependent</li>
                                 
                             </ul>
                         </div>
@@ -191,8 +193,6 @@
                         <div class="prereq-box programming">
                             <h4>Programming Prerequisites:</h4>
                             <ul>
-                                
-                                <li>Importing well-formed CSV files using read_csv()</li>
                                 
                                 <li>Basic plotting using matplotlib</li>
                                 
@@ -264,12 +264,14 @@
                                 
                                 <div class="notebook-buttons">
                                     
+                                    <a href="https://colab.research.google.com/github/act-cms/calculating-entropies/blob/main/02-entropy-multi-phase/calculating-multiphase-entropyorg.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
                                     
-                                    <a href="https://github.com/act-cms/your-lesson-repo/blob/main/entropySO2.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    <a href="https://github.com/act-cms/your-lesson-repo/blob/main/calculating-multiphase-entropyorg.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
                                     
                                 </div>
                                 
-                                <span class="duration">2 hrs</span>
+                                <span class="duration">2.5 hrs</span>
                             </div>
                             
                             <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
@@ -279,7 +281,7 @@
                                     
                                     <li>Application of concepts from Part 1</li>
                                     
-                                    <li>Apply the third law of thermodynamics</li>
+                                    <li>Apply the third law of thermodynamics to calculate entropy of a substance over a temperature range</li>
                                     
                                     <li>Calculate S for warming a substance in different phases</li>
                                     
@@ -324,7 +326,7 @@
                 <div class="content-section" id="instructor-notes">
                     <h2>Instructor Notes</h2>
                     <div class="instructor-notes">
-                        <div><br>These activities have been used in a Physical Chemistry I course with 5-15 students in a 3-hr laboratory period, 2-3 students per group. Students have had basic instruction on python/Jupyter and are comfortable using spreadsheets, but have had no formal instruction on programming. Students have been introduced to the 1st, 2nd, and 3rd laws of thermodynamics through POGIL exercises. They were familiar with mathematical relationships, but had not applied them to real systems.</p><p>Timing notes: Each activity takes 2-3 hrs to complete. However, the notebooks have natural break points to accommodate time constraints. For example, in "How to calculate entropy of a substance", a convenient stopping point would be after the fit equation is integrated, but before starting the Debye extrapolation.<br></div>
+                        <div><br>These activities have been used in a Physical Chemistry I course with 5-15<br>students in a 3-hr laboratory period, 2-3 students per group. Students have<br>had basic instruction on python/Jupyter and are comfortable using<br>spreadsheets, but have had no formal instruction on programming. Students<br>have been introduced to the 1st, 2nd, and 3rd laws of thermodynamics through<br>POGIL exercises. They were familiar with mathematical relationships, but had<br>not applied them to real systems.</p><p>Timing notes: Each activity takes 2-3 hrs to complete. However, the notebooks<br>have natural break points to accommodate time constraints.<br></div>
                     </div>
                 </div>
                 
@@ -353,8 +355,8 @@
                         
                         
                         
-                        <div class="platform-card recommended">
-                            <h4>CoCalc (Recommended)</h4>
+                        <div class="platform-card">
+                            <h4>CoCalc</h4>
 <p>No installation required. All dependencies can be installed via the terminal or configured in the project settings.</p>
 <ul>
     <li>Runs entirely in your web browser</li>
