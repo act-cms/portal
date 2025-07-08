@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>Gas Chromatography – Mass Spectrometry with Internal Standard - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Part 1: Introduction</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Gas Chromatography – Mass Spectrometry with Internal Standard</h1>
+                    <p class="lesson-summary">Data analysis for a Gas Chromatography – Mass Spectrometry Experiment with an Internal Standard in Analytical Chemistry Laboratory.</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">None</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Analytical Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Environmental Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Single Notebook</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Dr. Christine Morales</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">60-90 minutes</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Undergraduate - Second Year</span>
+                        </div>
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">10</span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">analytical-chemistry</span>
+                        
+                        <span class="tag">laboratory</span>
+                        
+                        <span class="tag">data-analysis</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This lesson can be used to analyze GC-MS peak area data collected by students in an analytical chemistry laboratory.
+The suggested context would be to walk through it together in the analytical laboratory after data collection, likely in the second week of a 2-week sequence.
+Even with relatively short run times and an autosampler, it is not feasible to prepare samples, run the GC, and analyze GC data in one lab period.
+At least an hour at the end of the lab period should be allocated to this data analysis module.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate</li>
+                            
+                            <li>Explain how mass spectrometry (MS) permits the selection of an ideal internal standard</li>
+                            
+                            <li>Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Use Python code to transform data using structures such as arrays</li>
+                            
+                            <li>Use Python code to transform data using functions</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>General chemistry</li>
+                                
+                                <li>Concept of an internal standard for use in calibration of an instrument signal</li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>Basic Python syntax (variables, arrays, functions)</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Part 1: Introduction</h4>
+                            </div>
+                            <p>Brief description of what this notebook covers</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1 hour</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Content: Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate</li>
+                                    
+                                    <li>Content: Explain how mass spectrometry (MS) permits the selection of an ideal internal standard</li>
+                                    
+                                    <li>Content: Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte</li>
+                                    
+                                    <li>Process: Use Python code to transform data using structures such as arrays</li>
+                                    
+                                    <li>Process: Use Python code to transform data using functions</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/gc-ms-internal-standard" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/gc-ms-internal-standard" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:moralech@mountunion.edu?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>This module provides practice to reinforce array-based programming skills introduced in prior modules for students with no prior coding experience.</p><p>Teaching tips:<br>• If time permits, consider reviewing internal standard calculations to assist students with interpreting functions in Tasks 3 and 4.<br>• In Task 1, students ideally should decide *as a class* whether to enter single-valued data or a NumPy array of replicate data points,<br>  and discuss as a team how to swap the lines of sample-code that are commented out if needed.<br>  However, there is no prompt for this in the notebook because our students did not have time to prepare replicate samples.<br>• If time permits, consider asking students to write their own code to perform dilution calculations in Task 2.  This could also be assigned<br>  as a pre-lab exercise, with sample code available as a last resort (perhaps at the cost of those pre-lab points).<br>• In Task 4, students ideally should review *as a class* whether to vectorize the defined function, and discuss as a team<br>  how to swap the lines of sample-code that are commented out if needed. As in Task 1 however, there is no prompt for this in the notebook<br>  because our students did not have time to prepare replicate samples.<br>• Ideally, this module could be good practice for students to think about how to code with NumPy arrays.  If there is time<br>  in the first week for students to prepare replicate samples, prompts can be added for students to discuss these decisions as a class.<br>• This increased focus on arrays assumes a prior introduction to NumPy arrays and data entry in prior modules. If that is not the case,<br>  the instructor may make all coding decisions for the class and treat the module as more of a basic introduction to array handling.</p><p>Timing notes:<br>• Task 1 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.<br>• Task 2 typically takes students 5-10 minutes.  Add 15-20 minutes or a pre-lab assignment if asking students to write their own code here.<br>• Task 3 typically takes students 5-10 minutes.  <br>• Task 4 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.</p><p>Common student questions:<br>• Some students may struggle to recall dilution factors if asked to write their own code in Task 2.<br>• Students may ask why they should use an internal standard instead of a calibration curve when analyzing GC-MS peak areas.<br>• If provided with chromatograms, students may think they need to enter retention times in addition to peak areas.<br>• If Selected Ion Monitoring (SIM) is used and not explained, students may ask why they cannot see the other peaks in chromatograms.<br></div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            
+                            <li><a href="../moralech-umu-basic-tasks/">Moralech Umu Basic Tasks</a></li>
+                            
+                            <li><a href="../statistical-testing-beta/">Statistical Testing Beta</a></li>
+                            
+                            <li><a href="../solution-preparation-spectrophotometry/">Solution Preparation Spectrophotometry</a></li>
+                            
+                            <li><a href="../standard-addition-spectrophotometry/">Standard Addition Spectrophotometry</a></li>
+                            
+                            <li><a href="../calibration-of-glassware/">Calibration Of Glassware</a></li>
+                            
+                            <li><a href="../ocean-acidification/">Ocean Acidification</a></li>
+                            
+                            <li><a href="../buffer-solutions/">Buffer Solutions</a></li>
+                            
+                            <li><a href="../hplc-analysis/">Hplc Analysis</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>Google Colab (Recommended)</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Local Installation</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>ChemCompute</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>

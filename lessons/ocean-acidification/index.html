@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>Ocean Acidification - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Ocean_Acidification Week 2 Student Version</a>
+                        
+                        <a href="#material-2" class="toc-sublink">Ocean_Acidification Week 3 Student Version</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Ocean Acidification</h1>
+                    <p class="lesson-summary">Data analysis for a multi-week Ocean Acidification Experiment in Analytical Chemistry Laboratory.  This module is designed to support the published laboratory experiment &#39;Ocean Acidification: Investigation and Presentation of the Effects of Elevated Carbon Dioxide Levels on Seawater Chemistry and Calcareous Organisms&#39; by Jeffrey M. Buth, J. Chem. Educ. 2016, 93, 718–721.</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">None</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Analytical Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Environmental Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Materials Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Dr. Christine Morales</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">2-3 hours</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Undergraduate - Second Year</span>
+                        </div>
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">10</span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">analytical-chemistry</span>
+                        
+                        <span class="tag">laboratory</span>
+                        
+                        <span class="tag">data-analysis</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This lesson can be used to analyze pooled mass, pH, and titration data collected by students in an analytical chemistry laboratory.
+The suggested context would be to walk through it together in the analytical laboratory after data collection.
+It would be helpful if students have completed the Statistical Testing module prior to this one.
+At least an hour at the end of *each* lab period should be allocated to this data analysis module; this includes Week 1, when students
+have no module but should get a head start on reading, commenting, and modifying code so as not to be rushed in Week 2 and Week 3.</p>
+                            
+                        
+                            
+                            <p>You can use multiple paragraphs to fully describe the lesson scope
+and learning experience.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment</li>
+                            
+                            <li>Calculate percent differences relative to a control</li>
+                            
+                            <li>Use statistical concepts to quantify uncertainty in class data</li>
+                            
+                            <li>Work in teams to manage and share data</li>
+                            
+                            <li>Work in teams to evaluate outcomes of statistical tests</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Modify Python code to transform data using structures such as arrays and tables</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>General chemistry</li>
+                                
+                                <li>Chemical concepts including pH, molar concentration, and stoichiometry in an aqueous solution</li>
+                                
+                                <li>Statistical concepts including mean, standard deviation, Student T test, and confidence interval</li>
+                                
+                                <li>Limit of detection</li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>File handling skills required to save CSV files from a spreadsheet, rename files, and import CSV files using Pandas</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Ocean_Acidification Week 2 Student Version</h4>
+                            </div>
+                            <p>Generate Python code to analyze pH, carbonate and bicarbonate titration data for bottled, CO$_2$-infused, and air-infused seawater</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W2_Student_Version.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W2_Student_Version.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Content: Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment</li>
+                                    
+                                    <li>Content: Calculate percent differences relative to a control</li>
+                                    
+                                    <li>Content: Use statistical concepts to quantify uncertainty in class data</li>
+                                    
+                                    <li>Content: Apply the Student T test to decide whether CO$_2$ significantly affected the measured quantities</li>
+                                    
+                                    <li>Process: Use Python code to transform data using structures such as arrays and tables</li>
+                                    
+                                    <li>Process: Work in teams to manage and share data</li>
+                                    
+                                    <li>Process: Work in teams to evaluate outcomes of statistical tests</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Ocean_Acidification Week 3 Student Version</h4>
+                            </div>
+                            <p>Generate Python code to analyze seashell mass changes and calcium and magnesium titration data for CO$_2$-infused and air-infused seawater relative to bottled control</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W3_Student_Version.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W3_Student_Version.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Content: Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment</li>
+                                    
+                                    <li>Content: Calculate percent differences relative to a control</li>
+                                    
+                                    <li>Content: Use statistical concepts to quantify uncertainty in class data</li>
+                                    
+                                    <li>Content: Apply the Student T test to decide whether CO$_2$ significantly affected the measured quantities</li>
+                                    
+                                    <li>Process: Modify Python code to transform data using structures such as arrays and tables</li>
+                                    
+                                    <li>Process: Work in teams to manage and share data</li>
+                                    
+                                    <li>Process: Work in teams to evaluate outcomes of statistical tests</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/ocean-acidification" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/ocean-acidification" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:moralech@mountunion.edu?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>This module provides practice to reinforce programming skills introduced in prior modules for students with no prior coding experience.</p><p>Teaching tips:<br>• If time permits during the first week of lab, discuss all relevant equilibria and common ions, and <br>  prompt students to hypothesize what might happen to each measured ion as a result of added CO$_2$.<br>• If time permits during the first week of lab, a review of statistical hypothesis testing might be useful.  <br>• If time permits during the first week of lab, encourage students to work ahead through the Week 2 and Week 3 code.<br>  They can comment code, copy/paste and modify code from Week 2 to using Week 3, and recall how to apply statistical hypothesis testing.<br>• Students will need to consolidate measured data into a shared class data spreadsheet during lab, then export CSV files to upload here.<br>  Please provide the blank spreadsheet templates for students to use in Week 2 and Week 3, and keep an eye out for possible data entry errors.<br>• In Week 2, students will need to record the masses of their dry Gooch funnels before beginning the filtering process (see below).<br>• In Week 3, students will re-weigh their seashells. Please remind students to subtract the masses of their dry Gooch filters before <br>  entering their final seashell-only masses for comparison to their initial seashell masses.<br>• It may be possible for seashell masses to slightly *increase* at moderate pH, if magnesium in the seawater combines with carbonate ions.<br>• Ideally the students should have previously completed the Statistical Testing module, but if not, they may require detailed instructions<br>  as to how to properly rename, upload, and import CSV files.  <br>• Students should work together in groups to ensure they are accountable to understand each part.  This is especially important for hypothesis testing.<br>• Encourage students to share ideas but code/answer questions in their own copy of the notebook.<br>• Remind students to save their own copy before they begin work.<br>• Some students may have several Google accounts; remind them to be aware of which account is logged in when they save.</p><p>Timing notes:<br>• Week 1 has no module, but that time can and should be used to get a head start on the Week 2 and Week 3 modules.<br>• In Week 2:<br>  -• Task 1 typically takes students 10-15 minutes.  Students should read carefully to find values needed in the code. (no data needed)<br>  -• Task 2 typically takes students 15-20 minutes, depending on their file handling skills.  Data entry errors in class data may surface,<br>     requiring everyone to re-download and re-upload the CSV files after correction.  (Ideally, checking first could prevent this.)<br>  -• Task 3 typically takes students 5-10 minutes.<br>  -• Task 4 typically takes students 10-15 minutes.  Students should read carefully to find values needed in the code. <br>  -• Task 5 typically takes students 15-20 minutes.  Students should review statistical hypothesis testing including pooled Student's T tests.<br>• In Week 3:<br>  -• Task 1 typically takes students 10-15 minutes.  Students should read carefully and check their lab notebook to find values needed in the code. <br>  -• Task 2 typically takes students 15-20 minutes, depending on their typing and file handling skills.  Copy/paste/modify coding requires attention to detail.<br>     Data entry errors in class data may surface, requiring everyone to re-download and re-upload the CSV files after correction.  <br>     (Ideally, reminding students to subtract the initial masses of their Gooch funnels, and checking the class data spreadsheet, could prevent this.)<br>  -• Task 3 typically takes students 10-15 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.<br>  -• Task 4 typically takes students 15-20 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.<br>  -• Task 5 typically takes students 15-20 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.</p><p>Common student questions:<br>• Students may ask how to download CSV files, how to rename them, and how to import them into the Jupyter notebook.<br>• Students may notice a large variation in class data results.  Often this is normal, but sometimes it is a sign of data entry errors.  <br>• Students who have gotten ahead may need to be prompted to re-download, re-upload, re-import, and re-calculate if errors are found in class data.<br>• If students need to recalculate anything after the lab period, they may need to be prompted to re-import the class data first.<br>• Especially in Week 3, students may see results that do not confirm their hypotheses, and/or may see results that are not statistically significant.<br>  This is an opportunity to review statistical uncertainty, statistical significance, and/or possible small deviations from the published protocol.<br></div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            
+                            <li><a href="../moralech-umu-basic-tasks/">Moralech Umu Basic Tasks</a></li>
+                            
+                            <li><a href="../statistical-testing-beta/">Statistical Testing Beta</a></li>
+                            
+                            <li><a href="../solution-preparation-spectrophotometry/">Solution Preparation Spectrophotometry</a></li>
+                            
+                            <li><a href="../standard-addition-spectrophotometry/">Standard Addition Spectrophotometry</a></li>
+                            
+                            <li><a href="../calibration-of-glassware/">Calibration Of Glassware</a></li>
+                            
+                            <li><a href="../buffer-solutions/">Buffer Solutions</a></li>
+                            
+                            <li><a href="../hplc-analysis/">Hplc Analysis</a></li>
+                            
+                            <li><a href="../gc-ms-internal-standard/">Gc Ms Internal Standard</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>Google Colab (Recommended)</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Local Installation</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>ChemCompute</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>

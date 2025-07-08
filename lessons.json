@@ -222,6 +222,87 @@
     "instructor_repo_path": "molecular-representations"
   },
   {
+    "title": "Buffer Preparation Calculations",
+    "description": "Calculations to guide reagent use when preparing a buffer solution at a given pH.",
+    "expanded_description": "This lesson can be used to guide reagent use by students when preparing a buffer solution in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory before preparing the buffer solutions.\nQuantities may need to be revised and recalculated during the laboratory if a student's buffer solution does not meet specifications.\nAbout an hour during lab should be allocated to this module; students may also ask questions when recalculating.\n",
+    "programming_skill": "None",
+    "primary_course": "Analytical Chemistry",
+    "also_for": [
+      "Biochemistry",
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Dr. Christine Morales"
+    ],
+    "estimated_time": "1 hour",
+    "format": "Single Notebook",
+    "instructor_email": "moralech@mountunion.edu",
+    "student_level": "Undergraduate - Second Year",
+    "students_piloted": 10,
+    "instructor_notes": "This module provides practice to reinforce programming concepts introduced in prior modules for students with no prior coding experience.\n\nTeaching tips:\n- This lesson reinforces the utility of variables and functions for quickly recalculating important quantities.\n- Students may safely use a scale factor larger than 25 to achieve sufficient buffer capacity; potentially up to 100.\n  Of course the scale factor can be increased beyond 100, but needing to do so may be a sign of cross-contamination.\n- After changing the scale factor, students must re-run both Task 3 and Task 4 to recalculate reagent quantities.\n- For students with a liquid acid, this lesson illustrates the use of commented-out code for contingent use cases.\n- Students should be reminded to always add acid to water, never water to acid, and preferably to do so in the hood.\n- While this lesson is not as challenging as others, that can compensate for the technical challenge of buffer preparation.\n  Its ease of use promotes good planning prior to preparation of buffers, which is an important analytical laboratory skill.\n- Students should be permitted to consult with others, to ensure they are accountable to understand each part.\n- Encourage students to share ideas but code/answer questions in their own copy of the notebook.\n- Remind students to save their own copy before they begin work.\n- Some students may have several Google accounts; remind them to be aware of which account is logged in when they save.\n\nTiming notes:\n- Task 1 typically takes students 5-10 minutes.\n- Task 2 typically takes students 5-10 minutes.\n- Task 3 typically takes students 10-15 minutes, as savvy students may debate increasing the scale factor right away.  \n  If they do so, they are less likely to need to recalculate and re-make their solution with a higher buffer capacity.\n- Task 4 typically takes students 10-15 minutes, as students decide if their acid is a solid or a liquid, decide what\n  to do with the commented-out code for liquid acids, and look up the needed molar masses and (if needed) density.\n- If necessary, recalculating with a higher scale factor (Tasks 3 and 4) should take students no more than 5 minutes.\n\nCommon student questions:\n- Students may ask if they should just start with an increased scale factor.\n- Students may ask how to dispense liquid acids.  Micropipettes are the most accurate, but MUST be handled very carefully.\n  Please supervise students if they have not yet been trained in safe handling of micropipettes.\n- Students may ask if the Henderson-Hasselbalch equation is sufficiently accurate.  This does not account for small ionic\n  strength effects on pH, but it greatly simplifies the code, and it should be sufficiently accurate for this purpose.\n",
+    "related_modules": [
+      "moralech-umu-basic-tasks",
+      "statistical-testing-beta",
+      "solution-preparation-spectrophotometry",
+      "standard-addition-spectrophotometry",
+      "calibration-of-glassware",
+      "ocean-acidification",
+      "hplc-analysis",
+      "gc-ms-internal-standard"
+    ],
+    "public_repo_url": "https://github.com/act-cms/buffer-solutions",
+    "materials": [
+      {
+        "title": "Buffer Preparation Calculations",
+        "description": "Generate code in Python to perform four tasks: Calculate an allowable pH range; Calculate allowable conjugate mole ratios; Calculate adjustable reagent amounts in moles; Convert amounts to measurable quantities.",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/buffer-solutions/blob/main/Buffer_Preparation_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/buffer-solutions/blob/main/Buffer_Preparation_Student_Version.ipynb",
+        "objectives": [
+          "Content: Apply the concept of a pKa value to select reagents for a buffer solution",
+          "Content: Apply the concept of buffer capacity to plan and prepare a buffer solution",
+          "Process: Use Python code to define variables and functions, and to perform calculations",
+          "Process: Use Python code to report the output of calculations in a specified format",
+          "Process: Understand how to redefine variables and re-run code if necessary"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Apply the concept of a pKa value to select reagents for a buffer solution",
+      "Apply the concept of buffer capacity to plan and prepare a buffer solution"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python code to define variables and functions, and to perform calculations",
+      "Use Python code to report the output of calculations in a specified format",
+      "Understand how to redefine variables and re-run code if necessary"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "The pH Scale and pKa Values",
+      "Buffer Solutions",
+      "The Henderson-Hasselbalch Equation"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "analytical-chemistry",
+      "laboratory",
+      "data-analysis"
+    ],
+    "id": "buffer-solutions",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "buffer-solutions"
+  },
+  {
     "title": "Building a Data Analysis Pipeline: The Kinetics of the Chemiluminescence of Bleach",
     "description": "Students will learn to to automate the fitting of a set of datafiles.",
     "expanded_description": "This module is a pair of notebooks designed to teach students how to batch process a set of experimental datafiles, rather than working with each file individually. Students are first taken through fitting one file with an eye towards automation. In the second notebook, two automation options are described. The first, 'soft' automation, simply gives an organization to fitting a moderate number of files by hand. The second teaches students to use glob to find all files of a given type and then use a for loop to fit all files.\n\nThe provided datafiles show the chemiluminescence of bleach when reacted with luminol and peroxide. These files show a sharp rise from the initial reaction, then an exponential decay that has different rates depending on the concentration of the reactants. These notebooks are easily adapted to any set of experimental data showing an exponential decay, common in many kinetics experiments.\n",
@@ -522,6 +603,165 @@
     "id": "foundational-symbolic-math",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "foundational-symbolic-math"
+  },
+  {
+    "title": "Gas Chromatography – Mass Spectrometry with Internal Standard",
+    "description": "Data analysis for a Gas Chromatography – Mass Spectrometry Experiment with an Internal Standard in Analytical Chemistry Laboratory.",
+    "expanded_description": "This lesson can be used to analyze GC-MS peak area data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection, likely in the second week of a 2-week sequence.\nEven with relatively short run times and an autosampler, it is not feasible to prepare samples, run the GC, and analyze GC data in one lab period.\nAt least an hour at the end of the lab period should be allocated to this data analysis module.\n",
+    "programming_skill": "None",
+    "primary_course": "Analytical Chemistry",
+    "also_for": [
+      "Environmental Chemistry"
+    ],
+    "authors": [
+      "Dr. Christine Morales"
+    ],
+    "estimated_time": "60-90 minutes",
+    "format": "Single Notebook",
+    "instructor_email": "moralech@mountunion.edu",
+    "student_level": "Undergraduate - Second Year",
+    "students_piloted": 10,
+    "instructor_notes": "This module provides practice to reinforce array-based programming skills introduced in prior modules for students with no prior coding experience.\n\nTeaching tips:\n- If time permits, consider reviewing internal standard calculations to assist students with interpreting functions in Tasks 3 and 4.\n- In Task 1, students ideally should decide *as a class* whether to enter single-valued data or a NumPy array of replicate data points,\n  and discuss as a team how to swap the lines of sample-code that are commented out if needed.\n  However, there is no prompt for this in the notebook because our students did not have time to prepare replicate samples.\n- If time permits, consider asking students to write their own code to perform dilution calculations in Task 2.  This could also be assigned\n  as a pre-lab exercise, with sample code available as a last resort (perhaps at the cost of those pre-lab points).\n- In Task 4, students ideally should review *as a class* whether to vectorize the defined function, and discuss as a team\n  how to swap the lines of sample-code that are commented out if needed. As in Task 1 however, there is no prompt for this in the notebook\n  because our students did not have time to prepare replicate samples.\n- Ideally, this module could be good practice for students to think about how to code with NumPy arrays.  If there is time\n  in the first week for students to prepare replicate samples, prompts can be added for students to discuss these decisions as a class.\n- This increased focus on arrays assumes a prior introduction to NumPy arrays and data entry in prior modules. If that is not the case,\n  the instructor may make all coding decisions for the class and treat the module as more of a basic introduction to array handling.\n\nTiming notes:\n- Task 1 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.\n- Task 2 typically takes students 5-10 minutes.  Add 15-20 minutes or a pre-lab assignment if asking students to write their own code here.\n- Task 3 typically takes students 5-10 minutes.  \n- Task 4 typically takes students 10-15 minutes.  Add 5-10 minutes if the class will discuss whether to use NumPy arrays of replicate data.\n\nCommon student questions:\n- Some students may struggle to recall dilution factors if asked to write their own code in Task 2.\n- Students may ask why they should use an internal standard instead of a calibration curve when analyzing GC-MS peak areas.\n- If provided with chromatograms, students may think they need to enter retention times in addition to peak areas.\n- If Selected Ion Monitoring (SIM) is used and not explained, students may ask why they cannot see the other peaks in chromatograms.\n",
+    "related_modules": [
+      "moralech-umu-basic-tasks",
+      "statistical-testing-beta",
+      "solution-preparation-spectrophotometry",
+      "standard-addition-spectrophotometry",
+      "calibration-of-glassware",
+      "ocean-acidification",
+      "buffer-solutions",
+      "hplc-analysis"
+    ],
+    "public_repo_url": "https://github.com/act-cms/gc-ms-internal-standard",
+    "materials": [
+      {
+        "title": "Part 1: Introduction",
+        "description": "Brief description of what this notebook covers",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/gc-ms-internal-standard/blob/main/GC-MS_Internal-Standard_Student_Version.ipynb",
+        "objectives": [
+          "Content: Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate",
+          "Content: Explain how mass spectrometry (MS) permits the selection of an ideal internal standard",
+          "Content: Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte",
+          "Process: Use Python code to transform data using structures such as arrays",
+          "Process: Use Python code to transform data using functions"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Explain how using an internal standard permits quantitative analysis of an analyte using a measurement technique such as gas chromatography (GC) in which the signal can fluctuate",
+      "Explain how mass spectrometry (MS) permits the selection of an ideal internal standard",
+      "Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python code to transform data using structures such as arrays",
+      "Use Python code to transform data using functions"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Concept of an internal standard for use in calibration of an instrument signal"
+    ],
+    "programming_prerequisites": [
+      "Basic Python syntax (variables, arrays, functions)"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "analytical-chemistry",
+      "laboratory",
+      "data-analysis"
+    ],
+    "id": "gc-ms-internal-standard",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "gc-ms-internal-standard"
+  },
+  {
+    "title": "High-Performance Liquid Chromatography Analysis",
+    "description": "Data analysis for a High-Performance Liquid Chromatography Experiment in Analytical Chemistry Laboratory.",
+    "expanded_description": "This lesson can be used to analyze chromatographic retention time and peak area data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection, likely in the second week of a 2-week sequence.\nEven with relatively short run times and an autosampler, it is not feasible to prepare samples, run the HPLC, and analyze HPLC data in one lab period. \nAlternatively, the HPLC Simulator on Chem Compute could be used to generate data and this lesson could be used to analyze data within one lab period.\n(Perri, M. J. 'Online Data Generation in Quantitative Analysis: Excel Spreadsheets and an Online HPLC Simulator Using a Jupyter Notebook on the Chem Compute Web site',\n*J. Chem. Educ.* **2020**, *97*, 2950–2954).  At least an hour at the end of the lab period should be allocated to this data analysis module.\n",
+    "programming_skill": "None",
+    "primary_course": "Analytical Chemistry",
+    "also_for": [
+      "Biochemistry",
+      "Environmental Chemistry"
+    ],
+    "authors": [
+      "Dr. Christine Morales"
+    ],
+    "estimated_time": "1-2 hours",
+    "format": "Single notebook",
+    "instructor_email": "moralech@mountunion.edu",
+    "student_level": "Undergraduate - Second Year",
+    "students_piloted": 10,
+    "instructor_notes": "This module provides practice to reinforce programming skills introduced in prior modules for students with no prior coding experience.\n\nTeaching tips:\n- If time permits, consider reviewing the concepts of retention time and peak area to assist students with interpreting data from chromatograms.\n- Data organization in Task 1 is potentially challenging, hence the pre-existing, blank NumPy arrays in the sample code.\n- The linear regression and calibration curves in Task 2 should be fairly straightforward, except for the space-saving choice of making a three-part graph.  \n  If time permits, consider asking students to modify code from a prior module to generate calibration curves for each analyte.\n- Task 3 is intended to reinforce the *concepts* of retention time and spiking, but does *not* use the standard addition method to estimate concentration.  \n- Task 4 contains code that is analogous to that of Task 4 of the Solution Preparation Spectrophotometry module.  If time permits,\n  consider asking students to (substantially) modify that code to implement it in triplicate, in the new context of HPLC peak area analysis.\n  Note that a dilution factor and a unit conversion also are required here, which were not present in the prior module.  Consider providing the sample-code \n  to at least perform the dilution and unit conversion and print out results.\n\nTiming notes:\n- Task 1 typically takes students 15-20 minutes, mainly due to the volume and complexity of data entry required.  \n- Task 2 typically takes students 5-10 minutes with sample code.  Add 15-20 minutes if asking students to copy/paste/modify code from\n  a prior module to construct three linear regression models and three calibration curves with error bars.\n- Task 3 typically takes students 10-15 minutes.\n- Task 4 typically takes students 10-15 minutes with sample code.  Add 30-45 minutes if asking students to (substantially) modify code  \n  from a prior module to calculate three analyte concentrations and propagated uncertainties.  \n\nCommon student questions:\n- There is a lot going on in Task 1; students may get confused about data entry even with all sample-code provided.\n- Students may be confused about the purpose of Task 3, possibly because the standard addition method is *not* used here to estimate concentration.\n- Students may ask why calibration curves are used here instead of standard additions to calculate accurate concentrations.\n",
+    "related_modules": [
+      "moralech-umu-basic-tasks",
+      "statistical-testing-beta",
+      "solution-preparation-spectrophotometry",
+      "standard-addition-spectrophotometry",
+      "calibration-of-glassware",
+      "ocean-acidification",
+      "buffer-solutions",
+      "gc-ms-internal-standard"
+    ],
+    "public_repo_url": "https://github.com/act-cms/hplc-analysis",
+    "materials": [
+      {
+        "title": "High-Performance Liquid Chromatography Analysis",
+        "description": "Generate code in Python to perform four tasks: Input concentration, volume, retention time and peak area data; Apply linear-least-squares analysis to generate calibration curves; Identify chromatogram peaks using data from spiked samples; Use calibration curves, peak area data and solution stoichiometry to calculate analyte concentrations and propagated uncertainty.",
+        "type": "notebook",
+        "duration": "1-2 hours",
+        "github_url": "https://github.com/act-cms/hplc-analysis/blob/main/HPLC_Analysis_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/hplc-analysis/blob/main/HPLC_Analysis_Student_Version.ipynb",
+        "objectives": [
+          "Content: Explain how using high-performance liquid chromatography (HPLC) permits separation of a mixture into more than one analyte, using retention times to identify well-separated peaks for each analyte",
+          "Content: Explain how spiked samples permit verification of each analyte's identity and estimation of each analyte's concentration",
+          "Content: Explain how calibration curves permit quantitative analysis of each analyte",
+          "Process: Use Python code to transform data using structures such as arrays",
+          "Process: Use Python code to visualize data using different types of graphs",
+          "Process: Use Python code to transform data using functions"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Explain how using high-performance liquid chromatography (HPLC) permits separation of a mixture into more than one analyte, using retention times to identify well-separated peaks for each analytes",
+      "Explain how spiked samples permit verification of each analyte's identity and estimation of each analyte's concentration",
+      "Explain how calibration curves permit quantitative analysis of each analyte"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python code to transform data using structures such as arrays",
+      "Use Python code to visualize data using different types of graphs",
+      "Use Python code to transform data using functions"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic understanding of chromatographic separations"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "analytical-chemistry",
+      "laboratory",
+      "data-analysis"
+    ],
+    "id": "hplc-analysis",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "hplc-analysis"
   },
   {
     "title": "How can we calculate the entropy of substances?",
@@ -880,6 +1120,106 @@
     "instructor_repo_path": "lesson-02-linear-variation-method"
   },
   {
+    "title": "Ocean Acidification",
+    "description": "Data analysis for a multi-week Ocean Acidification Experiment in Analytical Chemistry Laboratory.  This module is designed to support the published laboratory experiment 'Ocean Acidification: Investigation and Presentation of the Effects of Elevated Carbon Dioxide Levels on Seawater Chemistry and Calcareous Organisms' by Jeffrey M. Buth, J. Chem. Educ. 2016, 93, 718–721.",
+    "expanded_description": "This lesson can be used to analyze pooled mass, pH, and titration data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection.\nIt would be helpful if students have completed the Statistical Testing module prior to this one.\nAt least an hour at the end of *each* lab period should be allocated to this data analysis module; this includes Week 1, when students\nhave no module but should get a head start on reading, commenting, and modifying code so as not to be rushed in Week 2 and Week 3.\n\nYou can use multiple paragraphs to fully describe the lesson scope\nand learning experience.\n",
+    "programming_skill": "None",
+    "primary_course": "Analytical Chemistry",
+    "also_for": [
+      "Environmental Chemistry"
+    ],
+    "authors": [
+      "Dr. Christine Morales"
+    ],
+    "estimated_time": "2-3 hours",
+    "format": "Multi-Part Materials Module",
+    "instructor_email": "moralech@mountunion.edu",
+    "student_level": "Undergraduate - Second Year",
+    "students_piloted": 10,
+    "instructor_notes": "This module provides practice to reinforce programming skills introduced in prior modules for students with no prior coding experience.\n\nTeaching tips:\n- If time permits during the first week of lab, discuss all relevant equilibria and common ions, and \n  prompt students to hypothesize what might happen to each measured ion as a result of added CO$_2$.\n- If time permits during the first week of lab, a review of statistical hypothesis testing might be useful.  \n- If time permits during the first week of lab, encourage students to work ahead through the Week 2 and Week 3 code.\n  They can comment code, copy/paste and modify code from Week 2 to using Week 3, and recall how to apply statistical hypothesis testing.\n- Students will need to consolidate measured data into a shared class data spreadsheet during lab, then export CSV files to upload here.\n  Please provide the blank spreadsheet templates for students to use in Week 2 and Week 3, and keep an eye out for possible data entry errors.\n- In Week 2, students will need to record the masses of their dry Gooch funnels before beginning the filtering process (see below).\n- In Week 3, students will re-weigh their seashells. Please remind students to subtract the masses of their dry Gooch filters before \n  entering their final seashell-only masses for comparison to their initial seashell masses.\n- It may be possible for seashell masses to slightly *increase* at moderate pH, if magnesium in the seawater combines with carbonate ions.\n- Ideally the students should have previously completed the Statistical Testing module, but if not, they may require detailed instructions\n  as to how to properly rename, upload, and import CSV files.  \n- Students should work together in groups to ensure they are accountable to understand each part.  This is especially important for hypothesis testing.\n- Encourage students to share ideas but code/answer questions in their own copy of the notebook.\n- Remind students to save their own copy before they begin work.\n- Some students may have several Google accounts; remind them to be aware of which account is logged in when they save.\n\nTiming notes:\n- Week 1 has no module, but that time can and should be used to get a head start on the Week 2 and Week 3 modules.\n- In Week 2:\n  -- Task 1 typically takes students 10-15 minutes.  Students should read carefully to find values needed in the code. (no data needed)\n  -- Task 2 typically takes students 15-20 minutes, depending on their file handling skills.  Data entry errors in class data may surface,\n     requiring everyone to re-download and re-upload the CSV files after correction.  (Ideally, checking first could prevent this.)\n  -- Task 3 typically takes students 5-10 minutes.\n  -- Task 4 typically takes students 10-15 minutes.  Students should read carefully to find values needed in the code. \n  -- Task 5 typically takes students 15-20 minutes.  Students should review statistical hypothesis testing including pooled Student's T tests.\n- In Week 3:\n  -- Task 1 typically takes students 10-15 minutes.  Students should read carefully and check their lab notebook to find values needed in the code. \n  -- Task 2 typically takes students 15-20 minutes, depending on their typing and file handling skills.  Copy/paste/modify coding requires attention to detail.\n     Data entry errors in class data may surface, requiring everyone to re-download and re-upload the CSV files after correction.  \n     (Ideally, reminding students to subtract the initial masses of their Gooch funnels, and checking the class data spreadsheet, could prevent this.)\n  -- Task 3 typically takes students 10-15 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.\n  -- Task 4 typically takes students 15-20 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.\n  -- Task 5 typically takes students 15-20 minutes, depending on their typing skills.  Copy/paste/modify coding requires attention to detail.\n\nCommon student questions:\n- Students may ask how to download CSV files, how to rename them, and how to import them into the Jupyter notebook.\n- Students may notice a large variation in class data results.  Often this is normal, but sometimes it is a sign of data entry errors.  \n- Students who have gotten ahead may need to be prompted to re-download, re-upload, re-import, and re-calculate if errors are found in class data.\n- If students need to recalculate anything after the lab period, they may need to be prompted to re-import the class data first.\n- Especially in Week 3, students may see results that do not confirm their hypotheses, and/or may see results that are not statistically significant.\n  This is an opportunity to review statistical uncertainty, statistical significance, and/or possible small deviations from the published protocol.\n",
+    "related_modules": [
+      "moralech-umu-basic-tasks",
+      "statistical-testing-beta",
+      "solution-preparation-spectrophotometry",
+      "standard-addition-spectrophotometry",
+      "calibration-of-glassware",
+      "buffer-solutions",
+      "hplc-analysis",
+      "gc-ms-internal-standard"
+    ],
+    "public_repo_url": "https://github.com/act-cms/ocean-acidification",
+    "materials": [
+      {
+        "title": "Ocean_Acidification Week 2 Student Version",
+        "description": "Generate Python code to analyze pH, carbonate and bicarbonate titration data for bottled, CO$_2$-infused, and air-infused seawater",
+        "type": "notebook",
+        "duration": "60-90 min",
+        "github_url": "https://github.com/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W2_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W2_Student_Version.ipynb",
+        "objectives": [
+          "Content: Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment",
+          "Content: Calculate percent differences relative to a control",
+          "Content: Use statistical concepts to quantify uncertainty in class data",
+          "Content: Apply the Student T test to decide whether CO$_2$ significantly affected the measured quantities",
+          "Process: Use Python code to transform data using structures such as arrays and tables",
+          "Process: Work in teams to manage and share data",
+          "Process: Work in teams to evaluate outcomes of statistical tests"
+        ]
+      },
+      {
+        "title": "Ocean_Acidification Week 3 Student Version",
+        "description": "Generate Python code to analyze seashell mass changes and calcium and magnesium titration data for CO$_2$-infused and air-infused seawater relative to bottled control",
+        "type": "notebook",
+        "duration": "60-90 min",
+        "github_url": "https://github.com/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W3_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/ocean-acidification/blob/main/Ocean_Acidification_W3_Student_Version.ipynb",
+        "objectives": [
+          "Content: Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment",
+          "Content: Calculate percent differences relative to a control",
+          "Content: Use statistical concepts to quantify uncertainty in class data",
+          "Content: Apply the Student T test to decide whether CO$_2$ significantly affected the measured quantities",
+          "Process: Modify Python code to transform data using structures such as arrays and tables",
+          "Process: Work in teams to manage and share data",
+          "Process: Work in teams to evaluate outcomes of statistical tests"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Use stoichiometry to calculate the lower limit of detection for an analyte in a titration experiment",
+      "Calculate percent differences relative to a control",
+      "Use statistical concepts to quantify uncertainty in class data",
+      "Work in teams to manage and share data",
+      "Work in teams to evaluate outcomes of statistical tests"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Modify Python code to transform data using structures such as arrays and tables"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Chemical concepts including pH, molar concentration, and stoichiometry in an aqueous solution",
+      "Statistical concepts including mean, standard deviation, Student T test, and confidence interval",
+      "Limit of detection"
+    ],
+    "programming_prerequisites": [
+      "File handling skills required to save CSV files from a spreadsheet, rename files, and import CSV files using Pandas"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "analytical-chemistry",
+      "laboratory",
+      "data-analysis"
+    ],
+    "id": "ocean-acidification",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "ocean-acidification"
+  },
+  {
     "title": "Solution Preparation and Spectrophotometry",
     "description": "Data analysis for a Solution Preparation and Spectrophotometry Experiment in Analytical Chemistry Laboratory.",
     "expanded_description": "This lesson can be used to analyze solution preparation and spectrophotometry data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together during the corresponding Analytical Laboratory experiment.\nAbout a half hour to an hour should be allocated in lab to this lesson, after data collection is complete.\n\nYou can use multiple paragraphs to fully describe the lesson scope\nand learning experience.\n",
@@ -955,6 +1295,83 @@
     "id": "solution-preparation-spectrophotometry",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "solution-preparation-spectrophotometry"
+  },
+  {
+    "title": "Standard Addition Spectrophotometry",
+    "description": "Data analysis for a Standard Addition Spectrophotometry Experiment in Analytical Chemistry Laboratory.",
+    "expanded_description": "This lesson can be used to analyze standard addition spectrophotometric data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection.\nIt would be helpful if students have completed the Basic Tasks and Solution Preparation modules prior to this one.\nAbout an hour at the end of lab should be allocated to this data analysis module.\n",
+    "programming_skill": "None",
+    "primary_course": "Analytical Chemistry",
+    "also_for": [
+      "General Chemistry",
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Dr. Christine Morales"
+    ],
+    "estimated_time": "1 hour",
+    "format": "Single Notebook",
+    "instructor_email": "moralech@mountunion.edu",
+    "student_level": "Undergraduate - Second Year",
+    "students_piloted": 10,
+    "instructor_notes": "This module provides practice to reinforce programming skills introduced in two prior modules for students with no prior coding experience.\n\nTeaching tips:\n- If students have not yet been introduced to standard addition methods, consider offering a short explanation of this approach.\n- If you have run a blank with no analytical reagent, remind students to enter *corrected* absorbances (after subtraction) in Task 1.\n- If your students have already done Basic Tasks and you have time, consider providing less sample code for data entry in Task 1.\n- If students have *not* completed the Basic Tasks and Solution Preparation modules prior to this one, consider providing sample code in Task 2.\n- Important: Standard addition methods run a higher risk of exceeding the range of linearity. If plots in Task 2 level off dramatically, \n  ask students to consider going back to Task 1, truncating their arrays accordingly, and recalculating.  This will reduce N, but may improve accuracy.\n- Students should work together in groups to ensure they are accountable to understand each part.\n- Encourage students to share ideas but code/answer questions in their own copy of the notebook.\n- Remind students to save their own copy before they begin work.\n- Some students may have several Google accounts; remind them to be aware of which account is logged in when they save.\n\nTiming notes:\n- Task 1 typically takes students 10-15 minutes when sample code is provided.  Add 5 minutes if prompting students to copy Numpy syntax from Basic Tasks.\n- Task 2 typically takes students 10-15 minutes when sample code is *not* provided.  Subtract 5 minutes if sample code is provided.  \n- Task 3 typically takes students 10-15 minutes.  Remind students to save and print the graph to tape into their lab notebook.\n  *If possible, walk around during Task 2 to check for linearity in student graphs; advise students to truncate data if necessary.*  \n  If necessary, truncating data and then re-running the code cells in Tasks 1, 2 and 3 may take an additional 10-15 minutes.\n- Task 4 typically takes students 5-10 minutes.  This step *cannot* be skipped, even if time is tight.\n\nCommon student questions:\n- Students may ask if they should enter raw absorbance data or corrected absorbance values.\n- Students may ask if they need to tape the graph into their laboratory notebook before turning it in.\n- Students may skip some steps if they find it is necessary to truncate arrays in Part 1 and recalculate.\n  This is a good opportunity to teach/remind students to re-run all code cells in order when recalculating.\n",
+    "related_modules": [
+      "moralech-umu-basic-tasks",
+      "statistical-testing-beta",
+      "solution-preparation-spectrophotometry",
+      "calibration-of-glassware",
+      "ocean-acidification",
+      "buffer-solutions",
+      "hplc-analysis",
+      "gc-ms-internal-standard"
+    ],
+    "public_repo_url": "https://github.com/act-cms/standard-addition-spectrophotometry",
+    "materials": [
+      {
+        "title": "Standard Addition Spectrophotometry",
+        "description": "Generate code in Python to perform four tasks: Entering and processing data as an array; Linear least-squares fitting; Plotting data and a model with uncertainty; Calculating analyte concentration and uncertainty from multiple standard additions.",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/standard-addition-spectrophotometry/blob/main/Standard_Addition_Student_Version.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/standard-addition-spectrophotometry/blob/main/Standard_Addition_Student_Version.ipynb",
+        "objectives": [
+          "Content: Explain how standard addition permits quantitative analysis of a component in a matrix that could otherwise interfere with the analyte signal.",
+          "Content: Use a standard addition calibration curve to find the concentration of an analyte.",
+          "Process: Use Python code to transform data using structures such as arrays.",
+          "Process: Use Python code to visualize data using different types of graphs."
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Explain how standard addition permits quantitative analysis of a component in a matrix that could otherwise interfere with the analyte signal",
+      "Use a standard addition calibration curve to find the concentration of an analyte"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python code to transform data using structures such as arrays",
+      "Use Python code to visualize data using different types of graphs"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Calibration curves"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "analytical-chemistry",
+      "laboratory",
+      "data-analysis"
+    ],
+    "id": "standard-addition-spectrophotometry",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "standard-addition-spectrophotometry"
   },
   {
     "title": "Statistical Testing, or How Heavy is that Penny?",
