@@ -1117,6 +1117,73 @@
     "instructor_repo_path": "linear-variation-method"
   },
   {
+    "title": "JupyterQuiz Tutorial for Educators",
+    "description": "Learn how to embed interactive assessments into your Jupyter notebooks!",
+    "expanded_description": "This is a lesson for educators that explains how to embed interactive assessments into \nJupyter notebooks using the JupyterQuiz package. It goes over basics of the package and provides\nan engineered prompt so that large language models like ChatGPT can be used to format instructor questions.\n",
+    "programming_skill": "Beginner",
+    "primary_course": "Instructor Tutorial",
+    "authors": [
+      "Dr. Jessica A. Nash"
+    ],
+    "estimated_time": "30-45 minutes",
+    "format": "Multi-Part Materials Module",
+    "instructor_email": "janash@vt.edu",
+    "public_repo_url": "https://github.com/act-cms/jupyterquiz-tutorial",
+    "materials": [
+      {
+        "title": "Introduction to JupyterQuiz",
+        "description": "This notebook covers an introduction to JupyterQuiz, basic question types, and how to 'hide' quizzes from students.",
+        "type": "notebook",
+        "duration": "30 minutes",
+        "github_url": "https://github.com/act-cms/jupyterquiz-tutorial/blob/main/jupyterquiz-tutorial.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/jupyterquiz-tutorial.ipynb",
+        "objectives": [
+          "Learn format and type of JupyterQuiz questions",
+          "Import questions from an external module."
+        ]
+      },
+      {
+        "title": "LLM (Large Language Model)-Assisted JupyterQuiz Formatting",
+        "description": "This notebook contains a prompt that can be used with an LLM for easier formatting of quiz questions.",
+        "type": "notebook",
+        "duration": "15 min",
+        "github_url": "https://github.com/act-cms/jupyterquiz-tutorial/blob/main/LLM_assisted_jupyterquiz.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/blob/main/LLM_assisted_jupyterquiz.ipynb",
+        "objectives": [
+          "Advanced skill development",
+          "Application of concepts from Part 1"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      ""
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use JupyterQuiz to add interactive assessments to notebooks"
+    ],
+    "scientific_prerequisites": [
+      ""
+    ],
+    "programming_prerequisites": [
+      "Knowledge of variables, lists, and dictionaries in Python"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "molecular-dynamics",
+      "visualization",
+      "quantum-chemistry"
+    ],
+    "id": "jupyterquiz-tutorial",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "jupyterquiz-tutorial"
+  },
+  {
     "title": "Ocean Acidification",
     "description": "Data analysis for a multi-week Ocean Acidification Experiment in Analytical Chemistry Laboratory.  This module is designed to support the published laboratory experiment 'Ocean Acidification: Investigation and Presentation of the Effects of Elevated Carbon Dioxide Levels on Seawater Chemistry and Calcareous Organisms' by Jeffrey M. Buth, J. Chem. Educ. 2016, 93, 718–721.",
     "expanded_description": "This lesson can be used to analyze pooled mass, pH, and titration data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection.\nIt would be helpful if students have completed the Statistical Testing module prior to this one.\nAt least an hour at the end of *each* lab period should be allocated to this data analysis module; this includes Week 1, when students\nhave no module but should get a head start on reading, commenting, and modifying code so as not to be rushed in Week 2 and Week 3.\n\nYou can use multiple paragraphs to fully describe the lesson scope\nand learning experience.\n",

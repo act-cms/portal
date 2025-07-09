@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>JupyterQuiz Tutorial for Educators - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Introduction to JupyterQuiz</a>
+                        
+                        <a href="#material-2" class="toc-sublink">LLM (Large Language Model)-Assisted JupyterQuiz Formatting</a>
+                        
+                    </div>
+                    
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">JupyterQuiz Tutorial for Educators</h1>
+                    <p class="lesson-summary">Learn how to embed interactive assessments into your Jupyter notebooks!</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">Beginner</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Instructor Tutorial</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Materials Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Dr. Jessica A. Nash</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">30-45 minutes</span>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">molecular-dynamics</span>
+                        
+                        <span class="tag">visualization</span>
+                        
+                        <span class="tag">quantum-chemistry</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This is a lesson for educators that explains how to embed interactive assessments into 
+Jupyter notebooks using the JupyterQuiz package. It goes over basics of the package and provides
+an engineered prompt so that large language models like ChatGPT can be used to format instructor questions.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Use JupyterQuiz to add interactive assessments to notebooks</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>Knowledge of variables, lists, and dictionaries in Python</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Introduction to JupyterQuiz</h4>
+                            </div>
+                            <p>This notebook covers an introduction to JupyterQuiz, basic question types, and how to 'hide' quizzes from students.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/jupyterquiz-tutorial.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/jupyterquiz-tutorial/blob/main/jupyterquiz-tutorial.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">30 minutes</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Learn format and type of JupyterQuiz questions</li>
+                                    
+                                    <li>Import questions from an external module.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">LLM (Large Language Model)-Assisted JupyterQuiz Formatting</h4>
+                            </div>
+                            <p>This notebook contains a prompt that can be used with an LLM for easier formatting of quiz questions.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/blob/main/LLM_assisted_jupyterquiz.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/jupyterquiz-tutorial/blob/main/LLM_assisted_jupyterquiz.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">15 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Advanced skill development</li>
+                                    
+                                    <li>Application of concepts from Part 1</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/jupyterquiz-tutorial" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/jupyterquiz-tutorial" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:act-cms@molssi.org?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>Google Colab (Recommended)</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Local Installation</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>ChemCompute</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>
