@@ -1136,7 +1136,7 @@
         "type": "notebook",
         "duration": "30 minutes",
         "github_url": "https://github.com/act-cms/jupyterquiz-tutorial/blob/main/jupyterquiz-tutorial.ipynb",
-        "colab_url": "https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/jupyterquiz-tutorial.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/jupyterquiz-tutorial/blob/main/jupyterquiz-tutorial.ipynb",
         "objectives": [
           "Learn format and type of JupyterQuiz questions",
           "Import questions from an external module."
@@ -1156,21 +1156,21 @@
       }
     ],
     "scientific_objectives": [
-      ""
+      "None"
     ],
     "cyberinfrastructure_objectives": [
       "Use JupyterQuiz to add interactive assessments to notebooks"
     ],
     "scientific_prerequisites": [
-      ""
+      "None"
     ],
     "programming_prerequisites": [
       "Knowledge of variables, lists, and dictionaries in Python"
     ],
     "platforms": [
       "Google Colab",
-      "Local Installation",
-      "ChemCompute"
+      "ChemCompute",
+      "Local Installation"
     ],
     "recommended_platform": "Google Colab",
     "tags": [
