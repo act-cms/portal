@@ -300,7 +300,8 @@
     ],
     "id": "buffer-solutions",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "buffer-solutions"
+    "instructor_repo_path": "buffer-solutions",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/buffer-solutions&branch=main&urlpath=lab/tree/buffer-solutions/"
   },
   {
     "title": "Building a Data Analysis Pipeline: The Kinetics of the Chemiluminescence of Bleach",
@@ -382,7 +383,8 @@
     ],
     "id": "chemiluminescence-of-bleach",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "chemiluminescence-of-bleach"
+    "instructor_repo_path": "chemiluminescence-of-bleach",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/chemiluminescence-of-bleach&branch=main&urlpath=lab/tree/chemiluminescence-of-bleach/"
   },
   {
     "title": "Calibration of Glassware",
@@ -463,7 +465,8 @@
     ],
     "id": "calibration-of-glassware",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "calibration-of-glassware"
+    "instructor_repo_path": "calibration-of-glassware",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/moralech-umu-public-calibration-of-glassware&branch=main&urlpath=lab/tree/moralech-umu-public-calibration-of-glassware/"
   },
   {
     "title": "Diffusion from the Atomistic to Continuum Scale",
@@ -531,7 +534,8 @@
     ],
     "id": "diffusion",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "diffusion"
+    "instructor_repo_path": "diffusion",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/rkurchin/27100_diffusion_computational_lab&branch=main&urlpath=lab/tree/27100_diffusion_computational_lab/"
   },
   {
     "title": "Foundations of Symbolic Mathematics in Python",
@@ -680,7 +684,8 @@
     ],
     "id": "gc-ms-internal-standard",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "gc-ms-internal-standard"
+    "instructor_repo_path": "gc-ms-internal-standard",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/gc-ms-internal-standard&branch=main&urlpath=lab/tree/gc-ms-internal-standard/"
   },
   {
     "title": "High-Performance Liquid Chromatography Analysis",
@@ -761,7 +766,8 @@
     ],
     "id": "hplc-analysis",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "hplc-analysis"
+    "instructor_repo_path": "hplc-analysis",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/hplc-analysis&branch=main&urlpath=lab/tree/hplc-analysis/"
   },
   {
     "title": "How can we calculate the entropy of substances?",
@@ -852,7 +858,8 @@
     ],
     "id": "calculating-entropies",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "calculating-entropies"
+    "instructor_repo_path": "calculating-entropies",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/calculating-entropies&branch=main&urlpath=lab/tree/calculating-entropies/"
   },
   {
     "title": "Introduction to Programming for Molecular Scientists",
@@ -933,7 +940,8 @@
     ],
     "id": "foundational-intro-python",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "foundational-intro-python"
+    "instructor_repo_path": "foundational-intro-python",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-intro-python&branch=main&urlpath=lab/tree/foundational-intro-python/"
   },
   {
     "title": "Introduction to Python using NMR data for a first year, graduate level course",
@@ -1040,7 +1048,8 @@
     ],
     "id": "python-for-nmr",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "python-for-nmr"
+    "instructor_repo_path": "python-for-nmr",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/"
   },
   {
     "title": "Introduction to the linear variation method",
@@ -1114,7 +1123,8 @@
     ],
     "id": "linear-variation-method",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "linear-variation-method"
+    "instructor_repo_path": "linear-variation-method",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/"
   },
   {
     "title": "JupyterQuiz Tutorial for Educators",
@@ -1181,7 +1191,8 @@
     ],
     "id": "jupyterquiz-tutorial",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "jupyterquiz-tutorial"
+    "instructor_repo_path": "jupyterquiz-tutorial",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/jupyterquiz-tutorial&branch=main&urlpath=lab/tree/jupyterquiz-tutorial/"
   },
   {
     "title": "Ocean Acidification",
@@ -1281,7 +1292,8 @@
     ],
     "id": "ocean-acidification",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "ocean-acidification"
+    "instructor_repo_path": "ocean-acidification",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/ocean-acidification&branch=main&urlpath=lab/tree/ocean-acidification/"
   },
   {
     "title": "Solution Preparation and Spectrophotometry",
@@ -1358,7 +1370,8 @@
     ],
     "id": "solution-preparation-spectrophotometry",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "solution-preparation-spectrophotometry"
+    "instructor_repo_path": "solution-preparation-spectrophotometry",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/solution-preparation-spectrophotometry&branch=main&urlpath=lab/tree/solution-preparation-spectrophotometry/"
   },
   {
     "title": "Standard Addition Spectrophotometry",
@@ -1435,7 +1448,8 @@
     ],
     "id": "standard-addition-spectrophotometry",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "standard-addition-spectrophotometry"
+    "instructor_repo_path": "standard-addition-spectrophotometry",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/standard-addition-spectrophotometry&branch=main&urlpath=lab/tree/standard-addition-spectrophotometry/"
   },
   {
     "title": "Statistical Testing, or How Heavy is that Penny?",
@@ -1517,6 +1531,7 @@
     ],
     "id": "statistical-testing-beta",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "statistical-testing-beta"
+    "instructor_repo_path": "statistical-testing-beta",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/statistical-testing-beta&branch=main&urlpath=lab/tree/statistical-testing-beta/"
   }
 ]
