@@ -1,0 +1,166 @@
+# lessons/your-lesson-name.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Introduction to programming and python"
+
+# Brief description for search results (1-2 sentences)
+description: "In this lesson students learn foundational programming concepts and are exposed to the use of Python's libraries for scientific applications."
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  The lesson consists of two parts, a live-coding activity and a take-home assignment. Each part has an associated Jupyter notebook. To prepare for the in-class coding activity, students are asked to read sections I and II that cover the basic use of Jupyter notebooks and introductory programming concepts including data types, casting, variable assignment, formatted printing, comparison operators, and conditional statements. The live-coding activities in section III then focus on more advanced concepts including functions (user-defined and Python's built-in libraries), vectors, matrices, numerical integration, curve fitting, and plotting.    
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "Beginner"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Physical Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+
+# List all authors
+authors: 
+  - "Prof. Gergely Gidofalvi"
+
+# Estimated total time for all materials
+estimated_time: "6 hours"
+
+# Write a description of your module.
+# Single notebook, multi-part module, etc?
+format: "Multi-part module"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "gidofalvi@gonzaga.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Third Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 20  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson:
+ 
+  - If needed, the instructor may choose to cover some of the topics (e.g. conditional statements) in section II of the live-coding notebook during the in-class demo.
+
+  - The live-coding activities do not assume that students are familiar with physical chemistry concepts and most sample problems are context-agnostic.
+
+  - The mathematics required to complete the live-coding activities is fairly minimal. Sections III.4 and III.5 involve the use of vectors and matrices; we included the necessary background information so that students can follow the in-class coding activity.
+
+  - The student version of the Jupyter notebook for the live-coding activities contains less information than the corresponding instructor version. The omissions are intentional; we wanted to avoid overwhelming students with too much information and we believe that the additional details included in the instructor version are best discussed during the live-coding session.
+
+  - Problems 2 and 5 - 8 of the assignment notebook involve topics that are discussed in an undergraduate Physical Chemistry course. Although exposure to these topics (e.g. particle in a box model, hydrogen atom, and harmonic oscillator model) is likely to enhance students' experience, we provided enough information so that students can complete all the exercises after completing the live-coding activities.    
+
+  - This lesson is the first in a four-lesson sequence, and we designed the assignment questions as preparation for later lessons. For example, students will use numerical integration and matrices in lesson 2 (which is focused on the linear variation method) while they will use curve fitting in lessons 3 (quantum chemistry simultion in psi4) and 4 (diatomic molecule IR spectrum analysis). 
+  
+  Timing notes:
+  - If  students complete section I and II of the live-oding notebook as a pre-lab assignment, the exercises in section III can be completed in about 4-5 hours. 
+
+  
+  Common student questions:
+
+  - Students often get confused with thee 0 indexing of Python.
+  - Because the functions we implement in the live-coding activities are not reused, students fail to appreciate the utility of writing functions. Thus, it is a good idea to remind them that functions clean up code tremendously and they also increase the flexibility of code. 
+  - Students forget that simply calling a function does not mean that the return value(s) are saved outside the function.
+  - Many students thing that the variable names used inside functions must be the same as the variables names that are used when calling functions. 
+  - Students struggle with scoping of variables in Python.
+
+# Related lessons that complement this one
+related_modules:
+  - "foundational-intro-python"
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/introduction-to-programming-and-python"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Part 1: Introduction to programming and python - live coding session"
+    description: "Jupyter notebook for instructor-led live coding session to demonstrate the foundational programming concepts."
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "4-5 hours"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/introduction-to-programming-and-python/blob/main/lesson-01-introduction-to-programming-assignment-student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/introduction-to-programming-and-python/blob/main/lesson-01-introduction-to-programming-live-coding-student.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Understand and apply foundational programming concepts inculding data types, variabe assignment, for loops, functions, vector and matrix operations."
+      - "Learn the use of Numpy functions to declare and manipulate vectors and matrices."
+      - "Use Scipy funtions for curve fitting, spline interpolation, and numerical integration."
+      - "Use Matplotlib functions for plotting."
+ 
+  # Add more materials as needed
+  - title: "Part 2: Introduction to programming and python - assignment"
+    description: "Jupyter notebook to assess student learning. Students are asked to write code to demonstrate an understanding and mastery of programming concepts. This is a take-home assignment."
+    type: "notebook"
+    duration: "Approximately 2-3 hours"
+    github_url: "https://github.com/act-cms/introduction-to-programming-and-python/blob/main/lesson-01-introduction-to-programming-assignment-student.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/introduction-to-programming-and-python/blob/main/lesson-01-introduction-to-programming-assignment-student.ipynb"
+    objectives:
+      - "Demonstrate an understanding of foundational programming concepts by writing Python code."
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Apply programming concepts to solve basic scientific problems"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Interpret code to identify the data types used and identify the data type needed (int/float) for a specific problem." 
+  - "Use standard library functions to complete common scientific tasks including numerical integration and curve fitting."
+  - "Interpret the specific purpose a function and implement user-defined functions to solve problem-specific tasks."
+  - "Implement loops to execute iterative tasks."
+  - "Implement conditionals to affect loop execution in problem-specific contexts."
+  - "Use SciPy libraries to initialize vectors and matrices."
+  - "Write code to access and manipulate vector/matrix elements."
+  - "Use Matplotlib to visualize data."
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "None, although exposure to the standard models of quantum mechanics incuding the particle in a box model, the harmonic oscillator, and the hydrogen atom provides more context for the assignment problems."
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "None."
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used.
+platforms:
+  - "Google Colab"
+  - "ChemCompute"
+
+# Which platform do you recommend for most users?
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "for loops"
+  - "python arrays"
+  - "numerical integration" 
+  - "user-defined functions"
+  - "curve fitting"
+  - "plotting data"  

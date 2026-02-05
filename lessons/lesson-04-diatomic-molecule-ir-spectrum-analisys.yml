@@ -1,0 +1,178 @@
+# lessons/your-lesson-name.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Diatomic molecule IR spectrum analysis"
+
+# Brief description for search results (1-2 sentences)
+description: "In this lesson, students write Python code to determine the spectroscopic constants and structural parameters (force constant, bond dissociation energy, and equilibrium bond length) of a diatomic molecule from its IR spectrum."
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  This is the last lesson of the four-lesson sequence. Using the skills developed in the first lesson (introduction-to-programming-and-python), students write Python code to obtain the spectroscopic constants of a diatomic molecule from its FTIR spectrum. Students first write functions to 1) read in the data, 2) fit a polynomial to the experimental spectrum, 3) relate the spectroscopic constants to the fitting parameters, 4) calculate the force constant, equilibrium bond length, and the bond dissociation energy, and 5) determine the mass-dependence of various spectroscopic constants upon isotopic substitution. Students then use these functions to analyze the funcdamental and overtone spectrum of HCl-35 and DCl-35 (if any of these spectra are missing, experimental spectra are included in the instructor materials). If desired, this project can be combined with the third lesson in the sequence where students learned how to perform quantum chemistry calculations. In the assignment for lesson three, students calculate the potential energy curve of HCl using various levels of theory and basis sets. Using these potential energy curves, they can apply the sinc-DVR method (Jupyter notebook with a brief description of the theory and user's manual included) to model the IR spectra of HCl-35 and DCl-35. Once the theoretical line positions are computed, students can use their Jupyter notebook to compute theoretical values for the spectroscopic constants and structural parameters. 
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "Intermediate"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Physical Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for: "Spectroscopy"
+
+# List all authors
+authors: 
+  - "Prof. Gergely Gidofalvi"
+
+# Estimated total time for all materials
+estimated_time: "3 hours"
+
+# Write a description of your module.
+# Single notebook, multi-part module, etc?
+format: "Multi-part module"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "gidofalvi@gonzaga.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Third Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 20  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson: 
+
+  - The intent of this activity is to provide students with an opportunity to use their programming skills to implement scientific code from essentially scratch. The prompts and function descriptions in the Jupyter notebook serve as an indirect guide to designing their code. 
+
+  - Once the code for the functions is written, students are more or less are left on their own to decide how (order of function calls and variable assignments) to properly use the functions in their data analysis.   
+ 
+  Timing notes:
+  - If students have completed lesson 1 of the sequence (introduction-to-programming-and-python) or if they are familiar with programming in Python (in particular, they are able to implement functions and use built-in library functions for curve fitting), the in-class time required to complete the assignment is minimal (students may need help to get started with line assignment and reading in the data from files).
+
+  Common student questions:
+
+  - Students often forget to assign different names for variables related to different spectra.
+  - It is a good idea to remind students that they should check their functions as they develop them.
+  - Students are often unsure how to check the acuracy of their results. It is helpful to remind them that, when done correctly, their analysis should be in agreement with the reference data listed on the NIST website.
+  - Students often fail to recognize that the expression relating alpha_e to B_e to the fitting parameters are not the same for the fundamental and the first overtone. It is good to remind them that, when done correctly, the values for these two quantities from the fundamental and first overtone should agree with each other (hence the suggested averaging in the analysis).
+
+# Related lessons that complement this one
+related_modules:
+ - "foundational-intro-python"
+ - "introduction-to-programming-and-python"
+ - "quantum-chemistry-simulations-in-psi4"
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/diatomic-molecule-ir-spectrum-analysis"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Analysis of the IR spectrum of HCl-35 and DCl-35."
+    description: "Jupyter notebook for implementing Python code to analyze the FTIR spetrum of HCl-35 and DCl-35."
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "3 hours"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/diatomic-molecule-ir-spectrum-analysis/blob/main/lesson-04-diatomic-rovib-analysis-student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/diatomic-molecule-ir-spectrum-analysis/blob/main/lesson-04-diatomic-rovib-analysis-student.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Students will be able to describe the physical orignis of the lines in the rovibrational spectrum of a diatomic molecule."
+      - "Students will be able to analyze the high-resolution IR spectrum of a diatomic molecule to extract spectroscopic constants."
+      - "Students will be able to relate spectroscopic constants to structural parameters including the force constant, equilibrium bond length, and bond dissociation energy of a diatomic molecule."
+      - "Students will be able to describe and quantitatively determine the mass-dependence of various spectroscopic constants upon isotopic substitution."
+      - "Students will be able to use SciPy to fit experimental data to a polynomial"
+      - "Students will be able to implement functions in Python to carry out tasks specific to the analysis of the IR spectrum of a diatomic molecule."
+      - "Students will be able to use their Python code to analyze the IR spectrum of HCl-35 and/or DCl-35."
+
+  # Add more materials as needed
+  - title: "Sinc-DVR method to calculate the rovibrational energies of a diatomic molecule"
+    description: "Jupyter notebook that allows students to simulate the FTIR spectra of a diatomic molecule using its Born-Oppenheimer potential energy curve."
+    type: "notebook"
+    duration: "Minimal"
+    github_url: "https://github.com/act-cms/diatomic-molecule-ir-spectrum-analysis/blob/main/lesson-04-diatomic-sinc-dvr.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/diatomic-molecule-ir-spectrum-analysis/blob/main/lesson-04-diatomic-sinc-dvr.ipynb"
+    objectives:
+      - "Students will learn the key tenets of the sinc-DVR method to simulate the rovibrational spectrum of a diatomic molecule using the sinc-DVR method."
+      - "Students will learn how to interpret scientific code and adjust input parameters to calculate quantities of interest."
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+      - "Describe the physical orignis of the lines in the rovibrational spectrum of a diatomic molecule."
+      - "Analyze the high-resolution IR spectrum of a diatomic molecule to extract spectroscopic constants."
+      - "Relate spectroscopic constants to structural parameters including the force constant, equilibrium bond length, and bond dissociation energy of a diatomic molecule."
+      - "Describe and quantitatively determine the mass-dependence of various spectroscopic constants upon isotopic substitution."
+      - "Students will be able to use SciPy to fit experimental data to a polynomial"
+      - "Students will be able to implement functions in Python to carry out tasks specific to the analysis of the IR spectrum of a diatomic molecule."
+      - "Students will be able to use their Python code to analyze the IR spectrum of HCl-35 and/or DCl-35."
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+      - "Use SciPy to fit experimental data to a polynomial"
+      - "Implement functions in Python to carry out tasks specific to the analysis of the IR spectrum of a diatomic molecule."
+      - "Use Python code to analyze the IR spectrum of HCl-35 and/or DCl-35."
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+      - "Apply selection rules and the Bohr frequency condition to interpret spectra."
+      - "Describe the underlying physical principles of the harmonic oscillator and rigid rotor approximations."
+      - "Use the harmonic vibrational frequency and rotational constant to determine the force constant and equilibrium bond length of a diatomic molecule, respectively."
+      - "Describe the physical origin for deviations from the harmonic oscillator and rigid rotor models."
+      - "Describe and quantitatively evaluate the mass-dependence of spectroscopic constant upon isotopic substitution."
+
+# What programming experience is assumed?
+programming_prerequisites:
+      - "Knowledge of basic Python syntax (variable types, variable assignment, formatted printing using f-strings, etc. ) and program execution sequence."
+      - "Understanding of functions and how to use them."
+      - "Importing standard Python libraries (NumPy, SciPy, etc.) and using the functions included in these libraries."
+      - "Writing user-defined functions to accomplish context-specific tasks."
+
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used.
+platforms:
+  - "Google Colab"
+  - "ChemCompute"
+
+# Which platform do you recommend for most users?
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python arrays"
+  - "user-defined functions"
+  - "curve fitting"
+  - "analysis of FTIR spectrum"
+  - "rovibrational spectroscopy"
+  - "spectroscopic constants"
+  - "harmonic oscillator"
+  - "rigid rotor"
+  - "quantum chemistry modelling"
+  - "vibrational Schrodinger equation"
+  - "force constant"
+  - "equilibrium bond length"
+  - "bond dissociation energy" 
+  - "isotopic substitution"
