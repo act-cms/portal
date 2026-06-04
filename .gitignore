@@ -198,3 +198,4 @@ cython_debug/
 .playwright-mcp
 CLAUDE.md
 docs
+.claude/

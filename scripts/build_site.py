@@ -51,26 +51,41 @@ def process_lesson_data(lesson_data, lesson_id):
             print(f"Error: Lesson {lesson_id} has no materials section.")
             return None
 
-    # Generate chemcompute launch from public_repo_url
+    # Generate chemcompute launch URLs from public_repo_url
 
     if "ChemCompute" in lesson_data["platforms"]:
         stub = "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo="
-        
-        # Parse the GitHub repo URL
+
+        # Lesson-level: opens the repo root folder
         repo_url = lesson_data['public_repo_url']
         parsed = urllib.parse.urlparse(repo_url)
-        repo_path = PurePosixPath(parsed.path).stem
+        repo_stem = PurePosixPath(parsed.path).stem
 
         repo_url_encoded = urllib.parse.quote(repo_url)
-        urlpath = f"lab/tree/{repo_path}/"
+        urlpath = f"lab/tree/{repo_stem}/"
         urlpath_encoded = urllib.parse.quote(urlpath)
 
-        # Construct full launch URL
         lesson_data['chemcompute_launch'] = (
             f"{stub}{repo_url_encoded}"
             f"&branch=main"
             f"&urlpath={urlpath_encoded}"
-        )  
+        )
+
+        # Per-material: opens the specific notebook directly
+        for material in lesson_data.get('materials', []):
+            if material.get('type') == 'notebook' and 'github_url' in material:
+                nb_parsed = urllib.parse.urlparse(material['github_url'])
+                path_parts = nb_parsed.path.split('/blob/main/', 1)
+                if len(path_parts) == 2:
+                    mat_repo_url = f"{nb_parsed.scheme}://{nb_parsed.netloc}{path_parts[0]}"
+                    notebook_path = path_parts[1]
+                    mat_repo_stem = PurePosixPath(path_parts[0]).name
+                    mat_urlpath = f"lab/tree/{mat_repo_stem}/{notebook_path}"
+                    material['chemcompute_url'] = (
+                        f"{stub}{urllib.parse.quote(mat_repo_url)}"
+                        f"&branch=main"
+                        f"&urlpath={urllib.parse.quote(mat_urlpath)}"
+                    )
     
     return lesson_data
 

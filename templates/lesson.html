@@ -213,6 +213,9 @@
                                     {% if material.github_url %}
                                     <a href="{{ material.github_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
                                     {% endif %}
+                                    {% if material.chemcompute_url %}
+                                    <a href="{{ material.chemcompute_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    {% endif %}
                                 </div>
                                 {% elif material.type == "slides" %}
                                 {% if material.github_url %}
