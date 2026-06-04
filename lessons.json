@@ -265,7 +265,8 @@
           "Process: Use Python code to define variables and functions, and to perform calculations",
           "Process: Use Python code to report the output of calculations in a specified format",
           "Process: Understand how to redefine variables and re-run code if necessary"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/buffer-solutions&branch=main&urlpath=lab/tree/buffer-solutions/Buffer_Preparation_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -337,7 +338,8 @@
         "objectives": [
           "Fitting data to an exponential",
           "Automatically determining initial guess parameters"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/chemiluminescence-of-bleach&branch=main&urlpath=lab/tree/chemiluminescence-of-bleach/Fitting-the-first-data-file.ipynb"
       },
       {
         "title": "Part 2: Fitting many data files",
@@ -349,7 +351,8 @@
           "Using glob to find files",
           "Using a for loop to iterate over files",
           "Handling likely issues with automation"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/chemiluminescence-of-bleach&branch=main&urlpath=lab/tree/chemiluminescence-of-bleach/Fitting-many-data-files.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -431,7 +434,8 @@
           "Process: Use Python code to enter data into arrays",
           "Process: Use Python code to perform array calculations",
           "Process: Use Python code to display data in graphs or drop-down menus"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/moralech-umu-public-calibration-of-glassware&branch=main&urlpath=lab/tree/moralech-umu-public-calibration-of-glassware/Calibration_of_Glassware_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -508,7 +512,8 @@
           "Students will be able to use SciPy to fit experimental data to a polynomial",
           "Students will be able to implement functions in Python to carry out tasks specific to the analysis of the IR spectrum of a diatomic molecule.",
           "Students will be able to use their Python code to analyze the IR spectrum of HCl-35 and/or DCl-35."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/diatomic-molecule-ir-spectrum-analysis&branch=main&urlpath=lab/tree/diatomic-molecule-ir-spectrum-analysis/lesson-04-diatomic-rovib-analysis-student.ipynb"
       },
       {
         "title": "Sinc-DVR method to calculate the rovibrational energies of a diatomic molecule",
@@ -520,7 +525,8 @@
         "objectives": [
           "Students will learn the key tenets of the sinc-DVR method to simulate the rovibrational spectrum of a diatomic molecule using the sinc-DVR method.",
           "Students will learn how to interpret scientific code and adjust input parameters to calculate quantities of interest."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/diatomic-molecule-ir-spectrum-analysis&branch=main&urlpath=lab/tree/diatomic-molecule-ir-spectrum-analysis/lesson-04-diatomic-sinc-dvr.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -606,7 +612,8 @@
         "objectives": [
           "Understand how we measure and model diffusion computationally at both atomistic and continuum scales",
           "Consider complementarity between computational and experimental paradigms"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/rkurchin/27100_diffusion_computational_lab&branch=main&urlpath=lab/tree/27100_diffusion_computational_lab/diffusion_computational_lab.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -759,7 +766,8 @@
           "Content: Calculate an internal standard response factor from ratios in a measured signal, and use it to find the concentration of an analyte",
           "Process: Use Python code to transform data using structures such as arrays",
           "Process: Use Python code to transform data using functions"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/gc-ms-internal-standard&branch=main&urlpath=lab/tree/gc-ms-internal-standard/GC-MS_Internal-Standard_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -840,7 +848,8 @@
           "Process: Use Python code to transform data using structures such as arrays",
           "Process: Use Python code to visualize data using different types of graphs",
           "Process: Use Python code to transform data using functions"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/hplc-analysis&branch=main&urlpath=lab/tree/hplc-analysis/HPLC_Analysis_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -908,7 +917,8 @@
           "apply the first and second laws of thermodynamics for calculating the entropy of a substance in a single phase",
           "relate heat capacity to entropy mathematically",
           "predict the effect of structure on the entropy of a substance"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/calculating-entropies&branch=main&urlpath=lab/tree/calculating-entropies/01-entropy-single-phase/calculating-entropyorg.ipynb"
       },
       {
         "title": "Part 2: Calculating entropy with phase changes",
@@ -922,7 +932,8 @@
           "Apply the third law of thermodynamics to calculate entropy of a substance over a temperature range",
           "Calculate S for warming a substance in different phases",
           "Calculate S for phase transitions"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/your-lesson-repo&branch=main&urlpath=lab/tree/your-lesson-repo/calculating-multiphase-entropyorg.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1000,7 +1011,8 @@
           "Understand basic Python syntax and data types",
           "Learn about setting variables, for loops, and conditionals",
           "Write simple scripts in Jupyter notebooks to perform calculations"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-intro-python&branch=main&urlpath=lab/tree/foundational-intro-python/01-introduction-to-python.ipynb"
       },
       {
         "title": "Reading Data from a File",
@@ -1013,7 +1025,8 @@
           "Open a file and read its contents line by line",
           "Search for specific patterns in text files",
           "Extract relevant data from files"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-modules&branch=main&urlpath=lab/tree/foundational-modules/intro-programming/reading_from_file.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1083,7 +1096,8 @@
         "objectives": [
           "Open a Jupyter notebook",
           "Python logic statements, for loops, Python lists"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/0-python-essentials/Day0_python_essentials.ipynb"
       },
       {
         "title": "Part 2: Introduction to cheminformatics",
@@ -1096,7 +1110,8 @@
           "Learn how to import packages/libraries.",
           "Use rdkit library to draw and characterize molecules.",
           "Learn how to get help with tab complete and the help() function."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/1-intro-to-cheminformatics/Day1_rdkit.ipynb"
       },
       {
         "title": "Part 3: NMR Kinetics",
@@ -1107,7 +1122,8 @@
         "objectives": [
           "Use pandas and scipy to load and analyze NMR kinetics data.",
           "Determine the reaction order and rate constant (k) from NMR reaction monitoring data."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/2-nmr-kinetics/Day2_NMR_kinetics.ipynb"
       },
       {
         "title": "Part 4: NMR Spin Relaxation",
@@ -1118,7 +1134,8 @@
         "objectives": [
           "Use pandas and scipy to load and analyze NMR kinetics data.",
           "Determine the reaction order and rate constant (k) from NMR reaction monitoring data."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/2-nmr-kinetics/Day2_NMR_kinetics.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1191,7 +1208,8 @@
           "Learn the use of Numpy functions to declare and manipulate vectors and matrices.",
           "Use Scipy funtions for curve fitting, spline interpolation, and numerical integration.",
           "Use Matplotlib functions for plotting."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-programming-and-python&branch=main&urlpath=lab/tree/introduction-to-programming-and-python/lesson-01-introduction-to-programming-assignment-student.ipynb"
       },
       {
         "title": "Part 2: Introduction to programming and python - assignment",
@@ -1202,7 +1220,8 @@
         "colab_url": "https://colab.research.google.com/github/act-cms/introduction-to-programming-and-python/blob/main/lesson-01-introduction-to-programming-assignment-student.ipynb",
         "objectives": [
           "Demonstrate an understanding of foundational programming concepts by writing Python code."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-programming-and-python&branch=main&urlpath=lab/tree/introduction-to-programming-and-python/lesson-01-introduction-to-programming-assignment-student.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1273,7 +1292,8 @@
         "duration": "3 hours",
         "github_url": "https://github.com/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
         "colab_url": "https://colab.research.google.com/github/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
-        "objectives": null
+        "objectives": null,
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/lesson-02-linear-variation-method&branch=main&urlpath=lab/tree/lesson-02-linear-variation-method/lesson-02-linear-variation-method-live-coding-student.ipynb"
       },
       {
         "title": "Part 2: Linear variational method - double well potential",
@@ -1282,7 +1302,8 @@
         "duration": "Approximately 2-3 hours",
         "github_url": "https://github.com/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
         "colab_url": "https://colab.research.google.com/github/act-cms/lesson-02-linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
-        "objectives": null
+        "objectives": null,
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/lesson-02-linear-variation-method&branch=main&urlpath=lab/tree/lesson-02-linear-variation-method/lesson-02-linear-variation-method-double-well-assignment-student.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1351,7 +1372,8 @@
         "duration": "3 hours",
         "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
         "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
-        "objectives": []
+        "objectives": [],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/lesson-02-linear-variation-method-live-coding-student.ipynb"
       },
       {
         "title": "Part 2: Linear variational method - double well potential",
@@ -1360,7 +1382,8 @@
         "duration": "Approximately 2-3 hours",
         "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
         "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
-        "objectives": []
+        "objectives": [],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/lesson-02-linear-variation-method-double-well-assignment-student.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1423,7 +1446,8 @@
         "objectives": [
           "Learn format and type of JupyterQuiz questions",
           "Import questions from an external module."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/jupyterquiz-tutorial&branch=main&urlpath=lab/tree/jupyterquiz-tutorial/jupyterquiz-tutorial.ipynb"
       },
       {
         "title": "LLM (Large Language Model)-Assisted JupyterQuiz Formatting",
@@ -1435,7 +1459,8 @@
         "objectives": [
           "Advanced skill development",
           "Application of concepts from Part 1"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/jupyterquiz-tutorial&branch=main&urlpath=lab/tree/jupyterquiz-tutorial/LLM_assisted_jupyterquiz.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1512,7 +1537,8 @@
           "Process: Use Python code to transform data using structures such as arrays and tables",
           "Process: Work in teams to manage and share data",
           "Process: Work in teams to evaluate outcomes of statistical tests"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/ocean-acidification&branch=main&urlpath=lab/tree/ocean-acidification/Ocean_Acidification_W2_Student_Version.ipynb"
       },
       {
         "title": "Ocean_Acidification Week 3 Student Version",
@@ -1529,7 +1555,8 @@
           "Process: Modify Python code to transform data using structures such as arrays and tables",
           "Process: Work in teams to manage and share data",
           "Process: Work in teams to evaluate outcomes of statistical tests"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/ocean-acidification&branch=main&urlpath=lab/tree/ocean-acidification/Ocean_Acidification_W3_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1611,7 +1638,8 @@
           "Content: Use a calibration curve to find the concentration of an analyte in solution",
           "Process: Use Python code to transform data using structures such as arrays",
           "Process: Use Python code to visualize data using different types of graphs"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/solution-preparation-spectrophotometry&branch=main&urlpath=lab/tree/solution-preparation-spectrophotometry/Solution_Preparation_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1689,7 +1717,8 @@
           "Content: Use a standard addition calibration curve to find the concentration of an analyte.",
           "Process: Use Python code to transform data using structures such as arrays.",
           "Process: Use Python code to visualize data using different types of graphs."
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/standard-addition-spectrophotometry&branch=main&urlpath=lab/tree/standard-addition-spectrophotometry/Standard_Addition_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
@@ -1770,7 +1799,8 @@
           "Process: Use Python code to visualize data using different types of graphs",
           "Process: Work in teams to manage and share data, and document and share causes of outlier data",
           "Process: Work in teams to evaluate outcomes of statistical tests"
-        ]
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/statistical-testing-beta&branch=main&urlpath=lab/tree/statistical-testing-beta/Statistical_Testing_Student_Version.ipynb"
       }
     ],
     "scientific_objectives": [
