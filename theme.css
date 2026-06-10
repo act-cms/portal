@@ -1141,3 +1141,12 @@ html {
     text-decoration: underline;
 }
 
+.prereq-lessons {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.prereq-lessons li {
+    margin-bottom: 4px;
+}
+

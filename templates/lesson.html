@@ -167,7 +167,7 @@
                             </ul>
                         </div>
 
-                        {% if learning_paths %}
+                        {% if learning_paths or prerequisite_lessons %}
                         <div class="prereq-box sequence">
                             <h4>Lesson Sequence:</h4>
                             {% for membership in learning_paths %}
@@ -186,6 +186,14 @@
                             </div>
                             {% endif %}
                             {% endfor %}
+                            {% if prerequisite_lessons %}
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                {% for prereq in prerequisite_lessons %}
+                                <li><a href="../{{ prereq.id }}/">{{ prereq.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
                         {% endif %}
                     </div>
