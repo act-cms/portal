@@ -75,7 +75,7 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "Introduction-to-programming-and-python"
+  - "lesson-01-introduction-to-programming-and-python"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material

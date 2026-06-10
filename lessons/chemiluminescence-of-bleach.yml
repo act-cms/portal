@@ -68,8 +68,9 @@ instructor_notes: |
   - Part 2 takes between 1 and 2 hours
  
 # Related lessons that complement this one
-related_modules:
-  - "vibronic-spectrum-iodine"
+# Re-add when this lesson is submitted to the portal:
+# related_modules:
+#   - "vibronic-spectrum-iodine"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material

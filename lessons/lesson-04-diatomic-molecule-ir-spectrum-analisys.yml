@@ -74,8 +74,9 @@ instructor_notes: |
 # Related lessons that complement this one
 related_modules:
   - "foundational-intro-python"
-  - "introduction-to-programming-and-python"
-  - "quantum-chemistry-simulations-in-psi4"
+  - "lesson-01-introduction-to-programming-and-python"
+  # Re-add when this lesson is submitted to the portal:
+  # - "quantum-chemistry-simulations-in-psi4"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
