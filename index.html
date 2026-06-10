@@ -68,6 +68,14 @@
                         <!-- Options will be populated dynamically -->
                     </select>
                 </div>
+
+                <div class="filter-group" id="learningPathGroup">
+                    <label for="learningPath">Learning Path</label>
+                    <select class="filter-select" id="learningPath">
+                        <option value="">All Paths</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
             </div>
 
             <div class="filter-tags" id="activeFilters">
@@ -179,11 +187,19 @@
                 
                 // Populate filter options
                 populateFilterOptions();
-                
-                // Display all lessons initially
-                displayLessons(allLessons);
-                updateResultsCount(allLessons.length);
-                
+
+                // Apply a learning-path filter from the URL (e.g. linked from a lesson page)
+                const pathParam = new URLSearchParams(window.location.search).get('path');
+                const pathSelect = document.getElementById('learningPath');
+                if (pathParam && [...pathSelect.options].some(o => o.value === pathParam)) {
+                    pathSelect.value = pathParam;
+                    filterLessons();
+                } else {
+                    // Display all lessons initially
+                    displayLessons(allLessons);
+                    updateResultsCount(allLessons.length);
+                }
+
             } catch (error) {
                 console.error('Error loading lessons:', error);
                 document.getElementById('resultsCount').textContent = 'Error loading lessons';
@@ -199,6 +215,30 @@
             populateSelect('primaryCourse', courses);
             populateSelect('format', formats);
             populateSelect('author', authors);
+            populateLearningPaths();
+        }
+
+        // Populate the Learning Path dropdown from lesson path memberships
+        function populateLearningPaths() {
+            const pathTitles = new Map();
+            allLessons.forEach(lesson =>
+                (lesson.learning_paths || []).forEach(p => pathTitles.set(p.path_id, p.path_title))
+            );
+
+            if (pathTitles.size === 0) {
+                document.getElementById('learningPathGroup').style.display = 'none';
+                return;
+            }
+
+            const select = document.getElementById('learningPath');
+            [...pathTitles.entries()]
+                .sort((a, b) => a[1].localeCompare(b[1]))
+                .forEach(([pathId, pathTitle]) => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = pathId;
+                    optionElement.textContent = pathTitle;
+                    select.appendChild(optionElement);
+                });
         }
 
         function populateSelect(selectId, options) {
@@ -255,6 +295,11 @@
                         <span class="meta-value">${lesson.authors.join(', ')}</span>
                     </div>
                 </div>
+                ${lesson.learning_paths && lesson.learning_paths.length > 0 ? `
+                <div class="lesson-path-badges">
+                    ${lesson.learning_paths.map(p => `<span class="path-badge"><span class="path-badge-name">${p.path_title}</span>: part ${p.step}</span>`).join('')}
+                </div>
+                ` : ''}
                 <div class="lesson-tags">
                     ${lesson.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
@@ -270,6 +315,7 @@
             const primaryCourse = document.getElementById('primaryCourse').value;
             const format = document.getElementById('format').value;
             const author = document.getElementById('author').value;
+            const learningPath = document.getElementById('learningPath').value;
 
             let filteredLessons = allLessons;
 
@@ -290,9 +336,16 @@
                 filteredLessons = filteredLessons.filter(lesson => lesson.format === format);
             }
             if (author) {
-                filteredLessons = filteredLessons.filter(lesson => 
+                filteredLessons = filteredLessons.filter(lesson =>
                     lesson.authors.includes(author)
                 );
+            }
+            if (learningPath) {
+                // Show only that path's lessons, ordered by step
+                const stepIn = lesson => (lesson.learning_paths || []).find(p => p.path_id === learningPath);
+                filteredLessons = filteredLessons
+                    .filter(lesson => stepIn(lesson))
+                    .sort((a, b) => stepIn(a).step - stepIn(b).step);
             }
 
             displayLessons(filteredLessons);
@@ -310,11 +363,13 @@
             const primaryCourse = document.getElementById('primaryCourse').value;
             const format = document.getElementById('format').value;
             const author = document.getElementById('author').value;
+            const learningPathSelect = document.getElementById('learningPath');
 
             if (skillLevel) activeFilters.push({ type: 'Programming Skill', value: skillLevel, id: 'skillLevel' });
             if (primaryCourse) activeFilters.push({ type: 'Course', value: primaryCourse, id: 'primaryCourse' });
             if (format) activeFilters.push({ type: 'Format', value: format, id: 'format' });
             if (author) activeFilters.push({ type: 'Author', value: author, id: 'author' });
+            if (learningPathSelect.value) activeFilters.push({ type: 'Learning Path', value: learningPathSelect.selectedOptions[0].textContent, id: 'learningPath' });
 
             const container = document.getElementById('activeFilters');
             container.innerHTML = activeFilters.map(filter => 
@@ -333,6 +388,7 @@
         document.getElementById('primaryCourse').addEventListener('change', filterLessons);
         document.getElementById('format').addEventListener('change', filterLessons);
         document.getElementById('author').addEventListener('change', filterLessons);
+        document.getElementById('learningPath').addEventListener('change', filterLessons);
 
         // Initialize
         loadTheme();

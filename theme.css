@@ -1077,3 +1077,67 @@ html {
     scroll-margin-top: 80px;
 }
 
+/* Learning Paths */
+.lesson-path-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin-bottom: 8px;
+}
+
+.path-badge {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.path-badge-name {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.prereq-box.sequence {
+    background: var(--primary-light);
+    border-left-color: var(--primary-color);
+}
+
+.prereq-box.sequence h4 {
+    color: var(--primary-color);
+}
+
+.prereq-box.sequence .path-step {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.path-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 12px;
+}
+
+.path-nav .path-next {
+    margin-left: auto;
+}
+
+.path-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.path-nav a:hover {
+    text-decoration: underline;
+}
+
+.prereq-box.sequence a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.prereq-box.sequence a:hover {
+    text-decoration: underline;
+}
+

@@ -40,7 +40,7 @@ estimated_time: "3 or 6 hours (depending on implementation of part 2)"
 
 # Write a description of your module.
 # Single notebook, multi-part module, etc?
-format: "Multi-part module"
+format: "Multi-Part Module" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
@@ -75,6 +75,10 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
+  - "lesson-01-introduction-to-programming-and-python"
+
+# Lessons students should complete before this one (lesson IDs, build-validated)
+prerequisite_modules:
   - "lesson-01-introduction-to-programming-and-python"
 
 # REPOSITORY URLS (REQUIRED)

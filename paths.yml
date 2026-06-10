@@ -1,0 +1,25 @@
+# Learning paths for the ACT-CMS Lesson Portal
+#
+# A path is a named, ordered sequence of lessons. Lesson IDs are the YAML
+# filenames in lessons/ without the .yml extension; order in the `lessons`
+# list defines the step numbers shown on the portal. A lesson may appear in
+# more than one path. The build validates every ID, so a typo fails CI.
+#
+# To add your lesson to a path, insert its ID at the right position.
+# To create a new path, append a new entry with a unique kebab-case id.
+
+paths:
+  - id: quantum-chemistry-sequence
+    title: "Quantum Chemistry with Python"
+    description: "A multi-lesson sequence building from Python basics to spectrum analysis."
+    lessons:
+      - lesson-01-introduction-to-programming-and-python
+      - lesson-02-linear-variation-method
+      - lesson-04-diatomic-molecule-ir-spectrum-analisys
+
+  - id: python-foundations
+    title: "Python Foundations for Molecular Scientists"
+    description: "Core Python and symbolic math skills used across ACT-CMS lessons."
+    lessons:
+      - foundational-intro-python
+      - foundational-symbolic-math
