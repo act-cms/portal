@@ -20,7 +20,7 @@
       "calibration-of-glassware",
       "statistical-testing-beta",
       "solution-preparation-spectrophotometry",
-      "standard-addition-spectophotometry",
+      "standard-addition-spectrophotometry",
       "ocean-acidification",
       "buffer-solutions",
       "hplc-analysis",
@@ -324,9 +324,6 @@
     "student_level": "Undergraduate - Third Year",
     "students_piloted": 3,
     "instructor_notes": "Additional context for instructors using this lesson:\n\n- These notebooks are intended to support students in analyzing their experimental data\n- The piloted assessment was a separate lab report, so there is no formal assessment within this module\n- Students typically don't complete every step in order. Instead they work at what they need help with.\n- Students often struggle with how close initial parameter guesses need to be\n\nTiming notes:\n- Part 1 typically takes students 30 - 45 minutes\n- Part 2 takes between 1 and 2 hours\n",
-    "related_modules": [
-      "vibronic-spectrum-iodine"
-    ],
     "public_repo_url": "https://github.com/act-cms/chemiluminescence-of-bleach",
     "materials": [
       {
@@ -412,7 +409,7 @@
       "moralech-umu-basic-tasks",
       "statistical-testing-beta",
       "solution-preparation-spectrophotometry",
-      "standard-addition-spectophotometry",
+      "standard-addition-spectrophotometry",
       "ocean-acidification",
       "buffer-solutions",
       "hplc-analysis",
@@ -492,8 +489,7 @@
     "instructor_notes": "Additional context for instructors using this lesson: \n\n- The intent of this activity is to provide students with an opportunity to use their programming skills to implement scientific code from essentially scratch. The prompts and function descriptions in the Jupyter notebook serve as an indirect guide to designing their code. \n\n- Once the code for the functions is written, students are more or less are left on their own to decide how (order of function calls and variable assignments) to properly use the functions in their data analysis.   \n\nTiming notes:\n- If students have completed lesson 1 of the sequence (introduction-to-programming-and-python) or if they are familiar with programming in Python (in particular, they are able to implement functions and use built-in library functions for curve fitting), the in-class time required to complete the assignment is minimal (students may need help to get started with line assignment and reading in the data from files).\n\nCommon student questions:\n\n- Students often forget to assign different names for variables related to different spectra.\n- It is a good idea to remind students that they should check their functions as they develop them.\n- Students are often unsure how to check the acuracy of their results. It is helpful to remind them that, when done correctly, their analysis should be in agreement with the reference data listed on the NIST website.\n- Students often fail to recognize that the expression relating alpha_e to B_e to the fitting parameters are not the same for the fundamental and the first overtone. It is good to remind them that, when done correctly, the values for these two quantities from the fundamental and first overtone should agree with each other (hence the suggested averaging in the analysis).\n",
     "related_modules": [
       "foundational-intro-python",
-      "introduction-to-programming-and-python",
-      "quantum-chemistry-simulations-in-psi4"
+      "lesson-01-introduction-to-programming-and-python"
     ],
     "public_repo_url": "https://github.com/act-cms/diatomic-molecule-ir-spectrum-analysis",
     "materials": [
@@ -1281,7 +1277,7 @@
     "students_piloted": 20,
     "instructor_notes": "Additional context for instructors using this lesson:\n\n- This is the second lesson in the four-lesson sequence. \n- If needed, the first lesson (introduction-to-programming-and-python) introduces students to basic programming concepts (loops, conditional statements, user-defined functions), data types (scalars, strings, vectors, and matrices), and built-in Python libraries and functions for numerical integration, curve fitting, plotting.  \n- To demonstrate the implementation of the linear variational method, it is recommended that the instructor lead a live coding session using the notebook for part 1. See approximate timing below.\n- After the live coding session students should be ready to tackle the assignment outlined in the notebook for part 2. The assignment includes using the linear variation method to compute approximate solutions for a double-well potential and to examine properties of the ground state solution. \n\nTiming notes:\n- At the beginning of the live coding session, the instructor is encouraged to spend time reviewing the key steps of applying the method (section 3 of notebook) and highlight elements of code design.  \n- A three-hour live coding session should provide enough time for the instructor to complete part 1 and demonstrate 1) the application of the method, 2) use of SciPy functions for numerical integration and linear algebra, and 3) code design and debugging. A useful example could be a particle confined to an infinite well with a raised floor in the right half of the box. Approximately 2-2.5 hours for this would be appropriate. \n- Students are then asked to write their own code to obtain approximate solutions for a modified double-well potential.  This notebook can be assigned either as homework for students to complete on their own outside of class/lab or with instructor supervision during a 3-hour lab period. \n\nCommon student questions:\n\n- \"Students need several reminders related to the use of functions\"\n- \"Students, especially those with no linear algebra background, often have questions related to diagonalization and how it is equivalent to finding the optimal coefficients in the wave function expansion (the appendix addresses this)\"\n- \"Students often get confused between the quantum number index and the matrix index due to the zero offset in Python when building the matrix representation of the Hamiltonian\"\n",
     "related_modules": [
-      "Introduction-to-programming-and-python"
+      "lesson-01-introduction-to-programming-and-python"
     ],
     "public_repo_url": "https://github.com/act-cms/lesson-02-linear-variation-method",
     "materials": [
@@ -1344,83 +1340,6 @@
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "lesson-02-linear-variation-method",
     "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/lesson-02-linear-variation-method&branch=main&urlpath=lab/tree/lesson-02-linear-variation-method/"
-  },
-  {
-    "title": "Introduction to the linear variation method",
-    "description": "In this lesson students implement the linear variation method to calculate approximate solutions to the time-independent Schrodinger equation.",
-    "expanded_description": "Students are introduced to basic tenets of the linear variation method for computing approximate solution to the Schrodinger equation. Sections 1 and 2 summarize the method while sections 3 and 4 introduce atomic units and the syntax for matrix diagonalization in Python. If desired, the appendix contains a worked-out example for a 2-parameter trial function to demonstrate the steps of linear variational method and to highlight the connection between matrix diagonalization and solving for the optimal set of expansion coefficients.\n\nIn part 1, the instructor leads a live coding session to demonstrate the implementation of the linear variation method for a modified particle in a box potential and the students are then asked to write their own code to solve the time-independent Schrodinger equation for a double-well potential. \n",
-    "programming_skill": "Intermediate",
-    "primary_course": "Physical Chemistry",
-    "also_for": [
-      "Physical Chemistry"
-    ],
-    "authors": [
-      "Prof. Gergely Gidofalvi"
-    ],
-    "estimated_time": "3 or 6 hours (depending on implementation of part 2)",
-    "format": "Multi-Part Materials Module",
-    "instructor_email": "gidofalvi@gonzaga.edu",
-    "student_level": "Undergraduate - Third Year",
-    "students_piloted": 20,
-    "instructor_notes": "Additional context for instructors using this lesson:\n\n- If needed, lesson-01-introduction-to-programming-and-python introduces students to basic programming concepts (loops, conditional statements, user-defined functions), data types (scalars, strings, vectors, and matrices), and built-in Python libraries and functions for numerical integration, curve fitting, plotting.  \n- To demonstrate the implementation of the linear variational method, it is recommended that the instructor lead a live coding session using the notebook for part 1. See approximate timing below.\n- After the live coding session students should be ready to tackle the assignment outlined in the notebook for part 2. The assignment includes using the linear variation method to compute approximate solutions for a double-well potential and to examine properties of the ground state solution. \n\nTiming notes:\n- At the beginning of the live coding session, the instructor is encouraged to spend time reviewing the key steps of applying the method (section 3 of notebook) and highlight elements of code design.  \n- A three-hour live coding session should provide enough time for the instructor to complete part 1 and demonstrate 1) the application of the method, 2) use of SciPy functions for numerical integration and linear algebra, and 3) code design and debugging. A useful example could be a particle confined to an infinite well with a raised floor in the right half of the box. Approximately 2-2.5 hours for this would be appropriate. \n- Students are then asked to write their own code to obtain approximate solutions for a modified double-well potential.  This notebook can be assigned either as homework for students to complete on their own outside of class/lab or with instructor supervision during a 3-hour lab period. \n\nCommon student questions:\n\n- \"Students need several reminders related to the use of functions\"\n- \"Students, especially those with no linear algebra background, often have questions related to diagonalization and how it is equivalent to finding the optimal coefficients in the wave function expansion (the appendix addresses this)\"\n- \"Students often get confused between the quantum number index and the matrix index due to the zero offset in Python when building the matrix representation of the Hamiltonian\"\n",
-    "public_repo_url": "https://github.com/act-cms/linear-variation-method",
-    "materials": [
-      {
-        "title": "Part 1: Linear vatiational method - live coding session",
-        "description": "Jupyter notebook for instructor-led live coding session to demonstrate the implementation of the linear variation method.",
-        "type": "notebook",
-        "duration": "3 hours",
-        "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
-        "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-live-coding-student.ipynb",
-        "objectives": [],
-        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/lesson-02-linear-variation-method-live-coding-student.ipynb"
-      },
-      {
-        "title": "Part 2: Linear variational method - double well potential",
-        "description": "Jupyter notebook to assess student learning. Students are asked to write code to obtain approximate solutions to a double-well potential and examine properties of solutions.",
-        "type": "notebook",
-        "duration": "Approximately 2-3 hours",
-        "github_url": "https://github.com/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
-        "colab_url": "https://colab.research.google.com/github/act-cms/linear-variation-method/blob/main/lesson-02-linear-variation-method-double-well-assignment-student.ipynb",
-        "objectives": [],
-        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/lesson-02-linear-variation-method-double-well-assignment-student.ipynb"
-      }
-    ],
-    "scientific_objectives": [
-      "Describe the key aspects of the linear variational method",
-      "Apply the linear variational method to obtain approximate solutions to the time-independent Schrodinger equation",
-      "Explore dependence of tunneling probability on particle mass",
-      "Explain the cost to benefit ratio of accuracy versus computational complexity"
-    ],
-    "cyberinfrastructure_objectives": [
-      "Write code to access and modify elements of arrays and/or matrices",
-      "Use SciPy libraries to solve eigenvalue equations and numerical integration",
-      "Use Matplotlib to visualize data",
-      "Demonstrate skills for debugging code designed for scientific applications"
-    ],
-    "scientific_prerequisites": [
-      "Introductory quantum mechanics including the time-independent Schrodinger equation and the particle in an infinite well model."
-    ],
-    "programming_prerequisites": [
-      "It is assumed that students are familiar with basic Python syntax including variable assignment, for loops, user-defined functions, plotting, array initialization, and utilizing Python libraries."
-    ],
-    "platforms": [
-      "Google Colab",
-      "ChemCompute"
-    ],
-    "recommended_platform": "ChemCompute",
-    "tags": [
-      "python",
-      "approximation techniques",
-      "linear variational method",
-      "particle in a box",
-      "double-well potential",
-      "quantum-chemistry"
-    ],
-    "id": "linear-variation-method",
-    "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "linear-variation-method",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/linear-variation-method&branch=main&urlpath=lab/tree/linear-variation-method/"
   },
   {
     "title": "JupyterQuiz Tutorial for Educators",
@@ -1618,7 +1537,7 @@
       "moralech-umu-basic-tasks",
       "statistical-testing-beta",
       "calibration-of-glassware",
-      "standard-addition-spectophotometry",
+      "standard-addition-spectrophotometry",
       "ocean-acidification",
       "buffer-solutions",
       "hplc-analysis",
@@ -1776,7 +1695,7 @@
       "moralech-umu-basic-tasks",
       "calibration-of-glassware",
       "solution-preparation-spectrophotometry",
-      "standard-addition-spectophotometry",
+      "standard-addition-spectrophotometry",
       "ocean-acidification",
       "buffer-solutions",
       "hplc-analysis",
