@@ -80,7 +80,9 @@
     ],
     "id": "moralech-umu-basic-tasks",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "moralech-umu-basic-tasks"
+    "instructor_repo_path": "moralech-umu-basic-tasks",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Bridging Basic Chemistry and Cheminformatics: A Jupyter-based Module on Molecular Representation for Introductory Chemistry",
@@ -92,7 +94,7 @@
       "Prof. Kevin P. Greenman"
     ],
     "estimated_time": "2-3 hours",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "kgreenman@catholic.tech",
     "student_level": "Undergraduate - First/Second Year",
     "students_piloted": 15,
@@ -219,7 +221,9 @@
     ],
     "id": "molecular-representations",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "molecular-representations"
+    "instructor_repo_path": "molecular-representations",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Buffer Preparation Calculations",
@@ -302,7 +306,9 @@
     "id": "buffer-solutions",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "buffer-solutions",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/buffer-solutions&branch=main&urlpath=lab/tree/buffer-solutions/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/buffer-solutions&branch=main&urlpath=lab/tree/buffer-solutions/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Building a Data Analysis Pipeline: The Kinetics of the Chemiluminescence of Bleach",
@@ -319,7 +325,7 @@
       "Prof. Marie van Staveren"
     ],
     "estimated_time": "2-3 hours",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "instructor-access@university.edu",
     "student_level": "Undergraduate - Third Year",
     "students_piloted": 3,
@@ -384,7 +390,9 @@
     "id": "chemiluminescence-of-bleach",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "chemiluminescence-of-bleach",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/chemiluminescence-of-bleach&branch=main&urlpath=lab/tree/chemiluminescence-of-bleach/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/chemiluminescence-of-bleach&branch=main&urlpath=lab/tree/chemiluminescence-of-bleach/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Calibration of Glassware",
@@ -467,7 +475,9 @@
     "id": "calibration-of-glassware",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "calibration-of-glassware",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/moralech-umu-public-calibration-of-glassware&branch=main&urlpath=lab/tree/moralech-umu-public-calibration-of-glassware/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/moralech-umu-public-calibration-of-glassware&branch=main&urlpath=lab/tree/moralech-umu-public-calibration-of-glassware/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Diatomic molecule IR spectrum analysis",
@@ -482,7 +492,7 @@
       "Prof. Gergely Gidofalvi"
     ],
     "estimated_time": "3 hours",
-    "format": "Multi-part module",
+    "format": "Multi-Part Module",
     "instructor_email": "gidofalvi@gonzaga.edu",
     "student_level": "Undergraduate - Third Year",
     "students_piloted": 20,
@@ -490,6 +500,9 @@
     "related_modules": [
       "foundational-intro-python",
       "lesson-01-introduction-to-programming-and-python"
+    ],
+    "prerequisite_modules": [
+      "lesson-02-linear-variation-method"
     ],
     "public_repo_url": "https://github.com/act-cms/diatomic-molecule-ir-spectrum-analysis",
     "materials": [
@@ -576,7 +589,26 @@
     "id": "lesson-04-diatomic-molecule-ir-spectrum-analisys",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "lesson-04-diatomic-molecule-ir-spectrum-analisys",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/diatomic-molecule-ir-spectrum-analysis&branch=main&urlpath=lab/tree/diatomic-molecule-ir-spectrum-analysis/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/diatomic-molecule-ir-spectrum-analysis&branch=main&urlpath=lab/tree/diatomic-molecule-ir-spectrum-analysis/",
+    "learning_paths": [
+      {
+        "path_id": "quantum-chemistry-sequence",
+        "path_title": "Quantum Chemistry with Python",
+        "step": 3,
+        "total": 3,
+        "prev": {
+          "id": "lesson-02-linear-variation-method",
+          "title": "Introduction to the linear variation method"
+        },
+        "next": null
+      }
+    ],
+    "prerequisite_lessons": [
+      {
+        "id": "lesson-02-linear-variation-method",
+        "title": "Introduction to the linear variation method"
+      }
+    ]
   },
   {
     "title": "Diffusion from the Atomistic to Continuum Scale",
@@ -591,7 +623,7 @@
       "Prof. Rachel C. Kurchin"
     ],
     "estimated_time": "2-3 hours",
-    "format": "Single notebook",
+    "format": "Single Notebook",
     "instructor_email": "rkurchin@cmu.edu",
     "student_level": "Undergraduate - First Year",
     "students_piloted": 30,
@@ -646,7 +678,9 @@
     "id": "diffusion",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "diffusion",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/rkurchin/27100_diffusion_computational_lab&branch=main&urlpath=lab/tree/27100_diffusion_computational_lab/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/rkurchin/27100_diffusion_computational_lab&branch=main&urlpath=lab/tree/27100_diffusion_computational_lab/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Foundations of Symbolic Mathematics in Python",
@@ -717,7 +751,21 @@
     ],
     "id": "foundational-symbolic-math",
     "instructor_repo": "act-cms/instructor-materials",
-    "instructor_repo_path": "foundational-symbolic-math"
+    "instructor_repo_path": "foundational-symbolic-math",
+    "learning_paths": [
+      {
+        "path_id": "python-foundations",
+        "path_title": "Python Foundations for Molecular Scientists",
+        "step": 2,
+        "total": 2,
+        "prev": {
+          "id": "foundational-intro-python",
+          "title": "Introduction to Programming for Molecular Scientists"
+        },
+        "next": null
+      }
+    ],
+    "prerequisite_lessons": []
   },
   {
     "title": "Gas Chromatography – Mass Spectrometry with Internal Standard",
@@ -797,7 +845,9 @@
     "id": "gc-ms-internal-standard",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "gc-ms-internal-standard",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/gc-ms-internal-standard&branch=main&urlpath=lab/tree/gc-ms-internal-standard/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/gc-ms-internal-standard&branch=main&urlpath=lab/tree/gc-ms-internal-standard/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "High-Performance Liquid Chromatography Analysis",
@@ -813,7 +863,7 @@
       "Dr. Christine Morales"
     ],
     "estimated_time": "1-2 hours",
-    "format": "Single notebook",
+    "format": "Single Notebook",
     "instructor_email": "moralech@mountunion.edu",
     "student_level": "Undergraduate - Second Year",
     "students_piloted": 10,
@@ -880,7 +930,9 @@
     "id": "hplc-analysis",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "hplc-analysis",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/hplc-analysis&branch=main&urlpath=lab/tree/hplc-analysis/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/hplc-analysis&branch=main&urlpath=lab/tree/hplc-analysis/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "How can we calculate the entropy of substances?",
@@ -895,7 +947,7 @@
       "Prof. Steve Singleton"
     ],
     "estimated_time": "2-3 hours for each notebook",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "ssinglet@coe.edu",
     "student_level": "Undergraduate",
     "students_piloted": 15,
@@ -974,7 +1026,9 @@
     "id": "calculating-entropies",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "calculating-entropies",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/calculating-entropies&branch=main&urlpath=lab/tree/calculating-entropies/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/calculating-entropies&branch=main&urlpath=lab/tree/calculating-entropies/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Introduction to Programming for Molecular Scientists",
@@ -991,7 +1045,7 @@
       "Prof. Ashley McDonald"
     ],
     "estimated_time": "2-3 hours",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "instructor-access@university.edu",
     "instructor_notes": "This introductory module works well as the first programming lesson for students with no coding experience.\n\nTeaching tips:\n- Students often need extra time with the file reading concepts in Part 2\n- Encourage students to experiment with the code examples\n- Common issue: students forget to run cells in order\n",
     "public_repo_url": "https://github.com/act-cms/foundational-intro-python",
@@ -1058,7 +1112,21 @@
     "id": "foundational-intro-python",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "foundational-intro-python",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-intro-python&branch=main&urlpath=lab/tree/foundational-intro-python/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-intro-python&branch=main&urlpath=lab/tree/foundational-intro-python/",
+    "learning_paths": [
+      {
+        "path_id": "python-foundations",
+        "path_title": "Python Foundations for Molecular Scientists",
+        "step": 1,
+        "total": 2,
+        "prev": null,
+        "next": {
+          "id": "foundational-symbolic-math",
+          "title": "Foundations of Symbolic Mathematics in Python"
+        }
+      }
+    ],
+    "prerequisite_lessons": []
   },
   {
     "title": "Introduction to Python using NMR data for a first year, graduate level course",
@@ -1076,7 +1144,7 @@
       "Prof. Marc ter Horst"
     ],
     "estimated_time": "4 hours",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "terhorst@unc.edu",
     "student_level": "Mixed Graduate/Undergraduate",
     "students_piloted": 25,
@@ -1170,7 +1238,9 @@
     "id": "python-for-nmr",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "python-for-nmr",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/python-for-nmr&branch=main&urlpath=lab/tree/python-for-nmr/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Introduction to programming and python",
@@ -1182,7 +1252,7 @@
       "Prof. Gergely Gidofalvi"
     ],
     "estimated_time": "6 hours",
-    "format": "Multi-part module",
+    "format": "Multi-Part Module",
     "instructor_email": "gidofalvi@gonzaga.edu",
     "student_level": "Undergraduate - Third Year",
     "students_piloted": 20,
@@ -1256,7 +1326,21 @@
     "id": "lesson-01-introduction-to-programming-and-python",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "lesson-01-introduction-to-programming-and-python",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-programming-and-python&branch=main&urlpath=lab/tree/introduction-to-programming-and-python/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-programming-and-python&branch=main&urlpath=lab/tree/introduction-to-programming-and-python/",
+    "learning_paths": [
+      {
+        "path_id": "quantum-chemistry-sequence",
+        "path_title": "Quantum Chemistry with Python",
+        "step": 1,
+        "total": 3,
+        "prev": null,
+        "next": {
+          "id": "lesson-02-linear-variation-method",
+          "title": "Introduction to the linear variation method"
+        }
+      }
+    ],
+    "prerequisite_lessons": []
   },
   {
     "title": "Introduction to the linear variation method",
@@ -1271,12 +1355,15 @@
       "Prof. Gergely Gidofalvi"
     ],
     "estimated_time": "3 or 6 hours (depending on implementation of part 2)",
-    "format": "Multi-part module",
+    "format": "Multi-Part Module",
     "instructor_email": "gidofalvi@gonzaga.edu",
     "student_level": "Undergraduate - Third Year",
     "students_piloted": 20,
     "instructor_notes": "Additional context for instructors using this lesson:\n\n- This is the second lesson in the four-lesson sequence. \n- If needed, the first lesson (introduction-to-programming-and-python) introduces students to basic programming concepts (loops, conditional statements, user-defined functions), data types (scalars, strings, vectors, and matrices), and built-in Python libraries and functions for numerical integration, curve fitting, plotting.  \n- To demonstrate the implementation of the linear variational method, it is recommended that the instructor lead a live coding session using the notebook for part 1. See approximate timing below.\n- After the live coding session students should be ready to tackle the assignment outlined in the notebook for part 2. The assignment includes using the linear variation method to compute approximate solutions for a double-well potential and to examine properties of the ground state solution. \n\nTiming notes:\n- At the beginning of the live coding session, the instructor is encouraged to spend time reviewing the key steps of applying the method (section 3 of notebook) and highlight elements of code design.  \n- A three-hour live coding session should provide enough time for the instructor to complete part 1 and demonstrate 1) the application of the method, 2) use of SciPy functions for numerical integration and linear algebra, and 3) code design and debugging. A useful example could be a particle confined to an infinite well with a raised floor in the right half of the box. Approximately 2-2.5 hours for this would be appropriate. \n- Students are then asked to write their own code to obtain approximate solutions for a modified double-well potential.  This notebook can be assigned either as homework for students to complete on their own outside of class/lab or with instructor supervision during a 3-hour lab period. \n\nCommon student questions:\n\n- \"Students need several reminders related to the use of functions\"\n- \"Students, especially those with no linear algebra background, often have questions related to diagonalization and how it is equivalent to finding the optimal coefficients in the wave function expansion (the appendix addresses this)\"\n- \"Students often get confused between the quantum number index and the matrix index due to the zero offset in Python when building the matrix representation of the Hamiltonian\"\n",
     "related_modules": [
+      "lesson-01-introduction-to-programming-and-python"
+    ],
+    "prerequisite_modules": [
       "lesson-01-introduction-to-programming-and-python"
     ],
     "public_repo_url": "https://github.com/act-cms/lesson-02-linear-variation-method",
@@ -1339,7 +1426,29 @@
     "id": "lesson-02-linear-variation-method",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "lesson-02-linear-variation-method",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/lesson-02-linear-variation-method&branch=main&urlpath=lab/tree/lesson-02-linear-variation-method/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/lesson-02-linear-variation-method&branch=main&urlpath=lab/tree/lesson-02-linear-variation-method/",
+    "learning_paths": [
+      {
+        "path_id": "quantum-chemistry-sequence",
+        "path_title": "Quantum Chemistry with Python",
+        "step": 2,
+        "total": 3,
+        "prev": {
+          "id": "lesson-01-introduction-to-programming-and-python",
+          "title": "Introduction to programming and python"
+        },
+        "next": {
+          "id": "lesson-04-diatomic-molecule-ir-spectrum-analisys",
+          "title": "Diatomic molecule IR spectrum analysis"
+        }
+      }
+    ],
+    "prerequisite_lessons": [
+      {
+        "id": "lesson-01-introduction-to-programming-and-python",
+        "title": "Introduction to programming and python"
+      }
+    ]
   },
   {
     "title": "JupyterQuiz Tutorial for Educators",
@@ -1351,7 +1460,7 @@
       "Dr. Jessica A. Nash"
     ],
     "estimated_time": "30-45 minutes",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "janash@vt.edu",
     "public_repo_url": "https://github.com/act-cms/jupyterquiz-tutorial",
     "materials": [
@@ -1409,7 +1518,9 @@
     "id": "jupyterquiz-tutorial",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "jupyterquiz-tutorial",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/jupyterquiz-tutorial&branch=main&urlpath=lab/tree/jupyterquiz-tutorial/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/jupyterquiz-tutorial&branch=main&urlpath=lab/tree/jupyterquiz-tutorial/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Ocean Acidification",
@@ -1424,7 +1535,7 @@
       "Dr. Christine Morales"
     ],
     "estimated_time": "2-3 hours",
-    "format": "Multi-Part Materials Module",
+    "format": "Multi-Part Module",
     "instructor_email": "moralech@mountunion.edu",
     "student_level": "Undergraduate - Second Year",
     "students_piloted": 10,
@@ -1512,7 +1623,9 @@
     "id": "ocean-acidification",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "ocean-acidification",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/ocean-acidification&branch=main&urlpath=lab/tree/ocean-acidification/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/ocean-acidification&branch=main&urlpath=lab/tree/ocean-acidification/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Solution Preparation and Spectrophotometry",
@@ -1591,7 +1704,9 @@
     "id": "solution-preparation-spectrophotometry",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "solution-preparation-spectrophotometry",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/solution-preparation-spectrophotometry&branch=main&urlpath=lab/tree/solution-preparation-spectrophotometry/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/solution-preparation-spectrophotometry&branch=main&urlpath=lab/tree/solution-preparation-spectrophotometry/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Standard Addition Spectrophotometry",
@@ -1670,7 +1785,9 @@
     "id": "standard-addition-spectrophotometry",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "standard-addition-spectrophotometry",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/standard-addition-spectrophotometry&branch=main&urlpath=lab/tree/standard-addition-spectrophotometry/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/standard-addition-spectrophotometry&branch=main&urlpath=lab/tree/standard-addition-spectrophotometry/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   },
   {
     "title": "Statistical Testing, or How Heavy is that Penny?",
@@ -1754,6 +1871,8 @@
     "id": "statistical-testing-beta",
     "instructor_repo": "act-cms/instructor-materials",
     "instructor_repo_path": "statistical-testing-beta",
-    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/statistical-testing-beta&branch=main&urlpath=lab/tree/statistical-testing-beta/"
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/statistical-testing-beta&branch=main&urlpath=lab/tree/statistical-testing-beta/",
+    "learning_paths": [],
+    "prerequisite_lessons": []
   }
 ]
