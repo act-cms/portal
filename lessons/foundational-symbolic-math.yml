@@ -47,7 +47,7 @@ estimated_time: "3 hours" # Currently only for the symbolic-algebra lesson, will
 
 # Write a description of your module.
 # Single notebook, multi-part module, etc?
-format: "Multi-Part Module" # Currently only one lesson, but will grow with more additions
+format: "Multi-Part Module" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)

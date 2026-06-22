@@ -157,7 +157,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+
                         <div class="prereq-box programming">
                             <h4>Programming Prerequisites:</h4>
                             <ul>
@@ -166,6 +166,36 @@
                                 {% endfor %}
                             </ul>
                         </div>
+
+                        {% if learning_paths or prerequisite_lessons %}
+                        <div class="prereq-box sequence">
+                            <h4>Lesson Sequence:</h4>
+                            {% for membership in learning_paths %}
+                            <p class="path-step">
+                                This is <strong>Part {{ membership.step }} of {{ membership.total }}</strong> in the
+                                <strong><a href="../../index.html?path={{ membership.path_id | urlencode }}">{{ membership.path_title }}</a></strong> path.
+                            </p>
+                            {% if membership.prev or membership.next %}
+                            <div class="path-nav">
+                                {% if membership.prev %}
+                                <a class="path-prev" href="../{{ membership.prev.id }}/" title="{{ membership.prev.title }}">← Prev</a>
+                                {% endif %}
+                                {% if membership.next %}
+                                <a class="path-next" href="../{{ membership.next.id }}/" title="{{ membership.next.title }}">Next →</a>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            {% if prerequisite_lessons %}
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                {% for prereq in prerequisite_lessons %}
+                                <li><a href="../{{ prereq.id }}/">{{ prereq.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
 

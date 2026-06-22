@@ -40,7 +40,7 @@ estimated_time: "3 hours"
 
 # Write a description of your module.
 # Single notebook, multi-part module, etc?
-format: "Multi-part module"
+format: "Multi-Part Module" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
@@ -77,6 +77,10 @@ related_modules:
   - "lesson-01-introduction-to-programming-and-python"
   # Re-add when this lesson is submitted to the portal:
   # - "quantum-chemistry-simulations-in-psi4"
+
+# Lessons students should complete before this one (lesson IDs, build-validated)
+prerequisite_modules:
+  - "lesson-02-linear-variation-method"
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material

@@ -77,7 +77,7 @@ related_modules:
 estimated_time: "1 hour"
 
 # Choose ONE: "Single Notebook", "Multi-Part Materials Module", "Project-Based Module"
-format: "Single Notebook"
+format: "Single Notebook" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order

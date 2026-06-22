@@ -45,9 +45,10 @@ authors:
 # Estimated total time for all materials
 estimated_time: "2-3 hours"
 
-# Write a description of your module.
-# Single notebook, multi-part module, etc?
-format: "Multi-Part Materials Module"
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Multi-Part Module"
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
@@ -80,8 +81,20 @@ instructor_notes: |
 # Related lessons that complement this one
 related_modules:
   - "thermodynamics-fundamentals"
-  - "statistical-mechanics-intro" 
+  - "statistical-mechanics-intro"
   - "computational-chemistry-basics"
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+# prerequisite_modules:
+#   - "foundational-intro-python"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material

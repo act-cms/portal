@@ -89,23 +89,169 @@ def process_lesson_data(lesson_data, lesson_id):
     
     return lesson_data
 
-def build_lessons_json(lessons_dir, output_dir):
+def load_paths(project_root):
+    """Load learning paths from paths.yml if it exists; paths are optional"""
+    paths_file = Path(project_root) / 'paths.yml'
+    if not paths_file.exists():
+        return []
+    data = load_yaml_file(paths_file)
+    if data is None:
+        return []
+    return data.get('paths', [])
+
+def validate_paths(paths, lesson_ids):
+    """Validate learning path definitions against known lesson IDs"""
+    valid = True
+    seen_ids = set()
+
+    if not isinstance(paths, list):
+        print("Error: paths.yml 'paths' must be a list")
+        return False
+
+    for i, path in enumerate(paths):
+        label = f"paths.yml path {i+1}"
+        if not isinstance(path, dict):
+            print(f"Error: {label} must be a mapping")
+            valid = False
+            continue
+
+        for field in ['id', 'title', 'description']:
+            if not isinstance(path.get(field), str) or not path.get(field).strip():
+                print(f"Error: {label} is missing a non-empty '{field}'")
+                valid = False
+
+        path_id = path.get('id')
+        if path_id in seen_ids:
+            print(f"Error: paths.yml has duplicate path id '{path_id}'")
+            valid = False
+        seen_ids.add(path_id)
+
+        lessons = path.get('lessons')
+        if not isinstance(lessons, list) or len(lessons) == 0 or not all(isinstance(l, str) for l in lessons):
+            print(f"Error: {label} 'lessons' must be a non-empty list of lesson IDs")
+            valid = False
+            continue
+
+        for lesson_id in lessons:
+            if lesson_id not in lesson_ids:
+                print(f"Error: {label} ('{path_id}') references unknown lesson '{lesson_id}'")
+                valid = False
+        if len(set(lessons)) != len(lessons):
+            print(f"Error: {label} ('{path_id}') lists the same lesson more than once")
+            valid = False
+
+    return valid
+
+def validate_cross_references(lessons_by_id):
+    """Validate lesson-to-lesson references across all lessons.
+
+    prerequisite_modules errors are fatal; related_modules issues are warnings
+    only (existing data has known broken refs).
+    """
+    valid = True
+
+    for lesson_id, lesson_data in lessons_by_id.items():
+        prereqs = lesson_data.get('prerequisite_modules')
+        if prereqs is not None:
+            if not isinstance(prereqs, list) or not all(isinstance(p, str) for p in prereqs):
+                print(f"Error: {lesson_id} prerequisite_modules must be a list of lesson IDs")
+                valid = False
+                continue
+            for prereq in prereqs:
+                if prereq == lesson_id:
+                    print(f"Error: {lesson_id} lists itself in prerequisite_modules")
+                    valid = False
+                elif prereq not in lessons_by_id:
+                    print(f"Error: {lesson_id} prerequisite_modules references unknown lesson '{prereq}'")
+                    valid = False
+
+        for module in lesson_data.get('related_modules', []):
+            if isinstance(module, str) and module not in lessons_by_id:
+                print(f"WARNING: {lesson_id} related_modules references unknown lesson '{module}'")
+
+    if not valid:
+        return False
+
+    # Cycle detection over prerequisite_modules (iterative DFS)
+    state = {}  # lesson_id -> 'visiting' | 'done'
+    for start in lessons_by_id:
+        if state.get(start) == 'done':
+            continue
+        stack = [(start, iter(lessons_by_id[start].get('prerequisite_modules') or []))]
+        state[start] = 'visiting'
+        path = [start]
+        while stack:
+            node, neighbors = stack[-1]
+            advanced = False
+            for neighbor in neighbors:
+                if state.get(neighbor) == 'visiting':
+                    cycle_start = path.index(neighbor)
+                    cycle = ' -> '.join(path[cycle_start:] + [neighbor])
+                    print(f"Error: circular prerequisite_modules detected: {cycle}")
+                    return False
+                if state.get(neighbor) != 'done':
+                    state[neighbor] = 'visiting'
+                    path.append(neighbor)
+                    stack.append((neighbor, iter(lessons_by_id[neighbor].get('prerequisite_modules') or [])))
+                    advanced = True
+                    break
+            if not advanced:
+                state[node] = 'done'
+                path.pop()
+                stack.pop()
+
+    return True
+
+def annotate_lessons_with_paths(lessons, paths):
+    """Add learning_paths and prerequisite_lessons fields to each lesson"""
+    lessons_by_id = {lesson['id']: lesson for lesson in lessons}
+
+    for lesson in lessons:
+        lesson['learning_paths'] = []
+        lesson['prerequisite_lessons'] = [
+            {'id': prereq_id, 'title': lessons_by_id[prereq_id]['title']}
+            for prereq_id in lesson.get('prerequisite_modules') or []
+            if prereq_id in lessons_by_id
+        ]
+
+    for path in paths:
+        path_lesson_ids = path['lessons']
+        total = len(path_lesson_ids)
+        for step, lesson_id in enumerate(path_lesson_ids, start=1):
+            lesson = lessons_by_id.get(lesson_id)
+            if lesson is None:
+                continue
+            prev_id = path_lesson_ids[step - 2] if step > 1 else None
+            next_id = path_lesson_ids[step] if step < total else None
+            lesson['learning_paths'].append({
+                'path_id': path['id'],
+                'path_title': path['title'],
+                'step': step,
+                'total': total,
+                'prev': {'id': prev_id, 'title': lessons_by_id[prev_id]['title']} if prev_id else None,
+                'next': {'id': next_id, 'title': lessons_by_id[next_id]['title']} if next_id else None,
+            })
+
+def build_lessons_json(lessons_dir, output_dir, paths):
     """Build the lessons.json file from all YAML files"""
     lessons = []
-    
+
     # Process all YAML files in lessons directory
     for yaml_file in Path(lessons_dir).glob('*.yml'):
         print(f"Processing {yaml_file.name}...")
-        
+
         lesson_data = load_yaml_file(yaml_file)
         lesson_id = get_lesson_id_from_filename(yaml_file.name)
         processed_lesson = process_lesson_data(lesson_data, lesson_id)
-        
+
         if processed_lesson is not None:
             lessons.append(processed_lesson)
         else:
             print(f"Skipping {yaml_file.name} due to processing errors")
-    
+
+    # Add learning path memberships and resolved prerequisites
+    annotate_lessons_with_paths(lessons, paths)
+
     # Sort lessons by title
     lessons.sort(key=lambda x: x['title'])
     
@@ -204,7 +350,8 @@ def validate_lesson_data(lesson_data, filename):
         'student_level': str,
         'students_piloted': (int, float),
         'instructor_notes': str,
-        'related_modules': list
+        'related_modules': list,
+        'prerequisite_modules': list
     }
     
     missing_fields = []
@@ -308,19 +455,35 @@ def main():
     
     # Validate all lesson files first
     valid_lessons = True
+    lessons_by_id = {}
     for yaml_file in yaml_files:
         lesson_data = load_yaml_file(yaml_file)
         if not validate_lesson_data(lesson_data, yaml_file.name):
             valid_lessons = False
-    
+        else:
+            lessons_by_id[yaml_file.stem] = lesson_data
+
     if not valid_lessons:
         print("Error: Some lesson files have validation errors")
         print("Please fix the errors above and run the build again.")
         return 1
-    
+
+    # Load and validate learning paths (optional paths.yml)
+    paths = load_paths(project_root)
+    if not validate_paths(paths, set(lessons_by_id)):
+        print("Error: paths.yml has validation errors")
+        print("Please fix the errors above and run the build again.")
+        return 1
+
+    # Validate lesson-to-lesson references (prerequisite_modules, related_modules)
+    if not validate_cross_references(lessons_by_id):
+        print("Error: lesson cross-references have validation errors")
+        print("Please fix the errors above and run the build again.")
+        return 1
+
     try:
         # Build lessons.json
-        lessons = build_lessons_json(lessons_dir, output_dir)
+        lessons = build_lessons_json(lessons_dir, output_dir, paths)
         
         if len(lessons) == 0:
             print("Error: No valid lessons found after processing")

@@ -42,7 +42,7 @@ estimated_time: "2-3 hours for each notebook"
 
 # Write a description of your module.
 # Single notebook, multi-part module, etc?
-format: "Multi-Part Materials Module"
+format: "Multi-Part Module" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
