@@ -1012,7 +1012,7 @@
       "ChemCompute",
       "Google Colab"
     ],
-    "recommended_platform": "Local installation, CoCalc, ChemCompute",
+    "recommended_platform": "ChemCompute",
     "tags": [
       "python",
       "jupyter",
