@@ -1,0 +1,19 @@
+# Deliberately broken lesson to test the PR-check failure path. Remove before merge.
+title: "Bad Sample Lesson"
+description: "Intentionally malformed to exercise CI validation."
+programming_skill: "None"
+primary_course: "Foundational Module"
+authors: "Dr. One Person"            # BUG: should be a YAML list, not a string
+format: "Single Notebook"
+scientific_objectives: "Learn something"   # BUG: should be a list
+cyberinfrastructure_objectives:
+  - "Run a notebook"
+platforms: "Google Colab"            # BUG: should be a list (this one crashes the build if unchecked)
+recommended_platform: "Google Colab, ChemCompute"  # BUG: must be exactly one matching platform
+public_repo_url: "https://github.com/act-cms/your-lesson-repo"
+materials:
+  - title: "Part 1"
+    description: "A material."
+    type: "notebook"
+    duration: "1 hour"
+    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01.ipynb"
