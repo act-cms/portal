@@ -157,13 +157,19 @@ programming_prerequisites:
   # OR: eg "Basic Python syntax (variables, loops, functions)"
 
 # PLATFORM SUPPORT (REQUIRED)
-# List platforms where your materials can be used.
+# List platforms where your materials can be used. Each value must be one of
+# the supported platforms (spelling and capitalization matter):
+#   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
+# Any other value fails the build (no rendering template exists for it).
 platforms:
   - "Google Colab"
   - "Local Installation"
   - "ChemCompute"
 
 # Which platform do you recommend for most users?
+# Pick exactly ONE platform name, and it must match an entry in the `platforms`
+# list above EXACTLY (same spelling and capitalization). Do NOT combine several,
+# e.g. "Google Colab, ChemCompute" is invalid and fails the build.
 recommended_platform: "Google Colab"
 
 # METADATA (REQUIRED)

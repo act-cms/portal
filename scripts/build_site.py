@@ -287,7 +287,17 @@ def build_lesson_pages(lessons, templates_dir, output_dir):
         
         # Render template
         html_content = template.render(context)
-        
+
+        # Guard against unrendered Jinja making it into the published page
+        for marker in ('{{', '{%', '{#'):
+            if marker in html_content:
+                idx = html_content.index(marker)
+                snippet = html_content[idx:idx + 80].replace('\n', ' ')
+                raise ValueError(
+                    f"Lesson '{lesson['id']}' produced unrendered template syntax "
+                    f"'{marker}' in its page: ...{snippet}..."
+                )
+
         # Write lesson page
         lesson_file = lesson_dir / 'index.html'
         with open(lesson_file, 'w', encoding='utf-8') as f:
@@ -336,15 +346,20 @@ def copy_static_files(source_dir, output_dir):
         shutil.copytree(static_source, static_dest)
         print(f"Copied static files from {static_source} to {static_dest}")
 
-def validate_lesson_data(lesson_data, filename):
+def get_platform_key(platform):
+    """Compute the platform partial key (lowercase, spaces -> underscores)"""
+    return platform.lower().replace(' ', '_')
+
+
+def validate_lesson_data(lesson_data, filename, templates_dir=None):
     """Validate lesson data has required fields"""
     required_fields = [
         'title', 'description', 'programming_skill', 'primary_course',
-        'authors', 'format', 'scientific_objectives', 
+        'authors', 'format', 'scientific_objectives',
         'cyberinfrastructure_objectives', 'platforms', 'materials',
         'public_repo_url'
     ]
-    
+
     # Optional instructor fields that should be validated if present
     optional_instructor_fields = {
         'student_level': str,
@@ -353,30 +368,59 @@ def validate_lesson_data(lesson_data, filename):
         'related_modules': list,
         'prerequisite_modules': list
     }
-    
+
     missing_fields = []
     for field in required_fields:
         if field not in lesson_data:
             missing_fields.append(field)
-    
+
     if missing_fields:
         print(f"Error: {filename} is missing required fields: {missing_fields}")
         return False
-    
-    # Validate optional instructor fields if present
+
+    # Validate optional instructor fields if present (None == omitted)
     for field, expected_type in optional_instructor_fields.items():
-        if field in lesson_data:
+        if field in lesson_data and lesson_data[field] is not None:
             value = lesson_data[field]
             if not isinstance(value, expected_type):
                 print(f"Error: {filename} field '{field}' should be {expected_type.__name__ if hasattr(expected_type, '__name__') else expected_type}")
                 return False
-    
+
+    # Fields the lesson template iterates over: a string where a list is
+    # expected silently renders garbage (or crashes the build, in the case of
+    # `platforms`). Require these to be non-empty lists of strings.
+    required_list_fields = [
+        'authors', 'scientific_objectives', 'cyberinfrastructure_objectives',
+        'platforms'
+    ]
+    for field in required_list_fields:
+        value = lesson_data[field]
+        if not isinstance(value, list) or len(value) == 0:
+            print(f"Error: {filename} field '{field}' must be a non-empty list "
+                  f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
+            return False
+        if not all(isinstance(item, str) for item in value):
+            print(f"Error: {filename} field '{field}' must be a list of strings")
+            return False
+
+    # Optional list-of-strings fields: only checked when present and non-null.
+    optional_list_fields = [
+        'also_for', 'tags', 'scientific_prerequisites', 'programming_prerequisites'
+    ]
+    for field in optional_list_fields:
+        if field in lesson_data and lesson_data[field] is not None:
+            value = lesson_data[field]
+            if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
+                print(f"Error: {filename} field '{field}' must be a list of strings "
+                      f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
+                return False
+
     # Validate related_modules if present
-    if 'related_modules' in lesson_data:
+    if 'related_modules' in lesson_data and lesson_data['related_modules'] is not None:
         if not all(isinstance(module, str) for module in lesson_data['related_modules']):
             print(f"Error: {filename} related_modules should be a list of strings")
             return False
-    
+
     # Check for legacy formats and reject them
     if 'notebook' in lesson_data or 'notebooks' in lesson_data:
         print(f"Error: {filename} uses legacy notebook/notebooks format. Please convert to materials format with explicit URLs.")
@@ -392,17 +436,21 @@ def validate_lesson_data(lesson_data, filename):
         return False
     
     for i, material in enumerate(lesson_data['materials']):
+        if not isinstance(material, dict):
+            print(f"Error: {filename} material {i+1} must be a mapping with title/description/type/duration")
+            return False
+
         required_material_fields = ['title', 'description', 'type', 'duration']
         for field in required_material_fields:
             if field not in material:
                 print(f"Error: {filename} material {i+1} is missing required field: {field}")
                 return False
-        
+
         # Require at least one URL (github_url or colab_url)
         if 'github_url' not in material and 'colab_url' not in material:
             print(f"Error: {filename} material {i+1} must have either github_url or colab_url")
             return False
-        
+
         # Validate URL format if present
         for url_field in ['github_url', 'colab_url']:
             if url_field in material:
@@ -410,14 +458,37 @@ def validate_lesson_data(lesson_data, filename):
                 if not isinstance(url, str) or not url.startswith('http'):
                     print(f"Error: {filename} material {i+1} {url_field} must be a valid HTTP/HTTPS URL")
                     return False
-    
-    # Validate authors field
-    if 'authors' in lesson_data:
-        authors = lesson_data['authors']
-        if not isinstance(authors, (list, str)):
-            print(f"Error: {filename} authors field must be a list or string")
+
+        # objectives is iterated by the template; a string would render garbage
+        if 'objectives' in material and material['objectives'] is not None:
+            objectives = material['objectives']
+            if not isinstance(objectives, list) or not all(isinstance(o, str) for o in objectives):
+                print(f"Error: {filename} material {i+1} 'objectives' must be a list of strings "
+                      f"(got {type(objectives).__name__})")
+                return False
+
+    # recommended_platform must be exactly one of the listed platforms
+    if 'recommended_platform' in lesson_data and lesson_data['recommended_platform'] is not None:
+        recommended = lesson_data['recommended_platform']
+        if not isinstance(recommended, str):
+            print(f"Error: {filename} recommended_platform must be a single platform name (string)")
             return False
-    
+        if recommended not in lesson_data['platforms']:
+            print(f"Error: {filename} recommended_platform '{recommended}' must exactly match one entry "
+                  f"in platforms {lesson_data['platforms']} (pick exactly one)")
+            return False
+
+    # Every platform must have a rendering partial, else the build crashes on it
+    if templates_dir is not None:
+        platforms_dir = Path(templates_dir) / 'platforms'
+        for platform in lesson_data['platforms']:
+            partial = platforms_dir / f"{get_platform_key(platform)}.html"
+            if not partial.exists():
+                supported = sorted(p.stem for p in platforms_dir.glob('*.html'))
+                print(f"Error: {filename} platform '{platform}' is not supported "
+                      f"(no template {partial.name}). Supported platform keys: {supported}")
+                return False
+
     return True
 
 def main():
@@ -458,7 +529,11 @@ def main():
     lessons_by_id = {}
     for yaml_file in yaml_files:
         lesson_data = load_yaml_file(yaml_file)
-        if not validate_lesson_data(lesson_data, yaml_file.name):
+        if not isinstance(lesson_data, dict):
+            print(f"Error: {yaml_file.name} did not parse to a mapping of fields")
+            valid_lessons = False
+            continue
+        if not validate_lesson_data(lesson_data, yaml_file.name, templates_dir):
             valid_lessons = False
         else:
             lessons_by_id[yaml_file.stem] = lesson_data

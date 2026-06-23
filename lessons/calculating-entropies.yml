@@ -144,7 +144,7 @@ platforms:
   - "Google Colab"
 
 # Which platform do you recommend for most users?
-recommended_platform: "Local installation, CoCalc, ChemCompute"
+recommended_platform: "ChemCompute"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
