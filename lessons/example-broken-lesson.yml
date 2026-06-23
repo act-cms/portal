@@ -4,13 +4,10 @@
 # This file intentionally contains SEVERAL different mistakes so students can
 # see how the portal's CI check reacts to a bad submission.
 #
-# IMPORTANT: the CI reports ONE error per file per run (it stops at the first
-# problem it finds). So the workflow is iterative and realistic:
-#   1. Open the PR -> CI fails and comments with the first error.
-#   2. Fix that one line, push again -> CI re-runs and shows the NEXT error.
-#   3. Repeat until the check passes.
+# The CI lists ALL independent errors it can find in one comment, so you can
+# fix several at once and push again until the check passes.
 #
-# The planted errors below, in the order the CI will surface them:
+# The planted errors:
 #   (A) Missing required field   -> `description` is commented out.
 #   (B) authors as a string      -> must be a YAML list ("- item").
 #   (C) platforms as a string    -> must be a YAML list (this one would crash
@@ -19,6 +16,10 @@
 #   (E) material missing a URL   -> each material needs github_url or colab_url.
 #   (F) recommended_platform     -> must be EXACTLY ONE name that matches an
 #                                   entry in `platforms` (not a comma list).
+#
+# Note: error (F) only appears AFTER you fix `platforms` (C). While `platforms`
+# is malformed the CI can't meaningfully check recommended_platform against it,
+# so it waits rather than printing a confusing cascading error.
 #
 # Compare this against template.yaml (the correct reference) to see each fix.
 # =============================================================================
