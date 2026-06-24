@@ -90,8 +90,8 @@ related_modules:
 # strictly build-validated: unknown IDs, self-references, or circular
 # prerequisite chains FAIL the build. Machine-readable metadata (searchable
 # on the portal); ordered sequences are displayed via paths.yml instead.
-# prerequisite_modules:
-#   - "foundational-intro-python"
+prerequisite_modules:
+  - "foundational-intro-python"
 
 # NOTE: To add this lesson to an ordered learning path (or create a new one),
 # edit paths.yml at the repo root — step order is defined there, not here.
