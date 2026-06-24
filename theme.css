@@ -72,6 +72,12 @@ body {
     padding: 0 24px;
 }
 
+/* Wider container for the home page so the lessons grid can show 3 columns
+   on laptops while staying narrow on the lesson reading pages. */
+.container--wide {
+    max-width: 1200px;
+}
+
 .back-link {
     padding-bottom: 1.5rem;
 }
@@ -726,7 +732,7 @@ a:hover {
 /* Lesson Cards */
 .lessons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
     margin-bottom: 48px;
 }
