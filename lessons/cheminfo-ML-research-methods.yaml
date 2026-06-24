@@ -1,0 +1,159 @@
+# lessons/your-lesson-name.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Computational Research Methods: Cheminformatics to Machine Learning"
+
+# Brief description for search results (1-2 sentences)
+description: "Materials for Computational Research Methods course.  Begins with fundamental python and covers cheminformatics, and machine learning"
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  Materials for Computational Reserach Methods at Cal Poly San Luis Obispo.
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "None"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Research Methods in Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+  - "Physical Chemistry"
+  - "Cheminformatics"
+  - "Machine Learning"
+  - "Data Analysis and Visualization"
+
+# List all authors
+authors: 
+  - "Prof. Ashley Ringer McDonald"
+  - "Prof. Bonnie Hall"
+  - "Dr. Jessica Nash"
+  - "Dr. Sina Mostafanejad"
+
+# Estimated total time for all materials
+estimated_time: "21 hours"
+
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Multi-Part Module"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "armcdona@calpoly.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - First Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 85  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Intended to teach students computational skills needed for research including 
+  python scripting, graphing and data analysis, fundamentals of cheminformatics, 
+  and machine learning.
+
+# Related lessons that complement this one
+related_modules:
+  - "molecular-representations"
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+# prerequisite_modules:
+#   - "foundational-intro-python"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/cheminfo-ML-research-methods"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Part 1: Introduction"
+    description: "Brief description of what this notebook covers"
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "1 hour"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/cheminfo-ML-research-methods/blob/main/01_python-basics/student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Specific skill students will develop"
+      - "Another concrete learning outcome"
+      - "Third measurable objective"
+  
+  # Add more materials as needed
+  - title: "Part 2: Advanced Topics"
+    description: "Description of second notebook"
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/02-advanced.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
+    objectives:
+      - "Advanced skill development"
+      - "Application of concepts from Part 1"
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Apply programming to solve chemical problems"
+  - "Understand molecular property X through computational analysis"
+  - "Interpret results of computational molecular science calculations"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Write and execute Python code in Jupyter notebooks"
+  - "Use library X to perform scientific calculations"
+  - "Create visualizations of molecular data"
+  - "Debug common programming errors"
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+  - "Basic understanding of molecular structure"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "No prior programming experience required"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used.
+platforms:
+  - "ChemCompute"
+
+# Which platform do you recommend for most users?
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "molecular-dynamics"
+  - "visualization"
+  - "quantum-chemistry"  # Use appropriate scientific area tags
