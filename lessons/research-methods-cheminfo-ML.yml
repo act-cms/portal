@@ -6,14 +6,19 @@
 
 # BASIC METADATA (REQUIRED)
 # Use a clear, descriptive title that includes the main topic
-title: "Computational Research Methods: Cheminformatics to Machine Learning"
+title: "Computational Research Methods"
 
 # Brief description for search results (1-2 sentences)
-description: "Materials for Computational Research Methods course.  Begins with fundamental python and covers cheminformatics, and machine learning"
+description: "Brief description of what students will learn in this lesson."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  Materials for Computational Reserach Methods at Cal Poly San Luis Obispo.
+  Provide a more detailed description of your lesson here.
+  Explain the context, what students will accomplish, and how this
+  fits into broader molecular science education.
+  
+  You can use multiple paragraphs to fully describe the lesson scope
+  and learning experience.
 
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
@@ -25,24 +30,20 @@ programming_skill: "None"
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
-primary_course: "Research Methods in Chemistry"
+primary_course: "Foundational Module"
 
 # List other courses where this lesson could be used (optional)
 also_for:
   - "Physical Chemistry"
-  - "Cheminformatics"
-  - "Machine Learning"
-  - "Data Analysis and Visualization"
+  - "Materials Science"
 
 # List all authors
 authors: 
-  - "Prof. Ashley Ringer McDonald"
-  - "Prof. Bonnie Hall"
-  - "Dr. Jessica Nash"
-  - "Dr. Sina Mostafanejad"
+  - "Dr. Your Name"
+  - "Prof. Collaborator Name"
 
 # Estimated total time for all materials
-estimated_time: "21 hours"
+estimated_time: "2-3 hours"
 
 # Format of the module. Must be EXACTLY one of these two values (case- and
 # spelling-sensitive) so the home-page format filter groups lessons correctly:
@@ -51,24 +52,37 @@ format: "Multi-Part Module"
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
-instructor_email: "armcdona@calpoly.edu"
+instructor_email: "instructor-access@university.edu"
 # Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
 # where {lesson-filename} matches this YAML file's name
 
 # INSTRUCTOR DETAILS (OPTIONAL)
 # What level of students was this piloted with?
-student_level: "Undergraduate - First Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+student_level: "Undergraduate - Second Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
 # How many students has this been tested with?
-students_piloted: 85  # Number of students
+students_piloted: 25  # Number of students
 # Free-form notes for instructors
 instructor_notes: |
-  Intended to teach students computational skills needed for research including 
-  python scripting, graphing and data analysis, fundamentals of cheminformatics, 
-  and machine learning.
+  Additional context for instructors using this lesson:
+  
+  - This lesson works well when paired with a traditional lecture on molecular dynamics
+  - Students often struggle with the concept of periodic boundary conditions in Part 2
+  - The visualization exercises are very engaging - allow extra time for exploration
+  - Consider assigning the dataset analysis as homework rather than in-class work
+  
+  Timing notes:
+  - Part 1 typically takes students 45-60 minutes
+  - Part 2 can be rushed in 90 minutes but is better with 2 hours
+  
+  Common student questions:
+  - "Why do we need so many time steps?" - good opportunity to discuss numerical integration
+  - "What happens if we change the temperature?" - this connects well to thermodynamics concepts
 
 # Related lessons that complement this one
 related_modules:
-  - "molecular-representations"
+  - "thermodynamics-fundamentals"
+  - "statistical-mechanics-intro"
+  - "computational-chemistry-basics"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -84,7 +98,7 @@ related_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/cheminfo-ML-research-methods"
+public_repo_url: "https://github.com/act-cms/your-lesson-repo"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
@@ -96,9 +110,9 @@ materials:
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/cheminfo-ML-research-methods/blob/main/01_python-basics/student.ipynb"
+    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    
+    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -145,10 +159,12 @@ programming_prerequisites:
 # PLATFORM SUPPORT (REQUIRED)
 # List platforms where your materials can be used.
 platforms:
+  - "Google Colab"
+  - "Local Installation"
   - "ChemCompute"
 
 # Which platform do you recommend for most users?
-recommended_platform: "ChemCompute"
+recommended_platform: "Google Colab"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
