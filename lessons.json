@@ -480,6 +480,187 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Development of antibiotic resistance",
+    "description": "Students will model the appearence of both spontaneous and acquired antibiotic resistance mutations",
+    "expanded_description": "This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.\n\nAcross seven Jupyter notebooks, students progressively develop both biological understanding and computational skills. Early modules introduce probability distributions commonly used in biological modeling, including binomial and Poisson distributions, and demonstrate how stochastic processes influence experimental outcomes. Students then construct simulations of bacterial population growth, model the emergence of resistant mutants, and explore the consequences of mutation timing on population structure. Subsequent notebooks guide students through the development and comparison of competing evolutionary models representing spontaneous mutation and acquired resistance hypotheses.\n\nAs the lesson progresses, students move beyond simulation to data analysis and scientific inference. They estimate mutation rates from simulated fluctuation-test data, evaluate uncertainty in parameter estimates, and compare model predictions to experimental observations. In the culminating activities, students explicitly examine the relationship between mutation timing and the distribution of resistant cells across cultures, using statistical analyses and visualizations to determine which evolutionary model best explains the observed data.\n\nThe lesson integrates core concepts from genetics, microbiology, evolution, statistics, and bioinformatics while providing students with authentic experience using Python as a scientific tool. Students gain practical skills in data visualization, simulation design, parameter estimation, statistical reasoning, and hypothesis testing. By reconstructing the logic behind a landmark experiment in molecular biology, students develop a deeper understanding of how quantitative models can be used to generate, test, and refine scientific hypotheses.\n\nThis lesson fits within broader molecular science education by demonstrating how computational approaches can be used to address fundamental questions about mutation, inheritance, and evolution. The activities support the development of quantitative and computational competencies that are increasingly essential in modern biological research, while reinforcing key concepts in microbial genetics, evolutionary biology, and the molecular basis of antibiotic resistance.\n",
+    "programming_skill": "Beginner",
+    "primary_course": "Genetics",
+    "also_for": [
+      "Bioinformatics",
+      "Microbiology",
+      "Evolution",
+      "Microbial Genetics",
+      "Molecular Genetics",
+      "Computational Biology"
+    ],
+    "authors": [
+      "Prof. Nik Tsotakos"
+    ],
+    "estimated_time": "3-4 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "nxt12@psu.edu",
+    "student_level": "Undergraduate - Fourth Year",
+    "students_piloted": 25,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- Students should have Introductory knowledge of genetics, including mutation, selection, and inheritance\n- Students often struggle with the differential equations presented, but the modules do not need deep understanding of the calculus concepts to complete the lesson.\n- The modules work better if run as in-class active-learning activities, interspersed with lecture-style explanations of some concepts.\n- Consider assigning the embedded questions and coding exercises at the end of the modules as homework.\n",
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/development-of-antibiotic-resistance",
+    "materials": [
+      {
+        "title": "Lesson 01: Introduction to distributions",
+        "description": "Introduction to spontaneous and acquired mutations and statistical distributions",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/01_Introduction-to-distributions/student.ipynb",
+        "objectives": [
+          "Students will be able to generate and visualize random samples from uniform, normal, Poisson, and binomial distributions using Python and NumPy",
+          "Students will be able to compare the properties of common probability distributions and explain how they model different biological processes, including mutation occurrence and cell population behavior",
+          "Students will be able to interpret histograms and cumulative distribution functions (CDFs) to evaluate how sample size and distribution parameters influence observed experimental outcomes"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/01_Introduction-to-distributions/student.ipynb"
+      },
+      {
+        "title": "Lesson 02: Simulation of Luria-Delbrück experiment",
+        "description": "The purpose of this lesson is to introduce students to the results of the original Luria-Delbrück experiment and have them perform a simulation of the growth of one generation of bacteria.",
+        "type": "notebook",
+        "duration": "0.5 hours",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/02_Simulation-of-Luria_Delbruck-experiment/student.ipynb",
+        "objectives": [
+          "Students will be able to represent bacterial populations computationally and simulate population growth through successive rounds of cell division",
+          "Students will be able to model mutation events within a growing population using Python data structures and random sampling techniques",
+          "Students will be able to explain how stochastic mutation events can influence the composition of bacterial populations and contribute to variability among replicate experiments"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/02_Simulation-of-Luria_Delbruck-experiment/student.ipynb"
+      },
+      {
+        "title": "Lesson 03: Selection-dependent mutation model",
+        "description": "The purpose of this lesson is to show the students what a model of mutations arising following a certain stimulus (e.g., presence of antibiotic) would look like.",
+        "type": "notebook",
+        "duration": "0.5 hours",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/03_Selection-dependent-mutation-model/student.ipynb",
+        "objectives": [
+          "Students will be able to develop a quantitative model predicting mutant frequencies if resistance mutations arise only after exposure to selective pressure",
+          "Students will be able to use Poisson-based statistical methods to estimate mutation rates from experimental observations",
+          "Critically assess whether observed experimental data are consistent with a selection-dependent model of mutation"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/03_Selection-dependent-mutation-model/student.ipynb"
+      },
+      {
+        "title": "Lesson 03: Weitz_pois",
+        "description": "A mock dataset that follows the Poisson distribution",
+        "type": "dataset",
+        "duration": "N/A",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/03_Selection-dependent-mutation-model/Weitz_pois.csv"
+      },
+      {
+        "title": "Lesson 04: Modeling the growth of mutants",
+        "description": "The purpose of this lesson is to model the growth of mutant bacteria with both the Poisson and the binomial distributions.",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/04_Modeling-the-growth-of-mutants/student.ipynb",
+        "objectives": [
+          "Students will be able to develop computational simulations that model the emergence and growth of resistant bacterial mutants across multiple replicate cultures.",
+          "Students will be able to compare observed mutant distributions to Poisson expectations and explain why stochastic mutation timing can generate highly variable outcomes among cultures.",
+          "Students will be able to evaluate the origins of “jackpot” cultures by relating the timing of mutation events to the subsequent expansion of resistant lineages"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/04_Modeling-the-growth-of-mutants/student.ipynb"
+      },
+      {
+        "title": "Lesson 05: Spontaneous mutations",
+        "description": "The purpose of this lesson is to provide the mathematical foundations needed to estimate the timing of mutation appearance.",
+        "type": "notebook",
+        "duration": "0.25 hours",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/05_Spontanteous_mutations/student.ipynb",
+        "objectives": [
+          "Students will be able to distinguish between Darwinian (spontaneous) and Lamarckian (selection-dependent) explanations for the origin of antibiotic resistance",
+          "Students will be able to explain the biological assumptions underlying the spontaneous-mutation hypothesis and how it differs from the selection-dependent model",
+          "Students will be able to construct and interpret mathematical models describing the simultaneous growth of susceptible and resistant bacterial populations",
+          "Students will be able to predict how the timing of spontaneous mutations influences the final number of resistant cells observed after selection"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/05_Spontanteous_mutations/student.ipynb"
+      },
+      {
+        "title": "Lesson 06: From observations to estimates",
+        "description": "The purpose of this lesson is to use computational simulations to estimate mutation rates, evaluate uncertainty in those estimates, and determine whether observed patterns of antibiotic resistance are more consistent with spontaneous mutation or acquired resistance models.",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/06_From_observations_to_estimates/student.ipynb",
+        "objectives": [
+          "Students will be able to infer mutation rates from fluctuation-test data without prior knowledge of the underlying parameter values",
+          "Students will be able to implement a grid-search approach to identify parameter values that minimize differences between observed and simulated datasets",
+          "Students will be able to construct approximate confidence intervals and assess the strength of evidence supporting alternative evolutionary models"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/06_From_observations_to_estimates/student.ipynb"
+      },
+      {
+        "title": "Lesson 07: Timing of mutation appearance",
+        "description": "The purpose of this lesson is to investigate how the timing of mutation events influences the distribution of resistant bacteria and to use simulation results to distinguish between spontaneous mutation and acquired resistance hypotheses.",
+        "type": "notebook",
+        "duration": "1 hour",
+        "github_url": "https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/07_Timing_of_mutation_appearance/student.ipynb",
+        "objectives": [
+          "Students will be able to simulate and compare spontaneous-mutation and acquired-resistance models of antibiotic resistance using computational methods",
+          "Students will be able to analyze how the timing of mutation events influences the number and distribution of resistant cells observed after selection",
+          "Students will be able to evaluate experimental evidence by comparing the means, variances, and distributions generated by competing evolutionary models to determine which best explains the Luria–Delbrück results"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/07_Timing_of_mutation_appearance/student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Explain how spontaneous mutations generate genetic variation within bacterial populations prior to exposure to selective agents",
+      "Describe how natural selection acts on pre-existing genetic variants to produce antibiotic-resistant populations",
+      "Compare spontaneous-mutation and acquired-resistance hypotheses and evaluate the experimental evidence supporting each model",
+      "Interpret the relationship between mutation timing, clonal expansion, and the distribution of resistant mutants observed in fluctuation tests",
+      "Estimate mutation rates and assess how stochastic processes influence evolutionary outcomes in microbial populations",
+      "Explain the significance of the Luria–Delbrück experiment in establishing the modern understanding of mutation and evolution"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python to simulate stochastic biological processes and analyze experimental data",
+      "Generate random samples from probability distributions and apply them to model biological phenomena",
+      "Develop computational simulations of bacterial growth, mutation, and selection",
+      "Analyze simulation outputs using descriptive statistics and graphical methods",
+      "Implement simulation-based approaches to estimate biological parameters and evaluate uncertainty",
+      "Use computational models to compare competing scientific hypotheses and interpret model predictions in a biological context"
+    ],
+    "scientific_prerequisites": [
+      "Basic understanding of mutations",
+      "Basic knowledge of bacterial cell division and population growth",
+      "Understanding of natural selection as differential survival and reproduction"
+    ],
+    "programming_prerequisites": [
+      "No prior Python experience required"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "genetics",
+      "mutation",
+      "natural selection",
+      "antibiotic resistance",
+      "probability distributions",
+      "statistical inference",
+      "computational modeling",
+      "bioinformatics"
+    ],
+    "id": "development-of-antibiotic-resistance",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "development-of-antibiotic-resistance",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&branch=main&urlpath=lab/tree/development-of-antibiotic-resistance/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Diatomic molecule IR spectrum analysis",
     "description": "In this lesson, students write Python code to determine the spectroscopic constants and structural parameters (force constant, bond dissociation energy, and equilibrium bond length) of a diatomic molecule from its IR spectrum.",
     "expanded_description": "This is the last lesson of the four-lesson sequence. Using the skills developed in the first lesson (introduction-to-programming-and-python), students write Python code to obtain the spectroscopic constants of a diatomic molecule from its FTIR spectrum. Students first write functions to 1) read in the data, 2) fit a polynomial to the experimental spectrum, 3) relate the spectroscopic constants to the fitting parameters, 4) calculate the force constant, equilibrium bond length, and the bond dissociation energy, and 5) determine the mass-dependence of various spectroscopic constants upon isotopic substitution. Students then use these functions to analyze the funcdamental and overtone spectrum of HCl-35 and DCl-35 (if any of these spectra are missing, experimental spectra are included in the instructor materials). If desired, this project can be combined with the third lesson in the sequence where students learned how to perform quantum chemistry calculations. In the assignment for lesson three, students calculate the potential energy curve of HCl using various levels of theory and basis sets. Using these potential energy curves, they can apply the sinc-DVR method (Jupyter notebook with a brief description of the theory and user's manual included) to model the IR spectra of HCl-35 and DCl-35. Once the theoretical line positions are computed, students can use their Jupyter notebook to compute theoretical values for the spectroscopic constants and structural parameters.\n",

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>Development of antibiotic resistance - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Lesson 01: Introduction to distributions</a>
+                        
+                        <a href="#material-2" class="toc-sublink">Lesson 02: Simulation of Luria-Delbrück experiment</a>
+                        
+                        <a href="#material-3" class="toc-sublink">Lesson 03: Selection-dependent mutation model</a>
+                        
+                        <a href="#material-4" class="toc-sublink">Lesson 03: Weitz_pois</a>
+                        
+                        <a href="#material-5" class="toc-sublink">Lesson 04: Modeling the growth of mutants</a>
+                        
+                        <a href="#material-6" class="toc-sublink">Lesson 05: Spontaneous mutations</a>
+                        
+                        <a href="#material-7" class="toc-sublink">Lesson 06: From observations to estimates</a>
+                        
+                        <a href="#material-8" class="toc-sublink">Lesson 07: Timing of mutation appearance</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Development of antibiotic resistance</h1>
+                    <p class="lesson-summary">Students will model the appearence of both spontaneous and acquired antibiotic resistance mutations</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">Beginner</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Genetics</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Bioinformatics, Microbiology, Evolution, Microbial Genetics, Molecular Genetics, Computational Biology</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Prof. Nik Tsotakos</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">3-4 hours</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Undergraduate - Fourth Year</span>
+                        </div>
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">25</span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">genetics</span>
+                        
+                        <span class="tag">mutation</span>
+                        
+                        <span class="tag">natural selection</span>
+                        
+                        <span class="tag">antibiotic resistance</span>
+                        
+                        <span class="tag">probability distributions</span>
+                        
+                        <span class="tag">statistical inference</span>
+                        
+                        <span class="tag">computational modeling</span>
+                        
+                        <span class="tag">bioinformatics</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.</p>
+                            
+                        
+                            
+                            <p>Across seven Jupyter notebooks, students progressively develop both biological understanding and computational skills. Early modules introduce probability distributions commonly used in biological modeling, including binomial and Poisson distributions, and demonstrate how stochastic processes influence experimental outcomes. Students then construct simulations of bacterial population growth, model the emergence of resistant mutants, and explore the consequences of mutation timing on population structure. Subsequent notebooks guide students through the development and comparison of competing evolutionary models representing spontaneous mutation and acquired resistance hypotheses.</p>
+                            
+                        
+                            
+                            <p>As the lesson progresses, students move beyond simulation to data analysis and scientific inference. They estimate mutation rates from simulated fluctuation-test data, evaluate uncertainty in parameter estimates, and compare model predictions to experimental observations. In the culminating activities, students explicitly examine the relationship between mutation timing and the distribution of resistant cells across cultures, using statistical analyses and visualizations to determine which evolutionary model best explains the observed data.</p>
+                            
+                        
+                            
+                            <p>The lesson integrates core concepts from genetics, microbiology, evolution, statistics, and bioinformatics while providing students with authentic experience using Python as a scientific tool. Students gain practical skills in data visualization, simulation design, parameter estimation, statistical reasoning, and hypothesis testing. By reconstructing the logic behind a landmark experiment in molecular biology, students develop a deeper understanding of how quantitative models can be used to generate, test, and refine scientific hypotheses.</p>
+                            
+                        
+                            
+                            <p>This lesson fits within broader molecular science education by demonstrating how computational approaches can be used to address fundamental questions about mutation, inheritance, and evolution. The activities support the development of quantitative and computational competencies that are increasingly essential in modern biological research, while reinforcing key concepts in microbial genetics, evolutionary biology, and the molecular basis of antibiotic resistance.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Explain how spontaneous mutations generate genetic variation within bacterial populations prior to exposure to selective agents</li>
+                            
+                            <li>Describe how natural selection acts on pre-existing genetic variants to produce antibiotic-resistant populations</li>
+                            
+                            <li>Compare spontaneous-mutation and acquired-resistance hypotheses and evaluate the experimental evidence supporting each model</li>
+                            
+                            <li>Interpret the relationship between mutation timing, clonal expansion, and the distribution of resistant mutants observed in fluctuation tests</li>
+                            
+                            <li>Estimate mutation rates and assess how stochastic processes influence evolutionary outcomes in microbial populations</li>
+                            
+                            <li>Explain the significance of the Luria–Delbrück experiment in establishing the modern understanding of mutation and evolution</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Use Python to simulate stochastic biological processes and analyze experimental data</li>
+                            
+                            <li>Generate random samples from probability distributions and apply them to model biological phenomena</li>
+                            
+                            <li>Develop computational simulations of bacterial growth, mutation, and selection</li>
+                            
+                            <li>Analyze simulation outputs using descriptive statistics and graphical methods</li>
+                            
+                            <li>Implement simulation-based approaches to estimate biological parameters and evaluate uncertainty</li>
+                            
+                            <li>Use computational models to compare competing scientific hypotheses and interpret model predictions in a biological context</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>Basic understanding of mutations</li>
+                                
+                                <li>Basic knowledge of bacterial cell division and population growth</li>
+                                
+                                <li>Understanding of natural selection as differential survival and reproduction</li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>No prior Python experience required</li>
+                                
+                            </ul>
+                        </div>
+
+                        
+                        <div class="prereq-box sequence">
+                            <h4>Lesson Sequence:</h4>
+                            
+                            
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                
+                                <li><a href="../foundational-intro-python/">Introduction to Programming for Molecular Scientists</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 01: Introduction to distributions</h4>
+                            </div>
+                            <p>Introduction to spontaneous and acquired mutations and statistical distributions</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/01_Introduction-to-distributions/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/01_Introduction-to-distributions/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1 hour</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to generate and visualize random samples from uniform, normal, Poisson, and binomial distributions using Python and NumPy</li>
+                                    
+                                    <li>Students will be able to compare the properties of common probability distributions and explain how they model different biological processes, including mutation occurrence and cell population behavior</li>
+                                    
+                                    <li>Students will be able to interpret histograms and cumulative distribution functions (CDFs) to evaluate how sample size and distribution parameters influence observed experimental outcomes</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 02: Simulation of Luria-Delbrück experiment</h4>
+                            </div>
+                            <p>The purpose of this lesson is to introduce students to the results of the original Luria-Delbrück experiment and have them perform a simulation of the growth of one generation of bacteria.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/02_Simulation-of-Luria_Delbruck-experiment/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/02_Simulation-of-Luria_Delbruck-experiment/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">0.5 hours</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to represent bacterial populations computationally and simulate population growth through successive rounds of cell division</li>
+                                    
+                                    <li>Students will be able to model mutation events within a growing population using Python data structures and random sampling techniques</li>
+                                    
+                                    <li>Students will be able to explain how stochastic mutation events can influence the composition of bacterial populations and contribute to variability among replicate experiments</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-3">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 03: Selection-dependent mutation model</h4>
+                            </div>
+                            <p>The purpose of this lesson is to show the students what a model of mutations arising following a certain stimulus (e.g., presence of antibiotic) would look like.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/03_Selection-dependent-mutation-model/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/03_Selection-dependent-mutation-model/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">0.5 hours</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to develop a quantitative model predicting mutant frequencies if resistance mutations arise only after exposure to selective pressure</li>
+                                    
+                                    <li>Students will be able to use Poisson-based statistical methods to estimate mutation rates from experimental observations</li>
+                                    
+                                    <li>Critically assess whether observed experimental data are consistent with a selection-dependent model of mutation</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-4">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 03: Weitz_pois</h4>
+                            </div>
+                            <p>A mock dataset that follows the Poisson distribution</p>
+                            <div class="material-actions">
+                                
+                                
+                                <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/03_Selection-dependent-mutation-model/Weitz_pois.csv" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Access Dataset</a>
+                                
+                                
+                                <span class="duration">N/A</span>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-5">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 04: Modeling the growth of mutants</h4>
+                            </div>
+                            <p>The purpose of this lesson is to model the growth of mutant bacteria with both the Poisson and the binomial distributions.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/04_Modeling-the-growth-of-mutants/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/04_Modeling-the-growth-of-mutants/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1 hour</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to develop computational simulations that model the emergence and growth of resistant bacterial mutants across multiple replicate cultures.</li>
+                                    
+                                    <li>Students will be able to compare observed mutant distributions to Poisson expectations and explain why stochastic mutation timing can generate highly variable outcomes among cultures.</li>
+                                    
+                                    <li>Students will be able to evaluate the origins of “jackpot” cultures by relating the timing of mutation events to the subsequent expansion of resistant lineages</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-6">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 05: Spontaneous mutations</h4>
+                            </div>
+                            <p>The purpose of this lesson is to provide the mathematical foundations needed to estimate the timing of mutation appearance.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/05_Spontanteous_mutations/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/05_Spontanteous_mutations/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">0.25 hours</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to distinguish between Darwinian (spontaneous) and Lamarckian (selection-dependent) explanations for the origin of antibiotic resistance</li>
+                                    
+                                    <li>Students will be able to explain the biological assumptions underlying the spontaneous-mutation hypothesis and how it differs from the selection-dependent model</li>
+                                    
+                                    <li>Students will be able to construct and interpret mathematical models describing the simultaneous growth of susceptible and resistant bacterial populations</li>
+                                    
+                                    <li>Students will be able to predict how the timing of spontaneous mutations influences the final number of resistant cells observed after selection</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-7">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 06: From observations to estimates</h4>
+                            </div>
+                            <p>The purpose of this lesson is to use computational simulations to estimate mutation rates, evaluate uncertainty in those estimates, and determine whether observed patterns of antibiotic resistance are more consistent with spontaneous mutation or acquired resistance models.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/06_From_observations_to_estimates/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/06_From_observations_to_estimates/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1 hour</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to infer mutation rates from fluctuation-test data without prior knowledge of the underlying parameter values</li>
+                                    
+                                    <li>Students will be able to implement a grid-search approach to identify parameter values that minimize differences between observed and simulated datasets</li>
+                                    
+                                    <li>Students will be able to construct approximate confidence intervals and assess the strength of evidence supporting alternative evolutionary models</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-8">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 07: Timing of mutation appearance</h4>
+                            </div>
+                            <p>The purpose of this lesson is to investigate how the timing of mutation events influences the distribution of resistant bacteria and to use simulation results to distinguish between spontaneous mutation and acquired resistance hypotheses.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/development-of-antibiotic-resistance/blob/main/07_Timing_of_mutation_appearance/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/07_Timing_of_mutation_appearance/student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1 hour</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Students will be able to simulate and compare spontaneous-mutation and acquired-resistance models of antibiotic resistance using computational methods</li>
+                                    
+                                    <li>Students will be able to analyze how the timing of mutation events influences the number and distribution of resistant cells observed after selection</li>
+                                    
+                                    <li>Students will be able to evaluate experimental evidence by comparing the means, variances, and distributions generated by competing evolutionary models to determine which best explains the Luria–Delbrück results</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/development-of-antibiotic-resistance" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                            
+                            <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/development-of-antibiotic-resistance&amp;branch=main&amp;urlpath=lab/tree/development-of-antibiotic-resistance/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Launch on ChemCompute
+                            </a>
+                            
+                        </div> 
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/development-of-antibiotic-resistance" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:act-cms@molssi.org?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>Additional context for instructors using this lesson:</p><p>• Students should have Introductory knowledge of genetics, including mutation, selection, and inheritance<br>• Students often struggle with the differential equations presented, but the modules do not need deep understanding of the calculus concepts to complete the lesson.<br>• The modules work better if run as in-class active-learning activities, interspersed with lecture-style explanations of some concepts.<br>• Consider assigning the embedded questions and coding exercises at the end of the modules as homework.<br></div>
+                    </div>
+                </div>
+                
+
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Google Colab</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Local Installation</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>ChemCompute (Recommended)</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>
