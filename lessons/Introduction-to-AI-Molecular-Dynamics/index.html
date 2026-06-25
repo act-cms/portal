@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>Introduction to AI-Molecular Dynamics - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Introduction to Molecular Dynamics</a>
+                        
+                        <a href="#material-2" class="toc-sublink">Introduction to AI and LLMs for Molecular Dynamics</a>
+                        
+                        <a href="#material-3" class="toc-sublink">Python MD From Scratch</a>
+                        
+                        <a href="#material-4" class="toc-sublink">LAMMPS Fundamentals</a>
+                        
+                        <a href="#material-5" class="toc-sublink">Atomsk Structure Building</a>
+                        
+                        <a href="#material-6" class="toc-sublink">OVITO Visualization</a>
+                        
+                        <a href="#material-7" class="toc-sublink">Defects and Materials Modeling</a>
+                        
+                        <a href="#material-8" class="toc-sublink">AI-Assisted MD Workflows</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Introduction to AI-Molecular Dynamics</h1>
+                    <p class="lesson-summary">A seven-lesson module introducing molecular dynamics, atomistic model construction, visualization, and responsible AI/LLM-assisted MD workflows.</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">Beginner</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Materials Science</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Physical Chemistry, Computational Chemistry, Foundational Module</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Prof. Wenwu Xu</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">8-12 hours</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Mixed Undergraduate/Graduate</span>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">molecular-dynamics</span>
+                        
+                        <span class="tag">materials-science</span>
+                        
+                        <span class="tag">lammps</span>
+                        
+                        <span class="tag">atomsk</span>
+                        
+                        <span class="tag">ovito</span>
+                        
+                        <span class="tag">visualization</span>
+                        
+                        <span class="tag">ai</span>
+                        
+                        <span class="tag">llm</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This multi-part module introduces students to molecular dynamics (MD) as a practical computational method for studying atomistic systems. Students begin with the basic MD loop, simple potentials, numerical integration, and trajectory analysis, then move toward hands-on materials modeling workflows using Python, LAMMPS, Atomsk, and OVITO.</p>
+                            
+                        
+                            
+                            <p>The module also introduces artificial intelligence and large language models in the context of MD. Students learn where AI tools can help with planning, scripting, analysis, and interpretation, while also practicing validation habits needed to avoid physically incorrect or technically fragile simulation workflows.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Explain the core molecular dynamics workflow from initialization to trajectory analysis.</li>
+                            
+                            <li>Relate forces, potentials, integration schemes, and thermodynamic ensembles to atomistic simulations.</li>
+                            
+                            <li>Construct and modify crystalline atomistic structures for materials modeling.</li>
+                            
+                            <li>Interpret simulation outputs using visualization and structure-analysis workflows.</li>
+                            
+                            <li>Evaluate appropriate and inappropriate uses of AI and LLMs in molecular dynamics research.</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Run and modify Jupyter notebooks for molecular simulation learning activities.</li>
+                            
+                            <li>Write basic Python code for simple MD integration and analysis tasks.</li>
+                            
+                            <li>Generate and interpret introductory LAMMPS input scripts.</li>
+                            
+                            <li>Use Atomsk command patterns to create atomistic structures for simulation.</li>
+                            
+                            <li>Use OVITO workflows to visualize and analyze atomistic trajectory data.</li>
+                            
+                            <li>Validate AI-generated scripts, summaries, and modeling suggestions against documentation and simulation output.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>Introductory chemistry or materials science.</li>
+                                
+                                <li>Basic familiarity with atomic structure, bonding, force, energy, and simple plots.</li>
+                                
+                                <li>No prior experience with production molecular dynamics software is required.</li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>Basic Python syntax, including variables, loops, functions, and arrays.</li>
+                                
+                                <li>Basic familiarity with running cells in Jupyter notebooks.</li>
+                                
+                            </ul>
+                        </div>
+
+                        
+                        <div class="prereq-box sequence">
+                            <h4>Lesson Sequence:</h4>
+                            
+                            
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                
+                                <li><a href="../foundational-intro-python/">Introduction to Programming for Molecular Scientists</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Introduction to Molecular Dynamics</h4>
+                            </div>
+                            <p>Introduce the MD workflow using forces, potentials, numerical integration, and simple trajectory analysis.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-molecular-dynamics.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-molecular-dynamics.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/01_AI-MD-101/introduction-to-molecular-dynamics.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Describe the basic molecular dynamics loop.</li>
+                                    
+                                    <li>Connect potential energy functions to forces.</li>
+                                    
+                                    <li>Run and interpret a simple Python MD example.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Introduction to AI and LLMs for Molecular Dynamics</h4>
+                            </div>
+                            <p>Introduce AI, machine learning, and large language models as tools for supporting MD planning, scripting, analysis, and review.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-ai-llm-for-molecular-dynamics.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-ai-llm-for-molecular-dynamics.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/01_AI-MD-101/introduction-to-ai-llm-for-molecular-dynamics.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Distinguish physics-based models, machine learning models, and LLMs.</li>
+                                    
+                                    <li>Identify useful AI roles in MD workflows.</li>
+                                    
+                                    <li>Recognize limitations and validation needs for AI-assisted simulation work.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-3">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Python MD From Scratch</h4>
+                            </div>
+                            <p>Build a minimal molecular dynamics engine in Python to expose positions, velocities, pair forces, integration, and energy checks.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/02_python-md-from-scratch/python-md-from-scratch.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/02_python-md-from-scratch/python-md-from-scratch.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/02_python-md-from-scratch/python-md-from-scratch.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">75-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Implement simple MD data structures with NumPy.</li>
+                                    
+                                    <li>Compute pairwise forces from a simple potential.</li>
+                                    
+                                    <li>Use Velocity Verlet integration and inspect energy conservation.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-4">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">LAMMPS Fundamentals</h4>
+                            </div>
+                            <p>Learn the structure of LAMMPS input scripts and connect simulation commands to physical modeling choices.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/03_lammps-fundamentals/lammps-fundamentals.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/03_lammps-fundamentals/lammps-fundamentals.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/03_lammps-fundamentals/lammps-fundamentals.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">75-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Identify the main sections of a LAMMPS input script.</li>
+                                    
+                                    <li>Create simple atomistic systems directly in LAMMPS.</li>
+                                    
+                                    <li>Interpret thermo output, dump files, and common run settings.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-5">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Atomsk Structure Building</h4>
+                            </div>
+                            <p>Use Atomsk concepts and command patterns to create crystal structures, transform simulation cells, and prepare LAMMPS data files.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/04_atomsk-structure-building/atomsk-structure-building.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/04_atomsk-structure-building/atomsk-structure-building.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/04_atomsk-structure-building/atomsk-structure-building.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Build and transform common crystalline structures.</li>
+                                    
+                                    <li>Prepare structures for LAMMPS simulations.</li>
+                                    
+                                    <li>Introduce simple vacancies, substitutions, surfaces, and interfaces.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-6">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">OVITO Visualization</h4>
+                            </div>
+                            <p>Load and analyze LAMMPS output in OVITO using visualization, selection, filtering, and structure-analysis workflows.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/05_ovito-visualization/ovito-visualization.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/05_ovito-visualization/ovito-visualization.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/05_ovito-visualization/ovito-visualization.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">60-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Load LAMMPS dump and data files into OVITO.</li>
+                                    
+                                    <li>Apply common visualization and analysis modifiers.</li>
+                                    
+                                    <li>Export snapshots, plots, or animations for scientific communication.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-7">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Defects and Materials Modeling</h4>
+                            </div>
+                            <p>Apply LAMMPS, Atomsk, and OVITO to practical materials modeling tasks involving defects, surfaces, relaxation, and atomistic mechanisms.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/06_defects-and-materials-modeling/defects-and-materials-modeling.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/06_defects-and-materials-modeling/defects-and-materials-modeling.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/06_defects-and-materials-modeling/defects-and-materials-modeling.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">90-120 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Create basic defects and surfaces in atomistic models.</li>
+                                    
+                                    <li>Connect simulation setup to defect and surface energetics.</li>
+                                    
+                                    <li>Use visualization to interpret local atomic environments.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-8">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">AI-Assisted MD Workflows</h4>
+                            </div>
+                            <p>Use AI tools to plan simulations, draft scripts, summarize outputs, and accelerate analysis while validating each result.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/07_ai-assisted-md-workflows/ai-assisted-md-workflows.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/07_ai-assisted-md-workflows/ai-assisted-md-workflows.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/07_ai-assisted-md-workflows/ai-assisted-md-workflows.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">75-90 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Draft and revise MD-related scripts with AI assistance.</li>
+                                    
+                                    <li>Audit generated code for physical and technical correctness.</li>
+                                    
+                                    <li>Summarize simulation outputs while preserving validation checks.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                            
+                            <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Introduction-to-AI-Molecular-Dynamics&amp;branch=main&amp;urlpath=lab/tree/Introduction-to-AI-Molecular-Dynamics/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Launch on ChemCompute
+                            </a>
+                            
+                        </div> 
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/Introduction-to-AI-Molecular-Dynamics" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:act-cms@molssi.org?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>This module can be used as a complete introduction to AI-assisted molecular dynamics or as selected lessons embedded into a computational materials science, physical chemistry, or molecular simulation course.</p><p>The first two notebooks can be run with standard Python scientific packages. Later lessons introduce workflows that benefit from local installations of LAMMPS, Atomsk, and OVITO, although the notebooks also provide script-generation and interpretation exercises that can be discussed without a full production MD setup.</p><p>Emphasize validation throughout the module. Students should treat AI-generated scripts, explanations, and analysis summaries as drafts that must be checked against physical assumptions, software documentation, and reproducible simulation output.<br></div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            
+                            <li><a href="../foundational-intro-python/">Foundational Intro Python</a></li>
+                            
+                            <li><a href="../foundational-symbolic-math/">Foundational Symbolic Math</a></li>
+                            
+                            <li><a href="../diffusion/">Diffusion</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Google Colab</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>Local Installation (Recommended)</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>ChemCompute</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>
