@@ -9,7 +9,7 @@
 title: "Particle in a Box Energy Calculations"
 
 # Brief description for search results (1-2 sentences)
-description: "Students will calculate energy levels for particle in a box, exmaine how box length changes these levels, and predict spectra"
+description: "Students will calculate energy levels for particle in a box, exmaine how box length changes these levels, and predict absorption wavelength"
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
@@ -78,9 +78,11 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "thermodynamics-fundamentals"
-  - "statistical-mechanics-intro"
-  - "computational-chemistry-basics"
+  - "fooddye-uvvis-tddft"
+  - "Harmonic-Oscillator-Energy-Calculations"
+  - "vibronic-spectrum-of-iodine"
+  - "orthonormal-wavefunctions"
+  - "absorption-of-conjugated-dyes-with-finite-well-PIB"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -96,15 +98,15 @@ prerequisite_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/your-lesson-repo"
+public_repo_url: "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculations"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
+  - title: "Particle in a Box Energy Calculations"
     description: "Brief description of what this notebook covers"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "1 hour"
+    duration: "2 hour"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
@@ -118,22 +120,12 @@ materials:
       - "Another concrete learning outcome"
       - "Third measurable objective"
   
-  # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
-    description: "Description of second notebook"
-    type: "notebook"
-    duration: "90 min"
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/02-advanced.ipynb"
-    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
-    objectives:
-      - "Advanced skill development"
-      - "Application of concepts from Part 1"
 
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
   - "Apply programming to solve chemical problems"
-  - "Understand molecular property X through computational analysis"
+  - "Understand the particle in a box model through computational analysis"
   - "Interpret results of computational molecular science calculations"
 
 # What computational/programming skills will students develop?
@@ -147,11 +139,11 @@ cyberinfrastructure_objectives:
 # What science background do students need?
 scientific_prerequisites:
   - "General chemistry"
-  - "Basic understanding of molecular structure"
+  - "Basic understanding of particle in a box"
 
 # What programming experience is assumed?
 programming_prerequisites:
-  - "No prior programming experience required"
+  - "Basic python syntax"
   # OR: eg "Basic Python syntax (variables, loops, functions)"
 
 # PLATFORM SUPPORT (REQUIRED)
@@ -160,15 +152,15 @@ programming_prerequisites:
 #   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
 # Any other value fails the build (no rendering template exists for it).
 platforms:
-  - "Google Colab"
-  - "Local Installation"
   - "ChemCompute"
+  - "Local Installation"
+  - "Google Colab"
 
 # Which platform do you recommend for most users?
 # Pick exactly ONE platform name, and it must match an entry in the `platforms`
 # list above EXACTLY (same spelling and capitalization). Do NOT combine several,
 # e.g. "Google Colab, ChemCompute" is invalid and fails the build.
-recommended_platform: "Google Colab"
+recommended_platform: "ChemCompute"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
