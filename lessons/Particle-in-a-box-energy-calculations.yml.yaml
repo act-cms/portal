@@ -9,16 +9,13 @@
 title: "Particle in a Box Energy Calculations"
 
 # Brief description for search results (1-2 sentences)
-description: "Students will calculate energy levels for particle in a box, exmaine how box length changes these levels, and predict absorption wavelength"
+description: "Students will calculate energy levels for particle in a box, examine how box length changes these levels, and predict absorption wavelength"
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  Provide a more detailed description of your lesson here.
-  Explain the context, what students will accomplish, and how this
-  fits into broader molecular science education.
+  By completing this module students will examine the energies of a 1, 2, and 3-D box. 
+  Students will calculate both individual energy levels and differences in energy levels.
   
-  You can use multiple paragraphs to fully describe the lesson scope
-  and learning experience.
 
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
@@ -62,19 +59,12 @@ students_piloted: 7  # Number of students
 # Free-form notes for instructors
 instructor_notes: |
   Additional context for instructors using this lesson:
+  This activity was piloted with students working on their own document but collaborating in pairs.
+  The set up allowed students to help each other and learn to troubleshoot better.
+  A lot of material was covered before the module, and the module was designed more to help students practice calculations
+  and see visualizations than to learn new concepts. 
+
   
-  - This lesson works well when paired with a traditional lecture on molecular dynamics
-  - Students often struggle with the concept of periodic boundary conditions in Part 2
-  - The visualization exercises are very engaging - allow extra time for exploration
-  - Consider assigning the dataset analysis as homework rather than in-class work
-  
-  Timing notes:
-  - Part 1 typically takes students 45-60 minutes
-  - Part 2 can be rushed in 90 minutes but is better with 2 hours
-  
-  Common student questions:
-  - "Why do we need so many time steps?" - good opportunity to discuss numerical integration
-  - "What happens if we change the temperature?" - this connects well to thermodynamics concepts
 
 # Related lessons that complement this one
 related_modules:
@@ -106,7 +96,7 @@ materials:
   - title: "Particle in a Box Energy Calculations"
     description: "This notebook covers calculating energy levels using the particle in a box model, comparing energy levels as box length changes, and calculating energy level differences in both energy and wavelength"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "2 hour"
+    duration: "1-2 hour"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
@@ -116,9 +106,9 @@ materials:
     
     # Learning objectives specific to this material
     objectives:
-      - "Specific skill students will develop"
-      - "Another concrete learning outcome"
-      - "Third measurable objective"
+      - "Determine energy levels of a 1, 2, and 3-D particle in a box model"
+      - "Calculate differences in energy levels and the wavelength they correspond to"
+      - "Create visualizations of energy levels with changing box length"
   
 
 # LEARNING OBJECTIVES (REQUIRED)
@@ -126,6 +116,9 @@ materials:
 scientific_objectives:
   - "Apply programming to solve chemical problems"
   - "Understand the particle in a box model through computational analysis"
+  - "Calculate energy levels of particles in a box (1-D and 2-D)"
+  - "Convert energy to wavelength to predict what wavelength molecules will absorb"
+  - "Predict how energy levels will change when box length changes or particle mass changes"
   - "Interpret results of computational molecular science calculations"
 
 # What computational/programming skills will students develop?
@@ -167,6 +160,6 @@ recommended_platform: "ChemCompute"
 # Tags help with searching - use relevant keywords
 tags:
   - "python"
-  - "molecular-dynamics"
+  - "physical-chemistry"
   - "visualization"
   - "quantum-chemistry"  # Use appropriate scientific area tags
