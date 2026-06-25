@@ -104,7 +104,7 @@ public_repo_url: "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculatio
 # List each notebook/material in logical order
 materials:
   - title: "Particle in a Box Energy Calculations"
-    description: "Brief description of what this notebook covers"
+    description: "This notebook covers calculating energy levels using the particle in a box model, comparing energy levels as box length changes, and calculating energy level differences in both energy and wavelength"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "2 hour"
     
@@ -131,15 +131,16 @@ scientific_objectives:
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
   - "Write and execute Python code in Jupyter notebooks"
-  - "Use library X to perform scientific calculations"
-  - "Create visualizations of molecular data"
-  - "Debug common programming errors"
+  - "Set constants and use functions"
+  - "Use if and for loops"
+  - "Create plots"
+  - "Create and use arrays and matrices"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
 scientific_prerequisites:
   - "General chemistry"
-  - "Basic understanding of particle in a box"
+  - "Basic understanding of particle in a box model"
 
 # What programming experience is assumed?
 programming_prerequisites:
