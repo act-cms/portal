@@ -13,7 +13,7 @@ description: "Students will model the appearence of both spontaneous and acquire
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.
+This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.
 
 Across seven Jupyter notebooks, students progressively develop both biological understanding and computational skills. Early modules introduce probability distributions commonly used in biological modeling, including binomial and Poisson distributions, and demonstrate how stochastic processes influence experimental outcomes. Students then construct simulations of bacterial population growth, model the emergence of resistant mutants, and explore the consequences of mutation timing on population structure. Subsequent notebooks guide students through the development and comparison of competing evolutionary models representing spontaneous mutation and acquired resistance hypotheses.
 
@@ -197,16 +197,21 @@ materials:
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-  - "Apply programming to solve chemical problems"
-  - "Understand molecular property X through computational analysis"
-  - "Interpret results of computational molecular science calculations"
+  - "Explain how spontaneous mutations generate genetic variation within bacterial populations prior to exposure to selective agents"
+  - "Describe how natural selection acts on pre-existing genetic variants to produce antibiotic-resistant populations"
+  - "Compare spontaneous-mutation and acquired-resistance hypotheses and evaluate the experimental evidence supporting each model"
+  - "Interpret the relationship between mutation timing, clonal expansion, and the distribution of resistant mutants observed in fluctuation tests"
+  - "Estimate mutation rates and assess how stochastic processes influence evolutionary outcomes in microbial populations"
+  - "Explain the significance of the Luria–Delbrück experiment in establishing the modern understanding of mutation and evolution"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
-  - "Write and execute Python code in Jupyter notebooks"
-  - "Use library X to perform scientific calculations"
-  - "Create visualizations of molecular data"
-  - "Debug common programming errors"
+  - "Use Python to simulate stochastic biological processes and analyze experimental data"
+  - "Generate random samples from probability distributions and apply them to model biological phenomena"
+  - "Develop computational simulations of bacterial growth, mutation, and selection"
+  - "Analyze simulation outputs using descriptive statistics and graphical methods"
+  - "Implement simulation-based approaches to estimate biological parameters and evaluate uncertainty"
+  - "Use computational models to compare competing scientific hypotheses and interpret model predictions in a biological context"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
