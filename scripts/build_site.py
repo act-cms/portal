@@ -19,9 +19,29 @@ from pathlib import PurePosixPath
 INSTRUCTOR_REPO = "act-cms/instructor-materials"  # Replace with your instructor repo
 
 def load_yaml_file(filepath):
-    """Load and parse a YAML file"""
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+    """Load and parse a YAML file.
+
+    On a YAML syntax error, prints a friendly, author-actionable ``Error:``
+    line (picked up by format_pr_comment.py) and returns None instead of
+    letting the raw PyYAML traceback escape — an unhandled traceback produces
+    no ``Error:`` lines, so the PR comment can't tell the author what's wrong.
+    """
+    filename = Path(filepath).name
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except yaml.YAMLError as exc:
+        mark = getattr(exc, 'problem_mark', None)
+        problem = getattr(exc, 'problem', None) or "invalid YAML syntax"
+        if mark is not None:
+            # PyYAML marks are 0-based; report 1-based to match editors.
+            location = f"line {mark.line + 1}, column {mark.column + 1}"
+        else:
+            location = "unknown location"
+        print(f"Error: {filename} is not valid YAML ({location}): {problem}.")
+        print("Error: Check indentation — multi-line text under a 'key: |' "
+              "block must be indented, and list items must line up under their key.")
+        return None
 
 def get_lesson_id_from_filename(filename):
     """Extract lesson ID from YAML filename"""
@@ -96,6 +116,11 @@ def load_paths(project_root):
         return []
     data = load_yaml_file(paths_file)
     if data is None:
+        # load_yaml_file returns None for both an empty file (fine) and a
+        # parse error (already reported). Only treat a genuinely empty file as
+        # "no paths"; surface a parse error as invalid so the build fails.
+        if paths_file.read_text(encoding='utf-8').strip():
+            return None
         return []
     return data.get('paths', [])
 
