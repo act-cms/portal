@@ -31,7 +31,9 @@ programming_skill: "None"
 primary_course: "Physical Chemistry"
 
 # List other courses where this lesson could be used (optional)
-also_for: "General Chemistry"
+also_for: 
+  - "Physical Chemistry"
+  - "General Chemistry"
 
 # List all authors
 authors: 
