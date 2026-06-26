@@ -28,7 +28,7 @@ programming_skill: "None"
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
-primary_course: "Physical Chemistry"
+primary_course: "Physical Chemistry Lab"
 
 # List other courses where this lesson could be used (optional)
 also_for: 
@@ -79,7 +79,8 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "foundational-intro-python"
+  - "treatment-of-experimental-data"
+  - "intro-to-programming-with-chem-applications"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -89,6 +90,7 @@ related_modules:
 # on the portal); ordered sequences are displayed via paths.yml instead.
 prerequisite_modules:
   - "foundational-intro-python"
+  - "intro-to-programming-with-chem-applications"
 
 # NOTE: To add this lesson to an ordered learning path (or create a new one),
 # edit paths.yml at the repo root — step order is defined there, not here.
