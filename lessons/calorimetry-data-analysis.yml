@@ -79,8 +79,7 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "treatment-of-experimental-data"
-  - "intro-to-programming-with-chem-applications"
+  - "foundational-intro-python"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -90,7 +89,6 @@ related_modules:
 # on the portal); ordered sequences are displayed via paths.yml instead.
 prerequisite_modules:
   - "foundational-intro-python"
-  - "intro-to-programming-with-chem-applications"
 
 # NOTE: To add this lesson to an ordered learning path (or create a new one),
 # edit paths.yml at the repo root — step order is defined there, not here.
