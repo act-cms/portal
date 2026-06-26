@@ -170,8 +170,8 @@ def validate_paths(paths, lesson_ids):
 def validate_cross_references(lessons_by_id):
     """Validate lesson-to-lesson references across all lessons.
 
-    prerequisite_modules errors are fatal; related_modules issues are warnings
-    only (existing data has known broken refs).
+    Unknown-lesson references in prerequisite_modules and related_modules are
+    both fatal.
     """
     valid = True
 
@@ -192,7 +192,8 @@ def validate_cross_references(lessons_by_id):
 
         for module in lesson_data.get('related_modules', []):
             if isinstance(module, str) and module not in lessons_by_id:
-                print(f"WARNING: {lesson_id} related_modules references unknown lesson '{module}'")
+                print(f"Error: {lesson_id} related_modules references unknown lesson '{module}'")
+                valid = False
 
     if not valid:
         return False
