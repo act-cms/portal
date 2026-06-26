@@ -2467,5 +2467,126 @@
     "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/statistical-testing-beta&branch=main&urlpath=lab/tree/statistical-testing-beta/",
     "learning_paths": [],
     "prerequisite_lessons": []
+  },
+  {
+    "title": "Treatment of Experimental Data and Visualizing Uncertainty",
+    "description": "Students will learn how to treat experimental data of gas pressure and volume and approximate uncertainties using various techniques.",
+    "expanded_description": "How can you import your data from Excel into Python? How do I choose and create the correct plot? What are different ways to represent experimental uncertainty? What is the extent of data needed for proper calibration?\nThis notebook explores various methods to measure and visualize uncertainty through graphical error, best fit line uncertainties, and Monte Carlo sampling of the confidence interval. The sample data provided is air pressure in a closed plastic syringe altering the volume from 20 mL to 10 mL.\n",
+    "programming_skill": "None",
+    "primary_course": "Physical Chemistry Lab",
+    "also_for": [
+      "Physical Chemistry",
+      "Analytical Chemistry"
+    ],
+    "authors": [
+      "Prof. Prajay Patel"
+    ],
+    "estimated_time": "3-4 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "pmpatel@udallas.edu",
+    "student_level": "Undergraduate - Third/Fourth Year",
+    "students_piloted": 10,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- Different uncertainty levels may take a while to grasp. This includes the graphical error.\n- The Monte Carlo graphs will take a while to render because there are 50000 data points being plotted.\n- The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.\n\nTiming notes:\n- Part 1 typically takes students 30-60 minutes.\n- Part 2 can be rushed in 2 hours but is better with 3 hours.\n\nCommon student questions:\n- \"Why isn't this working?\" - good opportunity to remind students of patience that comes with programming\n",
+    "related_modules": [
+      "intro-to-programming-with-chem-applications",
+      "statistical-testing-beta",
+      "moralech-umu-basic-tasks"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python",
+      "intro-to-programming-with-chem-applications"
+    ],
+    "public_repo_url": "https://github.com/act-cms/treatment-of-experimental-data",
+    "materials": [
+      {
+        "title": "Part 1: Introduction",
+        "description": "A refresher of the foundational modules to create different types of plots in matplotlib.",
+        "type": "notebook",
+        "duration": "30-60 minutes",
+        "github_url": "https://github.com/act-cms/treatment-of-experimental-data/blob/main/01_pre-lab-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/treatment-of-experimental-data/blob/main/colab-notebooks/Analysis_PreLab_Assignment-Student.ipynb",
+        "objectives": [
+          "How do we import data into Colab?",
+          "How do we do a linear best fit regression?",
+          "What type of plot is most appropriate for a set of data?",
+          "Import data with pd.read_csv() or pd.read_excel().",
+          "Create numerous types of plots with matplotlib.",
+          "Choose the most appropriate type of plot for a specific data type."
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/treatment-of-experimental-data&branch=main&urlpath=lab/tree/treatment-of-experimental-data/01_pre-lab-activity/Student.ipynb"
+      },
+      {
+        "title": "Part 2: Treatment of Experimental Data",
+        "description": "Differentiate between best fit, graphical, and Monte Carlo methods for error estimation with matplotlib visuals",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/treatment-of-experimental-data/blob/main/02_treatment-of-data-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/treatment-of-experimental-data/blob/main/colab-notebooks/Treatment_of_Experimental_Data-Student.ipynb",
+        "objectives": [
+          "Differentiate between best fit, graphical, and Monte Carlo methods for error estimation.",
+          "Visualize multiple types of plots in matplotlib with legends.",
+          "How can you import your data from Excel into Python?",
+          "Open your data and compute a linear regression.",
+          "What is the extent of data needed for proper calibration?",
+          "What are different ways to represent experimental uncertainty?"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/treatment-of-experimental-data&branch=main&urlpath=lab/tree/treatment-of-experimental-data/02_treatment-of-data-activity/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Compute a linear regression",
+      "Visualize uncertainty",
+      "Differentiate between best fit, graphical, and Monte Carlo methods for error estimation",
+      "Discuss Monte Carlo sampling in context of experimental error",
+      "Calculate propagation of errors efficiently",
+      "What are different ways to represent experimental uncertainty?",
+      "What is the extent of data needed for proper calibration?"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Write and execute Python code in Jupyter notebooks",
+      "Visualize multiple types of plots in matplotlib with legends",
+      "Implement scipy.stats.linregress() for linear regression",
+      "How can you import your data from Excel into Python?",
+      "How do I choose and create the correct plot?"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Gas Laws",
+      "Uncertainty",
+      "Basic understanding of statistics"
+    ],
+    "programming_prerequisites": [
+      "Importing data from Excel sheets into Python with pandas"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Google Colab",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "pandas",
+      "uncertainty",
+      "lab",
+      "monte-carlo",
+      "visualization",
+      "gas-laws"
+    ],
+    "id": "treatment-of-experimental-data",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "treatment-of-experimental-data",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/treatment-of-experimental-data&branch=main&urlpath=lab/tree/treatment-of-experimental-data/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      },
+      {
+        "id": "intro-to-programming-with-chem-applications",
+        "title": "Introduction to Python with Chemical Lab Applications"
+      }
+    ]
   }
 ]
