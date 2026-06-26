@@ -7,6 +7,16 @@ name: PR Lesson Check
 on:
   pull_request:
     branches: [ main ]
+    # Run when a lesson YAML is submitted, or when the build infrastructure
+    # that renders/validates them changes. A submission is almost always a
+    # single lessons/*.yml file.
+    paths:
+      - '**/*.yml'
+      - '**/*.yaml'
+      - 'templates/**'
+      - 'scripts/**'
+      - 'theme.css'
+      - 'index.html'
 
 permissions:
   contents: read
@@ -24,6 +34,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # need history to diff the PR against its base
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,7 +45,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml jinja2
+          pip install pyyaml jinja2 requests
 
       - name: Validate lessons and render portal
         id: build
@@ -41,10 +53,63 @@ jobs:
           set -o pipefail
           python scripts/build_site.py 2>&1 | tee build.log
 
+      # Confirm every YAML touched by this PR is a lesson living in lessons/.
+      # A .yml added anywhere else is almost always a misplaced submission;
+      # paths.yml (learning paths) and template.yaml (the reference) are the
+      # only YAML files that legitimately live at the repo root.
+      - name: Check submitted YAML is in lessons/
+        id: location
+        if: always()
+        run: |
+          base="${{ github.event.pull_request.base.sha }}"
+          : > changed_lessons.txt
+          while IFS= read -r f; do
+            case "$f" in
+              *.yml|*.yaml) ;;
+              *) continue ;;
+            esac
+            if [ "$f" = "paths.yml" ] || [ "$f" = "template.yaml" ]; then
+              continue
+            fi
+            case "$f" in
+              lessons/*.yml|lessons/*.yaml)
+                printf '%s\n' "$f" >> changed_lessons.txt
+                ;;
+              *)
+                echo "Error: '$f' is a YAML file outside the lessons/ folder. Lesson submissions must live in lessons/<your-module>.yml." | tee -a build.log
+                echo "location_failed=true" >> "$GITHUB_OUTPUT"
+                ;;
+            esac
+          done < <(git diff --name-only --diff-filter=d "$base"...HEAD)
+
+      # Verify links resolve and no template placeholders were left in. Only the
+      # lesson files this PR changed are checked, to avoid network-checking (and
+      # potentially failing on) unrelated lessons.
+      - name: Check links and placeholders
+        id: linkcheck
+        if: always()
+        run: |
+          set -o pipefail
+          if [ -s changed_lessons.txt ]; then
+            xargs -a changed_lessons.txt python scripts/check_links.py 2>&1 | tee -a build.log
+          else
+            echo "check_links: no changed lesson files to check." | tee -a build.log
+          fi
+
+      - name: Determine overall outcome
+        id: outcome
+        if: always()
+        run: |
+          result=success
+          if [ "${{ steps.build.outcome }}" = "failure" ]; then result=failure; fi
+          if [ "${{ steps.linkcheck.outcome }}" = "failure" ]; then result=failure; fi
+          if [ "${{ steps.location.outputs.location_failed }}" = "true" ]; then result=failure; fi
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+
       - name: Format PR comment
         if: always()
         run: |
-          python scripts/format_pr_comment.py "${{ steps.build.outcome }}" build.log pr_comment.md
+          python scripts/format_pr_comment.py "${{ steps.outcome.outputs.result }}" build.log pr_comment.md
 
       - name: Post or update PR comment
         if: always()
@@ -72,6 +137,6 @@ jobs:
               });
             }
 
-      - name: Fail the check if the build failed
-        if: steps.build.outcome == 'failure'
+      - name: Fail the check if anything failed
+        if: steps.outcome.outputs.result == 'failure'
         run: exit 1
