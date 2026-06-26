@@ -53,11 +53,14 @@ jobs:
           set -o pipefail
           python scripts/build_site.py 2>&1 | tee build.log
 
-      # Confirm every YAML touched by this PR is a lesson living in lessons/.
-      # A .yml added anywhere else is almost always a misplaced submission;
-      # paths.yml (learning paths) and template.yaml (the reference) are the
-      # only YAML files that legitimately live at the repo root.
-      - name: Check submitted YAML is in lessons/
+      # Confirm every YAML touched by this PR is a lesson living in lessons/ AND
+      # named exactly <slug>.yml. build_site.py discovers lessons with
+      # glob('*.yml'), so a .yaml (or a stray double extension like .yml.yaml)
+      # is silently skipped — it would never be validated or deployed yet the
+      # build still passes. We reject those here. paths.yml (learning paths) and
+      # template.yaml (the reference) are the only YAML files that legitimately
+      # live at the repo root.
+      - name: Check submitted YAML is a lessons/*.yml file
         id: location
         if: always()
         run: |
@@ -72,8 +75,12 @@ jobs:
               continue
             fi
             case "$f" in
-              lessons/*.yml|lessons/*.yaml)
+              lessons/*.yml)
                 printf '%s\n' "$f" >> changed_lessons.txt
+                ;;
+              lessons/*)
+                echo "Error: '$f' must use the '.yml' extension — the build only processes lessons/*.yml, so this file would be silently ignored and never appear on the site. Rename it to lessons/<your-module>.yml." | tee -a build.log
+                echo "location_failed=true" >> "$GITHUB_OUTPUT"
                 ;;
               *)
                 echo "Error: '$f' is a YAML file outside the lessons/ folder. Lesson submissions must live in lessons/<your-module>.yml." | tee -a build.log
