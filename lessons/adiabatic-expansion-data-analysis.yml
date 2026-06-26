@@ -63,7 +63,7 @@ instructor_notes: |
   - Students will have been introduced to the laws of thermodynamics and equilibrium concepts in a concurrent lecture course.
   - Most students had little to no prior programming experience entering the course but had completed introductory Python tutorials in earlier laboratory activities.
   - Student feedback consistently enmphasized the value of interactive visualization features for improving conceptual understanding of thermodynamic behavior and experimental data analysis.
-  - Part 1 can be graded largely on compoetion while part 2 is designed as formative assessment where answers are formally graded in the lab report
+  - Part 1 can be graded largely on completion while part 2 is designed as formative assessment where answers are formally graded in the lab report.
   - For the first part of the notebook in part 2, only use the first trial for Ar. We want to get the code working for a singular data set first, then we will worry about the other data.
   - Although the statistical mechanics activities provided students with a tangible framework for generating theoretical heat capacities, many still treated the partition function formalism as a black box procedure rather than a molecular description of energy accessibility. 
   - Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.
