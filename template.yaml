@@ -1,15 +1,15 @@
-# lessons/your-lesson-name.yml
+# lessons/your-module-name.yml
 # 
-# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
-# Replace all placeholder text with your actual lesson information
-# Remove any sections that don't apply to your lesson
+# STARTER TEMPLATE FOR ACT-CMS PORTAL SUBMISSION
+# Replace all placeholder text with your actual module information
+# Remove any sections that don't apply to your module
 
 # BASIC METADATA (REQUIRED)
 # Use a clear, descriptive title that includes the main topic
-title: "Your Lesson Title Here"
+title: "Your Module Title Here"
 
 # Brief description for search results (1-2 sentences)
-description: "Brief description of what students will learn in this lesson."
+description: "Brief description of what students will learn in this module."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
@@ -38,11 +38,13 @@ also_for:
   - "Materials Science"
 
 # List all authors
+# For titles, use European convention:
+# Prof = you yourself teach students, Dr = PhD who doesn't teach students
 authors: 
-  - "Dr. Your Name"
-  - "Prof. Collaborator Name"
+  - "Prof. Your Name"
+  - "Dr. Collaborator Name"
 
-# Estimated total time for all materials
+# Estimated total time for ALL materials for ENTIRE collection
 estimated_time: "2-3 hours"
 
 # Format of the module. Must be EXACTLY one of these two values (case- and
@@ -170,7 +172,7 @@ platforms:
 # Pick exactly ONE platform name, and it must match an entry in the `platforms`
 # list above EXACTLY (same spelling and capitalization). Do NOT combine several,
 # e.g. "Google Colab, ChemCompute" is invalid and fails the build.
-recommended_platform: "Google Colab"
+recommended_platform: "ChemCompute"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
