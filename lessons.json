@@ -1732,6 +1732,110 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Introduction to Python with Chemical Lab Applications",
+    "description": "Students will learn how to use the pandas to analyze experimental data in a variety of applications",
+    "expanded_description": "This module is designed to supplement the introduction to python foundational module. This module looks into using pandas to import data from Excel and csv files into Python for further analysis.\nExamples include creating calibration curves (linear regression), analysis of IR spectroscopic peaks (pandas, data filtering), and kinetics using integrated rate laws (curve fitting).\n",
+    "programming_skill": "None",
+    "primary_course": "Foundational Module",
+    "also_for": [
+      "Physical Chemistry Lab",
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Prof. Prajay Patel"
+    ],
+    "estimated_time": "2-3 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "pmpatel@udallas.edu",
+    "student_level": "Undergraduate - Third/Fourth Year",
+    "students_piloted": 10,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This module is designed to be done after the foundational module (and a break)\n- Part 1 is completed prior to starting the Foundational Module(s) and Part 2 is done in lab with the foundational module\n- This module can work for students who have not covered IR spectroscopy in organic chemistry as they can still do the visualization activity but skip the reflection question that covers nuances of spectroscopy. Those who have had Organic Chemistry also may not get that reflection question correct.\n- The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.\n  \nTiming notes:\n- Part 1 typically takes students 30-60 minutes.\n- Part 2 can be rushed in 2 hours but is better with 3 hours.\n\nCommon student questions:\n- \"Why isn't this working?\" - good opportunity to remind students of patience that comes with programming\n",
+    "related_modules": [
+      "foundational-intro-python"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/intro-to-programming-with-chem-applications",
+    "materials": [
+      {
+        "title": "Part 1: Introduction",
+        "description": "The notebooks covers a brief introduction to Python and the basics of a Jupyter notebook with embedded videos",
+        "type": "notebook",
+        "duration": "30-60 minutes",
+        "github_url": "https://github.com/act-cms/intro-to-programming-with-chem-applications/blob/main/01_pre-lab-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/intro-to-programming-with-chem-applications/blob/main/colab-notebooks/Intro_PreLab_Assignment-Student.ipynb",
+        "objectives": [
+          "What is the Python programming language, and what is it used for?",
+          "What are the advantages and disadvantages of using Python?",
+          "What is a Jupyter notebook?",
+          "Describe the Python programming language and its uses.",
+          "Learn the basics of the Jupyter notebook."
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&branch=main&urlpath=lab/tree/intro-to-programming-with-chem-applications/01_pre-lab-activity/Student.ipynb"
+      },
+      {
+        "title": "Part 2: Transitioning from Excel to Python for Chemistry Lab Data Analysis",
+        "description": "Learn and use pandas to explore different chemical applications like calibration curves, IR spectroscopy, and kinetics",
+        "type": "notebook",
+        "duration": "1-2 hours",
+        "github_url": "https://github.com/act-cms/intro-to-programming-with-chem-applications/blob/main/02_intro-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/intro-to-programming-with-chem-applications/blob/main/colab-notebooks/02_introduction_to_python-Student.ipynb",
+        "objectives": [
+          "Learn how to import Excel data into Google Colab and into Jupyter Notebooks.",
+          "Learn the basics of plotting using Matplotlib.",
+          "Apply chemistry knowledge to plots created in Matplotlib."
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&branch=main&urlpath=lab/tree/intro-to-programming-with-chem-applications/02_intro-activity/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Construct a calibration curve using linear regression.",
+      "Interpret IR spectroscopic data to investigate the C=O peak.",
+      "Determine the reaction order of experimental kinetic data using integrated rate laws."
+    ],
+    "cyberinfrastructure_objectives": [
+      "Import your Excel data with the pd.read_csv() or the pd.read_excel() function.",
+      "Construct numerous types of plots with matplotlib.",
+      "There is a high degree of customizability in matplotlib plots.",
+      "The scipy.stats.linregress() function computes best fit line parameters.",
+      "There are plenty of applications to use Python to model chemical data."
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic understanding of molecular structure"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Google Colab",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "introduction",
+      "organic-chemistry",
+      "spectroscopy",
+      "pandas",
+      "kinetics",
+      "general-chemistry"
+    ],
+    "id": "intro-to-programming-with-chem-applications",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "intro-to-programming-with-chem-applications",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&branch=main&urlpath=lab/tree/intro-to-programming-with-chem-applications/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Introduction to programming and python",
     "description": "In this lesson students learn foundational programming concepts and are exposed to the use of Python's libraries for scientific applications.",
     "expanded_description": "The lesson consists of two parts, a live-coding activity and a take-home assignment. Each part has an associated Jupyter notebook. To prepare for the in-class coding activity, students are asked to read sections I and II that cover the basic use of Jupyter notebooks and introductory programming concepts including data types, casting, variable assignment, formatted printing, comparison operators, and conditional statements. The live-coding activities in section III then focus on more advanced concepts including functions (user-defined and Python's built-in libraries), vectors, matrices, numerical integration, curve fitting, and plotting.\n",

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>Introduction to Python with Chemical Lab Applications - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Part 1: Introduction</a>
+                        
+                        <a href="#material-2" class="toc-sublink">Part 2: Transitioning from Excel to Python for Chemistry Lab Data Analysis</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">Introduction to Python with Chemical Lab Applications</h1>
+                    <p class="lesson-summary">Students will learn how to use the pandas to analyze experimental data in a variety of applications</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">None</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">Foundational Module</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Physical Chemistry Lab, Physical Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Prof. Prajay Patel</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">2-3 hours</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Undergraduate - Third/Fourth Year</span>
+                        </div>
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">10</span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">introduction</span>
+                        
+                        <span class="tag">organic-chemistry</span>
+                        
+                        <span class="tag">spectroscopy</span>
+                        
+                        <span class="tag">pandas</span>
+                        
+                        <span class="tag">kinetics</span>
+                        
+                        <span class="tag">general-chemistry</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This module is designed to supplement the introduction to python foundational module. This module looks into using pandas to import data from Excel and csv files into Python for further analysis.
+Examples include creating calibration curves (linear regression), analysis of IR spectroscopic peaks (pandas, data filtering), and kinetics using integrated rate laws (curve fitting).</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Construct a calibration curve using linear regression.</li>
+                            
+                            <li>Interpret IR spectroscopic data to investigate the C=O peak.</li>
+                            
+                            <li>Determine the reaction order of experimental kinetic data using integrated rate laws.</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Import your Excel data with the pd.read_csv() or the pd.read_excel() function.</li>
+                            
+                            <li>Construct numerous types of plots with matplotlib.</li>
+                            
+                            <li>There is a high degree of customizability in matplotlib plots.</li>
+                            
+                            <li>The scipy.stats.linregress() function computes best fit line parameters.</li>
+                            
+                            <li>There are plenty of applications to use Python to model chemical data.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>General chemistry</li>
+                                
+                                <li>Basic understanding of molecular structure</li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>No prior programming experience required</li>
+                                
+                            </ul>
+                        </div>
+
+                        
+                        <div class="prereq-box sequence">
+                            <h4>Lesson Sequence:</h4>
+                            
+                            
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                
+                                <li><a href="../foundational-intro-python/">Introduction to Programming for Molecular Scientists</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Part 1: Introduction</h4>
+                            </div>
+                            <p>The notebooks covers a brief introduction to Python and the basics of a Jupyter notebook with embedded videos</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/intro-to-programming-with-chem-applications/blob/main/colab-notebooks/Intro_PreLab_Assignment-Student.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/intro-to-programming-with-chem-applications/blob/main/01_pre-lab-activity/Student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&amp;branch=main&amp;urlpath=lab/tree/intro-to-programming-with-chem-applications/01_pre-lab-activity/Student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">30-60 minutes</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>What is the Python programming language, and what is it used for?</li>
+                                    
+                                    <li>What are the advantages and disadvantages of using Python?</li>
+                                    
+                                    <li>What is a Jupyter notebook?</li>
+                                    
+                                    <li>Describe the Python programming language and its uses.</li>
+                                    
+                                    <li>Learn the basics of the Jupyter notebook.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Part 2: Transitioning from Excel to Python for Chemistry Lab Data Analysis</h4>
+                            </div>
+                            <p>Learn and use pandas to explore different chemical applications like calibration curves, IR spectroscopy, and kinetics</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    <a href="https://colab.research.google.com/github/act-cms/intro-to-programming-with-chem-applications/blob/main/colab-notebooks/02_introduction_to_python-Student.ipynb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open in Colab</a>
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/intro-to-programming-with-chem-applications/blob/main/02_intro-activity/Student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&amp;branch=main&amp;urlpath=lab/tree/intro-to-programming-with-chem-applications/02_intro-activity/Student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">1-2 hours</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Learn how to import Excel data into Google Colab and into Jupyter Notebooks.</li>
+                                    
+                                    <li>Learn the basics of plotting using Matplotlib.</li>
+                                    
+                                    <li>Apply chemistry knowledge to plots created in Matplotlib.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/intro-to-programming-with-chem-applications" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                            
+                            <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/intro-to-programming-with-chem-applications&amp;branch=main&amp;urlpath=lab/tree/intro-to-programming-with-chem-applications/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Launch on ChemCompute
+                            </a>
+                            
+                        </div> 
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/intro-to-programming-with-chem-applications" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:act-cms@molssi.org?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>Additional context for instructors using this lesson:</p><p>• This module is designed to be done after the foundational module (and a break)<br>• Part 1 is completed prior to starting the Foundational Module(s) and Part 2 is done in lab with the foundational module<br>• This module can work for students who have not covered IR spectroscopy in organic chemistry as they can still do the visualization activity but skip the reflection question that covers nuances of spectroscopy. Those who have had Organic Chemistry also may not get that reflection question correct.<br>• The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.<br>  <br>Timing notes:<br>• Part 1 typically takes students 30-60 minutes.<br>• Part 2 can be rushed in 2 hours but is better with 3 hours.</p><p>Common student questions:<br>• "Why isn't this working?" • good opportunity to remind students of patience that comes with programming<br></div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            
+                            <li><a href="../foundational-intro-python/">Foundational Intro Python</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>ChemCompute (Recommended)</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
+<ul>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Google Colab</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                        
+                        
+                        <div class="platform-card">
+                            <h4>Local Installation</h4>
+<p>For advanced users who prefer local development environments.</p>
+<ul>
+    <li>Requires conda package manager</li>
+    <li>Environment setup via provided environment.yml file</li>
+    <li>Full control over computing environment</li>
+    <li>Works offline once dependencies are installed</li>
+    <li>Can customize package versions and configurations</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>
