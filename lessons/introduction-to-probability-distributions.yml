@@ -9,10 +9,11 @@
 title: "Introduction to Probability Distributions"
 
 # Brief description for search results (1-2 sentences)
-description: "Brief description of what students will learn in this lesson."
+description: "Introduction to characterizing probability distributions using self-defined functions and graphical representations."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
+  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution. 
   Provide a more detailed description of your lesson here.
   Explain the context, what students will accomplish, and how this
   fits into broader molecular science education.
@@ -22,7 +23,7 @@ expanded_description: |
 
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
-programming_skill: "None"
+programming_skill: "Beginner"
 # None: No programming experience. 
 # Beginner: Knows variables, conditionals, loops
 # Intermediate: Can write their own scripts from scratch
@@ -34,33 +35,31 @@ primary_course: "Foundational Module"
 
 # List other courses where this lesson could be used (optional)
 also_for:
-  - "Physical Chemistry"
-  - "Materials Science"
+  - "Physical Chemistry - Thermodynamics"
 
 # List all authors
 authors: 
-  - "Dr. Your Name"
-  - "Prof. Collaborator Name"
+  - "Prof. Heidi Hendrickson"
 
 # Estimated total time for all materials
-estimated_time: "2-3 hours"
+estimated_time: "3 hours"
 
 # Format of the module. Must be EXACTLY one of these two values (case- and
 # spelling-sensitive) so the home-page format filter groups lessons correctly:
 #   "Single Notebook"  or  "Multi-Part Module"
-format: "Multi-Part Module"
+format: "Single Notebook"
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
-instructor_email: "instructor-access@university.edu"
+instructor_email: "hendrihe@lafayette.edu"
 # Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
 # where {lesson-filename} matches this YAML file's name
 
 # INSTRUCTOR DETAILS (OPTIONAL)
 # What level of students was this piloted with?
-student_level: "Undergraduate - Second Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+student_level: "Undergraduate - Third Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
 # How many students has this been tested with?
-students_piloted: 25  # Number of students
+students_piloted: 14  # Number of students
 # Free-form notes for instructors
 instructor_notes: |
   Additional context for instructors using this lesson:
@@ -134,26 +133,24 @@ materials:
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-  - "Apply programming to solve chemical problems"
+  - "Apply programming to integrate probability distribution functions"
   - "Understand molecular property X through computational analysis"
   - "Interpret results of computational molecular science calculations"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
   - "Write and execute Python code in Jupyter notebooks"
-  - "Use library X to perform scientific calculations"
-  - "Create visualizations of molecular data"
-  - "Debug common programming errors"
+  - "Write user-defined functions"
+  - "Create graphs of user-defined functions"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
 scientific_prerequisites:
   - "General chemistry"
-  - "Basic understanding of molecular structure"
 
 # What programming experience is assumed?
 programming_prerequisites:
-  - "No prior programming experience required"
+  - "Basic Python syntax (variables, loops, functions)"
   # OR: eg "Basic Python syntax (variables, loops, functions)"
 
 # PLATFORM SUPPORT (REQUIRED)
@@ -162,20 +159,21 @@ programming_prerequisites:
 #   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
 # Any other value fails the build (no rendering template exists for it).
 platforms:
-  - "Google Colab"
-  - "Local Installation"
   - "ChemCompute"
+  - "Local Installation"
+  - "Google Colab"
 
 # Which platform do you recommend for most users?
 # Pick exactly ONE platform name, and it must match an entry in the `platforms`
 # list above EXACTLY (same spelling and capitalization). Do NOT combine several,
 # e.g. "Google Colab, ChemCompute" is invalid and fails the build.
-recommended_platform: "Google Colab"
+recommended_platform: "ChemCompute"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
 tags:
   - "python"
-  - "molecular-dynamics"
+  - "probability"
+  - "thermodynamics"
   - "visualization"
   - "quantum-chemistry"  # Use appropriate scientific area tags
