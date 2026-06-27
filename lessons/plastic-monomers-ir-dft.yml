@@ -1,0 +1,142 @@
+# lessons/plastic-monomers-ir-dft.yml
+#
+# ACT-CMS lesson portal submission.
+# Lesson id (this filename without .yml): plastic-monomers-ir-dft
+
+# BASIC METADATA (REQUIRED)
+title: "Computational IR Spectroscopy of Plastic Monomers"
+
+description: "Use DFT in Turbomole/TmoleX on an HPC cluster to compute the IR spectra of two candidate monomers and identify which one an unknown plastic is made from."
+
+expanded_description: |
+  In this lesson students use density functional theory (DFT) in the Turbomole program, 
+  used through the TmoleX GUI, to compute the IR spectra of two candidate monomer 
+  structures and decide which one an unknown plastic is built from by comparing with 
+  the experimental spectrum of the unknown measured in the wet-lab part
+  (which shows a distinct band near 1700 cm⁻¹).
+
+  Students build each monomer themselves with the 2D editor and convert it to
+  3D, run a DFT geometry optimization, then a harmonic vibrational-frequency
+  calculation from the optimized geometry. They read off vibrational frequencies
+  and IR intensities, animate and characterize the normal modes behind the
+  strongest bands, and connect the diagnostic ~1700 cm⁻¹ carbonyl band to the
+  presence of an ester group. The jobs are small and run locally inside the GUI
+  session (no programming component).
+
+# COURSE INFORMATION (REQUIRED)
+# "None" because the lesson is a guided GUI workflow with no programming.
+programming_skill: "None"
+
+primary_course: "Foundational Module"
+
+also_for:
+  - "Organic Chemistry"
+  - "Analytical Chemistry"
+  - "Materials Science"
+
+authors:
+  - "Prof. Robin Grotjahn"
+
+estimated_time: "1.5-2 hours"
+
+# Must be EXACTLY "Single Notebook" or "Multi-Part Module".
+# Single self-contained lab guide -> "Single Notebook".
+format: "Single Notebook"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+instructor_email: "rgrotjahn@scu.edu"
+# Instructor materials live in the repo at 01_plastic-monomers-ir-dft/instructor.md
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+student_level: "Undergraduate - First Year"
+students_piloted: 22
+instructor_notes: |
+  Piloted in CHEM-14L (Advanced Chemical Principles Laboratory, general
+  chemistry lab for first-year students) at Santa Clara University, with one
+  instructor and one TA for 22 students in a single lab session. Budget about
+  1.5-2 hours of computational work.
+
+  Software and access:
+  - Requires Turbomole 8.0 + the integrated TmoleX GUI (a free educational
+    license is available at https://store.turbomole.org/product/turbomole-8-0-educational/;
+  - If using Open OnDemand, confirm the "Compute GUI" resource profile exposes
+    the TmoleX launcher.
+
+  No input files: students build both monomers (Structure 1 = diethyl
+  terephthalate; Structure 2 = isopropylbenzene) themselves with the 2D editor.
+
+  Calculation settings: build via Draw 2D -> Get SMILES and close -> SMILES to
+  3D. Job 1: Geometry Optimization, Ground state, defaults (DFT, BP86,
+  def2-SV(P)). Job 2: IR & vibrational frequencies from the optimized geometry.
+  Neutral molecules, gas phase (no charge change, no solvation), run locally.
+  Spectrum display: standard deviation 40, 1000 sampling points, x-axis
+  600-4000 cm-1.
+
+# Companion lesson plus related theory modules (free-text references).
+related_modules:
+  - "fooddye-uvvis-tddft"
+
+# REPOSITORY URLS (REQUIRED)
+public_repo_url: "https://github.com/act-cms/plastic-monomers-ir-dft"
+
+# MATERIALS SECTION (REQUIRED)
+materials:
+  - title: "Computational IR Spectroscopy of Plastic Monomers (lab guide)"
+    description: "Markdown lab guide: log in via Open OnDemand, launch TmoleX, build each monomer with the 2D editor and convert to 3D, run a DFT geometry optimization and a harmonic frequency calculation locally, view the IR spectrum, animate and characterize the strongest vibrational modes, and identify the unknown plastic's monomer. No input files needed."
+    type: "lesson"
+    duration: "1.5-2 hours"
+    github_url: "https://github.com/act-cms/plastic-monomers-ir-dft/blob/main/01_plastic-monomers-ir-dft/student.md"
+    objectives:
+      - "Build a molecular structure with the 2D editor and convert it to 3D in TmoleX."
+      - "Run a DFT geometry optimization and a harmonic vibrational-frequency calculation."
+      - "Compute an IR spectrum and read off vibrational frequencies and IR intensities."
+      - "Animate and characterize the vibrational normal modes behind individual IR bands."
+      - "Compare a computed IR spectrum with reference data to identify functional groups."
+
+# LEARNING OBJECTIVES (REQUIRED)
+scientific_objectives:
+  - "Relate vibrational normal modes to the characteristic IR absorption bands of functional groups."
+  - "Explain why an IR spectrum must be computed from the optimized (relaxed) geometry."
+  - "Read off vibrational frequencies and IR intensities from computed output."
+  - "Animate and characterize the normal modes behind the strongest IR bands."
+  - "Compare a computed IR spectrum with reference data to identify a compound's functional groups."
+
+cyberinfrastructure_objectives:
+  - "Log in to an HPC cluster through an Open OnDemand web portal."
+  - "Launch a remote desktop session and operate a graphical application (TmoleX) within it."
+  - "Build a molecular structure with a GUI 2D editor and generate a 3D geometry."
+  - "Set up and run DFT geometry-optimization and vibrational-frequency calculations locally in a GUI."
+  - "Interpret computed output (frequency tables, IR spectrum) and animate normal modes."
+
+# PREREQUISITES (REQUIRED)
+scientific_prerequisites:
+  - "General chemistry"
+  - "Basic familiarity with molecular structure, bonding, and functional groups (e.g. esters, aromatics)"
+  - "No prior quantum-chemistry coursework is assumed"
+
+programming_prerequisites:
+  - "No prior programming experience required"
+
+# PLATFORM SUPPORT (REQUIRED)
+# Allowed values: "Google Colab", "Local Installation", "ChemCompute", "CoCalc".
+# TmoleX is an installed application (on a lab machine or HPC cluster) rather
+# than a cloud notebook, so this maps to "Local Installation".
+platforms:
+  - "Local Installation"
+
+recommended_platform: "Local Installation"
+
+# METADATA (REQUIRED)
+tags:
+  - "ir-spectroscopy"
+  - "vibrational-frequencies"
+  - "dft"
+  - "computational-chemistry"
+  - "geometry-optimization"
+  - "turbomole"
+  - "tmolex"
+  - "hpc"
+  - "open-ondemand"
+  - "functional-groups"
+  - "normal-modes"
+  - "polymers"
