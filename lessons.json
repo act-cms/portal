@@ -599,6 +599,177 @@
     ]
   },
   {
+    "title": "Computational IR Spectroscopy of Plastic Monomers",
+    "description": "Use DFT in Turbomole/TmoleX on an HPC cluster to compute the IR spectra of two candidate monomers and identify which one an unknown plastic is made from.",
+    "expanded_description": "In this lesson students use density functional theory (DFT) in the Turbomole program, \nused through the TmoleX GUI, to compute the IR spectra of two candidate monomer \nstructures and decide which one an unknown plastic is built from by comparing with \nthe experimental spectrum of the unknown measured in the wet-lab part\n(which shows a distinct band near 1700 cm⁻¹).\n\nStudents build each monomer themselves with the 2D editor and convert it to\n3D, run a DFT geometry optimization, then a harmonic vibrational-frequency\ncalculation from the optimized geometry. They read off vibrational frequencies\nand IR intensities, animate and characterize the normal modes behind the\nstrongest bands, and connect the diagnostic ~1700 cm⁻¹ carbonyl band to the\npresence of an ester group. The jobs are small and run locally inside the GUI\nsession (no programming component).\n",
+    "programming_skill": "None",
+    "primary_course": "Foundational Module",
+    "also_for": [
+      "Organic Chemistry",
+      "Analytical Chemistry",
+      "Materials Science"
+    ],
+    "authors": [
+      "Prof. Robin Grotjahn"
+    ],
+    "estimated_time": "1.5-2 hours",
+    "format": "Single Notebook",
+    "instructor_email": "rgrotjahn@scu.edu",
+    "student_level": "Undergraduate - First Year",
+    "students_piloted": 22,
+    "instructor_notes": "Piloted in CHEM-14L (Advanced Chemical Principles Laboratory, general\nchemistry lab for first-year students) at Santa Clara University, with one\ninstructor and one TA for 22 students in a single lab session. Budget about\n1.5-2 hours of computational work.\n\nSoftware and access:\n- Requires Turbomole 8.0 + the integrated TmoleX GUI (a free educational\n  license is available at https://store.turbomole.org/product/turbomole-8-0-educational/;\n- If using Open OnDemand, confirm the \"Compute GUI\" resource profile exposes\n  the TmoleX launcher.\n\nNo input files: students build both monomers (Structure 1 = diethyl\nterephthalate; Structure 2 = isopropylbenzene) themselves with the 2D editor.\n\nCalculation settings: build via Draw 2D -> Get SMILES and close -> SMILES to\n3D. Job 1: Geometry Optimization, Ground state, defaults (DFT, BP86,\ndef2-SV(P)). Job 2: IR & vibrational frequencies from the optimized geometry.\nNeutral molecules, gas phase (no charge change, no solvation), run locally.\nSpectrum display: standard deviation 40, 1000 sampling points, x-axis\n600-4000 cm-1.\n",
+    "related_modules": [
+      "fooddye-uvvis-tddft"
+    ],
+    "public_repo_url": "https://github.com/act-cms/plastic-monomers-ir-dft",
+    "materials": [
+      {
+        "title": "Computational IR Spectroscopy of Plastic Monomers (lab guide)",
+        "description": "Markdown lab guide: log in via Open OnDemand, launch TmoleX, build each monomer with the 2D editor and convert to 3D, run a DFT geometry optimization and a harmonic frequency calculation locally, view the IR spectrum, animate and characterize the strongest vibrational modes, and identify the unknown plastic's monomer. No input files needed.",
+        "type": "lesson",
+        "duration": "1.5-2 hours",
+        "github_url": "https://github.com/act-cms/plastic-monomers-ir-dft/blob/main/01_plastic-monomers-ir-dft/student.md",
+        "objectives": [
+          "Build a molecular structure with the 2D editor and convert it to 3D in TmoleX.",
+          "Run a DFT geometry optimization and a harmonic vibrational-frequency calculation.",
+          "Compute an IR spectrum and read off vibrational frequencies and IR intensities.",
+          "Animate and characterize the vibrational normal modes behind individual IR bands.",
+          "Compare a computed IR spectrum with reference data to identify functional groups."
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Relate vibrational normal modes to the characteristic IR absorption bands of functional groups.",
+      "Explain why an IR spectrum must be computed from the optimized (relaxed) geometry.",
+      "Read off vibrational frequencies and IR intensities from computed output.",
+      "Animate and characterize the normal modes behind the strongest IR bands.",
+      "Compare a computed IR spectrum with reference data to identify a compound's functional groups."
+    ],
+    "cyberinfrastructure_objectives": [
+      "Log in to an HPC cluster through an Open OnDemand web portal.",
+      "Launch a remote desktop session and operate a graphical application (TmoleX) within it.",
+      "Build a molecular structure with a GUI 2D editor and generate a 3D geometry.",
+      "Set up and run DFT geometry-optimization and vibrational-frequency calculations locally in a GUI.",
+      "Interpret computed output (frequency tables, IR spectrum) and animate normal modes."
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic familiarity with molecular structure, bonding, and functional groups (e.g. esters, aromatics)",
+      "No prior quantum-chemistry coursework is assumed"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Local Installation"
+    ],
+    "recommended_platform": "Local Installation",
+    "tags": [
+      "ir-spectroscopy",
+      "vibrational-frequencies",
+      "dft",
+      "computational-chemistry",
+      "geometry-optimization",
+      "turbomole",
+      "tmolex",
+      "hpc",
+      "open-ondemand",
+      "functional-groups",
+      "normal-modes",
+      "polymers"
+    ],
+    "id": "plastic-monomers-ir-dft",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "plastic-monomers-ir-dft",
+    "learning_paths": [],
+    "prerequisite_lessons": []
+  },
+  {
+    "title": "Computational UV-vis Spectroscopy of Food Dyes",
+    "description": "Use TDDFT in Turbomole/TmoleX on an HPC cluster to predict the UV-vis spectra and colors of three candidate molecules and identify which one is the Red-40 dye by comparison to experiment.",
+    "expanded_description": "Food dyes are colored because they absorb specific wavelengths of visible\nlight. In this lesson students use time-dependent density functional theory\n(TDDFT) in the Turbomole program, driven through the TmoleX GUI and run on a\nhigh-performance computing (HPC) cluster, to predict the UV-vis spectra and\ncolors of three candidate structures (A, B, C) and decide which one is the\nRed-40 (Allura Red) dye, whose absorption maximum in aqueous solution lies\nnear 504 nm.\n\nAlong the way students set up a realistic solution-phase calculation: a\ndef2-TZVPD basis set, a molecular charge of -2, and COSMO\nimplicit solvation for water. They submit the job to a cluster queue through\nOpen OnDemand, compute the spectrum and predicted color, and compare against\nexperimental reference data. The lesson mirrors how chemists screen candidate\nmolecules computationally before committing to synthesis, and connects the\nsize of a π-conjugated system to absorption wavelengths. It can be paired\nwith instructor chosen wet-lab components such as quantitative analysis via\nBeer's law. No programming is required and the workflow is entirely GUI-based.\n",
+    "programming_skill": "None",
+    "primary_course": "Foundational Module",
+    "also_for": [
+      "Physical Chemistry",
+      "Analytical Chemistry",
+      "Materials Science"
+    ],
+    "authors": [
+      "Prof. Robin Grotjahn"
+    ],
+    "estimated_time": "1.5-2 hours",
+    "format": "Single Notebook",
+    "instructor_email": "rgrotjahn@scu.edu",
+    "student_level": "Undergraduate - First Year",
+    "students_piloted": 22,
+    "instructor_notes": "Piloted in CHEM-14L (Advanced Chemical Principles Laboratory, general\nchemistry lab for first-year students) at Santa Clara University, with one\ninstructor and one TA for 22 students in a single lab session. Budget about\n1.5-2 hours of computational work.\n\nSoftware and access:\n- Requires Turbomole 8.0 + the integrated TmoleX GUI (a free educational\n  license is available at https://store.turbomole.org/product/turbomole-8-0-educational/;\n  note that this is not an academic research license).\n- Calculations are more demanding and requests ~48 threads to complete in 20-30 minutes.\n  Queued execution on an HPC cluster via Open OnDemand is\n  recommended over individual laptops.\n\nInput files (in material/): A.xyz, B.xyz, C.xyz, and remote-configuration.xml.\nThe XML is a SLURM template with UPPERCASE placeholders (partition, scratch\npath, TURBODIR, Turbomole version, mail domain); edit it for your site before\ndistributing. Students copy the inputs to /tmp and enter their own cluster\ncredentials in TmoleX after import.\n\nCalculation settings (must match across all three structures): basis\ndef2-TZVPD; charge -2; functional PBE; COSMO solvation with epsilon = 80.4 \nand refractive index = 1.33 (water); UV/Vis and CD vertical excitations, \n40 excitations, All IRREPs; run queued on the remote node (48 threads), \nnot local. PBE was chosen deliberately. More sophisticated functionals such\nas the range-separated hybrid ωB97X-D actually perform worse for this \nparticular system or do not separate the different systems in the same\npedagocically useful manner that's achieved at the PBE/def2-TZVPD (COSMO) level. \n",
+    "related_modules": [
+      "plastic-monomers-ir-dft"
+    ],
+    "public_repo_url": "https://github.com/act-cms/fooddye-uvvis-tddft",
+    "materials": [
+      {
+        "title": "Computational UV-vis Spectroscopy of Food Dyes (lab guide)",
+        "description": "Markdown lab guide: log in via Open OnDemand, launch TmoleX, import structures A/B/C, configure a solution-phase TDDFT calculation, submit to the cluster queue, compute spectra and predicted colors, and identify the Red-40 dye. Input files (A.xyz, B.xyz, C.xyz, remote-configuration.xml) are provided in material/.",
+        "type": "lesson",
+        "duration": "1.5-2 hours",
+        "github_url": "https://github.com/act-cms/fooddye-uvvis-tddft/blob/main/01_fooddye-uvvis-tddft/student.md",
+        "objectives": [
+          "Import a molecular structure and set up a quantum-chemical calculation in TmoleX.",
+          "Choose appropriate settings: basis set, molecular charge, density functional, and implicit solvation.",
+          "Run TDDFT calculations on an HPC cluster through a job queue.",
+          "Compute a UV-vis spectrum and predict a molecule's color from it.",
+          "Compare computed spectra and colors with reference data to identify a compound.",
+          "Relate the size of a π-conjugated system to its absorption wavelength."
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Explain electronic excitation as the molecular origin of UV-vis absorption and visible color.",
+      "Select calculation settings (basis set, charge, functional, implicit solvation).",
+      "Predict a molecule's visible color from its computed UV-vis spectrum.",
+      "Compare computed spectra and colors with experimental reference data to identify a compound.",
+      "Relate the size of a π-conjugated system to its absorption wavelength."
+    ],
+    "cyberinfrastructure_objectives": [
+      "Log in to an HPC cluster",
+      "Launch a remote desktop session and operate a graphical application (TmoleX) within it.",
+      "Set up and run a quantum-chemical (TDDFT) calculation through a GUI.",
+      "Configure remote systems and submit a job to a cluster queue (queued, multi-threaded execution).",
+      "Manage remote files and terminate the interactive session to free shared resources."
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic familiarity with molecular structure and π-conjugation",
+      "No prior quantum-chemistry coursework is assumed"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Local Installation"
+    ],
+    "recommended_platform": "Local Installation",
+    "tags": [
+      "tddft",
+      "uv-vis-spectroscopy",
+      "dft",
+      "computational-chemistry",
+      "excited-states",
+      "turbomole",
+      "tmolex",
+      "hpc",
+      "conjugation",
+      "dyes"
+    ],
+    "id": "fooddye-uvvis-tddft",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "fooddye-uvvis-tddft",
+    "learning_paths": [],
+    "prerequisite_lessons": []
+  },
+  {
     "title": "Development of antibiotic resistance",
     "description": "Students will model the appearence of both spontaneous and acquired antibiotic resistance mutations",
     "expanded_description": "This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.\n\nAcross seven Jupyter notebooks, students progressively develop both biological understanding and computational skills. Early modules introduce probability distributions commonly used in biological modeling, including binomial and Poisson distributions, and demonstrate how stochastic processes influence experimental outcomes. Students then construct simulations of bacterial population growth, model the emergence of resistant mutants, and explore the consequences of mutation timing on population structure. Subsequent notebooks guide students through the development and comparison of competing evolutionary models representing spontaneous mutation and acquired resistance hypotheses.\n\nAs the lesson progresses, students move beyond simulation to data analysis and scientific inference. They estimate mutation rates from simulated fluctuation-test data, evaluate uncertainty in parameter estimates, and compare model predictions to experimental observations. In the culminating activities, students explicitly examine the relationship between mutation timing and the distribution of resistant cells across cultures, using statistical analyses and visualizations to determine which evolutionary model best explains the observed data.\n\nThe lesson integrates core concepts from genetics, microbiology, evolution, statistics, and bioinformatics while providing students with authentic experience using Python as a scientific tool. Students gain practical skills in data visualization, simulation design, parameter estimation, statistical reasoning, and hypothesis testing. By reconstructing the logic behind a landmark experiment in molecular biology, students develop a deeper understanding of how quantitative models can be used to generate, test, and refine scientific hypotheses.\n\nThis lesson fits within broader molecular science education by demonstrating how computational approaches can be used to address fundamental questions about mutation, inheritance, and evolution. The activities support the development of quantitative and computational competencies that are increasingly essential in modern biological research, while reinforcing key concepts in microbial genetics, evolutionary biology, and the molecular basis of antibiotic resistance.\n",
