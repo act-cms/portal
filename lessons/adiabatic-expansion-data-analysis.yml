@@ -6,7 +6,7 @@
 
 # BASIC METADATA (REQUIRED)
 # Use a clear, descriptive title that includes the main topic
-title: "Heat Capacity Ratios via Experimental Data and Statistical Mechanics"
+title: "Determining Heat Capacity Ratios via Experimental Data and Statistical Mechanics"
 
 # Brief description for search results (1-2 sentences)
 description: "Students will examine experimental and computational data to compute heat capacity ratios"
@@ -154,7 +154,6 @@ scientific_prerequisites:
   - "Derivatives"
   - "Gas Laws"
   - "Thermodynamics"
-  - "Basic understanding of molecular structure"
 
 # What programming experience is assumed?
 programming_prerequisites:
