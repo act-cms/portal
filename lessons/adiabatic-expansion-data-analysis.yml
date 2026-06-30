@@ -27,7 +27,7 @@ programming_skill: "Beginner"
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
-primary_course: "Physical Chemistry"
+primary_course: "Physical Chemistry Lab"
 
 # List other courses where this lesson could be used (optional)
 also_for:
