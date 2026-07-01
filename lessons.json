@@ -770,6 +770,119 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Determining Heat Capacity Ratios via Experimental Data and Statistical Mechanics",
+    "description": "Students will examine experimental and computational data to compute heat capacity ratios",
+    "expanded_description": "This module combines analysis of time-resolved pressure measurements with electronic structure calculations to connect experimentally measured thermodynamic behavior to molecular-level statistical thermodynamics.\nStudents analyze pressure-time traces collecting during adiabatic expansion to identify the three characteristic pressure required to determine the heat capacity ratio: the initial equilibrium pressure (p1), the pressure immediately following expansion (p2), and the final re-equilibrated pressure (p3). Interactive filtering and visualization tools are used to identify these regions, after which students construct functions that employ numerical derivatives to locate the rapid pressure change associated with adiabatic expansion. This workflow demonstrates how computational tools can be used to identify thermodynamically meaningful features in experimental data.\nThe notebook also introduces statistical thermodynamics through electronic structure calculations using Psi4. Students calculate heat capacities for Ar and N$_2$ using ChemCompute, whereas completed Psi4 output files are provided for propane for time. Students then develop simple text-parsing workflows to extract thermodynamic quantities, including heat capacities, from the output files. These values are used to relate molecular degrees of freedom and statistical thermodynamics to experimentally observed macroscopic behavior. By incorporating both electronic structure calculations and text extraction from computational outputs, the module exposes students to computational workflows commonly encountered in modern research. \n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry Lab",
+    "also_for": [
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Prof. Prajay Patel"
+    ],
+    "estimated_time": "3-4 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "pmpatel@udallas.edu",
+    "student_level": "Undergraduate - Third/Fourth Year",
+    "students_piloted": 10,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- Students will have been introduced to the laws of thermodynamics and equilibrium concepts in a concurrent lecture course.\n- Most students had little to no prior programming experience entering the course but had completed introductory Python tutorials in earlier laboratory activities.\n- Student feedback consistently enmphasized the value of interactive visualization features for improving conceptual understanding of thermodynamic behavior and experimental data analysis.\n- Part 1 can be graded largely on completion while part 2 is designed as formative assessment where answers are formally graded in the lab report.\n- For the first part of the notebook in part 2, only use the first trial for Ar. We want to get the code working for a singular data set first, then we will worry about the other data.\n- Although the statistical mechanics activities provided students with a tangible framework for generating theoretical heat capacities, many still treated the partition function formalism as a black box procedure rather than a molecular description of energy accessibility. \n- Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.\n- The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.\n- The notebook for Part 1 is the same as Part 1 in the \"Determination of Molar Mass via Freezing Point Depression\" module because students were provided a choice between these two modules to work up for analysis.\n\nTiming notes:\n- Part 1 typically takes students 30-60 minutes.\n- Part 2 can be rushed in 2 hours but is better with 3 hours.\n\nCommon student questions:\n- \"Why isn't this working?\" - good opportunity to remind students of patience that comes with programming\n",
+    "related_modules": [
+      "intro-to-programming-with-chem-applications",
+      "treatment-of-experimental-data"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python",
+      "intro-to-programming-with-chem-applications"
+    ],
+    "public_repo_url": "https://github.com/act-cms/adiabatic-expansion-data-analysis",
+    "materials": [
+      {
+        "title": "Part 1: Data Filtering and Computational Chemistry",
+        "description": "Watch some videos and learn about how to filter data and run some basic electronic structure calculations in Psi4",
+        "type": "notebook",
+        "duration": "30-60 minutes",
+        "github_url": "https://github.com/act-cms/adiabatic-expansion-data-analysis/blob/main/01_pre-lab-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/adiabatic-expansion-data-analysis/blob/main/colab-notebooks/Thermodynamics_PreLab_Assignment-Student.ipynb",
+        "objectives": [
+          "Slice subsets of data from NumPy arrays and pandas DataFrames",
+          "Filter data using Boolean masks and conditional logic",
+          "Apply simple smoothing techniques (rolling average and convolution)",
+          "Run basic electronic structure calculations using Psi4"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/adiabatic-expansion-data-analysis&branch=main&urlpath=lab/tree/adiabatic-expansion-data-analysis/01_pre-lab-activity/Student.ipynb"
+      },
+      {
+        "title": "Part 2: Adiabatic Expansion of Gases",
+        "description": "Examine results from a dynamical version of the Clement-Desormes experiment to determine the heat capacity ratio of gases through Python analysis and statistical mechanics",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/adiabatic-expansion-data-analysis/blob/main/02_adiabatic-expansion/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/adiabatic-expansion-data-analysis/blob/main/colab-notebooks/Adiabatic_Expansion-Student.ipynb",
+        "objectives": [
+          "Data Filtering and Slicing",
+          "Extracting information from a text file",
+          "Analyze Psi4 calculations in Google Colab",
+          "Constructing Python functions to repeat a task"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/adiabatic-expansion-data-analysis&branch=main&urlpath=lab/tree/adiabatic-expansion-data-analysis/02_adiabatic-expansion/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Compute heat capacities using experimental and computational techniques",
+      "Utilize statistical thermodynamics in the context of electronic structure calculations"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use data slicing to find relevant information in an array",
+      "Extract relevant text from a text-based file",
+      "Use Python functions to save time in doing repetitive tasks"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Calculus",
+      "Derivatives",
+      "Gas Laws",
+      "Thermodynamics"
+    ],
+    "programming_prerequisites": [
+      "Basic Python syntax (variables, data types)",
+      "Importing data from Excel sheets into Python with pandas"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Google Colab",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "pandas",
+      "psi4",
+      "thermodynamics",
+      "gas-laws",
+      "adiabatic",
+      "lab",
+      "physical-chemistry",
+      "interactive",
+      "visualization"
+    ],
+    "id": "adiabatic-expansion-data-analysis",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "adiabatic-expansion-data-analysis",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/adiabatic-expansion-data-analysis&branch=main&urlpath=lab/tree/adiabatic-expansion-data-analysis/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      },
+      {
+        "id": "intro-to-programming-with-chem-applications",
+        "title": "Introduction to Python with Chemical Lab Applications"
+      }
+    ]
+  },
+  {
     "title": "Development of antibiotic resistance",
     "description": "Students will model the appearence of both spontaneous and acquired antibiotic resistance mutations",
     "expanded_description": "This lesson series introduces upper-level genetics and molecular biology students to computational modeling through the classic Luria–Delbrück fluctuation test, one of the foundational experiments in molecular genetics. The central biological question explored throughout the modules is whether antibiotic resistance arises through spontaneous mutations that occur before exposure to antibiotics or through mutations induced by selective pressure. Students investigate this question by building and analyzing computational models that simulate bacterial growth, mutation, and selection.\n\nAcross seven Jupyter notebooks, students progressively develop both biological understanding and computational skills. Early modules introduce probability distributions commonly used in biological modeling, including binomial and Poisson distributions, and demonstrate how stochastic processes influence experimental outcomes. Students then construct simulations of bacterial population growth, model the emergence of resistant mutants, and explore the consequences of mutation timing on population structure. Subsequent notebooks guide students through the development and comparison of competing evolutionary models representing spontaneous mutation and acquired resistance hypotheses.\n\nAs the lesson progresses, students move beyond simulation to data analysis and scientific inference. They estimate mutation rates from simulated fluctuation-test data, evaluate uncertainty in parameter estimates, and compare model predictions to experimental observations. In the culminating activities, students explicitly examine the relationship between mutation timing and the distribution of resistant cells across cultures, using statistical analyses and visualizations to determine which evolutionary model best explains the observed data.\n\nThe lesson integrates core concepts from genetics, microbiology, evolution, statistics, and bioinformatics while providing students with authentic experience using Python as a scientific tool. Students gain practical skills in data visualization, simulation design, parameter estimation, statistical reasoning, and hypothesis testing. By reconstructing the logic behind a landmark experiment in molecular biology, students develop a deeper understanding of how quantitative models can be used to generate, test, and refine scientific hypotheses.\n\nThis lesson fits within broader molecular science education by demonstrating how computational approaches can be used to address fundamental questions about mutation, inheritance, and evolution. The activities support the development of quantitative and computational competencies that are increasingly essential in modern biological research, while reinforcing key concepts in microbial genetics, evolutionary biology, and the molecular basis of antibiotic resistance.\n",
