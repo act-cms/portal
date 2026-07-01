@@ -6,7 +6,7 @@
 
 # BASIC METADATA (REQUIRED)
 # Use a clear, descriptive title that includes the main topic
-title: "Extracting Molar Mass from Freezing Point Depression Data"
+title: "Numerical Analysis of Cooling Curves to Determine the Molar Mass of an Unknown Compound"
 
 # Brief description for search results (1-2 sentences)
 description: "Students will interpret thermodynamic data through interactive visualization and numerical analysis of cooling curves to determine the molar mass of an unknown solute"
@@ -60,6 +60,7 @@ instructor_notes: |
   
   - The visualization exercises are very engaging - allow extra time for exploration and play.
   - Part 1 can be graded largely on completion as a pre-lab assignment while Part 2 is designed as formative assessment where answers are formally graded in the lab report.
+  - Part 1 of this module was also used for the "Determining Heat Capacity Ratios via Experimental Data and Statistical Mechanics" module in the original implementation since students could choose which lab of the two to write the formal report.
   - Screenshots of the interactive slider results are saved as Interactive_X.png where X=Tfus, mix1, or mix2 at 300 dpi. This allowed students to directly import these figures to their formal lab report.
   - For this data, cyclohexane was the solvent and p-dibromobenzene was the solute added as the mixture.
   - Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.
