@@ -1,0 +1,199 @@
+# lessons/your-lesson-name.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Absorption of Conjugated Dyes using the Finite Well Particle-in-a-Box Model"
+
+# Brief description for search results (1-2 sentences)
+description: "Use the particle-in-a-finite-well model to explore the absorption of conjugated dyes with UV-vis spectroscopy"
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  The particle-in-a-box (PIB) model is a quintessential yet abstract concept for Physical Chemistry. 
+  Students often find the model hard to understand due to the mathematical complexity of the model and the limited perceived relevance. 
+  Traditionally, students probe the PIB model by measuring the UV-vis absorption of conjugated carbocyanine dyes. 
+  This experiment links chain length to π-π* transition energies via an analytical formula in comparison to experimental spectra. 
+  To deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. 
+  Students can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined $λ_{max}$ to the experimentally collected spectra. 
+  Additionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. 
+  Together, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools.
+  This module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "Beginner"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Physical Chemistry Lab"
+
+# List other courses where this lesson could be used (optional)
+also_for: 
+  - "Quantum Chemistry"
+  - "Physical Chemistry"
+# List all authors
+authors: 
+  - "Prof. Prajay Patel"
+
+# Estimated total time for all materials
+estimated_time: "3-4 hours"
+
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Multi-Part Module"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "pmpatel@udallas.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Third/Fourth Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 10  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson:
+  
+  - Students collected experimental and computational data the prior week in lab and part of their experimental procedure was to analyze the MOs. Therefore in Part 2, section 2 is adaptable as an interactive representation of that process.
+  - The time-dependent DFT (TDDFT) spectra were run using ORCA 6.0+ using RIJCOSX CAM-B3LYP/def2-SVP.
+  - Students struggle with implementing loops and constructing functions.
+  - The visualization exercises are very engaging - allow extra time for exploration and play. The connections will probably not be obvious how the molecular orbitals are similar to the PIB wavefunctions.
+  - Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.
+  - Questions/Answers were not graded as these questions can be folded into the lab report.
+  - Part 1 can be graded largely on completion as a pre-lab assignment while Part 2 is designed as formative assessment where answers are formally graded in the lab report.
+  - The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.
+  
+  Timing notes:
+  - Part 1 typically takes students 30-60 minutes.
+  - Part 2 is better with 3 hours.
+  
+  Common student questions:
+  - "How do we determine the box length?" We measure the distance between the N atoms in the conjugated system
+  - "How do we determine the well depth?" The well depth is approximated as the difference in energy levels with no nodes in the conjugated pi system and LUMO+2.
+  - "Why isn't this working?" - good opportunity to remind students of patience that comes with programming
+
+# Related lessons that complement this one
+related_modules:
+  - "intro-to-programming-with-chem-applications"
+  - "fooddye-uvvis-tddft"
+  - "lesson-02-linear-variation-method"
+  - "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+prerequisite_modules:
+  - "foundational-intro-python"
+  - "intro-to-programming-with-chem-applications"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Part 1: Introduction"
+    description: "Pre lab assignment covering if/else statements and for loops in the context of broadening spectra"
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "30-60 minutes"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/01_pre-lab-activity/Student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/colab-notebooks/Quantum_Theory_PreLab_Assignment-Student.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Describe for loops and if/else statements"
+      - "Plot a summation of gaussian peaks using a for loop"
+  
+  # Add more materials as needed
+  - title: "Part 2: Absorption of Conjugated Dyes using the Fintie Well"
+    description: "This notebook goes through how the particle-in-a-box and the finite well model connects with UV-vis spectroscopy"
+    type: "notebook"
+    duration: "2-3 hours"
+    github_url: "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/02_absorption-conjugated-dyes-activity/Student.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/colab-notebooks/Quantum_Theory-Student.ipynb"
+    objectives:
+      - "Use a for loop to plot the computed UV-vis spectra."
+      - "Create more customized figures using matplotlib by overlaying computed and experimental spectra"
+      - "Determine the computed maximum wavlength of absorbance from various models and spectra"
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Describe peak broadening in spectroscopy"
+  - "How does the particle-in-a-box (PIB) model connect to UV-vis spectroscopy?"
+  - "How does this connection extend to the finite well model?"
+  - "Examine the particle in a finite well model interactively"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Use Python functions and loops to save time in doing repetitive tasks."
+  - "Use subplots and a twin axis to plot a computed and experimental UV-vis spectra on the same figure."
+  - "Compute energy levels in a finite well model."
+  - "Extract text information from an ORCA output file."
+  
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+  - "Calculus"
+  - "Physical chemistry"
+  - "Particle in a Box"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "Basic Python syntax (variables)"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used. Each value must be one of
+# the supported platforms (spelling and capitalization matter):
+#   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
+# Any other value fails the build (no rendering template exists for it).
+platforms:
+  - "ChemCompute"
+  - "Google Colab"
+  - "Local Installation"
+
+# Which platform do you recommend for most users?
+# Pick exactly ONE platform name, and it must match an entry in the `platforms`
+# list above EXACTLY (same spelling and capitalization). Do NOT combine several,
+# e.g. "Google Colab, ChemCompute" is invalid and fails the build.
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "pandas"
+  - "visualization"
+  - "interactive"
+  - "particle-in-a-box"
+  - "finite-well"
+  - "uv-vis"
+  - "spectroscopy"
+  - "conjugated-dyes"
+  - "physical-chemistry"
+  - "quantum-chemistry"  # Use appropriate scientific area tags
