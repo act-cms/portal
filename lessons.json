@@ -2406,6 +2406,119 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Numerical Analysis of Cooling Curves to Determine the Molar Mass of an Unknown Compound",
+    "description": "Students will interpret temperature-time cooling curves through interactive visualization and numerical analysis to determine the molar mass of an unknown solute",
+    "expanded_description": "This module emphasizes the computational interpretation of noisy, time-resolved thermodynamic data through interactive visualization and numerical analysis of cooling curves. Students analyze temperature vs. time data collected during the freezing of pure solvent and solution samples with Beckmann's cryoscopic apparatus to determine the freezing point depression and calculate the molar mass of an unknown solute. Unlike traditional implementations of the experiment that rely primarily on manual inspection of cooling curves, this module introduces students to computational approaches for identifying thermodynamically meaningful transition regions in experimental datasets using numerical differentiation.\nEmphasis is placed on the relationship between smoothing and numerical differentiation for this module. Students compare the rolling average and Savitzky-Golay smoothing methods to examine how different approaches influence derivative behavior and identify characteristic regions within the cooling curves. \n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry Lab",
+    "also_for": [
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Prof. Prajay Patel"
+    ],
+    "estimated_time": "3-4 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "pmpatel@udallas.edu",
+    "student_level": "Undergraduate - Third/Fourth Year",
+    "students_piloted": 10,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- The visualization exercises are very engaging - allow extra time for exploration and play.\n- Part 1 can be graded largely on completion as a pre-lab assignment while Part 2 is designed as formative assessment where answers are formally graded in the lab report.\n- Part 1 of this module was also used for the \"Determining Heat Capacity Ratios via Experimental Data and Statistical Mechanics\" module in the original implementation since students could choose which lab of the two to write the formal report.\n- Screenshots of the interactive slider results are saved as Interactive_X.png where X=Tfus, mix1, or mix2 at 300 dpi. This allowed students to directly import these figures to their formal lab report.\n- For this data, cyclohexane was the solvent and p-dibromobenzene was the solute added as the mixture.\n- Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.\n- The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.\n\nTiming notes:\n- Part 1 typically takes students 30-60 minutes.\n- Part 2 can be rushed in 2 hours but is better with 3 hours.\n\nCommon student questions:\n- \"Why isn't this working?\" - good opportunity to remind students of patience that comes with programming\n",
+    "related_modules": [
+      "adiabatic-expansion-data-analysis",
+      "treatment-of-experimental-data",
+      "intro-to-programming-with-chem-applications"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python",
+      "intro-to-programming-with-chem-applications"
+    ],
+    "public_repo_url": "https://github.com/act-cms/freezing-point-depression-molar-mass-determination",
+    "materials": [
+      {
+        "title": "Part 1: Data Filtering and Computational Chemistry",
+        "description": "This notebook covers how to slice subsets of data and apply simple smoothing techniques",
+        "type": "notebook",
+        "duration": "30-60 minutes",
+        "github_url": "https://github.com/act-cms/freezing-point-depression-molar-mass-determination/blob/main/01_pre-lab-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/freezing-point-depression-molar-mass-determination/blob/main/colab-notebooks/Thermodynamics_PreLab_Assignment-Student.ipynb",
+        "objectives": [
+          "Slice subsets of data from NumPy arrays and pandas DataFrames",
+          "Filter data using Boolean masks and conditional logic",
+          "Apply simple smoothing techniques (rolling average and convolution)",
+          "Run electronic structure calculations using Psi4"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/freezing-point-depression-molar-mass-determination&branch=main&urlpath=lab/tree/freezing-point-depression-molar-mass-determination/01_pre-lab-activity/Student.ipynb"
+      },
+      {
+        "title": "Part 2: Freezing Point Depression using a Beckmann Cryoscopic Apparatus",
+        "description": "Numerically analyze cooling curves to determine the molar mass of an unknown compound",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/freezing-point-depression-molar-mass-determination/blob/main/02_freezing-point-depression-analysis/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/freezing-point-depression-molar-mass-determination/blob/main/colab-notebooks/Freezing_Point_Depression-Student.ipynb",
+        "objectives": [
+          "Implement data filtering and slicing of pandas dataframes and numpy arrays",
+          "Examine data smoothing techniques",
+          "Numerical differentiation",
+          "Constructing Python functions to repeat a task"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/freezing-point-depression-molar-mass-determination&branch=main&urlpath=lab/tree/freezing-point-depression-molar-mass-determination/02_freezing-point-depression-analysis/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Explain colligative properties",
+      "Recognize how numerical differentiation is used to determine cooling curves",
+      "Determine molar mass of an unknown solute via freezing point depression"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use data slicing and booleans to find relevant information in an array",
+      "Plot and analyze a derivative function interactively",
+      "Compute the molar mass of an unknown compound using cooling curves and freezing point depression",
+      "Use Python functions to save time in doing repetitive tasks"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Colligative properties",
+      "Calculus",
+      "Derivatives"
+    ],
+    "programming_prerequisites": [
+      "Importing data from Excel sheets into Python with pandas"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Google Colab",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "pandas",
+      "colligative properties",
+      "lab",
+      "visualization",
+      "interactive",
+      "freezing-point-depression",
+      "cryoscopy",
+      "thermodynamics"
+    ],
+    "id": "freezing-point-depression-molar-mass-determination",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "freezing-point-depression-molar-mass-determination",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/freezing-point-depression-molar-mass-determination&branch=main&urlpath=lab/tree/freezing-point-depression-molar-mass-determination/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      },
+      {
+        "id": "intro-to-programming-with-chem-applications",
+        "title": "Introduction to Python with Chemical Lab Applications"
+      }
+    ]
+  },
+  {
     "title": "Ocean Acidification",
     "description": "Data analysis for a multi-week Ocean Acidification Experiment in Analytical Chemistry Laboratory.  This module is designed to support the published laboratory experiment 'Ocean Acidification: Investigation and Presentation of the Effects of Elevated Carbon Dioxide Levels on Seawater Chemistry and Calcareous Organisms' by Jeffrey M. Buth, J. Chem. Educ. 2016, 93, 718–721.",
     "expanded_description": "This lesson can be used to analyze pooled mass, pH, and titration data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection.\nIt would be helpful if students have completed the Statistical Testing module prior to this one.\nAt least an hour at the end of *each* lab period should be allocated to this data analysis module; this includes Week 1, when students\nhave no module but should get a head start on reading, commenting, and modifying code so as not to be rushed in Week 2 and Week 3.\n\nYou can use multiple paragraphs to fully describe the lesson scope\nand learning experience.\n",
