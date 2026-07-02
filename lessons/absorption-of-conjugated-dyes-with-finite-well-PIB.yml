@@ -20,7 +20,7 @@ expanded_description: |
   To deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. 
   Students can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined $λ_{max}$ to the experimentally collected spectra. 
   Additionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. 
-  Together, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools.
+  Together, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools. 
   This module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.
 
 # COURSE INFORMATION (REQUIRED)
