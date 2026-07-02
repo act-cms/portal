@@ -9,7 +9,7 @@
 title: "Numerical Analysis of Cooling Curves to Determine the Molar Mass of an Unknown Compound"
 
 # Brief description for search results (1-2 sentences)
-description: "Students will interpret thermodynamic data through interactive visualization and numerical analysis of cooling curves to determine the molar mass of an unknown solute"
+description: "Students will interpret temperature-time cooling curves through interactive visualization and numerical analysis to determine the molar mass of an unknown solute"
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
@@ -141,7 +141,7 @@ scientific_objectives:
 cyberinfrastructure_objectives:
   - "Use data slicing and booleans to find relevant information in an array"
   - "Plot and analyze a derivative function interactively"
-  - "Compute the molar mass using cooling curves and freezing point depression"
+  - "Compute the molar mass of an unknown compound using cooling curves and freezing point depression"
   - "Use Python functions to save time in doing repetitive tasks"
 
 # PREREQUISITES (REQUIRED)
@@ -183,4 +183,5 @@ tags:
   - "visualization"
   - "interactive"
   - "freezing-point-depression"
+  - "cryoscopy"
   - "thermodynamics"  # Use appropriate scientific area tags
