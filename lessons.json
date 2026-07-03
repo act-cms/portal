@@ -1,5 +1,120 @@
 [
   {
+    "title": "Absorption of Conjugated Dyes using the Finite Well Particle-in-a-Box Model",
+    "description": "Use the particle-in-a-finite-well model to explore the absorption of conjugated dyes with UV-vis spectroscopy",
+    "expanded_description": "The particle-in-a-box (PIB) model is a quintessential yet abstract concept for Physical Chemistry. \nStudents often find the model hard to understand due to the mathematical complexity of the model and the limited perceived relevance. \nTraditionally, students probe the PIB model by measuring the UV-vis absorption of conjugated carbocyanine dyes. \nThis experiment links chain length to π-π* transition energies via an analytical formula in comparison to experimental spectra. \nTo deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. \nStudents can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined $λ_{max}$ to the experimentally collected spectra. \nAdditionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. \nTogether, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools. \nThis module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.\n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry Lab",
+    "also_for": [
+      "Quantum Chemistry",
+      "Physical Chemistry"
+    ],
+    "authors": [
+      "Prof. Prajay Patel"
+    ],
+    "estimated_time": "3-4 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "pmpatel@udallas.edu",
+    "student_level": "Undergraduate - Third/Fourth Year",
+    "students_piloted": 10,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- Students collected experimental and computational data the prior week in lab and part of their experimental procedure was to analyze the MOs. Therefore in Part 2, section 2 is adaptable as an interactive representation of that process.\n- The time-dependent DFT (TDDFT) spectra were run using ORCA 6.0+ using RIJCOSX CAM-B3LYP/def2-SVP.\n- Students struggle with implementing loops and constructing functions.\n- The visualization exercises are very engaging - allow extra time for exploration and play. The connections will probably not be obvious how the molecular orbitals are similar to the PIB wavefunctions.\n- Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.\n- Questions/Answers were not graded as these questions can be folded into the lab report.\n- Part 1 can be graded largely on completion as a pre-lab assignment while Part 2 is designed as formative assessment where answers are formally graded in the lab report.\n- The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.\n\nTiming notes:\n- Part 1 typically takes students 30-60 minutes.\n- Part 2 is better with 3 hours.\n\nCommon student questions:\n- \"How do we determine the box length?\" We measure the distance between the N atoms in the conjugated system\n- \"How do we determine the well depth?\" The well depth is approximated as the difference in energy levels with no nodes in the conjugated pi system and LUMO+2.\n- \"Why isn't this working?\" - good opportunity to remind students of patience that comes with programming\n",
+    "related_modules": [
+      "intro-to-programming-with-chem-applications",
+      "fooddye-uvvis-tddft",
+      "lesson-02-linear-variation-method",
+      "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python",
+      "intro-to-programming-with-chem-applications"
+    ],
+    "public_repo_url": "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB",
+    "materials": [
+      {
+        "title": "Part 1: Introduction",
+        "description": "Pre lab assignment covering if/else statements and for loops in the context of broadening spectra",
+        "type": "notebook",
+        "duration": "30-60 minutes",
+        "github_url": "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/01_pre-lab-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/colab-notebooks/Quantum_Theory_PreLab_Assignment-Student.ipynb",
+        "objectives": [
+          "Describe for loops and if/else statements",
+          "Plot a summation of gaussian peaks using a for loop"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB&branch=main&urlpath=lab/tree/absorption-of-conjugated-dyes-with-finite-well-PIB/01_pre-lab-activity/Student.ipynb"
+      },
+      {
+        "title": "Part 2: Absorption of Conjugated Dyes using the Fintie Well",
+        "description": "This notebook goes through how the particle-in-a-box and the finite well model connects with UV-vis spectroscopy",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/02_absorption-conjugated-dyes-activity/Student.ipynb",
+        "colab_url": "https://colab.research.google.com/github/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB/blob/main/colab-notebooks/Quantum_Theory-Student.ipynb",
+        "objectives": [
+          "Use a for loop to plot the computed UV-vis spectra.",
+          "Create more customized figures using matplotlib by overlaying computed and experimental spectra",
+          "Determine the computed maximum wavlength of absorbance from various models and spectra"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB&branch=main&urlpath=lab/tree/absorption-of-conjugated-dyes-with-finite-well-PIB/02_absorption-conjugated-dyes-activity/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Describe peak broadening in spectroscopy",
+      "How does the particle-in-a-box (PIB) model connect to UV-vis spectroscopy?",
+      "How does this connection extend to the finite well model?",
+      "Examine the particle in a finite well model interactively"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Use Python functions and loops to save time in doing repetitive tasks.",
+      "Use subplots and a twin axis to plot a computed and experimental UV-vis spectra on the same figure.",
+      "Compute energy levels in a finite well model.",
+      "Extract text information from an ORCA output file."
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Calculus",
+      "Physical chemistry",
+      "Particle in a Box"
+    ],
+    "programming_prerequisites": [
+      "Basic Python syntax (variables)"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Google Colab",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "pandas",
+      "visualization",
+      "interactive",
+      "particle-in-a-box",
+      "finite-well",
+      "uv-vis",
+      "spectroscopy",
+      "conjugated-dyes",
+      "physical-chemistry",
+      "quantum-chemistry"
+    ],
+    "id": "absorption-of-conjugated-dyes-with-finite-well-PIB",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "absorption-of-conjugated-dyes-with-finite-well-PIB",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB&branch=main&urlpath=lab/tree/absorption-of-conjugated-dyes-with-finite-well-PIB/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      },
+      {
+        "id": "intro-to-programming-with-chem-applications",
+        "title": "Introduction to Python with Chemical Lab Applications"
+      }
+    ]
+  },
+  {
     "title": "Basic Tasks Using a Jupyter Notebook with Code in Python for Analytical Chemistry Data Analysis",
     "description": "Generate code in Python to perform four basic tasks: Basic calculations; Entering data into NumPy arrays; Fitting data in NumPy arrays to a NumPy or SciPy nonlinear model function; Creating a Matplotlib graph of data in NumPy arrays and of a nonlinear model function.",
     "expanded_description": "This lesson can be used as an introduction to Analytical Chemistry Data Analysis tasks in Python.\nThe suggested context would be to walk through it together during the first week of Analytical Laboratory.\nAbout 45 minutes to an hour should be allocated to this lesson; an hour is best.\n",
