@@ -100,9 +100,9 @@ materials:
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
+    github_url: "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculations/blob/main/01_PIB_SimpleCalcuations/student.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+    colab_url: 
     
     # Learning objectives specific to this material
     objectives:
@@ -148,7 +148,6 @@ programming_prerequisites:
 platforms:
   - "ChemCompute"
   - "Local Installation"
-  - "Google Colab"
 
 # Which platform do you recommend for most users?
 # Pick exactly ONE platform name, and it must match an entry in the `platforms`
