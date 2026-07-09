@@ -60,11 +60,20 @@ jobs:
       # build still passes. We reject those here. paths.yml (learning paths) and
       # template.yaml (the reference) are the only YAML files that legitimately
       # live at the repo root.
+      #
+      # We diff the PR head SHA against base (base...head), NOT ...HEAD. On a
+      # pull_request event, actions/checkout resolves HEAD to the *merge* ref
+      # (head merged into current main), so ...HEAD would also surface every
+      # change main made since the branch forked — misattributing main's own
+      # commits (e.g. edits to this workflow) to the PR. Diffing the pure head
+      # SHA yields exactly the author's changes, matching GitHub's "Files
+      # changed" tab, even when the branch is behind main.
       - name: Check submitted YAML is a lessons/*.yml file
         id: location
         if: always()
         run: |
           base="${{ github.event.pull_request.base.sha }}"
+          head="${{ github.event.pull_request.head.sha }}"
           : > changed_lessons.txt
           while IFS= read -r f; do
             case "$f" in
@@ -87,7 +96,7 @@ jobs:
                 echo "location_failed=true" >> "$GITHUB_OUTPUT"
                 ;;
             esac
-          done < <(git diff --name-only --diff-filter=d "$base"...HEAD)
+          done < <(git diff --name-only --diff-filter=d "$base...$head")
 
       # Verify links resolve and no template placeholders were left in. Only the
       # lesson files this PR changed are checked, to avoid network-checking (and
