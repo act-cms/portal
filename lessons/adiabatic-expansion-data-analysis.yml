@@ -1,0 +1,192 @@
+# lessons/your-lesson-name.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Determining Heat Capacity Ratios via Experimental Data and Statistical Mechanics"
+
+# Brief description for search results (1-2 sentences)
+description: "Students will examine experimental and computational data to compute heat capacity ratios"
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  This module combines analysis of time-resolved pressure measurements with electronic structure calculations to connect experimentally measured thermodynamic behavior to molecular-level statistical thermodynamics.
+  Students analyze pressure-time traces collecting during adiabatic expansion to identify the three characteristic pressure required to determine the heat capacity ratio: the initial equilibrium pressure (p1), the pressure immediately following expansion (p2), and the final re-equilibrated pressure (p3). Interactive filtering and visualization tools are used to identify these regions, after which students construct functions that employ numerical derivatives to locate the rapid pressure change associated with adiabatic expansion. This workflow demonstrates how computational tools can be used to identify thermodynamically meaningful features in experimental data.
+  The notebook also introduces statistical thermodynamics through electronic structure calculations using Psi4. Students calculate heat capacities for Ar and N$_2$ using ChemCompute, whereas completed Psi4 output files are provided for propane for time. Students then develop simple text-parsing workflows to extract thermodynamic quantities, including heat capacities, from the output files. These values are used to relate molecular degrees of freedom and statistical thermodynamics to experimentally observed macroscopic behavior. By incorporating both electronic structure calculations and text extraction from computational outputs, the module exposes students to computational workflows commonly encountered in modern research. 
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "Beginner"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Physical Chemistry Lab"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+  - "Physical Chemistry"
+  
+# List all authors
+authors: 
+  - "Prof. Prajay Patel"
+
+# Estimated total time for all materials
+estimated_time: "3-4 hours"
+
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Multi-Part Module"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "pmpatel@udallas.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Third/Fourth Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 10  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson:
+  
+  - Students will have been introduced to the laws of thermodynamics and equilibrium concepts in a concurrent lecture course.
+  - Most students had little to no prior programming experience entering the course but had completed introductory Python tutorials in earlier laboratory activities.
+  - Student feedback consistently enmphasized the value of interactive visualization features for improving conceptual understanding of thermodynamic behavior and experimental data analysis.
+  - Part 1 can be graded largely on completion while part 2 is designed as formative assessment where answers are formally graded in the lab report.
+  - For the first part of the notebook in part 2, only use the first trial for Ar. We want to get the code working for a singular data set first, then we will worry about the other data.
+  - Although the statistical mechanics activities provided students with a tangible framework for generating theoretical heat capacities, many still treated the partition function formalism as a black box procedure rather than a molecular description of energy accessibility. 
+  - Sample data is provided to use the notebook. Any custom data should be formatted in the same way as the sample data for best compatibility.
+  - The instructor version works in both ChemCompute and Colab; however, the version in Colab will not render the markdown JupyterMyST colored cells.
+  - The notebook for Part 1 is the same as Part 1 in the "Determination of Molar Mass via Freezing Point Depression" module because students were provided a choice between these two modules to work up for analysis.
+  
+  Timing notes:
+  - Part 1 typically takes students 30-60 minutes.
+  - Part 2 can be rushed in 2 hours but is better with 3 hours.
+  
+  Common student questions:
+  - "Why isn't this working?" - good opportunity to remind students of patience that comes with programming
+
+# Related lessons that complement this one
+related_modules:
+  - "intro-to-programming-with-chem-applications"
+  - "treatment-of-experimental-data"
+  
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+prerequisite_modules:
+  - "foundational-intro-python"
+  - "intro-to-programming-with-chem-applications"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/adiabatic-expansion-data-analysis"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Part 1: Data Filtering and Computational Chemistry"
+    description: "Watch some videos and learn about how to filter data and run some basic electronic structure calculations in Psi4"
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "30-60 minutes"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/adiabatic-expansion-data-analysis/blob/main/01_pre-lab-activity/Student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    colab_url: "https://colab.research.google.com/github/act-cms/adiabatic-expansion-data-analysis/blob/main/colab-notebooks/Thermodynamics_PreLab_Assignment-Student.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Slice subsets of data from NumPy arrays and pandas DataFrames"
+      - "Filter data using Boolean masks and conditional logic"
+      - "Apply simple smoothing techniques (rolling average and convolution)"
+      - "Run basic electronic structure calculations using Psi4"
+  
+  # Add more materials as needed
+  - title: "Part 2: Adiabatic Expansion of Gases"
+    description: "Examine results from a dynamical version of the Clement-Desormes experiment to determine the heat capacity ratio of gases through Python analysis and statistical mechanics"
+    type: "notebook"
+    duration: "2-3 hours"
+    github_url: "https://github.com/act-cms/adiabatic-expansion-data-analysis/blob/main/02_adiabatic-expansion/Student.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/adiabatic-expansion-data-analysis/blob/main/colab-notebooks/Adiabatic_Expansion-Student.ipynb"
+    objectives:
+      - "Data Filtering and Slicing"
+      - "Extracting information from a text file"
+      - "Analyze Psi4 calculations in Google Colab"
+      - "Constructing Python functions to repeat a task"
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Compute heat capacities using experimental and computational techniques"
+  - "Utilize statistical thermodynamics in the context of electronic structure calculations"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Use data slicing to find relevant information in an array"
+  - "Extract relevant text from a text-based file"
+  - "Use Python functions to save time in doing repetitive tasks"
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+  - "Calculus"
+  - "Derivatives"
+  - "Gas Laws"
+  - "Thermodynamics"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "Basic Python syntax (variables, data types)"
+  - "Importing data from Excel sheets into Python with pandas"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used. Each value must be one of
+# the supported platforms (spelling and capitalization matter):
+#   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
+# Any other value fails the build (no rendering template exists for it).
+platforms:
+  - "ChemCompute"
+  - "Google Colab"
+  - "Local Installation"
+
+# Which platform do you recommend for most users?
+# Pick exactly ONE platform name, and it must match an entry in the `platforms`
+# list above EXACTLY (same spelling and capitalization). Do NOT combine several,
+# e.g. "Google Colab, ChemCompute" is invalid and fails the build.
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "pandas"
+  - "psi4"
+  - "thermodynamics"
+  - "gas-laws"
+  - "adiabatic"
+  - "lab"
+  - "physical-chemistry"
+  - "interactive"
+  - "visualization"  # Use appropriate scientific area tags
