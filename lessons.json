@@ -2739,6 +2739,92 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Particle in a Box Energy Calculations",
+    "description": "Students will calculate energy levels for particle in a box, examine how box length changes these levels, and predict absorption wavelength",
+    "expanded_description": "By completing this module students will examine the energies of a 1, 2, and 3-D box. \nStudents will calculate both individual energy levels and differences in energy levels.\n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry",
+    "also_for": [
+      "Physical Chemistry Lab"
+    ],
+    "authors": [
+      "Prof. Cecilia Vollbrecht"
+    ],
+    "estimated_time": "1-2 hours",
+    "format": "Single Notebook",
+    "instructor_email": "cecilia.vollbrecht@kzoo.edu",
+    "student_level": "Undergraduate - Third Year",
+    "students_piloted": 7,
+    "instructor_notes": "Additional context for instructors using this lesson:\nThis activity was piloted with students working on their own document but collaborating in pairs.\nThe set up allowed students to help each other and learn to troubleshoot better.\nA lot of material was covered before the module, and the module was designed more to help students practice calculations\nand see visualizations than to learn new concepts. \n",
+    "related_modules": [
+      "calculating-entropies",
+      "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculations",
+    "materials": [
+      {
+        "title": "Particle in a Box Energy Calculations",
+        "description": "This notebook covers calculating energy levels using the particle in a box model, comparing energy levels as box length changes, and calculating energy level differences in both energy and wavelength",
+        "type": "notebook",
+        "duration": "1-2 hour",
+        "github_url": "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculations/blob/main/01_PIB_SimpleCalcuations/student.ipynb",
+        "objectives": [
+          "Determine energy levels of a 1, 2, and 3-D particle in a box model",
+          "Calculate differences in energy levels and the wavelength they correspond to",
+          "Create visualizations of energy levels with changing box length"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Particle-In-A-Box-Energy-Calculations&branch=main&urlpath=lab/tree/Particle-In-A-Box-Energy-Calculations/01_PIB_SimpleCalcuations/student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Apply programming to solve chemical problems",
+      "Understand the particle in a box model through computational analysis",
+      "Calculate energy levels of particles in a box (1-D and 2-D)",
+      "Convert energy to wavelength to predict what wavelength molecules will absorb",
+      "Predict how energy levels will change when box length changes or particle mass changes",
+      "Interpret results of computational molecular science calculations"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Write and execute Python code in Jupyter notebooks",
+      "Set constants and use functions",
+      "Use if and for loops",
+      "Create plots",
+      "Create and use arrays and matrices"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic understanding of particle in a box model"
+    ],
+    "programming_prerequisites": [
+      "Basic python syntax"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Local Installation"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "physical-chemistry",
+      "visualization",
+      "quantum-chemistry"
+    ],
+    "id": "Particle-in-A-Box-Energy-Calculations",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "Particle-in-A-Box-Energy-Calculations",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/Particle-In-A-Box-Energy-Calculations&branch=main&urlpath=lab/tree/Particle-In-A-Box-Energy-Calculations/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Solution Preparation and Spectrophotometry",
     "description": "Data analysis for a Solution Preparation and Spectrophotometry Experiment in Analytical Chemistry Laboratory.",
     "expanded_description": "This lesson can be used to analyze solution preparation and spectrophotometry data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together during the corresponding Analytical Laboratory experiment.\nAbout a half hour to an hour should be allocated in lab to this lesson, after data collection is complete.\n\nYou can use multiple paragraphs to fully describe the lesson scope\nand learning experience.\n",
