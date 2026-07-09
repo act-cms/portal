@@ -68,11 +68,9 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "fooddye-uvvis-tddft"
-  - "Harmonic-Oscillator-Energy-Calculations"
-  - "vibronic-spectrum-of-iodine"
-  - "orthonormal-wavefunctions"
-  - "absorption-of-conjugated-dyes-with-finite-well-PIB"
+  - "calculating-entropies"
+  - "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
