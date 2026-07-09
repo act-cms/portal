@@ -101,8 +101,7 @@ materials:
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
     github_url: "https://github.com/act-cms/Particle-In-A-Box-Energy-Calculations/blob/main/01_PIB_SimpleCalcuations/student.ipynb"
-    # Google Colab launch link (recommended for accessibility)
-    colab_url: 
+    # Google Colab launch link (recommended for accessibility) 
     
     # Learning objectives specific to this material
     objectives:
