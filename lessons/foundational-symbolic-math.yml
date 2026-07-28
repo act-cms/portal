@@ -13,13 +13,23 @@ description: "Students will learn foundational skills for performing symbolic ma
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  Provide a more detailed description of your lesson here.
-  Explain the context, what students will accomplish, and how this
-  fits into broader molecular science education.
+  Physical chemistry describes chemical phenomena in the language of mathematics
+  at a level of conceptual and theoretical rigor beyond that which many
+  undergraduate chemistry students are typically unaccustomed. This means that
+  for students of physical chemistry, they must develop a wide variety of
+  mathematical skills "on the job," while leaving enough intellectual bandwidth
+  to learn the physical chemistry concepts themselves. For many students this is
+  an enormously challenging proposition, which contributes to physical
+  chemistry's reputation as one of (if not the) most difficult courses taught on
+  any college campus. While mathematical rigor is the cost of doing business in
+  physical chemistry, being able to perform every requisite mathematical
+  transformation by hand does not have to be a learning objective for the course.
+  To make the study of physical chemistry more mathematically accessible for
+  undergraduate chemistry students, the goal of this Module is to help students
+  develop the cyberinfrastructure (CI) skills necessary to use Python as a
+  symbolic and numerical mathematics engine for solving physical chemistry
+  problems.
   
-  You can use multiple paragraphs to fully describe the lesson scope
-  and learning experience.
-
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
 programming_skill: "Beginner"
