@@ -21,6 +21,7 @@ on:
 permissions:
   contents: read
   pull-requests: write  # needed to post/update the summary comment
+  issues: write         # needed to create/update issue comments via the Issues API
 
 # If an author pushes several times quickly, only check the latest commit.
 concurrency:
