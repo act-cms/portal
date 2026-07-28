@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../theme.css">
-    <title>Foundations of Symbolic Mathematics in Python - Lesson Portal</title>
+    <title>Foundational Symbolic Mathematics - Lesson Portal</title>
 </head>
 <body>
     <div class="container">
@@ -48,7 +48,7 @@
                     <a href="#course-materials" class="toc-link">Course Materials</a>
                     <div class="toc-submenu">
                         
-                        <a href="#material-1" class="toc-sublink">Foundations of Symbolic Algebra in Python</a>
+                        <a href="#material-1" class="toc-sublink">Lesson 1: Introduction to Symbolic Algebra in Python</a>
                         
                     </div>
                     
@@ -64,8 +64,8 @@
             <!-- Main content -->
             <main class="lesson-content">
                 <div class="lesson-header">
-                    <h1 class="lesson-title">Foundations of Symbolic Mathematics in Python</h1>
-                    <p class="lesson-summary">Students will be introduced to the fundamentals of symbolic mathematical manipulations in Python.</p>
+                    <h1 class="lesson-title">Foundational Symbolic Mathematics</h1>
+                    <p class="lesson-summary">Students will learn foundational skills for performing symbolic mathematical manipulations in Python.</p>
                     
                     <div class="lesson-meta-grid">
                         <div class="meta-item">
@@ -79,7 +79,7 @@
                         
                         <div class="meta-item">
                             <span class="meta-label">Also for:</span>
-                            <span class="meta-value">General Chemistry, Physical Chemistry, Biophysical Chemistry, Materials Science, Analytical Chemistry</span>
+                            <span class="meta-value">General Chemistry, Physical Chemistry, Materials Science</span>
                         </div>
                         
                         <div class="meta-item">
@@ -92,18 +92,18 @@
                         </div>
                         <div class="meta-item">
                             <span class="meta-label">Estimated Time:</span>
-                            <span class="meta-value">3 hours</span>
+                            <span class="meta-value">4-6 hours</span>
                         </div>
                         
                         <div class="meta-item">
                             <span class="meta-label">Piloted with:</span>
-                            <span class="meta-value">Undergraduate (all years)</span>
+                            <span class="meta-value">Undergraduate Upper Division</span>
                         </div>
                         
                         
                         <div class="meta-item">
                             <span class="meta-label">Students Tested:</span>
-                            <span class="meta-value">15</span>
+                            <span class="meta-value">50</span>
                         </div>
                         
                     </div>
@@ -114,7 +114,9 @@
                         
                         <span class="tag">symbolic-math</span>
                         
-                        <span class="tag">symbolic-algebra</span>
+                        <span class="tag">symbolic-calculus</span>
+                        
+                        <span class="tag">visualization</span>
                         
                     </div>
                 </div>
@@ -124,10 +126,22 @@
                     
                         
                             
-                            <p>The lessons in this module are meant to help students develop foundational
-skills in symbolic mathematics, including algebra, calculus, linear algebra,
-differential equations, and beyond --- but decoupled from any particular chemistry
-course or chemical application beyond the general chemistry level.</p>
+                            <p>Physical chemistry describes chemical phenomena in the language of mathematics
+at a level of conceptual and theoretical rigor beyond that which many
+undergraduate chemistry students are typically unaccustomed. This means that
+for students of physical chemistry, they must develop a wide variety of
+mathematical skills &#34;on the job,&#34; while leaving enough intellectual bandwidth
+to learn the physical chemistry concepts themselves. For many students this is
+an enormously challenging proposition, which contributes to physical
+chemistry&#39;s reputation as one of (if not the) most difficult courses taught on
+any college campus. While mathematical rigor is the cost of doing business in
+physical chemistry, being able to perform every requisite mathematical
+transformation by hand does not have to be a learning objective for the course.
+To make the study of physical chemistry more mathematically accessible for
+undergraduate chemistry students, the goal of this Module is to help students
+develop the cyberinfrastructure (CI) skills necessary to use Python as a
+symbolic and numerical mathematics engine for solving physical chemistry
+problems.</p>
                             
                         
                     
@@ -136,7 +150,13 @@ course or chemical application beyond the general chemistry level.</p>
                         <h4>Scientific Learning Objectives</h4>
                         <ul>
                             
-                            <li>Apply symbolic mathematical operations in Python to solve general chemical problems</li>
+                            <li>Define mathematical variables and expressions using SymPy</li>
+                            
+                            <li>Manipulate algebraic expressions to solve for a single variable</li>
+                            
+                            <li>Substitute numerical values and units into algebraic expressions</li>
+                            
+                            <li>Apply symbolic algebra techniques in Python to solve general chemistry problems</li>
                             
                         </ul>
                     </div>
@@ -145,15 +165,9 @@ course or chemical application beyond the general chemistry level.</p>
                         <h4>Cyberinfrastructure Learning Objectives</h4>
                         <ul>
                             
-                            <li>Define algebraic variables and expressions using the `algebra_with_sympy` library</li>
+                            <li>Using SymPy to symbolically perform mathematical transformations in a chemical context</li>
                             
-                            <li>Manipulate algebraic expressions to solve for a single variable</li>
-                            
-                            <li>Substitute numerical values and units to evaluate algebraic expressions</li>
-                            
-                            <li>Automatically solve algebraic expressions for a single variable</li>
-                            
-                            <li>Apply `algebra_with_sympy` to symbolically solve chemical problems at the first-year general chemical level</li>
+                            <li>Use NumPy/SciPy to perform numerical mathematics operations</li>
                             
                         </ul>
                     </div>
@@ -166,7 +180,11 @@ course or chemical application beyond the general chemistry level.</p>
                             <h4>Scientific Prerequisites:</h4>
                             <ul>
                                 
-                                <li>General chemistry: gas laws, chemical kinetics, thermochemistry, Bohr model of the atom &amp; wave nature of light, chemical equilibrium</li>
+                                <li>General chemistry</li>
+                                
+                                <li>College-level algebra</li>
+                                
+                                <li>Precalculus</li>
                                 
                             </ul>
                         </div>
@@ -175,7 +193,7 @@ course or chemical application beyond the general chemistry level.</p>
                             <h4>Programming Prerequisites:</h4>
                             <ul>
                                 
-                                <li>Basic Python syntax (variables, loops, functions, lists)</li>
+                                <li>Basic Python syntax (variables, loops, functions)</li>
                                 
                             </ul>
                         </div>
@@ -198,6 +216,13 @@ course or chemical application beyond the general chemistry level.</p>
                             
                             
                             
+                            <p class="path-step">Complete these lessons first:</p>
+                            <ul class="prereq-lessons">
+                                
+                                <li><a href="../foundational-intro-python/">Introduction to Programming for Molecular Scientists</a></li>
+                                
+                            </ul>
+                            
                         </div>
                         
                     </div>
@@ -215,20 +240,22 @@ course or chemical application beyond the general chemistry level.</p>
                                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                                 </svg>
                                 
-                                <h4 class="material-title">Foundations of Symbolic Algebra in Python</h4>
+                                <h4 class="material-title">Lesson 1: Introduction to Symbolic Algebra in Python</h4>
                             </div>
-                            <p>Basics of using `sympy` and `algebra_with_sympy` libraries to symbolically solve general chemistry problems</p>
+                            <p>Introduces students to the foundational skills of using SymPy for symbolic algebra manipulations to solve chemical problems.</p>
                             <div class="material-actions">
                                 
                                 <div class="notebook-buttons">
                                     
                                     
-                                    <a href="https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    <a href="https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/instructor-key.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
                                     
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&amp;branch=main&amp;urlpath=lab/tree/foundational-symbolic-math/symbolic-algebra/instructor-key.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
                                     
                                 </div>
                                 
-                                <span class="duration">3 hours</span>
+                                <span class="duration">2-3 hours</span>
                             </div>
                             
                             <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
@@ -236,15 +263,13 @@ course or chemical application beyond the general chemistry level.</p>
                                 <h5>Learning Objectives:</h5>
                                 <ul>
                                     
-                                    <li>Define algebraic variables and expressions using the `algebra_with_sympy` library</li>
+                                    <li>Define mathematical variables and expressions using SymPy</li>
                                     
                                     <li>Manipulate algebraic expressions to solve for a single variable</li>
                                     
-                                    <li>Substitute numerical values and units to evaluate algebraic expressions</li>
+                                    <li>Substitute numerical values and units into algebraic expressions</li>
                                     
-                                    <li>Automatically solve algebraic expressions for a single variable</li>
-                                    
-                                    <li>Apply `algebra_with_sympy` to symbolically solve chemical problems at the first-year general chemical level</li>
+                                    <li>Apply symbolic algebra techniques in Python to solve general chemistry problems</li>
                                     
                                 </ul>
                             </div>
@@ -260,6 +285,10 @@ course or chemical application beyond the general chemistry level.</p>
                             <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
                             <a href="https://github.com/act-cms/foundational-symbolic-math" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                 View Repository
+                            </a>
+                            
+                            <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&amp;branch=main&amp;urlpath=lab/tree/foundational-symbolic-math/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Launch on ChemCompute
                             </a>
                             
                         </div> 
@@ -286,7 +315,7 @@ course or chemical application beyond the general chemistry level.</p>
                 <div class="content-section" id="instructor-notes">
                     <h2>Instructor Notes</h2>
                     <div class="instructor-notes">
-                        <div>Additional context for instructors using this lesson:<br>• Prerequisite of basic Python programming (equivalent to outcome of related module)<br>• Symbolic algebra lesson is prerequisite for other lessons</p><p>Timing notes:<br>• Symbolic algebra lesson can be completed in single 3-hour lab period</p><p>Common student questions:<br>• "I can solve these problems by hand, why do I need to use Python?" <br>• Remind students that some chemical problems in sophomore-level courses & beyond are either impossible or backbreakingly difficult to solve by hand, so developing these skills will greatly help their progress through the curriculum<br></div>
+                        <div>Additional context for instructors using this lesson:</p><p>• This lesson works well when paired with a traditional lecture on molecular dynamics<br>• Students often struggle with the concept of periodic boundary conditions in Part 2<br>• The visualization exercises are very engaging • allow extra time for exploration<br>• Consider assigning the dataset analysis as homework rather than in-class work</p><p>Timing notes:<br>• Part 1 typically takes students 45-60 minutes<br>• Part 2 can be rushed in 90 minutes but is better with 2 hours</p><p>Common student questions:<br>• "Why do we need so many time steps?" • good opportunity to discuss numerical integration<br>• "What happens if we change the temperature?" • this connects well to thermodynamics concepts<br></div>
                     </div>
                 </div>
                 
@@ -298,7 +327,11 @@ course or chemical application beyond the general chemistry level.</p>
                         <p>This lesson pairs well with:</p>
                         <ul>
                             
-                            <li><a href="../foundational-intro-python/">Foundational Intro Python</a></li>
+                            <li><a href="../lesson-01-introduction-to-programming-and-python/">Lesson 01 Introduction To Programming And Python</a></li>
+                            
+                            <li><a href="../lesson-02-linear-variation-method/">Lesson 02 Linear Variation Method</a></li>
+                            
+                            <li><a href="../lesson-04-diatomic-molecule-ir-spectrum-analisys/">Lesson 04 Diatomic Molecule Ir Spectrum Analisys</a></li>
                             
                         </ul>
                     </div>
@@ -313,14 +346,13 @@ course or chemical application beyond the general chemistry level.</p>
                         
                         
                         <div class="platform-card recommended">
-                            <h4>Local Installation (Recommended)</h4>
-<p>For advanced users who prefer local development environments.</p>
+                            <h4>ChemCompute (Recommended)</h4>
+<p>This module is compatible with ChemCompute - a specialized platform for computational chemistry education.</p>
 <ul>
-    <li>Requires conda package manager</li>
-    <li>Environment setup via provided environment.yml file</li>
-    <li>Full control over computing environment</li>
-    <li>Works offline once dependencies are installed</li>
-    <li>Can customize package versions and configurations</li>
+    <li>Access using your institution account</li>
+    <li>Pre-configured chemistry software environment</li>
+    <li>No personal setup required</li>
+    <li>Includes computational molecular science packages (Psi4, OpenMM)</li>
 </ul>
                         </div>
                         
