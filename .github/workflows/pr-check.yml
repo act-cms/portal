@@ -1,24 +1,24 @@
 name: PR Lesson Check
 
-# Validates lesson submissions on pull requests (branch-based and fork PRs)
-# and renders the portal pages, then posts a friendly pass/fail summary as a PR
-# comment. This does NOT deploy — deployment stays in build-site.yml on main.
+# Validates lesson submissions on pull requests (branch PRs and forks) and
+# renders the portal pages. This does NOT deploy — deployment stays in
+# build-site.yml on main.
+#
+# This job checks out and runs the PR author's code (scripts/, templates/), so
+# it deliberately holds a read-only GITHUB_TOKEN and touches no secrets. That
+# means it cannot post its own summary comment: on `pull_request`, GitHub
+# forces the fork token to read-only regardless of the declared permissions
+# block, so the comment API returns HTTP 403. Instead the rendered comment is
+# uploaded as an artifact and posted by pr-comment.yml, which runs on
+# `workflow_run` in the base-repo context with a writable token and never
+# checks out PR code.
 
 on:
-  pull_request_target:
+  pull_request:
     branches: [ main ]
     # Run when a lesson YAML is submitted, or when the build infrastructure
     # that renders/validates them changes. A submission is almost always a
     # single lessons/*.yml file.
-    #
-    # pull_request_target (rather than pull_request) is required so that the
-    # GITHUB_TOKEN has write access when the PR comes from a fork — the
-    # pull_request event restricts fork tokens to read-only regardless of the
-    # declared permissions block, which causes the "Post PR comment" step to
-    # fail with HTTP 403. pull_request_target runs in the base-repo context
-    # and always honours the declared permissions. Untrusted code from the fork
-    # is handled safely: after checking out the PR head we restore all
-    # executable scripts from the trusted base branch (see below).
     paths:
       - '**/*.yml'
       - '**/*.yaml'
@@ -28,9 +28,7 @@ on:
       - 'index.html'
 
 permissions:
-  contents: read
-  pull-requests: write  # needed to post/update the summary comment
-  issues: write         # needed to create/update issue comments via the Issues API
+  contents: read  # deliberately read-only — this job runs untrusted PR code
 
 # If an author pushes several times quickly, only check the latest commit.
 concurrency:
@@ -42,22 +40,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout PR content
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0  # need history to diff the PR against its base
-
-      # Security: with pull_request_target the GITHUB_TOKEN has base-repo write
-      # access, so we must ensure untrusted fork code cannot run. Lesson
-      # submissions are YAML *data* (safe to parse), but scripts/templates are
-      # executable — restore them from the trusted base branch before running
-      # anything.
-      - name: Restore trusted scripts and config from base branch
-        run: |
-          git fetch origin ${{ github.event.pull_request.base.sha }}
-          git checkout ${{ github.event.pull_request.base.sha }} -- \
-            scripts/ templates/ template.yaml paths.yml index.html theme.css
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -83,9 +69,9 @@ jobs:
       # template.yaml (the reference) are the only YAML files that legitimately
       # live at the repo root.
       #
-      # We diff the PR head SHA against base (base...head), NOT ...HEAD.
-      # actions/checkout with pull_request_target resolves HEAD to the *merge*
-      # ref (head merged into current main), so ...HEAD would also surface every
+      # We diff the PR head SHA against base (base...head), NOT ...HEAD. On a
+      # pull_request event, actions/checkout resolves HEAD to the *merge* ref
+      # (head merged into current main), so ...HEAD would also surface every
       # change main made since the branch forked — misattributing main's own
       # commits (e.g. edits to this workflow) to the PR. Diffing the pure head
       # SHA yields exactly the author's changes, matching GitHub's "Files
@@ -144,36 +130,25 @@ jobs:
           if [ "${{ steps.location.outputs.location_failed }}" = "true" ]; then result=failure; fi
           echo "result=$result" >> "$GITHUB_OUTPUT"
 
+      # pr_number.txt is only a last-resort hint for pr-comment.yml. It is
+      # written by this untrusted job, so that workflow verifies it against the
+      # run's head SHA before trusting it.
       - name: Format PR comment
         if: always()
         run: |
           python scripts/format_pr_comment.py "${{ steps.outcome.outputs.result }}" build.log pr_comment.md
+          echo "${{ github.event.pull_request.number }}" > pr_number.txt
 
-      - name: Post or update PR comment
+      - name: Upload the comment for pr-comment.yml to post
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            const fs = require('fs');
-            const body = fs.readFileSync('pr_comment.md', 'utf8');
-            const marker = '<!-- act-cms-lesson-check -->';
-            const { owner, repo } = context.repo;
-            const issue_number = context.issue.number;
-
-            const { data: comments } = await github.rest.issues.listComments({
-              owner, repo, issue_number, per_page: 100,
-            });
-            const existing = comments.find(c => c.body && c.body.includes(marker));
-
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner, repo, comment_id: existing.id, body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner, repo, issue_number, body,
-              });
-            }
+          name: pr-check-comment
+          path: |
+            pr_comment.md
+            pr_number.txt
+          retention-days: 1
+          if-no-files-found: error
 
       - name: Fail the check if anything failed
         if: steps.outcome.outputs.result == 'failure'
