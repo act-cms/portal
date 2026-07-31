@@ -50,6 +50,8 @@
                         
                         <a href="#material-1" class="toc-sublink">Lesson 1: Introduction to Symbolic Algebra in Python</a>
                         
+                        <a href="#material-2" class="toc-sublink">Lesson 2: Essentials of Calculus in Python</a>
+                        
                     </div>
                     
                     <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
@@ -116,7 +118,7 @@
                         
                         <span class="tag">symbolic-calculus</span>
                         
-                        <span class="tag">visualization</span>
+                        <span class="tag">visualizing-math-functions</span>
                         
                     </div>
                 </div>
@@ -158,6 +160,10 @@ problems.</p>
                             
                             <li>Apply symbolic algebra techniques in Python to solve general chemistry problems</li>
                             
+                            <li>Perform symbolic calculus operations using the SymPy library</li>
+                            
+                            <li>Perform numerical quadrature for definite integration using the SciPy library</li>
+                            
                         </ul>
                     </div>
 
@@ -167,7 +173,9 @@ problems.</p>
                             
                             <li>Using SymPy to symbolically perform mathematical transformations in a chemical context</li>
                             
-                            <li>Use NumPy/SciPy to perform numerical mathematics operations</li>
+                            <li>Using NumPy/SciPy to perform numerical mathematics operations</li>
+                            
+                            <li>Using SymPy/SciPy to perform symbolic and numerical calculus operations in Python</li>
                             
                         </ul>
                     </div>
@@ -185,6 +193,8 @@ problems.</p>
                                 <li>College-level algebra</li>
                                 
                                 <li>Precalculus</li>
+                                
+                                <li>Calculus 1</li>
                                 
                             </ul>
                         </div>
@@ -248,10 +258,10 @@ problems.</p>
                                 <div class="notebook-buttons">
                                     
                                     
-                                    <a href="https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/instructor-key.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    <a href="https://github.com/act-cms/foundational-symbolic-math/blob/main/1_symbolic-algebra/student-async.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
                                     
                                     
-                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&amp;branch=main&amp;urlpath=lab/tree/foundational-symbolic-math/symbolic-algebra/instructor-key.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&amp;branch=main&amp;urlpath=lab/tree/foundational-symbolic-math/1_symbolic-algebra/student-async.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
                                     
                                 </div>
                                 
@@ -270,6 +280,51 @@ problems.</p>
                                     <li>Substitute numerical values and units into algebraic expressions</li>
                                     
                                     <li>Apply symbolic algebra techniques in Python to solve general chemistry problems</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 2: Essentials of Calculus in Python</h4>
+                            </div>
+                            <p>Introduces students to the essential skills for performing calculus operations in Python.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/foundational-symbolic-math/blob/main/2_symbolic-calculus/student-async.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                    <a href="https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&amp;branch=main&amp;urlpath=lab/tree/foundational-symbolic-math/2_symbolic-calculus/student-async.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Launch on ChemCompute</a>
+                                    
+                                </div>
+                                
+                                <span class="duration">3-4 hours</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Encode mathematical functions of one or more variables into SymPy expressions</li>
+                                    
+                                    <li>Perform symbolic derivatives of scalar functions of one or more variables in SymPy</li>
+                                    
+                                    <li>Perform symbolic indefinite integration of scalar functions of one or more variables in SymPy</li>
+                                    
+                                    <li>Perform symbolic definite integration of scalar functions of one or more variables in SymPy</li>
+                                    
+                                    <li>Perform numerical quadrature to evaluate definite integrals of one or more variables with SciPy</li>
                                     
                                 </ul>
                             </div>
@@ -315,7 +370,7 @@ problems.</p>
                 <div class="content-section" id="instructor-notes">
                     <h2>Instructor Notes</h2>
                     <div class="instructor-notes">
-                        <div>Additional context for instructors using this lesson:</p><p>• This lesson works well when paired with a traditional lecture on molecular dynamics<br>• Students often struggle with the concept of periodic boundary conditions in Part 2<br>• The visualization exercises are very engaging • allow extra time for exploration<br>• Consider assigning the dataset analysis as homework rather than in-class work</p><p>Timing notes:<br>• Part 1 typically takes students 45-60 minutes<br>• Part 2 can be rushed in 90 minutes but is better with 2 hours</p><p>Common student questions:<br>• "Why do we need so many time steps?" • good opportunity to discuss numerical integration<br>• "What happens if we change the temperature?" • this connects well to thermodynamics concepts<br></div>
+                        <div>Additional context for instructors using this lesson:</p><p>• This module is meant to introduce the cyberinfrastructure skills for symbolic & numerical math in Python, rather than teaching the mathematics or chemistry itself.<br>• Students are assumed to have basic experience with Python syntax, and any new syntactic elements are introduced at the moment they become relevant.<br>• Three student versions are provided for each lesson, which are designed for different teaching modalities (asynchronous, guided-inquiry, and live-coding)<br></div>
                     </div>
                 </div>
                 

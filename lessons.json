@@ -1400,7 +1400,7 @@
     "instructor_email": "sirianda@westminster.edu",
     "student_level": "Undergraduate Upper Division",
     "students_piloted": 50,
-    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This lesson works well when paired with a traditional lecture on molecular dynamics\n- Students often struggle with the concept of periodic boundary conditions in Part 2\n- The visualization exercises are very engaging - allow extra time for exploration\n- Consider assigning the dataset analysis as homework rather than in-class work\n\nTiming notes:\n- Part 1 typically takes students 45-60 minutes\n- Part 2 can be rushed in 90 minutes but is better with 2 hours\n\nCommon student questions:\n- \"Why do we need so many time steps?\" - good opportunity to discuss numerical integration\n- \"What happens if we change the temperature?\" - this connects well to thermodynamics concepts\n",
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This module is meant to introduce the cyberinfrastructure skills for symbolic & numerical math in Python, rather than teaching the mathematics or chemistry itself.\n- Students are assumed to have basic experience with Python syntax, and any new syntactic elements are introduced at the moment they become relevant.\n- Three student versions are provided for each lesson, which are designed for different teaching modalities (asynchronous, guided-inquiry, and live-coding)\n",
     "related_modules": [
       "lesson-01-introduction-to-programming-and-python",
       "lesson-02-linear-variation-method",
@@ -1416,30 +1416,49 @@
         "description": "Introduces students to the foundational skills of using SymPy for symbolic algebra manipulations to solve chemical problems.",
         "type": "notebook",
         "duration": "2-3 hours",
-        "github_url": "https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/instructor-key.ipynb",
+        "github_url": "https://github.com/act-cms/foundational-symbolic-math/blob/main/1_symbolic-algebra/student-async.ipynb",
         "objectives": [
           "Define mathematical variables and expressions using SymPy",
           "Manipulate algebraic expressions to solve for a single variable",
           "Substitute numerical values and units into algebraic expressions",
           "Apply symbolic algebra techniques in Python to solve general chemistry problems"
         ],
-        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&branch=main&urlpath=lab/tree/foundational-symbolic-math/symbolic-algebra/instructor-key.ipynb"
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&branch=main&urlpath=lab/tree/foundational-symbolic-math/1_symbolic-algebra/student-async.ipynb"
+      },
+      {
+        "title": "Lesson 2: Essentials of Calculus in Python",
+        "description": "Introduces students to the essential skills for performing calculus operations in Python.",
+        "type": "notebook",
+        "duration": "3-4 hours",
+        "github_url": "https://github.com/act-cms/foundational-symbolic-math/blob/main/2_symbolic-calculus/student-async.ipynb",
+        "objectives": [
+          "Encode mathematical functions of one or more variables into SymPy expressions",
+          "Perform symbolic derivatives of scalar functions of one or more variables in SymPy",
+          "Perform symbolic indefinite integration of scalar functions of one or more variables in SymPy",
+          "Perform symbolic definite integration of scalar functions of one or more variables in SymPy",
+          "Perform numerical quadrature to evaluate definite integrals of one or more variables with SciPy"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/foundational-symbolic-math&branch=main&urlpath=lab/tree/foundational-symbolic-math/2_symbolic-calculus/student-async.ipynb"
       }
     ],
     "scientific_objectives": [
       "Define mathematical variables and expressions using SymPy",
       "Manipulate algebraic expressions to solve for a single variable",
       "Substitute numerical values and units into algebraic expressions",
-      "Apply symbolic algebra techniques in Python to solve general chemistry problems"
+      "Apply symbolic algebra techniques in Python to solve general chemistry problems",
+      "Perform symbolic calculus operations using the SymPy library",
+      "Perform numerical quadrature for definite integration using the SciPy library"
     ],
     "cyberinfrastructure_objectives": [
       "Using SymPy to symbolically perform mathematical transformations in a chemical context",
-      "Use NumPy/SciPy to perform numerical mathematics operations"
+      "Using NumPy/SciPy to perform numerical mathematics operations",
+      "Using SymPy/SciPy to perform symbolic and numerical calculus operations in Python"
     ],
     "scientific_prerequisites": [
       "General chemistry",
       "College-level algebra",
-      "Precalculus"
+      "Precalculus",
+      "Calculus 1"
     ],
     "programming_prerequisites": [
       "Basic Python syntax (variables, loops, functions)"
@@ -1452,7 +1471,7 @@
       "python",
       "symbolic-math",
       "symbolic-calculus",
-      "visualization"
+      "visualizing-math-functions"
     ],
     "id": "foundational-symbolic-math",
     "instructor_repo": "act-cms/instructor-materials",
