@@ -77,19 +77,10 @@ students_piloted: 50  # Number of students
 instructor_notes: |
   Additional context for instructors using this lesson:
   
-  - This lesson works well when paired with a traditional lecture on molecular dynamics
-  - Students often struggle with the concept of periodic boundary conditions in Part 2
-  - The visualization exercises are very engaging - allow extra time for exploration
-  - Consider assigning the dataset analysis as homework rather than in-class work
+  - This module is meant to introduce the cyberinfrastructure skills for symbolic & numerical math in Python, rather than teaching the mathematics or chemistry itself.
+  - Students are assumed to have basic experience with Python syntax, and any new syntactic elements are introduced at the moment they become relevant.
+  - Three student versions are provided for each lesson, which are designed for different teaching modalities (asynchronous, guided-inquiry, and live-coding)
   
-  Timing notes:
-  - Part 1 typically takes students 45-60 minutes
-  - Part 2 can be rushed in 90 minutes but is better with 2 hours
-  
-  Common student questions:
-  - "Why do we need so many time steps?" - good opportunity to discuss numerical integration
-  - "What happens if we change the temperature?" - this connects well to thermodynamics concepts
-
 # Related lessons that complement this one
 related_modules:
   - "lesson-01-introduction-to-programming-and-python"
@@ -122,7 +113,7 @@ materials:
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/instructor-key.ipynb"
+    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/1_symbolic-algebra/student-async.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -130,6 +121,22 @@ materials:
       - "Manipulate algebraic expressions to solve for a single variable"
       - "Substitute numerical values and units into algebraic expressions"
       - "Apply symbolic algebra techniques in Python to solve general chemistry problems"
+  - title: "Lesson 2: Essentials of Calculus in Python"
+    description: "Introduces students to the essential skills for performing calculus operations in Python."
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "3-4 hours"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/2_symbolic-calculus/student-async.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Encode mathematical functions of one or more variables into SymPy expressions"
+      - "Perform symbolic derivatives of scalar functions of one or more variables in SymPy"
+      - "Perform symbolic indefinite integration of scalar functions of one or more variables in SymPy"
+      - "Perform symbolic definite integration of scalar functions of one or more variables in SymPy"
+      - "Perform numerical quadrature to evaluate definite integrals of one or more variables with SciPy"
   
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
@@ -138,11 +145,14 @@ scientific_objectives:
   - "Manipulate algebraic expressions to solve for a single variable"
   - "Substitute numerical values and units into algebraic expressions"
   - "Apply symbolic algebra techniques in Python to solve general chemistry problems"
+  - "Perform symbolic calculus operations using the SymPy library"
+  - "Perform numerical quadrature for definite integration using the SciPy library"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
   - "Using SymPy to symbolically perform mathematical transformations in a chemical context"
-  - "Use NumPy/SciPy to perform numerical mathematics operations"
+  - "Using NumPy/SciPy to perform numerical mathematics operations"
+  - "Using SymPy/SciPy to perform symbolic and numerical calculus operations in Python"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
@@ -150,6 +160,7 @@ scientific_prerequisites:
   - "General chemistry"
   - "College-level algebra"
   - "Precalculus"
+  - "Calculus 1"
 
 # What programming experience is assumed?
 programming_prerequisites:
@@ -175,4 +186,4 @@ tags:
   - "python"
   - "symbolic-math"
   - "symbolic-calculus"
-  - "visualization"
+  - "visualizing-math-functions"
