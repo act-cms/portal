@@ -67,7 +67,10 @@ jobs:
       # is silently skipped — it would never be validated or deployed yet the
       # build still passes. We reject those here. paths.yml (learning paths) and
       # template.yaml (the reference) are the only YAML files that legitimately
-      # live at the repo root.
+      # live at the repo root, and .github/ is CI config rather than lesson
+      # content — without that exemption every workflow edit fails this check
+      # with "move it into lessons/", because the paths filter above matches
+      # '**/*.yml'.
       #
       # We diff the PR head SHA against base (base...head), NOT ...HEAD. On a
       # pull_request event, actions/checkout resolves HEAD to the *merge* ref
@@ -88,9 +91,10 @@ jobs:
               *.yml|*.yaml) ;;
               *) continue ;;
             esac
-            if [ "$f" = "paths.yml" ] || [ "$f" = "template.yaml" ]; then
-              continue
-            fi
+            # Repo infrastructure, not a lesson submission.
+            case "$f" in
+              .github/*|paths.yml|template.yaml) continue ;;
+            esac
             case "$f" in
               lessons/*.yml)
                 printf '%s\n' "$f" >> changed_lessons.txt
