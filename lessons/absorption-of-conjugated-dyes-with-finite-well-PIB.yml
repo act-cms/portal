@@ -18,7 +18,7 @@ expanded_description: |
   Traditionally, students probe the PIB model by measuring the UV-vis absorption of conjugated carbocyanine dyes. 
   This experiment links chain length to π-π* transition energies via an analytical formula in comparison to experimental spectra. 
   To deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. 
-  Students can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined $λ_{max}$ to the experimentally collected spectra. 
+  Students can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined λ_max to the experimentally collected spectra. 
   Additionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. 
   Together, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools. 
   This module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.
@@ -90,6 +90,7 @@ related_modules:
   - "fooddye-uvvis-tddft"
   - "lesson-02-linear-variation-method"
   - "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+  - "Particle-in-A-Box-Energy-Calculations"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -128,7 +129,7 @@ materials:
       - "Plot a summation of gaussian peaks using a for loop"
   
   # Add more materials as needed
-  - title: "Part 2: Absorption of Conjugated Dyes using the Fintie Well"
+  - title: "Part 2: Absorption of Conjugated Dyes using the Finite Well"
     description: "This notebook goes through how the particle-in-a-box and the finite well model connects with UV-vis spectroscopy"
     type: "notebook"
     duration: "2-3 hours"
@@ -137,7 +138,7 @@ materials:
     objectives:
       - "Use a for loop to plot the computed UV-vis spectra."
       - "Create more customized figures using matplotlib by overlaying computed and experimental spectra"
-      - "Determine the computed maximum wavlength of absorbance from various models and spectra"
+      - "Determine the computed maximum wavelength of absorbance from various models and spectra"
 
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
