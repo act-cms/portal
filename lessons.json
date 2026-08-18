@@ -2,7 +2,7 @@
   {
     "title": "Absorption of Conjugated Dyes using the Finite Well Particle-in-a-Box Model",
     "description": "Use the particle-in-a-finite-well model to explore the absorption of conjugated dyes with UV-vis spectroscopy",
-    "expanded_description": "The particle-in-a-box (PIB) model is a quintessential yet abstract concept for Physical Chemistry. \nStudents often find the model hard to understand due to the mathematical complexity of the model and the limited perceived relevance. \nTraditionally, students probe the PIB model by measuring the UV-vis absorption of conjugated carbocyanine dyes. \nThis experiment links chain length to π-π* transition energies via an analytical formula in comparison to experimental spectra. \nTo deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. \nStudents can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined $λ_{max}$ to the experimentally collected spectra. \nAdditionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. \nTogether, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools. \nThis module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.\n",
+    "expanded_description": "The particle-in-a-box (PIB) model is a quintessential yet abstract concept for Physical Chemistry. \nStudents often find the model hard to understand due to the mathematical complexity of the model and the limited perceived relevance. \nTraditionally, students probe the PIB model by measuring the UV-vis absorption of conjugated carbocyanine dyes. \nThis experiment links chain length to π-π* transition energies via an analytical formula in comparison to experimental spectra. \nTo deepen engagement and conceptual understanding, an updated version of the experiment integrates computational chemistry with classic laboratory techniques. \nStudents can connect molecular orbital theory to the restriction of electron motion to discrete energy levels by comparing the computationally determined λ_max to the experimentally collected spectra. \nAdditionally, the use of Python introduces valuable skills in coding, data analysis, and visualization. \nTogether, these elements create a multifaceted learning experience that reinforces core physical chemistry concepts through modern computational tools. \nThis module was adapted from the following publication: Patel, P. Modernizing Physical Chemistry: Integrating Computational Chemistry, the Finite Well, and Python Data Visualization in the Particle-in-a-Box Experiment. In *Engaging Students in Physical Chemistry, Volume 2; ACS Symposium Series*; American Chemical Society, **2025**; Vol. 1515, pp 261–278. https://doi.org/doi:10.1021/bk-2025-1515.ch017.\n",
     "programming_skill": "Beginner",
     "primary_course": "Physical Chemistry Lab",
     "also_for": [
@@ -22,7 +22,8 @@
       "intro-to-programming-with-chem-applications",
       "fooddye-uvvis-tddft",
       "lesson-02-linear-variation-method",
-      "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+      "lesson-04-diatomic-molecule-ir-spectrum-analisys",
+      "Particle-in-A-Box-Energy-Calculations"
     ],
     "prerequisite_modules": [
       "foundational-intro-python",
@@ -44,7 +45,7 @@
         "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB&branch=main&urlpath=lab/tree/absorption-of-conjugated-dyes-with-finite-well-PIB/01_pre-lab-activity/Student.ipynb"
       },
       {
-        "title": "Part 2: Absorption of Conjugated Dyes using the Fintie Well",
+        "title": "Part 2: Absorption of Conjugated Dyes using the Finite Well",
         "description": "This notebook goes through how the particle-in-a-box and the finite well model connects with UV-vis spectroscopy",
         "type": "notebook",
         "duration": "2-3 hours",
@@ -53,7 +54,7 @@
         "objectives": [
           "Use a for loop to plot the computed UV-vis spectra.",
           "Create more customized figures using matplotlib by overlaying computed and experimental spectra",
-          "Determine the computed maximum wavlength of absorbance from various models and spectra"
+          "Determine the computed maximum wavelength of absorbance from various models and spectra"
         ],
         "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/absorption-of-conjugated-dyes-with-finite-well-PIB&branch=main&urlpath=lab/tree/absorption-of-conjugated-dyes-with-finite-well-PIB/02_absorption-conjugated-dyes-activity/Student.ipynb"
       }
