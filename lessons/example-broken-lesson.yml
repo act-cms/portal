@@ -1,0 +1,63 @@
+# =============================================================================
+# EXAMPLE BROKEN LESSON — TEACHING SAMPLE (do not use as a real lesson)
+# =============================================================================
+# This file intentionally contains SEVERAL different mistakes so students can
+# see how the portal's CI check reacts to a bad submission.
+#
+# The CI lists ALL independent errors it can find in one comment, so you can
+# fix several at once and push again until the check passes.
+#
+# The planted errors:
+#   (A) Missing required field   -> `description` is commented out.
+#   (B) authors as a string      -> must be a YAML list ("- item").
+#   (C) platforms as a string    -> must be a YAML list (this one would crash
+#                                   the whole build if it weren't caught).
+#   (D) tags as a string         -> must be a YAML list.
+#   (E) material missing a URL   -> each material needs github_url or colab_url.
+#   (F) recommended_platform     -> must be EXACTLY ONE name that matches an
+#                                   entry in `platforms` (not a comma list).
+#
+# Note: error (F) only appears AFTER you fix `platforms` (C). While `platforms`
+# is malformed the CI can't meaningfully check recommended_platform against it,
+# so it waits rather than printing a confusing cascading error.
+#
+# Compare this against template.yaml (the correct reference) to see each fix.
+# =============================================================================
+
+title: "Example Broken Lesson (teaching sample)"
+
+# (A) REQUIRED FIELD MISSING — uncomment to fix:
+# description: "Brief description for search results."
+
+programming_skill: "None"
+primary_course: "Foundational Module"
+
+# (B) WRONG: authors must be a list, not a string.
+authors: "Dr. Ada Lovelace"
+
+format: "Single Notebook"
+
+scientific_objectives:
+  - "Recognize common YAML submission mistakes"
+cyberinfrastructure_objectives:
+  - "Read and act on a CI error message"
+
+# (C) WRONG: platforms must be a list, not a string.
+platforms: "Google Colab"
+
+# (D) WRONG: tags must be a list, not a string.
+tags: "python"
+
+# (F) WRONG: recommended_platform must be exactly ONE value that matches an
+#     entry in `platforms`. A comma-joined string matches nothing.
+recommended_platform: "Google Colab, ChemCompute"
+
+public_repo_url: "https://github.com/act-cms/example-repo"
+
+materials:
+  - title: "Part 1"
+    description: "A material with no link."
+    type: "notebook"
+    duration: "1 hour"
+    # (E) WRONG: a material must have at least one of github_url / colab_url.
+    # github_url: "https://github.com/act-cms/example-repo/blob/main/01.ipynb"

@@ -377,8 +377,23 @@ def get_platform_key(platform):
     return platform.lower().replace(' ', '_')
 
 
+def is_list_of_strings(value):
+    """True if value is a list whose items are all strings"""
+    return isinstance(value, list) and all(isinstance(item, str) for item in value)
+
+
 def validate_lesson_data(lesson_data, filename, templates_dir=None):
-    """Validate lesson data has required fields"""
+    """Validate a lesson, collecting ALL problems (not fail-fast).
+
+    Every issue is appended to a list and printed as its own `Error:` line so
+    the PR-check comment can show the full set at once. Later checks are guarded
+    so a missing or wrong-typed field never crashes the validator; checks that
+    genuinely depend on an earlier field being well-formed (e.g.
+    recommended_platform needs a valid platforms list) are skipped rather than
+    reported as confusing cascading errors. Returns True only if no errors.
+    """
+    errors = []
+
     required_fields = [
         'title', 'description', 'programming_skill', 'primary_course',
         'authors', 'format', 'scientific_objectives',
@@ -395,39 +410,35 @@ def validate_lesson_data(lesson_data, filename, templates_dir=None):
         'prerequisite_modules': list
     }
 
-    missing_fields = []
     for field in required_fields:
         if field not in lesson_data:
-            missing_fields.append(field)
-
-    if missing_fields:
-        print(f"Error: {filename} is missing required fields: {missing_fields}")
-        return False
+            errors.append(f"{filename} is missing required field: '{field}'")
 
     # Validate optional instructor fields if present (None == omitted)
     for field, expected_type in optional_instructor_fields.items():
         if field in lesson_data and lesson_data[field] is not None:
             value = lesson_data[field]
             if not isinstance(value, expected_type):
-                print(f"Error: {filename} field '{field}' should be {expected_type.__name__ if hasattr(expected_type, '__name__') else expected_type}")
-                return False
+                type_name = expected_type.__name__ if hasattr(expected_type, '__name__') else expected_type
+                errors.append(f"{filename} field '{field}' should be {type_name}")
 
     # Fields the lesson template iterates over: a string where a list is
     # expected silently renders garbage (or crashes the build, in the case of
-    # `platforms`). Require these to be non-empty lists of strings.
+    # `platforms`). Require these to be non-empty lists of strings. Only checked
+    # when present (a missing one is already reported above).
     required_list_fields = [
         'authors', 'scientific_objectives', 'cyberinfrastructure_objectives',
         'platforms'
     ]
     for field in required_list_fields:
+        if field not in lesson_data:
+            continue
         value = lesson_data[field]
         if not isinstance(value, list) or len(value) == 0:
-            print(f"Error: {filename} field '{field}' must be a non-empty list "
-                  f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
-            return False
-        if not all(isinstance(item, str) for item in value):
-            print(f"Error: {filename} field '{field}' must be a list of strings")
-            return False
+            errors.append(f"{filename} field '{field}' must be a non-empty list "
+                          f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
+        elif not all(isinstance(item, str) for item in value):
+            errors.append(f"{filename} field '{field}' must be a list of strings")
 
     # Optional list-of-strings fields: only checked when present and non-null.
     optional_list_fields = [
@@ -436,86 +447,81 @@ def validate_lesson_data(lesson_data, filename, templates_dir=None):
     for field in optional_list_fields:
         if field in lesson_data and lesson_data[field] is not None:
             value = lesson_data[field]
-            if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
-                print(f"Error: {filename} field '{field}' must be a list of strings "
-                      f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
-                return False
+            if not is_list_of_strings(value):
+                errors.append(f"{filename} field '{field}' must be a list of strings "
+                              f"(got {type(value).__name__}). Use YAML '- ' list items, not a single string.")
 
     # Validate related_modules if present
     if 'related_modules' in lesson_data and lesson_data['related_modules'] is not None:
-        if not all(isinstance(module, str) for module in lesson_data['related_modules']):
-            print(f"Error: {filename} related_modules should be a list of strings")
-            return False
+        if not is_list_of_strings(lesson_data['related_modules']):
+            errors.append(f"{filename} related_modules should be a list of strings")
 
     # Check for legacy formats and reject them
     if 'notebook' in lesson_data or 'notebooks' in lesson_data:
-        print(f"Error: {filename} uses legacy notebook/notebooks format. Please convert to materials format with explicit URLs.")
-        return False
-    
-    # Validate materials structure
-    if not isinstance(lesson_data['materials'], list):
-        print(f"Error: {filename} materials field must be a list")
-        return False
-    
-    if len(lesson_data['materials']) == 0:
-        print(f"Error: {filename} materials list cannot be empty")
-        return False
-    
-    for i, material in enumerate(lesson_data['materials']):
-        if not isinstance(material, dict):
-            print(f"Error: {filename} material {i+1} must be a mapping with title/description/type/duration")
-            return False
+        errors.append(f"{filename} uses legacy notebook/notebooks format. "
+                      f"Please convert to materials format with explicit URLs.")
 
-        required_material_fields = ['title', 'description', 'type', 'duration']
-        for field in required_material_fields:
-            if field not in material:
-                print(f"Error: {filename} material {i+1} is missing required field: {field}")
-                return False
+    # Validate materials structure (only if present — missing already reported)
+    materials = lesson_data.get('materials')
+    if 'materials' in lesson_data:
+        if not isinstance(materials, list):
+            errors.append(f"{filename} materials field must be a list")
+        elif len(materials) == 0:
+            errors.append(f"{filename} materials list cannot be empty")
+        else:
+            required_material_fields = ['title', 'description', 'type', 'duration']
+            for i, material in enumerate(materials):
+                if not isinstance(material, dict):
+                    errors.append(f"{filename} material {i+1} must be a mapping with title/description/type/duration")
+                    continue
 
-        # Require at least one URL (github_url or colab_url)
-        if 'github_url' not in material and 'colab_url' not in material:
-            print(f"Error: {filename} material {i+1} must have either github_url or colab_url")
-            return False
+                for field in required_material_fields:
+                    if field not in material:
+                        errors.append(f"{filename} material {i+1} is missing required field: {field}")
 
-        # Validate URL format if present
-        for url_field in ['github_url', 'colab_url']:
-            if url_field in material:
-                url = material[url_field]
-                if not isinstance(url, str) or not url.startswith('http'):
-                    print(f"Error: {filename} material {i+1} {url_field} must be a valid HTTP/HTTPS URL")
-                    return False
+                # Require at least one URL (github_url or colab_url)
+                if 'github_url' not in material and 'colab_url' not in material:
+                    errors.append(f"{filename} material {i+1} must have either github_url or colab_url")
 
-        # objectives is iterated by the template; a string would render garbage
-        if 'objectives' in material and material['objectives'] is not None:
-            objectives = material['objectives']
-            if not isinstance(objectives, list) or not all(isinstance(o, str) for o in objectives):
-                print(f"Error: {filename} material {i+1} 'objectives' must be a list of strings "
-                      f"(got {type(objectives).__name__})")
-                return False
+                # Validate URL format if present
+                for url_field in ['github_url', 'colab_url']:
+                    if url_field in material:
+                        url = material[url_field]
+                        if not isinstance(url, str) or not url.startswith('http'):
+                            errors.append(f"{filename} material {i+1} {url_field} must be a valid HTTP/HTTPS URL")
 
-    # recommended_platform must be exactly one of the listed platforms
+                # objectives is iterated by the template; a string would render garbage
+                if 'objectives' in material and material['objectives'] is not None:
+                    if not is_list_of_strings(material['objectives']):
+                        errors.append(f"{filename} material {i+1} 'objectives' must be a list of strings "
+                                      f"(got {type(material['objectives']).__name__})")
+
+    # recommended_platform must be exactly one of the listed platforms. Only
+    # meaningful when platforms is a valid list of strings; otherwise the bad
+    # platforms field is already reported and this would just cascade.
+    platforms = lesson_data.get('platforms')
+    platforms_ok = is_list_of_strings(platforms) and len(platforms) > 0
     if 'recommended_platform' in lesson_data and lesson_data['recommended_platform'] is not None:
         recommended = lesson_data['recommended_platform']
         if not isinstance(recommended, str):
-            print(f"Error: {filename} recommended_platform must be a single platform name (string)")
-            return False
-        if recommended not in lesson_data['platforms']:
-            print(f"Error: {filename} recommended_platform '{recommended}' must exactly match one entry "
-                  f"in platforms {lesson_data['platforms']} (pick exactly one)")
-            return False
+            errors.append(f"{filename} recommended_platform must be a single platform name (string)")
+        elif platforms_ok and recommended not in platforms:
+            errors.append(f"{filename} recommended_platform '{recommended}' must exactly match one entry "
+                          f"in platforms {platforms} (pick exactly one)")
 
     # Every platform must have a rendering partial, else the build crashes on it
-    if templates_dir is not None:
+    if templates_dir is not None and platforms_ok:
         platforms_dir = Path(templates_dir) / 'platforms'
-        for platform in lesson_data['platforms']:
+        for platform in platforms:
             partial = platforms_dir / f"{get_platform_key(platform)}.html"
             if not partial.exists():
                 supported = sorted(p.stem for p in platforms_dir.glob('*.html'))
-                print(f"Error: {filename} platform '{platform}' is not supported "
-                      f"(no template {partial.name}). Supported platform keys: {supported}")
-                return False
+                errors.append(f"{filename} platform '{platform}' is not supported "
+                              f"(no template {partial.name}). Supported platform keys: {supported}")
 
-    return True
+    for error in errors:
+        print(f"Error: {error}")
+    return len(errors) == 0
 
 def main():
     """Main build process"""
