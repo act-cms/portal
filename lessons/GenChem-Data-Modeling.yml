@@ -1,4 +1,4 @@
-# lessons/your-lesson-name.yml
+# lessons/GenChem-Data-Modeling.yml
 # 
 # STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
 # Replace all placeholder text with your actual lesson information
@@ -9,7 +9,7 @@
 title: "GenChem Data Modeling with Colab and Gemini"
 
 # Brief description for search results (1-2 sentences)
-description: "Brief description of what students will learn in this lesson."
+description: "Students will learn how to use Google Colab and Gemini to analyze and visualize experimental data."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
@@ -98,12 +98,12 @@ prerequisite_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/your-lesson-repo"
+public_repo_url: "https://github.com/act-cms/GenChem-Modeling-with-Colab"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
+  - title: "Lesson 1: Introduction to Google Colab, Python, and Gemini"
     description: "Brief description of what this notebook covers"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "1 hour"
@@ -112,7 +112,7 @@ materials:
     # Direct link to notebook file on GitHub
     github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+    # colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     
     # Learning objectives specific to this material
     objectives:
@@ -121,12 +121,12 @@ materials:
       - "Third measurable objective"
   
   # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
+  - title: "Lesson 2: Advanced Topics"
     description: "Description of second notebook"
     type: "notebook"
     duration: "90 min"
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/02-advanced.ipynb"
-    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
+    github_url: "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/02_Reaction-Kinetics/Reaction-order-student.ipynb"
+    # colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
     objectives:
       - "Advanced skill development"
       - "Application of concepts from Part 1"
