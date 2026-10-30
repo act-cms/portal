@@ -41,7 +41,7 @@ authors:
   - "Prof. Linlin Jensen"
 
 # Estimated total time for all materials
-estimated_time: "5-6 hours"
+estimated_time: "6-7 hours"
 
 # Format of the module. Must be EXACTLY one of these two values (case- and
 # spelling-sensitive) so the home-page format filter groups lessons correctly:
@@ -63,17 +63,17 @@ students_piloted: 75  # Number of students
 instructor_notes: |
   Additional context for instructors using this lesson:
   
-  - Lessons in this module can be implemented successfully in either a lecture or recitation setting as as guided-inquiry activities. 
+  - Lessons in this module can be implemented successfully in either a lecture or recitation setting as guided-inquiry activities. 
   - Students often need support navigating file systems, locating the correct data files on their computers, and uploading files to the appropriate directory  within the Google Colab environment.
   - Students complete these activities individually and submit both their complete guided-inquiry worksheet and Colab notebook for credit. 
   - Consider incorporating brief live-coding demonstrations and project your screen as you guide students through key steps and troubleshoot common issues.
   
   Timing notes:
   - Each lesson in the module is designed for a 75-minutes class period.
-  - Lesson can be completed either before or after the relevant chemical concepts are discussed in lectures.
+  - Each lesson can be completed either before or after the relevant chemical concepts are discussed in lectures.
   
   Common student questions:
-  - "Where are the plots?" - Gemini sometimes insert outputs or results into different sections of the Colab notebook, making it difficult for students to locate the requested code and analyses
+  - "Where are the plots?" - Gemini sometimes insert outputs or results into different sections of the Colab notebook, making it difficult for students to locate the requested code and plots.
 
   Potential workarounds:
   - Use more explicit prompts, such as: "Provide only the Python code needed to complete this task. Do not provide step-by-step explanations or summaries."
@@ -81,7 +81,7 @@ instructor_notes: |
 
 # Related lessons that complement this one
 related_modules:
-  - "Basic-Tasks-Using-a-Jupyter-Notebook-with-Code-in-Python-for-Analytical-Chemistry-Data-Analysis"
+#  - "Basic-Tasks-Using-a-Jupyter-Notebook-with-Code-in-Python-for-Analytical-Chemistry-Data-Analysis"
   - "Buffer-Preparation-Calculations"
   - "foundational-intro-python"
 
@@ -110,6 +110,7 @@ materials:
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
     github_url: "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/01_Intro-Gas-Laws/Intro-student.ipynb"
+
     # Google Colab launch link (recommended for accessibility)
     # colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     
@@ -120,7 +121,6 @@ materials:
       - "Derive the mathematical relationship from the graph and data."
       - "Describe the relationship between volume and temperature and connect it to the Ideal Gas Law, PV = nRT."
   
-  # Add more materials as needed
   - title: "Lesson 2: Reaction Kinetics of Organic Reactions"
     description: "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for organic reactions."
     type: "notebook"
@@ -132,7 +132,6 @@ materials:
       - "Model and compare 1st- and 2nd-order rate laws using Python."
       - "Use models to identify reaction order by matching theoretical and experimental data."
 
-  # Add more materials as needed
   - title: "Lesson 3: Reaction Kinetics of Drug Degradation"
     description: "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for drug degradation in aqueous solutions"
     type: "notebook"
@@ -140,10 +139,9 @@ materials:
     github_url: "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/03_Drug-Degradation/Activation-energy-student.ipynb"
     objectives:
       - "Interpret and compare rate constants across temperatures and pHs values."
-      - "Model 𝑘 vs. 𝑇 and ln𝑘 vs. 1/𝑇 at different pHs."
-      - "Relate slopes and y-intercept to activation energies 𝐸𝑎 and frequency factor 𝐴."
+      - "Model k vs. T and lnk vs. 1/T at different pHs."
+      - "Relate slopes and y-intercept to activation energies Ea and frequency factor A."
 
-  # Add more materials as needed
   - title: "Lesson 4: Titration Curves of Common Household Acids"
     description: "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize titration data of common household acids with a strong base."
     type: "notebook"
@@ -154,7 +152,6 @@ materials:
       - "Compare titration curves of polyprotic vs monoprotic acids, and match unknowns to reference curves."
       - "Use curve shape and equivalence behavior to determine 𝑝𝐾𝑎 and identify an unknown acid."
 
-  # Add more materials as needed
   - title: "Lesson 5: Impact of Concentrations on Voltaic Cell Potentials"
     description: "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize data for a voltaic cell under different conditions."
     type: "notebook"
@@ -162,8 +159,8 @@ materials:
     github_url: "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/05_Voltaic-Cells/Cellpotential-student.ipynb"
     objectives:
       - "Interpret how concentration changes influence cell potential."
-      - "Graph E_cell vs. concentrations, Q, or log⁡Q to identify trends."
-      - "Use E_cell vs. log⁡Q to determine n, E_cell^o, and K, and compare with theoretical predictions."
+      - "Graph Ecell vs. concentrations, Q, or log⁡Q to identify trends."
+      - "Use Ecell vs. log⁡Q to determine n, Ecell standard, and K, and compare with theoretical predictions."
 
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
