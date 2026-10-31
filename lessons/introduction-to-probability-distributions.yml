@@ -13,15 +13,14 @@ description: "Introduction to characterizing probability distributions with user
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution |
-  for different noble gases at different temperatures. |
-  Students are provided with background on probability distribution functions, |
-  although it can be helpful for them to see these in lecture prior to carrying out the activity. |
-  They learn how to integrate the distribution function to find the probability of finding a particle within a range of speeds.|
-  They also learn how to characterize a distribution using the most probable, average, and root mean square speeds.|
-
-  In order to plot the distribution functions, students learn how to make plots using MatPlotLib. |
-  To do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.|
+  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution 
+  for different noble gases at different temperatures. 
+  Students are provided with background on probability distribution functions, 
+  although it can be helpful for them to see these in lecture prior to carrying out the activity. 
+  They learn how to integrate the distribution function to find the probability of finding a particle within a range of speeds.
+  They also learn how to characterize a distribution using the most probable, average, and root mean square speeds.
+  In order to plot the distribution functions, students learn how to make plots using MatPlotLib. 
+  To do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.
   
 
 # COURSE INFORMATION (REQUIRED)
