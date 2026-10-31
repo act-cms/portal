@@ -19,9 +19,29 @@ from pathlib import PurePosixPath
 INSTRUCTOR_REPO = "act-cms/instructor-materials"  # Replace with your instructor repo
 
 def load_yaml_file(filepath):
-    """Load and parse a YAML file"""
-    with open(filepath, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+    """Load and parse a YAML file.
+
+    On a YAML syntax error, prints a friendly, author-actionable ``Error:``
+    line (picked up by format_pr_comment.py) and returns None instead of
+    letting the raw PyYAML traceback escape — an unhandled traceback produces
+    no ``Error:`` lines, so the PR comment can't tell the author what's wrong.
+    """
+    filename = Path(filepath).name
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except yaml.YAMLError as exc:
+        mark = getattr(exc, 'problem_mark', None)
+        problem = getattr(exc, 'problem', None) or "invalid YAML syntax"
+        if mark is not None:
+            # PyYAML marks are 0-based; report 1-based to match editors.
+            location = f"line {mark.line + 1}, column {mark.column + 1}"
+        else:
+            location = "unknown location"
+        print(f"Error: {filename} is not valid YAML ({location}): {problem}.")
+        print("Error: Check indentation — multi-line text under a 'key: |' "
+              "block must be indented, and list items must line up under their key.")
+        return None
 
 def get_lesson_id_from_filename(filename):
     """Extract lesson ID from YAML filename"""
@@ -96,6 +116,11 @@ def load_paths(project_root):
         return []
     data = load_yaml_file(paths_file)
     if data is None:
+        # load_yaml_file returns None for both an empty file (fine) and a
+        # parse error (already reported). Only treat a genuinely empty file as
+        # "no paths"; surface a parse error as invalid so the build fails.
+        if paths_file.read_text(encoding='utf-8').strip():
+            return None
         return []
     return data.get('paths', [])
 
@@ -145,8 +170,8 @@ def validate_paths(paths, lesson_ids):
 def validate_cross_references(lessons_by_id):
     """Validate lesson-to-lesson references across all lessons.
 
-    prerequisite_modules errors are fatal; related_modules issues are warnings
-    only (existing data has known broken refs).
+    Unknown-lesson references in prerequisite_modules and related_modules are
+    both fatal.
     """
     valid = True
 
@@ -167,7 +192,8 @@ def validate_cross_references(lessons_by_id):
 
         for module in lesson_data.get('related_modules', []):
             if isinstance(module, str) and module not in lessons_by_id:
-                print(f"WARNING: {lesson_id} related_modules references unknown lesson '{module}'")
+                print(f"Error: {lesson_id} related_modules references unknown lesson '{module}'")
+                valid = False
 
     if not valid:
         return False
