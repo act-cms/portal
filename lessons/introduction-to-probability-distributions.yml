@@ -17,7 +17,8 @@ expanded_description: |
   for different noble gases at different temperatures. 
   Students are provided with background on probability distribution functions, 
   although it can be helpful for them to see these in lecture prior to carrying out the activity. 
-  They learn how to integrate the distribution function to find the probability of finding a particle within a range of speeds.
+  They learn how to integrate the distribution function to find the probability of 
+  finding a particle within a range of speeds.
   They also learn how to characterize a distribution using the most probable, average, and root mean square speeds.
   In order to plot the distribution functions, students learn how to make plots using MatPlotLib. 
   To do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.
@@ -74,7 +75,8 @@ instructor_notes: |
   
   Timing notes:
   - The activity was piloted across two 75-minute class sessions
-  - The activity could work as a full 3 hour lab, or could be modified to fit into two 50 min sessions depending on how much detail the instructor explains.
+  - The activity could be compressed into two 50-minute class sessions
+  - The activity could work well for a 3 hour lab session (including time to work on the last challenge problem
   
   Common student questions:
   - "What does speed mean?" - they are unsure about how to interpret the argument names in python functions
@@ -82,7 +84,7 @@ instructor_notes: |
   - "How is this related to quantum mechanics" - the modulus square of the wavefunction is a probability distribution function
 
 # Related lessons that complement this one
-related_modules:
+#related_modules: 
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
