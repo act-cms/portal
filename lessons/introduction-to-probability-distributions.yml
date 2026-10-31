@@ -1,4 +1,4 @@
-# lessons/your-lesson-name.yml
+# lessons/introduction-to-probability-distributions.yml
 # 
 # STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
 # Replace all placeholder text with your actual lesson information
@@ -9,17 +9,20 @@
 title: "Introduction to Probability Distributions"
 
 # Brief description for search results (1-2 sentences)
-description: "Introduction to characterizing probability distributions using self-defined functions and graphical representations."
+description: "Introduction to characterizing probability distributions with user-defined functions and graphical representations."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution. 
-  Provide a more detailed description of your lesson here.
-  Explain the context, what students will accomplish, and how this
-  fits into broader molecular science education.
+  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution 
+  for different noble gases at different temperatures. 
+  Students are provided with background on probability distribution functions, 
+  although it can be helpful for them to see these in lecture prior to carrying out the activity. 
+  They learn how to integrate the distribution function to find the probability of finding a particle within a range of speeds.
+  They also learn how to characterize a distribution using the most probable, average, and root mean square speeds.
+
+  In order to plot the distribution functions, students learn how to make plots using MatPlotLib. 
+  To do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.
   
-  You can use multiple paragraphs to fully describe the lesson scope
-  and learning experience.
 
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
@@ -31,10 +34,12 @@ programming_skill: "Beginner"
 
 # Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
 # "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
-primary_course: "Foundational Module"
+primary_course: "Physical Chemistry"
 
 # List other courses where this lesson could be used (optional)
 also_for:
+  - "General Chemistry"
+  - "Physical Chemistry - Quantum Mechanics"
   - "Physical Chemistry - Thermodynamics"
 
 # List all authors
@@ -42,7 +47,7 @@ authors:
   - "Prof. Heidi Hendrickson"
 
 # Estimated total time for all materials
-estimated_time: "3 hours"
+estimated_time: "2-3 hours"
 
 # Format of the module. Must be EXACTLY one of these two values (case- and
 # spelling-sensitive) so the home-page format filter groups lessons correctly:
@@ -57,31 +62,28 @@ instructor_email: "hendrihe@lafayette.edu"
 
 # INSTRUCTOR DETAILS (OPTIONAL)
 # What level of students was this piloted with?
-student_level: "Undergraduate - Third Year"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+student_level: "Undergraduate - Upper level"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
 # How many students has this been tested with?
 students_piloted: 14  # Number of students
 # Free-form notes for instructors
 instructor_notes: |
   Additional context for instructors using this lesson:
   
-  - This lesson works well when paired with a traditional lecture on molecular dynamics
-  - Students often struggle with the concept of periodic boundary conditions in Part 2
-  - The visualization exercises are very engaging - allow extra time for exploration
-  - Consider assigning the dataset analysis as homework rather than in-class work
+  - This lesson works well when paired with a traditional lecture on probability distributions
+  - Students may struggle with user-defined functions and lambda expressions - allow extra time for questions
+  - Consider assigning Self-Check 4 and Self-Check 7 as homework rather than in-class work (depending on class session time)
   
   Timing notes:
-  - Part 1 typically takes students 45-60 minutes
-  - Part 2 can be rushed in 90 minutes but is better with 2 hours
+  - The activity was piloted across two 75-minute class sessions
+  - The activity could work as a full 3 hour lab, or could be modified to fit into two 50 min sessions depending on how much detail the instructor explains.
   
   Common student questions:
-  - "Why do we need so many time steps?" - good opportunity to discuss numerical integration
+  - "What does speed mean?" - they are unsure about how to interpret the argument names in python functions
   - "What happens if we change the temperature?" - this connects well to thermodynamics concepts
+  - "How is this related to quantum mechanics" - the modulus square of the wavefunction is a probability distribution function
 
 # Related lessons that complement this one
 related_modules:
-  - "thermodynamics-fundamentals"
-  - "statistical-mechanics-intro"
-  - "computational-chemistry-basics"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -97,51 +99,46 @@ prerequisite_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/your-lesson-repo"
+public_repo_url: "https://github.com/act-cms/introduction-to-probability-distributions"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Part 1: Introduction"
-    description: "Brief description of what this notebook covers"
+  - title: "Introduction to Probability Distributions"
+    description: "Introduction to visualizing and characterizing probability distributions using the Maxwell Speed Distribution"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "1 hour"
+    duration: "2-3 hours"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
+    github_url: "https://github.com/act-cms/introduction-to-probability-distributions/blob/main/01-Introduction-to-probability-distributions/Student.ipynb"
     # Google Colab launch link (recommended for accessibility)
     colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
     
     # Learning objectives specific to this material
     objectives:
-      - "Specific skill students will develop"
-      - "Another concrete learning outcome"
-      - "Third measurable objective"
+      - "Write a user-defined function in python"
+      - "Define a numpy array in python"
+      - "Plot a user-defined function using matplotlib"
+      - "Integrate a probability distribution to find the probability using scipy"
+      - "Minimize a probability distribution to find the most probable value using scipy"
+      - "Calculate the first and second moment of a probability distribution"
   
-  # Add more materials as needed
-  - title: "Part 2: Advanced Topics"
-    description: "Description of second notebook"
-    type: "notebook"
-    duration: "90 min"
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/02-advanced.ipynb"
-    colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/02-advanced.ipynb"
-    objectives:
-      - "Advanced skill development"
-      - "Application of concepts from Part 1"
 
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
   - "Apply programming to integrate probability distribution functions"
-  - "Understand molecular property X through computational analysis"
-  - "Interpret results of computational molecular science calculations"
+  - "Apply programming to find the maximum value of probability distribution functions"
+  - "Apply programming to calculate characteristic statistics of probability distribution functions"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
   - "Write and execute Python code in Jupyter notebooks"
   - "Write user-defined functions"
-  - "Create graphs of user-defined functions"
+  - "Define and use numpy arrays"
+  - "Write functions that use lambda expressions"
+  - "Visualize user-defined functions using MatPlotLib"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
