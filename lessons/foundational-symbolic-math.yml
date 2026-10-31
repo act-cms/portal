@@ -1,23 +1,35 @@
-# lessons/your-lesson-name.yml
+# lessons/your-module-name.yml
 # 
-# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
-# Replace all placeholder text with your actual lesson information
-# Remove any sections that don't apply to your lesson
+# STARTER TEMPLATE FOR ACT-CMS PORTAL SUBMISSION
+# Replace all placeholder text with your actual module information
+# Remove any sections that don't apply to your module
 
 # BASIC METADATA (REQUIRED)
 # Use a clear, descriptive title that includes the main topic
-title: "Foundations of Symbolic Mathematics in Python"
+title: "Foundational Symbolic Mathematics"
 
 # Brief description for search results (1-2 sentences)
-description: "Students will be introduced to the fundamentals of symbolic mathematical manipulations in Python."
+description: "Students will learn foundational skills for performing symbolic mathematical manipulations in Python."
 
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
-  The lessons in this module are meant to help students develop foundational
-  skills in symbolic mathematics, including algebra, calculus, linear algebra,
-  differential equations, and beyond --- but decoupled from any particular chemistry
-  course or chemical application beyond the general chemistry level.
-
+  Physical chemistry describes chemical phenomena in the language of mathematics
+  at a level of conceptual and theoretical rigor beyond that which many
+  undergraduate chemistry students are typically unaccustomed. This means that
+  for students of physical chemistry, they must develop a wide variety of
+  mathematical skills "on the job," while leaving enough intellectual bandwidth
+  to learn the physical chemistry concepts themselves. For many students this is
+  an enormously challenging proposition, which contributes to physical
+  chemistry's reputation as one of (if not the) most difficult courses taught on
+  any college campus. While mathematical rigor is the cost of doing business in
+  physical chemistry, being able to perform every requisite mathematical
+  transformation by hand does not have to be a learning objective for the course.
+  To make the study of physical chemistry more mathematically accessible for
+  undergraduate chemistry students, the goal of this Module is to help students
+  develop the cyberinfrastructure (CI) skills necessary to use Python as a
+  symbolic and numerical mathematics engine for solving physical chemistry
+  problems.
+  
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
 programming_skill: "Beginner"
@@ -34,48 +46,58 @@ primary_course: "Foundational Module"
 also_for:
   - "General Chemistry"
   - "Physical Chemistry"
-  - "Biophysical Chemistry"
   - "Materials Science"
-  - "Analytical Chemistry"
 
 # List all authors
+# For titles, use European convention:
+# Prof = you yourself teach students, Dr = PhD who doesn't teach students
 authors: 
   - "Prof. Dom Sirianni"
 
-# Estimated total time for all materials
-estimated_time: "3 hours" # Currently only for the symbolic-algebra lesson, will grow w/ more
+# Estimated total time for ALL materials for ENTIRE collection
+estimated_time: "4-6 hours"
 
-# Write a description of your module.
-# Single notebook, multi-part module, etc?
-format: "Multi-Part Module" # Must be EXACTLY "Single Notebook" or "Multi-Part Module" (same spelling/case) for the format filter
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Multi-Part Module"
 
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
-instructor_email: "sirianni.dom@gmail.com" # will update after I get a Westminster email
+instructor_email: "sirianda@westminster.edu"
 # Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
 # where {lesson-filename} matches this YAML file's name
 
 # INSTRUCTOR DETAILS (OPTIONAL)
 # What level of students was this piloted with?
-student_level: "Undergraduate (all years)"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+student_level: "Undergraduate Upper Division"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
 # How many students has this been tested with?
-students_piloted: 15  # Number of students
+students_piloted: 50  # Number of students
 # Free-form notes for instructors
 instructor_notes: |
   Additional context for instructors using this lesson:
-  - Prerequisite of basic Python programming (equivalent to outcome of related module)
-  - Symbolic algebra lesson is prerequisite for other lessons
   
-  Timing notes:
-  - Symbolic algebra lesson can be completed in single 3-hour lab period
+  - This module is meant to introduce the cyberinfrastructure skills for symbolic & numerical math in Python, rather than teaching the mathematics or chemistry itself.
+  - Students are assumed to have basic experience with Python syntax, and any new syntactic elements are introduced at the moment they become relevant.
+  - Three student versions are provided for each lesson, which are designed for different teaching modalities (asynchronous, guided-inquiry, and live-coding)
   
-  Common student questions:
-  - "I can solve these problems by hand, why do I need to use Python?" 
-  - Remind students that some chemical problems in sophomore-level courses & beyond are either impossible or backbreakingly difficult to solve by hand, so developing these skills will greatly help their progress through the curriculum
-
 # Related lessons that complement this one
 related_modules:
+  - "lesson-01-introduction-to-programming-and-python"
+  - "lesson-02-linear-variation-method"
+  - "lesson-04-diatomic-molecule-ir-spectrum-analisys"
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+prerequisite_modules:
   - "foundational-intro-python"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
@@ -84,78 +106,84 @@ public_repo_url: "https://github.com/act-cms/foundational-symbolic-math"
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "Foundations of Symbolic Algebra in Python"
-    description: "Basics of using `sympy` and `algebra_with_sympy` libraries to symbolically solve general chemistry problems"
+  - title: "Lesson 1: Introduction to Symbolic Algebra in Python"
+    description: "Introduces students to the foundational skills of using SymPy for symbolic algebra manipulations to solve chemical problems."
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "3 hours"
+    duration: "2-3 hours"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/symbolic-algebra/symbolic-algebra-async.ipynb"
-    # Google Colab launch link (recommended for accessibility)
-    #colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
+    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/1_symbolic-algebra/student-async.ipynb"
     
     # Learning objectives specific to this material
     objectives:
-      - "Define algebraic variables and expressions using the `algebra_with_sympy` library"
+      - "Define mathematical variables and expressions using SymPy"
       - "Manipulate algebraic expressions to solve for a single variable"
-      - "Substitute numerical values and units to evaluate algebraic expressions"
-      - "Automatically solve algebraic expressions for a single variable"
-      - "Apply `algebra_with_sympy` to symbolically solve chemical problems at the first-year general chemical level"
-
-  #- title: "Introduction to Symbolic Calculus in Python"
-  #  description: "Brief description of what this notebook covers"
-  #  type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
-  #  duration: "1.5 hours"
-  #  
-  #  # REQUIRED: Include at least one URL (preferably both)
-  #  # Direct link to notebook file on GitHub
-  #  github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
-  #  # Google Colab launch link (recommended for accessibility)
-  #  colab_url: "https://colab.research.google.com/github/act-cms/your-lesson-repo/blob/main/colab-notebooks/01-intro.ipynb"
-  #  
-  #  # Learning objectives specific to this material
-  #  objectives:
-  #    - "Define algebraic variables and expressions using the `algebra_with_sympy` library"
-  #    - "Manipulate algebraic expressions to solve for a single variable"
-  #    - "Substitute numerical values and units to evaluate algebraic expressions"
-  #    - "Use `algebra_with_sympy` to solve chemical problems at the first-year general chemical level"
+      - "Substitute numerical values and units into algebraic expressions"
+      - "Apply symbolic algebra techniques in Python to solve general chemistry problems"
+  - title: "Lesson 2: Essentials of Calculus in Python"
+    description: "Introduces students to the essential skills for performing calculus operations in Python."
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "3-4 hours"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/foundational-symbolic-math/blob/main/2_symbolic-calculus/student-async.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Encode mathematical functions of one or more variables into SymPy expressions"
+      - "Perform symbolic derivatives of scalar functions of one or more variables in SymPy"
+      - "Perform symbolic indefinite integration of scalar functions of one or more variables in SymPy"
+      - "Perform symbolic definite integration of scalar functions of one or more variables in SymPy"
+      - "Perform numerical quadrature to evaluate definite integrals of one or more variables with SciPy"
   
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-  - "Apply symbolic mathematical operations in Python to solve general chemical problems"
+  - "Define mathematical variables and expressions using SymPy"
+  - "Manipulate algebraic expressions to solve for a single variable"
+  - "Substitute numerical values and units into algebraic expressions"
+  - "Apply symbolic algebra techniques in Python to solve general chemistry problems"
+  - "Perform symbolic calculus operations using the SymPy library"
+  - "Perform numerical quadrature for definite integration using the SciPy library"
 
 # What computational/programming skills will students develop?
 cyberinfrastructure_objectives:
-  - "Define algebraic variables and expressions using the `algebra_with_sympy` library"
-  - "Manipulate algebraic expressions to solve for a single variable"
-  - "Substitute numerical values and units to evaluate algebraic expressions"
-  - "Automatically solve algebraic expressions for a single variable"
-  - "Apply `algebra_with_sympy` to symbolically solve chemical problems at the first-year general chemical level"
+  - "Using SymPy to symbolically perform mathematical transformations in a chemical context"
+  - "Using NumPy/SciPy to perform numerical mathematics operations"
+  - "Using SymPy/SciPy to perform symbolic and numerical calculus operations in Python"
 
 # PREREQUISITES (REQUIRED)
 # What science background do students need?
 scientific_prerequisites:
-  - "General chemistry: gas laws, chemical kinetics, thermochemistry, Bohr model of the atom & wave nature of light, chemical equilibrium"
+  - "General chemistry"
+  - "College-level algebra"
+  - "Precalculus"
+  - "Calculus 1"
 
 # What programming experience is assumed?
 programming_prerequisites:
-  - "Basic Python syntax (variables, loops, functions, lists)"
+  - "Basic Python syntax (variables, loops, functions)"
 
 # PLATFORM SUPPORT (REQUIRED)
-# List platforms where your materials can be used.
+# List platforms where your materials can be used. Each value must be one of
+# the supported platforms (spelling and capitalization matter):
+#   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
+# Any other value fails the build (no rendering template exists for it).
 platforms:
-  #- "Google Colab"
-  - "Local Installation"
-  #- "ChemCompute"
+  - "ChemCompute"
 
 # Which platform do you recommend for most users?
-recommended_platform: "Local Installation"
+# Pick exactly ONE platform name, and it must match an entry in the `platforms`
+# list above EXACTLY (same spelling and capitalization). Do NOT combine several,
+# e.g. "Google Colab, ChemCompute" is invalid and fails the build.
+recommended_platform: "ChemCompute"
 
 # METADATA (REQUIRED)
 # Tags help with searching - use relevant keywords
 tags:
   - "python"
   - "symbolic-math"
-  - "symbolic-algebra"
+  - "symbolic-calculus"
+  - "visualizing-math-functions"

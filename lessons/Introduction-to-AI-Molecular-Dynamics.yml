@@ -1,0 +1,178 @@
+# lessons/Introduction-to-AI-Molecular-Dynamics.yml
+
+title: "Introduction to AI-Molecular Dynamics"
+
+description: "A seven-lesson module introducing molecular dynamics, atomistic model construction, visualization, and responsible AI/LLM-assisted MD workflows."
+
+expanded_description: |
+  This multi-part module introduces students to molecular dynamics (MD) as a practical computational method for studying atomistic systems. Students begin with the basic MD loop, simple potentials, numerical integration, and trajectory analysis, then move toward hands-on materials modeling workflows using Python, LAMMPS, Atomsk, and OVITO.
+
+  The module also introduces artificial intelligence and large language models in the context of MD. Students learn where AI tools can help with planning, scripting, analysis, and interpretation, while also practicing validation habits needed to avoid physically incorrect or technically fragile simulation workflows.
+
+programming_skill: "Beginner"
+
+primary_course: "Materials Science"
+
+also_for:
+  - "Physical Chemistry"
+  - "Computational Chemistry"
+  - "Foundational Module"
+
+authors:
+  - "Prof. Wenwu Xu"
+
+estimated_time: "8-12 hours"
+
+format: "Multi-Part Module"
+
+instructor_email: "wenwu.xu@sdsu.edu"
+
+student_level: "Mixed Undergraduate/Graduate"
+
+instructor_notes: |
+  This module can be used as a complete introduction to AI-assisted molecular dynamics or as selected lessons embedded into a computational materials science, physical chemistry, or molecular simulation course.
+
+  The first two notebooks can be run with standard Python scientific packages. Later lessons introduce workflows that benefit from local installations of LAMMPS, Atomsk, and OVITO, although the notebooks also provide script-generation and interpretation exercises that can be discussed without a full production MD setup.
+
+  Emphasize validation throughout the module. Students should treat AI-generated scripts, explanations, and analysis summaries as drafts that must be checked against physical assumptions, software documentation, and reproducible simulation output.
+
+related_modules:
+  - "foundational-intro-python"
+  - "foundational-symbolic-math"
+  - "diffusion"
+
+prerequisite_modules:
+  - "foundational-intro-python"
+
+public_repo_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics"
+
+materials:
+  - title: "Introduction to Molecular Dynamics"
+    description: "Introduce the MD workflow using forces, potentials, numerical integration, and simple trajectory analysis."
+    type: "notebook"
+    duration: "60-75 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-molecular-dynamics.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-molecular-dynamics.ipynb"
+    objectives:
+      - "Describe the basic molecular dynamics loop."
+      - "Connect potential energy functions to forces."
+      - "Run and interpret a simple Python MD example."
+
+  - title: "Introduction to AI and LLMs for Molecular Dynamics"
+    description: "Introduce AI, machine learning, and large language models as tools for supporting MD planning, scripting, analysis, and review."
+    type: "notebook"
+    duration: "60-75 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-ai-llm-for-molecular-dynamics.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/01_AI-MD-101/introduction-to-ai-llm-for-molecular-dynamics.ipynb"
+    objectives:
+      - "Distinguish physics-based models, machine learning models, and LLMs."
+      - "Identify useful AI roles in MD workflows."
+      - "Recognize limitations and validation needs for AI-assisted simulation work."
+
+  - title: "Python MD From Scratch"
+    description: "Build a minimal molecular dynamics engine in Python to expose positions, velocities, pair forces, integration, and energy checks."
+    type: "notebook"
+    duration: "75-90 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/02_python-md-from-scratch/python-md-from-scratch.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/02_python-md-from-scratch/python-md-from-scratch.ipynb"
+    objectives:
+      - "Implement simple MD data structures with NumPy."
+      - "Compute pairwise forces from a simple potential."
+      - "Use Velocity Verlet integration and inspect energy conservation."
+
+  - title: "LAMMPS Fundamentals"
+    description: "Learn the structure of LAMMPS input scripts and connect simulation commands to physical modeling choices."
+    type: "notebook"
+    duration: "75-90 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/03_lammps-fundamentals/lammps-fundamentals.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/03_lammps-fundamentals/lammps-fundamentals.ipynb"
+    objectives:
+      - "Identify the main sections of a LAMMPS input script."
+      - "Create simple atomistic systems directly in LAMMPS."
+      - "Interpret thermo output, dump files, and common run settings."
+
+  - title: "Atomsk Structure Building"
+    description: "Use Atomsk concepts and command patterns to create crystal structures, transform simulation cells, and prepare LAMMPS data files."
+    type: "notebook"
+    duration: "60-90 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/04_atomsk-structure-building/atomsk-structure-building.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/04_atomsk-structure-building/atomsk-structure-building.ipynb"
+    objectives:
+      - "Build and transform common crystalline structures."
+      - "Prepare structures for LAMMPS simulations."
+      - "Introduce simple vacancies, substitutions, surfaces, and interfaces."
+
+  - title: "OVITO Visualization"
+    description: "Load and analyze LAMMPS output in OVITO using visualization, selection, filtering, and structure-analysis workflows."
+    type: "notebook"
+    duration: "60-90 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/05_ovito-visualization/ovito-visualization.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/05_ovito-visualization/ovito-visualization.ipynb"
+    objectives:
+      - "Load LAMMPS dump and data files into OVITO."
+      - "Apply common visualization and analysis modifiers."
+      - "Export snapshots, plots, or animations for scientific communication."
+
+  - title: "Defects and Materials Modeling"
+    description: "Apply LAMMPS, Atomsk, and OVITO to practical materials modeling tasks involving defects, surfaces, relaxation, and atomistic mechanisms."
+    type: "notebook"
+    duration: "90-120 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/06_defects-and-materials-modeling/defects-and-materials-modeling.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/06_defects-and-materials-modeling/defects-and-materials-modeling.ipynb"
+    objectives:
+      - "Create basic defects and surfaces in atomistic models."
+      - "Connect simulation setup to defect and surface energetics."
+      - "Use visualization to interpret local atomic environments."
+
+  - title: "AI-Assisted MD Workflows"
+    description: "Use AI tools to plan simulations, draft scripts, summarize outputs, and accelerate analysis while validating each result."
+    type: "notebook"
+    duration: "75-90 min"
+    github_url: "https://github.com/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/07_ai-assisted-md-workflows/ai-assisted-md-workflows.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/Introduction-to-AI-Molecular-Dynamics/blob/main/07_ai-assisted-md-workflows/ai-assisted-md-workflows.ipynb"
+    objectives:
+      - "Draft and revise MD-related scripts with AI assistance."
+      - "Audit generated code for physical and technical correctness."
+      - "Summarize simulation outputs while preserving validation checks."
+
+scientific_objectives:
+  - "Explain the core molecular dynamics workflow from initialization to trajectory analysis."
+  - "Relate forces, potentials, integration schemes, and thermodynamic ensembles to atomistic simulations."
+  - "Construct and modify crystalline atomistic structures for materials modeling."
+  - "Interpret simulation outputs using visualization and structure-analysis workflows."
+  - "Evaluate appropriate and inappropriate uses of AI and LLMs in molecular dynamics research."
+
+cyberinfrastructure_objectives:
+  - "Run and modify Jupyter notebooks for molecular simulation learning activities."
+  - "Write basic Python code for simple MD integration and analysis tasks."
+  - "Generate and interpret introductory LAMMPS input scripts."
+  - "Use Atomsk command patterns to create atomistic structures for simulation."
+  - "Use OVITO workflows to visualize and analyze atomistic trajectory data."
+  - "Validate AI-generated scripts, summaries, and modeling suggestions against documentation and simulation output."
+
+scientific_prerequisites:
+  - "Introductory chemistry or materials science."
+  - "Basic familiarity with atomic structure, bonding, force, energy, and simple plots."
+  - "No prior experience with production molecular dynamics software is required."
+
+programming_prerequisites:
+  - "Basic Python syntax, including variables, loops, functions, and arrays."
+  - "Basic familiarity with running cells in Jupyter notebooks."
+
+platforms:
+  - "Google Colab"
+  - "Local Installation"
+  - "ChemCompute"
+
+recommended_platform: "Local Installation"
+
+tags:
+  - "python"
+  - "molecular-dynamics"
+  - "materials-science"
+  - "lammps"
+  - "atomsk"
+  - "ovito"
+  - "visualization"
+  - "ai"
+  - "llm"
