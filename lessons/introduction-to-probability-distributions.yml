@@ -113,7 +113,7 @@ materials:
     # Direct link to notebook file on GitHub
     github_url: "https://github.com/act-cms/introduction-to-probability-distributions/blob/main/01-Introduction-to-probability-distributions/Student.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: "https://colab.research.google.com/github/act-cms/introduction-to-probability-distributions/blob/main/colab-notebooks/01-Introduction-to-probability-distributions/Student.ipynb"
+    # colab_url: "https://colab.research.google.com/github/act-cms/introduction-to-probability-distributions/blob/main/colab-notebooks/01-Introduction-to-probability-distributions/Student.ipynb"
     
     # Learning objectives specific to this material
     objectives:
