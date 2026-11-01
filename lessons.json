@@ -2771,6 +2771,98 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "Orthonormal Wavefunctions",
+    "description": "Students will explore orthonormality and normalization of basis sets and superposition wavefunctions.",
+    "expanded_description": "In this lesson, students will calculate inner products, plot the products of wavefunctions, \nand interpret how coefficients and normalization constants impact the amplitude of the wavefunction. \nThis activity reviews material students are familiar with from lecture, but often have a hard \ntime visualizing and understanding. Students normalize a set of orthogonal functions and \nthen use that set to create a superposition wavefunction, compare \"good\" and \"bad\" \nsuperposition wavefunctions, and normalize the \"bad\" wavefunction. Students visualize \nand interpret how coefficients and normalization constants scale the wavefunction amplitude. \nThis activity is useful in a Physical Chemistry - Quantum course. \nIt was piloted over two 75-minute class sessions. \n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry",
+    "authors": [
+      "Prof. Heidi Hendrickson"
+    ],
+    "estimated_time": "2-3 hours",
+    "format": "Single Notebook",
+    "instructor_email": "hendrihe@lafayette.edu",
+    "student_level": "Undergraduate - Upper Level",
+    "students_piloted": 14,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This lesson works well when paired with a traditional lecture on properties of wavefunctions\n- Students often struggle with the concept of orthogonal functions and integration\n- The plotting code is a little overwhelming for students to follow - it helps to walk them through a few lines of it\n- The background information is quite extensive - it's there for review, so it's ok to skip/skim over it\n\nTiming notes:\n- The notebook was divided into two 75-minute sessions in the pilot, but it went long due to time spent on the background\n- Students will ask questions about the background info throughout the session, so you can go back to it when it's relevant for them\n\nCommon student questions:\n- \"Why do we have to integrate the product of two functions?\" - good opportunity to explain the similarity between integrals and sums (if they get the discrete dot product)\n- \"Does the inner product include the integral?\" - good opportunity to explain how integration \"gets rid of\" the integration dimension\n- \"Why do we use Dirac notation?\" - also good chance to relate discrete and continuous variables and mention the Kronecker delta\n",
+    "related_modules": [
+      "foundational-intro-python"
+    ],
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/orthonormal-wavefunctions",
+    "materials": [
+      {
+        "title": "Orthonormal Wavefunctions",
+        "description": "This notebooks covers calculations and visualizations related to orthonormality and completeness for a set of functions",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/orthonormal-wavefunctions/blob/main/01-orthonormal-wavefunctions/student.ipynb",
+        "objectives": [
+          "Use the inner product to determine if functions in a set are orthonormal",
+          "Normalize a set of orthogonal functions",
+          "Normalize a superposition wavefunction",
+          "Calculate the coefficients for a basis function in a superposition wavefunction",
+          "Interpret how the basis function coefficients and normalization constant scale a wavefunction",
+          "Write and execute Python code in Jupyter notebooks",
+          "Write user-defined functions",
+          "Manage floating point precision issues",
+          "Create plots with multiple subplots using plt.subplots()"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/orthonormal-wavefunctions&branch=main&urlpath=lab/tree/orthonormal-wavefunctions/01-orthonormal-wavefunctions/student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Calculate the inner product of two functions",
+      "Use the inner product to determine if functions in a set are orthonormal",
+      "Normalize a set of orthogonal functions",
+      "Normalize a superposition wavefunction",
+      "Calculate the coefficients for a basis function in a superposition wavefunction",
+      "Interpret how the basis function coefficients and normalization constant scale a wavefunction"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Write and execute Python code in Jupyter notebooks",
+      "Write user-defined functions",
+      "Manage floating point precision issues",
+      "Create plots with multiple subplots using plt.subplots()"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic familiarity with the state postulate of quantum mechanics",
+      "Basic understanding of probability distribution functions"
+    ],
+    "programming_prerequisites": [
+      "Basic Python syntax (variables, loops, functions)",
+      "Basic understanding of matplotlib.pyplot.subplots()",
+      "Basic familiarity with scipy.integrate.quad()",
+      "Basic familiarity with Lambda expressions"
+    ],
+    "platforms": [
+      "Google Colab",
+      "Local Installation",
+      "ChemCompute"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "quantum-mechanics",
+      "visualization",
+      "wavefunctions"
+    ],
+    "id": "orthonormal-wavefunctions",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "orthonormal-wavefunctions",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/orthonormal-wavefunctions&branch=main&urlpath=lab/tree/orthonormal-wavefunctions/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Particle in a Box Energy Calculations",
     "description": "Students will calculate energy levels for particle in a box, examine how box length changes these levels, and predict absorption wavelength",
     "expanded_description": "By completing this module students will examine the energies of a 1, 2, and 3-D box. \nStudents will calculate both individual energy levels and differences in energy levels.\n",
