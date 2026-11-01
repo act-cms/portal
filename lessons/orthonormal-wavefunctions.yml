@@ -86,7 +86,7 @@ instructor_notes: |
 # Related lessons that complement this one
 related_modules:
   - "foundational-intro-python"
-  - "introduction-to-probability-distributions"
+#  - "introduction-to-probability-distributions"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
@@ -96,7 +96,7 @@ related_modules:
 # on the portal); ordered sequences are displayed via paths.yml instead.
 prerequisite_modules:
   - "foundational-intro-python"
-  - "introduction-to-probability-distributions"
+#  - "introduction-to-probability-distributions"
 
 # NOTE: To add this lesson to an ordered learning path (or create a new one),
 # edit paths.yml at the repo root — step order is defined there, not here.
