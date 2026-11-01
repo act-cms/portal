@@ -1957,6 +1957,91 @@
     ]
   },
   {
+    "title": "Introduction to Probability Distributions",
+    "description": "Introduction to characterizing probability distributions with user-defined functions and graphical representations.",
+    "expanded_description": "In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution \nfor different noble gases at different temperatures. \nStudents are provided with background on probability distribution functions, \nalthough it can be helpful for them to see these in lecture prior to carrying out the activity. \nThey learn how to integrate the distribution function to find the probability of \nfinding a particle within a range of speeds.\nThey also learn how to characterize a distribution using the most probable, average, and root mean square speeds.\nIn order to plot the distribution functions, students learn how to make plots using MatPlotLib. \nTo do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.\n",
+    "programming_skill": "Beginner",
+    "primary_course": "Physical Chemistry",
+    "also_for": [
+      "General Chemistry",
+      "Physical Chemistry - Quantum Mechanics",
+      "Physical Chemistry - Thermodynamics"
+    ],
+    "authors": [
+      "Prof. Heidi Hendrickson"
+    ],
+    "estimated_time": "2-3 hours",
+    "format": "Single Notebook",
+    "instructor_email": "hendrihe@lafayette.edu",
+    "student_level": "Undergraduate - Upper level",
+    "students_piloted": 14,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This lesson works well when paired with a traditional lecture on probability distributions\n- Students may struggle with user-defined functions and lambda expressions - allow extra time for questions\n- Consider assigning Self-Check 4 and Self-Check 7 as homework rather than in-class work (depending on class session time)\n\nTiming notes:\n- The activity was piloted across two 75-minute class sessions\n- The activity could be compressed into two 50-minute class sessions\n- The activity could work well for a 3 hour lab session (including time to work on the last challenge problem\n\nCommon student questions:\n- \"What does speed mean?\" - they are unsure about how to interpret the argument names in python functions\n- \"What happens if we change the temperature?\" - this connects well to thermodynamics concepts\n- \"How is this related to quantum mechanics\" - the modulus square of the wavefunction is a probability distribution function\n",
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/introduction-to-probability-distributions",
+    "materials": [
+      {
+        "title": "Introduction to Probability Distributions",
+        "description": "Introduction to visualizing and characterizing probability distributions using the Maxwell Speed Distribution",
+        "type": "notebook",
+        "duration": "2-3 hours",
+        "github_url": "https://github.com/act-cms/introduction-to-probability-distributions/blob/main/01-Introduction-to-probability-distributions/Student.ipynb",
+        "objectives": [
+          "Write a user-defined function in python",
+          "Define a numpy array in python",
+          "Plot a user-defined function using matplotlib",
+          "Integrate a probability distribution to find the probability using scipy",
+          "Minimize a probability distribution to find the most probable value using scipy",
+          "Calculate the first and second moment of a probability distribution"
+        ],
+        "chemcompute_url": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-probability-distributions&branch=main&urlpath=lab/tree/introduction-to-probability-distributions/01-Introduction-to-probability-distributions/Student.ipynb"
+      }
+    ],
+    "scientific_objectives": [
+      "Apply programming to integrate probability distribution functions",
+      "Apply programming to find the maximum value of probability distribution functions",
+      "Apply programming to calculate characteristic statistics of probability distribution functions"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Write and execute Python code in Jupyter notebooks",
+      "Write user-defined functions",
+      "Define and use numpy arrays",
+      "Write functions that use lambda expressions",
+      "Visualize user-defined functions using MatPlotLib"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry"
+    ],
+    "programming_prerequisites": [
+      "Basic Python syntax (variables, loops, functions)"
+    ],
+    "platforms": [
+      "ChemCompute",
+      "Local Installation",
+      "Google Colab"
+    ],
+    "recommended_platform": "ChemCompute",
+    "tags": [
+      "python",
+      "probability",
+      "thermodynamics",
+      "visualization",
+      "quantum-chemistry"
+    ],
+    "id": "introduction-to-probability-distributions",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "introduction-to-probability-distributions",
+    "chemcompute_launch": "https://chemcompute.org/jupyterhub_internal/hub/user-redirect/git-pull?repo=https%3A//github.com/act-cms/introduction-to-probability-distributions&branch=main&urlpath=lab/tree/introduction-to-probability-distributions/",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Introduction to Programming for Molecular Scientists",
     "description": "Learn fundamental programming concepts in Python including data types, file operations, and basic programming structures.",
     "expanded_description": "This foundational module introduces students to programming concepts essential for computational molecular science. \nStudents will learn Python basics including variables, data types, control structures, and file operations through \nhands-on exercises designed for scientific applications.\n\nThe module emphasizes practical programming skills that serve as prerequisites for more advanced computational \nlessons in chemistry and molecular sciences.\n",
