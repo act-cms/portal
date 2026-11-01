@@ -1,0 +1,177 @@
+# lessons/introduction-to-probability-distributions.yml
+# 
+# STARTER TEMPLATE FOR ACT-CMS LESSON PORTAL SUBMISSION
+# Replace all placeholder text with your actual lesson information
+# Remove any sections that don't apply to your lesson
+
+# BASIC METADATA (REQUIRED)
+# Use a clear, descriptive title that includes the main topic
+title: "Introduction to Probability Distributions"
+
+# Brief description for search results (1-2 sentences)
+description: "Introduction to characterizing probability distributions with user-defined functions and graphical representations."
+
+# Longer description for the lesson page (use | for multi-line text)
+expanded_description: |
+  In this lesson, the students are introduced to probability distributions using the Maxwell Speed Distribution 
+  for different noble gases at different temperatures. 
+  Students are provided with background on probability distribution functions, 
+  although it can be helpful for them to see these in lecture prior to carrying out the activity. 
+  They learn how to integrate the distribution function to find the probability of 
+  finding a particle within a range of speeds.
+  They also learn how to characterize a distribution using the most probable, average, and root mean square speeds.
+  In order to plot the distribution functions, students learn how to make plots using MatPlotLib. 
+  To do so, they also need to learn about how to use numpy arrays, lambda expressions, and scipy functions.
+  
+
+# COURSE INFORMATION (REQUIRED)
+# Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
+programming_skill: "Beginner"
+# None: No programming experience. 
+# Beginner: Knows variables, conditionals, loops
+# Intermediate: Can write their own scripts from scratch
+# Advanced: Can write/develop software.
+
+# Examples: "Foundational Module", "Physical Chemistry", "Organic Chemistry", 
+# "Inorganic Chemistry", "Analytical Chemistry", "Biochemistry", "Materials Science", "Other"
+primary_course: "Physical Chemistry"
+
+# List other courses where this lesson could be used (optional)
+also_for:
+  - "General Chemistry"
+  - "Physical Chemistry - Quantum Mechanics"
+  - "Physical Chemistry - Thermodynamics"
+
+# List all authors
+authors: 
+  - "Prof. Heidi Hendrickson"
+
+# Estimated total time for all materials
+estimated_time: "2-3 hours"
+
+# Format of the module. Must be EXACTLY one of these two values (case- and
+# spelling-sensitive) so the home-page format filter groups lessons correctly:
+#   "Single Notebook"  or  "Multi-Part Module"
+format: "Single Notebook"
+
+# INSTRUCTOR INFORMATION (OPTIONAL)
+# Contact email for instructor access requests (optional - will use default if not specified)
+instructor_email: "hendrihe@lafayette.edu"
+# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# where {lesson-filename} matches this YAML file's name
+
+# INSTRUCTOR DETAILS (OPTIONAL)
+# What level of students was this piloted with?
+student_level: "Undergraduate - Upper level"  # e.g., "Graduate", "Undergraduate - First Year", "Mixed Graduate/Undergraduate"
+# How many students has this been tested with?
+students_piloted: 14  # Number of students
+# Free-form notes for instructors
+instructor_notes: |
+  Additional context for instructors using this lesson:
+  
+  - This lesson works well when paired with a traditional lecture on probability distributions
+  - Students may struggle with user-defined functions and lambda expressions - allow extra time for questions
+  - Consider assigning Self-Check 4 and Self-Check 7 as homework rather than in-class work (depending on class session time)
+  
+  Timing notes:
+  - The activity was piloted across two 75-minute class sessions
+  - The activity could be compressed into two 50-minute class sessions
+  - The activity could work well for a 3 hour lab session (including time to work on the last challenge problem
+  
+  Common student questions:
+  - "What does speed mean?" - they are unsure about how to interpret the argument names in python functions
+  - "What happens if we change the temperature?" - this connects well to thermodynamics concepts
+  - "How is this related to quantum mechanics" - the modulus square of the wavefunction is a probability distribution function
+
+# Related lessons that complement this one
+#related_modules: 
+
+# OPTIONAL: Lessons students should complete BEFORE this one.
+# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
+# scientific_prerequisites/programming_prerequisites fields below, these are
+# strictly build-validated: unknown IDs, self-references, or circular
+# prerequisite chains FAIL the build. Machine-readable metadata (searchable
+# on the portal); ordered sequences are displayed via paths.yml instead.
+prerequisite_modules:
+  - "foundational-intro-python"
+
+# NOTE: To add this lesson to an ordered learning path (or create a new one),
+# edit paths.yml at the repo root — step order is defined there, not here.
+
+# REPOSITORY URLS (REQUIRED)
+# Link to the repository containing your public material
+public_repo_url: "https://github.com/act-cms/introduction-to-probability-distributions"
+
+# MATERIALS SECTION (REQUIRED)
+# List each notebook/material in logical order
+materials:
+  - title: "Introduction to Probability Distributions"
+    description: "Introduction to visualizing and characterizing probability distributions using the Maxwell Speed Distribution"
+    type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
+    duration: "2-3 hours"
+    
+    # REQUIRED: Include at least one URL (preferably both)
+    # Direct link to notebook file on GitHub
+    github_url: "https://github.com/act-cms/introduction-to-probability-distributions/blob/main/01-Introduction-to-probability-distributions/Student.ipynb"
+    # Google Colab launch link (recommended for accessibility)
+    # colab_url: "https://colab.research.google.com/github/act-cms/introduction-to-probability-distributions/blob/main/colab-notebooks/01-Introduction-to-probability-distributions/Student.ipynb"
+    
+    # Learning objectives specific to this material
+    objectives:
+      - "Write a user-defined function in python"
+      - "Define a numpy array in python"
+      - "Plot a user-defined function using matplotlib"
+      - "Integrate a probability distribution to find the probability using scipy"
+      - "Minimize a probability distribution to find the most probable value using scipy"
+      - "Calculate the first and second moment of a probability distribution"
+  
+
+# LEARNING OBJECTIVES (REQUIRED)
+# What molecular science concepts will students learn?
+scientific_objectives:
+  - "Apply programming to integrate probability distribution functions"
+  - "Apply programming to find the maximum value of probability distribution functions"
+  - "Apply programming to calculate characteristic statistics of probability distribution functions"
+
+# What computational/programming skills will students develop?
+cyberinfrastructure_objectives:
+  - "Write and execute Python code in Jupyter notebooks"
+  - "Write user-defined functions"
+  - "Define and use numpy arrays"
+  - "Write functions that use lambda expressions"
+  - "Visualize user-defined functions using MatPlotLib"
+
+# PREREQUISITES (REQUIRED)
+# What science background do students need?
+scientific_prerequisites:
+  - "General chemistry"
+
+# What programming experience is assumed?
+programming_prerequisites:
+  - "Basic Python syntax (variables, loops, functions)"
+  # OR: eg "Basic Python syntax (variables, loops, functions)"
+
+# PLATFORM SUPPORT (REQUIRED)
+# List platforms where your materials can be used. Each value must be one of
+# the supported platforms (spelling and capitalization matter):
+#   "Google Colab", "Local Installation", "ChemCompute", "CoCalc"
+# Any other value fails the build (no rendering template exists for it).
+platforms:
+  - "ChemCompute"
+  - "Local Installation"
+  - "Google Colab"
+
+# Which platform do you recommend for most users?
+# Pick exactly ONE platform name, and it must match an entry in the `platforms`
+# list above EXACTLY (same spelling and capitalization). Do NOT combine several,
+# e.g. "Google Colab, ChemCompute" is invalid and fails the build.
+recommended_platform: "ChemCompute"
+
+# METADATA (REQUIRED)
+# Tags help with searching - use relevant keywords
+tags:
+  - "python"
+  - "probability"
+  - "thermodynamics"
+  - "visualization"
+  - "quantum-chemistry"  # Use appropriate scientific area tags
