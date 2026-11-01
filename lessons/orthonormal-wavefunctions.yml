@@ -134,7 +134,7 @@ materials:
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
 scientific_objectives:
-Calculate the inner product of two functions
+  - "Calculate the inner product of two functions"
   - "Use the inner product to determine if functions in a set are orthonormal"
   - "Normalize a set of orthogonal functions"
   - "Normalize a superposition wavefunction"
