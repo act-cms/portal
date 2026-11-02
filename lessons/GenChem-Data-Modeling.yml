@@ -14,9 +14,9 @@ description: "A five-lesson module that uses Google Colab, Gemini, and Python to
 # Longer description for the lesson page (use | for multi-line text)
 expanded_description: |
 
-This module introduces students to the use of Google Colab and Gemini for data analysis and visualization in a second-semester general chemistry course. The activities are designed to familiarize students with Python syntax and scientific libraries, develop effective AI prompting skills for chemistry problem solving, and deepen understanding of key chemical concepts.
+  This module introduces students to the use of Google Colab and Gemini for data analysis and visualization in a second-semester general chemistry course. The activities are designed to familiarize students with Python syntax and scientific libraries, develop effective AI prompting skills for chemistry problem solving, and deepen understanding of key chemical concepts.
 
-The module consists of five lessons, each designed for a 75-minute class period. The activities are best implemented in a synchronous guided-inquiry setting, with teaching assistants and/or learning assistants available to support student learning. The first lesson serves as an introductory activity that familiarizes students with the Colab-Gemini workflow and is intended for use early in the semester. The remaining four lessons are independent, self-contained activities that can be implemented in any order to align with the course curriculum.
+  The module consists of five lessons, each designed for a 75-minute class period. The activities are best implemented in a synchronous guided-inquiry setting, with teaching assistants and/or learning assistants available to support student learning. The first lesson serves as an introductory activity that familiarizes students with the Colab-Gemini workflow and is intended for use early in the semester. The remaining four lessons are independent, self-contained activities that can be implemented in any order to align with the course curriculum.
 
 # COURSE INFORMATION (REQUIRED)
 # Choose ONE: "None", "Beginner", "Intermediate", "Advanced"
