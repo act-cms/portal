@@ -1581,6 +1581,138 @@
     "prerequisite_lessons": []
   },
   {
+    "title": "GenChem Data Modeling with Colab",
+    "description": "A five-lesson module that uses Google Colab, Gemini, and Python to help students analyze and visualize data within the context of general chemistry.",
+    "expanded_description": "\nThis module introduces students to the use of Google Colab and Gemini for data analysis and visualization in a second-semester general chemistry course. The activities are designed to familiarize students with Python syntax and scientific libraries, develop effective AI prompting skills for chemistry problem solving, and deepen understanding of key chemical concepts.\n\nThe module consists of five lessons, each designed for a 75-minute class period. The activities are best implemented in a synchronous guided-inquiry setting, with teaching assistants and/or learning assistants available to support student learning. The first lesson serves as an introductory activity that familiarizes students with the Colab-Gemini workflow and is intended for use early in the semester. The remaining four lessons are independent, self-contained activities that can be implemented in any order to align with the course curriculum.\n",
+    "programming_skill": "None",
+    "primary_course": "General Chemistry",
+    "also_for": [
+      "Physical Chemistry",
+      "Analytical Chemistry"
+    ],
+    "authors": [
+      "Prof. Linlin Jensen"
+    ],
+    "estimated_time": "6-7 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "luz11@psu.edu",
+    "student_level": "Undergraduate - First/Second Year",
+    "students_piloted": 75,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- Lessons in this module can be implemented successfully in either a lecture or recitation setting as guided-inquiry activities. \n- Students often need support navigating file systems, locating the correct data files on their computers, and uploading files to the appropriate directory  within the Google Colab environment.\n- Students complete these activities individually and submit both their complete guided-inquiry worksheet and Colab notebook for credit. \n- Consider incorporating brief live-coding demonstrations and project your screen as you guide students through key steps and troubleshoot common issues.\n\nTiming notes:\n- Each lesson in the module is designed for a 75-minutes class period.\n- Each lesson can be completed either before or after the relevant chemical concepts are discussed in lectures.\n\nCommon student questions:\n- \"Where are the plots?\" - Gemini sometimes insert outputs or results into different sections of the Colab notebook, making it difficult for students to locate the requested code and plots.\n\nPotential workarounds:\n- Use more explicit prompts, such as: \"Provide only the Python code needed to complete this task. Do not provide step-by-step explanations or summaries.\"\n- Remind students to review the entire notebook for generated outputs.\n",
+    "related_modules": [
+      "buffer-solutions",
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab",
+    "materials": [
+      {
+        "title": "Lesson 1: Introduction to Google Colab, Python, and Gemini",
+        "description": "This lesson introduces students to Google Colab, Gemini, and Python as tools for analyzing and visualizing data related to the Ideal Gas Law .",
+        "type": "notebook",
+        "duration": "75 minutes",
+        "github_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/01_Intro-Gas-Laws/Intro-student.ipynb",
+        "objectives": [
+          "Analyze how volume changes with temperature from a data table.",
+          "Construct a volume vs. temperature graph and interpret the meaning of the slope and intercepts.",
+          "Derive the mathematical relationship from the graph and data.",
+          "Describe the relationship between volume and temperature and connect it to the Ideal Gas Law, PV = nRT."
+        ]
+      },
+      {
+        "title": "Lesson 2: Reaction Kinetics of Organic Reactions",
+        "description": "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for organic reactions.",
+        "type": "notebook",
+        "duration": "75 min",
+        "github_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/02_Reaction-Kinetics/Reaction-order-student.ipynb",
+        "objectives": [
+          "Represent concentration data in tables and graphs.",
+          "Predict half-life for 1st- and 2nd-order reactions.",
+          "Model and compare 1st- and 2nd-order rate laws using Python.",
+          "Use models to identify reaction order by matching theoretical and experimental data."
+        ]
+      },
+      {
+        "title": "Lesson 3: Reaction Kinetics of Drug Degradation",
+        "description": "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for drug degradation in aqueous solutions",
+        "type": "notebook",
+        "duration": "75 min",
+        "github_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/03_Drug-Degradation/Activation-energy-student.ipynb",
+        "objectives": [
+          "Interpret and compare rate constants across temperatures and pHs values.",
+          "Model k vs. T and lnk vs. 1/T at different pHs.",
+          "Relate slopes and y-intercept to activation energies Ea and frequency factor A."
+        ]
+      },
+      {
+        "title": "Lesson 4: Titration Curves of Common Household Acids",
+        "description": "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize titration data of common household acids with a strong base.",
+        "type": "notebook",
+        "duration": "75 min",
+        "github_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/04_Titration-Curves/Titration-student.ipynb",
+        "objectives": [
+          "Identify key features of titration curves (buffer region, half-equivalence point, equivalence point) for weak acids.",
+          "Compare titration curves of polyprotic vs monoprotic acids, and match unknowns to reference curves.",
+          "Use curve shape and equivalence behavior to determine 𝑝𝐾𝑎 and identify an unknown acid."
+        ]
+      },
+      {
+        "title": "Lesson 5: Impact of Concentrations on Voltaic Cell Potentials",
+        "description": "In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize data for a voltaic cell under different conditions.",
+        "type": "notebook",
+        "duration": "75 min",
+        "github_url": "https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/05_Voltaic-Cells/Cellpotential-student.ipynb",
+        "objectives": [
+          "Interpret how concentration changes influence cell potential.",
+          "Graph Ecell vs. concentrations, Q, or log⁡Q to identify trends.",
+          "Use Ecell vs. log⁡Q to determine n, Ecell standard, and K, and compare with theoretical predictions."
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Interpret, analyze, and visualize data in chemical systems, including reaction kinetics, acid-base equilibria, and electrochemical cells.",
+      "Relate multiple representations of chemical information (data tables, graphs, equations, and models) to explain and predict chemical behavior.",
+      "Develop, apply, and evaluate mathematical models to explain chemical behavior.",
+      "Compare experimental results with theoretical predictions to draw evidence-based conclusions."
+    ],
+    "cyberinfrastructure_objectives": [
+      "Access and open a notebook in Google Colab",
+      "Identify and use the key components of the Google Colab interface (code cells, text cells, run button).",
+      "Read and understand a Python script with comments.",
+      "Run a Python script and interpret its output.",
+      "Data Handling: Import and load a CSV file into a Pandas DataFrame.",
+      "Data Cleaning/Transformation: Calculate chemical quantities using mathematical models.",
+      "Data Visualization: Generate scatter plots using Python libraries (e.g., Pandas, Matplotlib, NumPy/SciPy).",
+      "Computational Analysis: Perform a linear fit to find the slope and intercept.",
+      "AI Literacy: Formulate effective and specific prompts to get the most out of an AI assistant."
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic understanding of molecular structure"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Google Colab"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "data-analysis",
+      "visualization",
+      "Colab-AI",
+      "general-chemistry",
+      "kinetics",
+      "acid-base-titration",
+      "electrochemistry"
+    ],
+    "id": "GenChem-Data-Modeling",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "GenChem-Data-Modeling",
+    "learning_paths": [],
+    "prerequisite_lessons": []
+  },
+  {
     "title": "High-Performance Liquid Chromatography Analysis",
     "description": "Data analysis for a High-Performance Liquid Chromatography Experiment in Analytical Chemistry Laboratory.",
     "expanded_description": "This lesson can be used to analyze chromatographic retention time and peak area data collected by students in an analytical chemistry laboratory.\nThe suggested context would be to walk through it together in the analytical laboratory after data collection, likely in the second week of a 2-week sequence.\nEven with relatively short run times and an autosampler, it is not feasible to prepare samples, run the HPLC, and analyze HPLC data in one lab period. \nAlternatively, the HPLC Simulator on Chem Compute could be used to generate data and this lesson could be used to analyze data within one lab period.\n(Perri, M. J. 'Online Data Generation in Quantitative Analysis: Excel Spreadsheets and an Online HPLC Simulator Using a Jupyter Notebook on the Chem Compute Web site',\n*J. Chem. Educ.* **2020**, *97*, 2950–2954).  At least an hour at the end of the lab period should be allocated to this data analysis module.\n",

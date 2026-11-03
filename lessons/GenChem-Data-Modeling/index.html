@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../theme.css">
+    <title>GenChem Data Modeling with Colab - Lesson Portal</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <!-- Replace this placeholder with your actual logo -->
+                <img src="../../act-cms-logo.svg" alt="ACT-CMS Logo" class="logo" style="display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+            </div>
+            <h1>ACT-CMS Lesson Portal</h1>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+
+        <div class="back-link">
+                <a href="../../index.html" class="back-link">← Back to Lesson Portal</a>
+        </div>
+
+        <!-- Main layout with sidebar -->
+        <div class="lesson-layout">
+            <!-- Sidebar TOC -->
+            <aside class="sidebar-toc" id="sidebarToc">
+                <div class="toc-header">
+                    <h3>Contents</h3>
+                    <button class="toc-collapse" onclick="toggleSidebarTOC()" id="tocCollapseBtn">
+                        <svg viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-link">Overview</a>
+                    <div class="toc-submenu">
+                        <a href="#scientific-objectives" class="toc-sublink">Scientific Objectives</a>
+                        <a href="#cyberinfrastructure-objectives" class="toc-sublink">Cyberinfrastructure Objectives</a>
+                    </div>
+                    <a href="#prerequisites" class="toc-link">Prerequisites</a>
+                    <a href="#course-materials" class="toc-link">Course Materials</a>
+                    <div class="toc-submenu">
+                        
+                        <a href="#material-1" class="toc-sublink">Lesson 1: Introduction to Google Colab, Python, and Gemini</a>
+                        
+                        <a href="#material-2" class="toc-sublink">Lesson 2: Reaction Kinetics of Organic Reactions</a>
+                        
+                        <a href="#material-3" class="toc-sublink">Lesson 3: Reaction Kinetics of Drug Degradation</a>
+                        
+                        <a href="#material-4" class="toc-sublink">Lesson 4: Titration Curves of Common Household Acids</a>
+                        
+                        <a href="#material-5" class="toc-sublink">Lesson 5: Impact of Concentrations on Voltaic Cell Potentials</a>
+                        
+                    </div>
+                    
+                    <a href="#instructor-notes" class="toc-link">Instructor Notes</a>
+                    
+                    
+                    <a href="#related-lessons" class="toc-link">Related Lessons</a>
+                    
+                    <a href="#platform-requirements" class="toc-link">Platform Requirements</a>
+                </nav>
+            </aside>
+
+            <!-- Main content -->
+            <main class="lesson-content">
+                <div class="lesson-header">
+                    <h1 class="lesson-title">GenChem Data Modeling with Colab</h1>
+                    <p class="lesson-summary">A five-lesson module that uses Google Colab, Gemini, and Python to help students analyze and visualize data within the context of general chemistry.</p>
+                    
+                    <div class="lesson-meta-grid">
+                        <div class="meta-item">
+                            <span class="meta-label">Programming Skill:</span>
+                            <span class="meta-value">None</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Primary Course:</span>
+                            <span class="meta-value">General Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Also for:</span>
+                            <span class="meta-value">Physical Chemistry, Analytical Chemistry</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Format:</span>
+                            <span class="meta-value">Multi-Part Module</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Authors:</span>
+                            <span class="meta-value">Prof. Linlin Jensen</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Estimated Time:</span>
+                            <span class="meta-value">6-7 hours</span>
+                        </div>
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Piloted with:</span>
+                            <span class="meta-value">Undergraduate - First/Second Year</span>
+                        </div>
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Students Tested:</span>
+                            <span class="meta-value">75</span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="lesson-tags">
+                        
+                        <span class="tag">python</span>
+                        
+                        <span class="tag">data-analysis</span>
+                        
+                        <span class="tag">visualization</span>
+                        
+                        <span class="tag">Colab-AI</span>
+                        
+                        <span class="tag">general-chemistry</span>
+                        
+                        <span class="tag">kinetics</span>
+                        
+                        <span class="tag">acid-base-titration</span>
+                        
+                        <span class="tag">electrochemistry</span>
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="overview">
+                    <h2>Overview</h2>
+                    
+                        
+                            
+                            <p>This module introduces students to the use of Google Colab and Gemini for data analysis and visualization in a second-semester general chemistry course. The activities are designed to familiarize students with Python syntax and scientific libraries, develop effective AI prompting skills for chemistry problem solving, and deepen understanding of key chemical concepts.</p>
+                            
+                        
+                            
+                            <p>The module consists of five lessons, each designed for a 75-minute class period. The activities are best implemented in a synchronous guided-inquiry setting, with teaching assistants and/or learning assistants available to support student learning. The first lesson serves as an introductory activity that familiarizes students with the Colab-Gemini workflow and is intended for use early in the semester. The remaining four lessons are independent, self-contained activities that can be implemented in any order to align with the course curriculum.</p>
+                            
+                        
+                    
+
+                    <div class="objectives-list" id="scientific-objectives">
+                        <h4>Scientific Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Interpret, analyze, and visualize data in chemical systems, including reaction kinetics, acid-base equilibria, and electrochemical cells.</li>
+                            
+                            <li>Relate multiple representations of chemical information (data tables, graphs, equations, and models) to explain and predict chemical behavior.</li>
+                            
+                            <li>Develop, apply, and evaluate mathematical models to explain chemical behavior.</li>
+                            
+                            <li>Compare experimental results with theoretical predictions to draw evidence-based conclusions.</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="objectives-list" id="cyberinfrastructure-objectives" style="margin-top: 16px;">
+                        <h4>Cyberinfrastructure Learning Objectives</h4>
+                        <ul>
+                            
+                            <li>Access and open a notebook in Google Colab</li>
+                            
+                            <li>Identify and use the key components of the Google Colab interface (code cells, text cells, run button).</li>
+                            
+                            <li>Read and understand a Python script with comments.</li>
+                            
+                            <li>Run a Python script and interpret its output.</li>
+                            
+                            <li>Data Handling: Import and load a CSV file into a Pandas DataFrame.</li>
+                            
+                            <li>Data Cleaning/Transformation: Calculate chemical quantities using mathematical models.</li>
+                            
+                            <li>Data Visualization: Generate scatter plots using Python libraries (e.g., Pandas, Matplotlib, NumPy/SciPy).</li>
+                            
+                            <li>Computational Analysis: Perform a linear fit to find the slope and intercept.</li>
+                            
+                            <li>AI Literacy: Formulate effective and specific prompts to get the most out of an AI assistant.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2>Prerequisites</h2>
+                    <div class="prereq-grid">
+                        <div class="prereq-box scientific">
+                            <h4>Scientific Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>General chemistry</li>
+                                
+                                <li>Basic understanding of molecular structure</li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="prereq-box programming">
+                            <h4>Programming Prerequisites:</h4>
+                            <ul>
+                                
+                                <li>No prior programming experience required</li>
+                                
+                            </ul>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="content-section" id="course-materials">
+                    <h2>Course Materials</h2>
+                    
+                    <div class="materials-list">
+                        
+                        <div class="material-item" id="material-1">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 1: Introduction to Google Colab, Python, and Gemini</h4>
+                            </div>
+                            <p>This lesson introduces students to Google Colab, Gemini, and Python as tools for analyzing and visualizing data related to the Ideal Gas Law .</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/01_Intro-Gas-Laws/Intro-student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                </div>
+                                
+                                <span class="duration">75 minutes</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Analyze how volume changes with temperature from a data table.</li>
+                                    
+                                    <li>Construct a volume vs. temperature graph and interpret the meaning of the slope and intercepts.</li>
+                                    
+                                    <li>Derive the mathematical relationship from the graph and data.</li>
+                                    
+                                    <li>Describe the relationship between volume and temperature and connect it to the Ideal Gas Law, PV = nRT.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-2">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 2: Reaction Kinetics of Organic Reactions</h4>
+                            </div>
+                            <p>In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for organic reactions.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/02_Reaction-Kinetics/Reaction-order-student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                </div>
+                                
+                                <span class="duration">75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Represent concentration data in tables and graphs.</li>
+                                    
+                                    <li>Predict half-life for 1st- and 2nd-order reactions.</li>
+                                    
+                                    <li>Model and compare 1st- and 2nd-order rate laws using Python.</li>
+                                    
+                                    <li>Use models to identify reaction order by matching theoretical and experimental data.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-3">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 3: Reaction Kinetics of Drug Degradation</h4>
+                            </div>
+                            <p>In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize kinetics data for drug degradation in aqueous solutions</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/03_Drug-Degradation/Activation-energy-student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                </div>
+                                
+                                <span class="duration">75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Interpret and compare rate constants across temperatures and pHs values.</li>
+                                    
+                                    <li>Model k vs. T and lnk vs. 1/T at different pHs.</li>
+                                    
+                                    <li>Relate slopes and y-intercept to activation energies Ea and frequency factor A.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-4">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 4: Titration Curves of Common Household Acids</h4>
+                            </div>
+                            <p>In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize titration data of common household acids with a strong base.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/04_Titration-Curves/Titration-student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                </div>
+                                
+                                <span class="duration">75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Identify key features of titration curves (buffer region, half-equivalence point, equivalence point) for weak acids.</li>
+                                    
+                                    <li>Compare titration curves of polyprotic vs monoprotic acids, and match unknowns to reference curves.</li>
+                                    
+                                    <li>Use curve shape and equivalence behavior to determine 𝑝𝐾𝑎 and identify an unknown acid.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="material-item" id="material-5">
+                            <div class="material-header">
+                                
+                                <svg class="material-type-icon" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                                
+                                <h4 class="material-title">Lesson 5: Impact of Concentrations on Voltaic Cell Potentials</h4>
+                            </div>
+                            <p>In this lesson, students use Google Colab, Gemini, and Python to read, analyze, and visualize data for a voltaic cell under different conditions.</p>
+                            <div class="material-actions">
+                                
+                                <div class="notebook-buttons">
+                                    
+                                    
+                                    <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab/blob/main/05_Voltaic-Cells/Cellpotential-student.ipynb" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Notebook</a>
+                                    
+                                    
+                                </div>
+                                
+                                <span class="duration">75 min</span>
+                            </div>
+                            
+                            <button class="objectives-toggle" onclick="toggleObjectives(this)">Show Learning Objectives</button>
+                            <div class="material-objectives collapsed">
+                                <h5>Learning Objectives:</h5>
+                                <ul>
+                                    
+                                    <li>Interpret how concentration changes influence cell potential.</li>
+                                    
+                                    <li>Graph Ecell vs. concentrations, Q, or log⁡Q to identify trends.</li>
+                                    
+                                    <li>Use Ecell vs. log⁡Q to determine n, Ecell standard, and K, and compare with theoretical predictions.</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Student Repository</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Student Materials</h4>
+                            <p>Download or clone the complete repository with all notebooks, datasets, and supporting files.</p>
+                            <a href="https://github.com/act-cms/GenChem-Modeling-with-Colab" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Repository
+                            </a>
+                            
+                        </div> 
+                    </div>
+                    
+                    <h3 style="margin-top: 32px;">Instructor Materials</h3>
+                    <div class="materials-grid">
+                        <div class="material-card">
+                            <h4>Complete Instructor Package</h4>
+                            <p>Solutions for all notebooks, teaching notes, assessment rubrics, and additional examples.</p>
+                            <a href="https://github.com/act-cms/instructor-materials/tree/main/GenChem-Data-Modeling" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                Instructor Resources
+                            </a>
+                            <p class="access-note">
+                                Requires instructor verification. 
+                                <a href="mailto:act-cms@molssi.org?subject=Instructor Access Request&body=Please include:%0A- Your name and institution%0A- Your GitHub username%0A- Courses you teach%0A%0APlease send from your academic email address.">Request access</a> 
+                                if you don't have permission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="content-section" id="instructor-notes">
+                    <h2>Instructor Notes</h2>
+                    <div class="instructor-notes">
+                        <div>Additional context for instructors using this lesson:</p><p>• Lessons in this module can be implemented successfully in either a lecture or recitation setting as guided-inquiry activities. <br>• Students often need support navigating file systems, locating the correct data files on their computers, and uploading files to the appropriate directory  within the Google Colab environment.<br>• Students complete these activities individually and submit both their complete guided-inquiry worksheet and Colab notebook for credit. <br>• Consider incorporating brief live-coding demonstrations and project your screen as you guide students through key steps and troubleshoot common issues.</p><p>Timing notes:<br>• Each lesson in the module is designed for a 75-minutes class period.<br>• Each lesson can be completed either before or after the relevant chemical concepts are discussed in lectures.</p><p>Common student questions:<br>• "Where are the plots?" • Gemini sometimes insert outputs or results into different sections of the Colab notebook, making it difficult for students to locate the requested code and plots.</p><p>Potential workarounds:<br>• Use more explicit prompts, such as: "Provide only the Python code needed to complete this task. Do not provide step-by-step explanations or summaries."<br>• Remind students to review the entire notebook for generated outputs.<br></div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="content-section" id="related-lessons">
+                    <h2>Related Lessons</h2>
+                    <div class="related-modules">
+                        <p>This lesson pairs well with:</p>
+                        <ul>
+                            
+                            <li><a href="../buffer-solutions/">Buffer Solutions</a></li>
+                            
+                            <li><a href="../foundational-intro-python/">Foundational Intro Python</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="content-section" id="platform-requirements">
+                    <h2>Platform Requirements</h2>
+                    
+                    <div class="platform-options">
+                        
+                        
+                        
+                        <div class="platform-card recommended">
+                            <h4>Google Colab (Recommended)</h4>
+<p>No installation required. All dependencies are installed automatically when you run the notebooks.</p>
+<ul>
+    <li>Runs entirely in your web browser</li>
+    <li>Free Google account required</li>
+    <li>All required packages installed inline</li>
+    <li>Works on any device with internet</li>
+    <li>GPU acceleration available for computational tasks</li>
+</ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>Accelerating Curricular Transformation in the Computational Molecular Sciences (ACT-CMS) is a project of The Molecular Sciences Software Institute</p>
+            <p>ACT-CMS is supported by NSF OAC 2321044 and 2321045.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                // Sun icon for light mode toggle
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Moon icon for dark mode toggle
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeIcon').innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                document.getElementById('themeText').textContent = 'Light Mode';
+            }
+        }
+
+        // Sidebar TOC functions
+        function toggleSidebarTOC() {
+            const sidebar = document.getElementById('sidebarToc');
+            const btn = document.getElementById('tocCollapseBtn');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>';
+            } else {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 18l-6-6 6-6"/></svg>';
+            }
+        }
+
+        // Highlight active section in TOC
+        function highlightActiveTOCSection() {
+            const sections = document.querySelectorAll('.content-section, .material-item');
+            const tocLinks = document.querySelectorAll('.toc-link, .toc-sublink');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle objectives function
+        function toggleObjectives(button) {
+            const objectives = button.nextElementSibling;
+            const isCollapsed = objectives.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                objectives.classList.remove('collapsed');
+                button.textContent = 'Hide Learning Objectives';
+            } else {
+                objectives.classList.add('collapsed');
+                button.textContent = 'Show Learning Objectives';
+            }
+        }
+
+        // Initialize
+        loadTheme();
+        
+        // Add scroll listener for TOC highlighting
+        window.addEventListener('scroll', highlightActiveTOCSection);
+        
+        // Initial TOC highlight
+        highlightActiveTOCSection();
+    </script>
+</body>
+</html>
