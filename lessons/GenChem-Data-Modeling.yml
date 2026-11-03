@@ -82,7 +82,7 @@ instructor_notes: |
 # Related lessons that complement this one
 related_modules:
 #  - "Basic-Tasks-Using-a-Jupyter-Notebook-with-Code-in-Python-for-Analytical-Chemistry-Data-Analysis"
-  - "Buffer-Preparation-Calculations"
+  - "buffer-solutions"
   - "foundational-intro-python"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
