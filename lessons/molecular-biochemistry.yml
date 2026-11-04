@@ -1,0 +1,398 @@
+# lessons/molecular-biochemistry.yml
+#
+# ACT-CMS portal submission for the Molecular Biochemistry module collection.
+#
+# Items marked "FILL IN" below are the only things that cannot be derived from
+# the notebooks themselves: the public repository URL, the instructor contact
+# address, and the pilot-cohort size. Everything else is taken from the
+# notebooks in this directory.
+
+# ---------------------------------------------------------------------------
+# BASIC METADATA
+# ---------------------------------------------------------------------------
+title: "Molecular Biochemistry: Computational Structural Biology of Enzymes and Designed Proteins"
+
+description: "A nine-notebook collection that takes students from parsing a raw PDB coordinate file to simulating, docking against, and designing binders for a plastic-degrading enzyme, using Python in Google Colab."
+
+expanded_description: |
+  This collection teaches molecular biochemistry the way it is now practised:
+  as a computational discipline in which sequence, structure, thermodynamics
+  and kinetics are all things a student can measure for themselves from
+  primary data.
+
+  Every notebook follows a single running system, the polyethylene
+  terephthalate hydrolase (PETase) of *Ideonella sakaiensis* (PDB 6ANE), with
+  a parallel nucleic-acid thread based on a bacterial purine riboswitch
+  aptamer. Because the same enzyme reappears in all nine notebooks, students
+  accumulate biochemical intuition about one real protein rather than meeting
+  nine disconnected toy systems. The catalytic triad they first locate by
+  hand in a text file in the opening notebook becomes the pocket they centre
+  a docking box on, the residues whose fluctuations they measure in a
+  molecular dynamics trajectory, and the site whose predicted coordinates
+  they validate against the crystal structure.
+
+  The collection moves through four stages. Students begin with the raw data
+  of structural biochemistry: shell pipelines over PDB records, Python data
+  structures for multi-chain assemblies, Henderson-Hasselbalch titration of a
+  real protein, and programmatic queries to UniProt, RCSB and NCBI. They then
+  quantify function, fitting Michaelis-Menten parameters to PETase kinetics
+  by non-linear least squares and distinguishing competitive from
+  non-competitive inhibition by global fitting across multiple inhibitor
+  concentrations. Next comes molecular mechanics: decomposing a classical
+  force field term by term, writing a steepest-descent minimizer from
+  scratch, building a solvated and charge-neutralized simulation cell in
+  OpenMM, running equilibration, and extracting RMSD, RMSF and radius of
+  gyration from the resulting trajectory. The collection closes with
+  structure-based drug discovery and protein design: ligand preparation in
+  RDKit, scoring-function thermodynamics, virtual-screening performance
+  metrics, the mathematics of the AlphaFold2 Evoformer and Invariant Point
+  Attention, and a GPU-based peptide binder hallucination run.
+
+  The notebooks are written for students who have seen a Python loop but have
+  never used a terminal, and each one builds the physical and statistical
+  background it needs before using it. Mathematics is stated explicitly and
+  every symbol is named, so the notebooks can also be read by students who
+  want the derivation rather than the recipe.
+
+# ---------------------------------------------------------------------------
+# COURSE INFORMATION
+# ---------------------------------------------------------------------------
+# "Beginner": students need variables, conditionals and loops. The opening
+# notebook supplies the shell and the data-structure work from near zero, but
+# students are expected to be able to read a for-loop on day one.
+programming_skill: "Beginner"
+
+primary_course: "Biochemistry"
+
+also_for:
+  - "Physical Chemistry"
+  - "Foundational Module"
+  - "Other"
+
+authors:
+  - "Prof. Keith Fraser"
+
+# Student working time for all nine notebooks: the per-material durations
+# below sum to 12.5 hours, which is nine class sessions. See the timing
+# notes in instructor_notes.
+estimated_time: "12-13 hours"
+
+format: "Multi-Part Module"
+
+# ---------------------------------------------------------------------------
+# INSTRUCTOR INFORMATION
+# ---------------------------------------------------------------------------
+# FILL IN: contact address for instructor-access requests. The portal uses a
+# default if this line is removed.
+instructor_email: "REPLACE-WITH-YOUR-PREFERRED-CONTACT-ADDRESS"
+
+student_level: "Undergraduate - Third and Fourth Year"
+
+# FILL IN: number of students this collection has been run with. Left
+# commented out rather than guessed; the field is optional.
+# students_piloted: 0
+
+instructor_notes: |
+  Instructor guides. Each sub-directory contains a PDF instructor guide
+  alongside the student notebook. The guides carry the full quiz answer keys,
+  a section-by-section walkthrough with the real expected output, and the
+  known issues for that notebook. Read the guide for a notebook before
+  teaching it.
+
+  Runtime selection. Eight of the nine notebooks run on a CPU runtime. The
+  peptide binder design notebook requires a GPU runtime and will not run
+  otherwise. The force fields notebook runs on CPU but should be given a T4
+  GPU runtime in class: its implicit-solvent minimization is O(N^2) with no
+  cutoff, and on a free CPU runtime that single cell takes roughly fourteen
+  minutes. The code already prefers CUDA when it is available, so simply
+  selecting the GPU runtime cuts it to a minute or two. If you must stay on
+  CPU, start that cell and lecture over it.
+
+  Timing notes.
+  - Foundations and Databases each fit comfortably in a single 75-minute
+    session.
+  - Sequence Alignment needs the full 90 minutes; the apt-get install of
+    MAFFT adds a couple of minutes at the start.
+  - Solvation, Molecular Dynamics and Molecular Docking are each a full
+    90-minute session. None of them has slack for a slow start.
+  - Peptide Binder Design downloads about 5.6 GB of AlphaFold parameters on
+    every fresh session. Have students start the setup cell the moment they
+    sit down, before any introduction.
+
+  Known issues to teach around. Several notebooks print conclusions that
+  their code does not establish. This is deliberate in the sense that it
+  makes excellent discussion material, but you need to know about it before
+  a student finds it:
+  - Solvation hard-codes the chain A net charge as -2; the value computed in
+    the Foundations notebook is about +6.3 e. The hand calculation in that
+    notebook predicts 29 Na+ / 27 Cl-, while OpenMM actually builds 22 Na+ /
+    29 Cl-. The seven-ion discrepancy is the protein's real charge, and the
+    contradiction is worth walking students through rather than patching.
+  - Structure Prediction does not run AlphaFold. It adds Gaussian noise to
+    the crystal coordinates and analyses the result. The summary claims an
+    error below 0.6 A directly beneath four printed values of 0.766 to
+    0.948 A. The Evoformer and Invariant Point Attention sections, by
+    contrast, are correct and are the real content of the notebook.
+  - Molecular Docking performs no conformational search. The reported
+    binding score is a hard-coded constant plus a torsional term, and one
+    2.36 A contact is labelled hydrophobic. Teach it as an exercise in
+    scoring-function anatomy and screening statistics, which it does well,
+    not as a docking run.
+  - Sequence Alignment uses sequences labelled FOXP that are in fact
+    FoxA-type forkhead domains; the record labelled FOXP1_HUMAN is 72.9%
+    identical to the real FOXA1 forkhead domain and 42.4% identical to the
+    real FOXP1. A verified drop-in replacement dataset built from UniProt
+    records is given in that notebook's instructor guide.
+  - Databases labels a 67-nucleotide sequence as the *add* adenine
+    riboswitch aptamer. It is byte-identical to PDB 4FE5, the *xpt-pbuX*
+    guanine riboswitch aptamer. The real 1Y26 aptamer is 71 nucleotides and
+    a different sequence.
+  - Molecular Dynamics and Structure Prediction both index the catalytic
+    triad off by one, because chain A of 6ANE is numbered from residue 2
+    while OpenMM renumbers from 1. Both cells report the wrong residue
+    identities under the right labels. In the Molecular Dynamics case the
+    conclusion survives the correction: correctly indexed, the triad still
+    sits near the tenth percentile of RMSF.
+
+  Dependency pinning. Four notebooks write a pip requirement as
+  openmm>=8.2.0 or rdkit>=2024.3 without quotation marks. IPython passes
+  that to the shell, which reads >= as an output redirection: the version
+  floor is silently not enforced and a junk file named =8.2.0 appears in the
+  working directory. Quote those specifiers before the first class.
+
+  Common student questions.
+  - "Why is the net charge not a whole number?" The Henderson-Hasselbalch
+    calculation gives fractional occupancy at a given pH; only the formal
+    charge is integral. This is a good entry point to buffering and pKa.
+  - "Why do we need 150 mM salt if we already neutralized the system?"
+    Neutralization is a requirement of the Ewald sum; the physiological salt
+    is a requirement of the biology. The two are independent, and separating
+    them is worth ten minutes.
+  - "The equilibration plot has not flattened out." Correct. The NVT stage
+    reaches 196.78 K against a 300 K target after 1 ps, which is almost
+    exactly what a 1 ps^-1 friction coefficient predicts, and the trajectory
+    is only 2 ps long. Treat the label "stable plateau" as a claim to
+    challenge.
+
+# Related and prerequisite lessons. prerequisite_modules is build-validated
+# against the lesson IDs that exist in the portal repository, so unknown IDs
+# fail the build. Add entries here only once you have confirmed the IDs of
+# the lessons you want to point at; the free-text prerequisites below carry
+# the same information for human readers in the meantime.
+# related_modules:
+#   - "confirmed-lesson-id"
+# prerequisite_modules:
+#   - "confirmed-lesson-id"
+
+# ---------------------------------------------------------------------------
+# REPOSITORY URLS
+# ---------------------------------------------------------------------------
+# FILL IN: replace act-cms/molecular-biochemistry with the real repository
+# once it is published. The github_url and colab_url values below are built
+# from this same path and the directory layout in this folder, so a
+# find-and-replace on the repository path updates all of them at once.
+public_repo_url: "https://github.com/act-cms/molecular-biochemistry"
+
+# ---------------------------------------------------------------------------
+# MATERIALS
+# ---------------------------------------------------------------------------
+materials:
+  - title: "Part 1: Foundations - UNIX, Python Data Structures, and PDB Record Parsing"
+    description: "Students meet the raw data of structural biochemistry: shell pipelines over a PDB coordinate file, Python data structures for a multi-chain crystallographic assembly, and net charge at physiological pH computed from the atomic records themselves."
+    type: "notebook"
+    duration: "75 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Foundations-unix-python-pdb/Foundations-unix-python-pdb-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Foundations-unix-python-pdb/Foundations-unix-python-pdb-student-notebook.ipynb"
+    objectives:
+      - "Navigate a Linux filesystem from a notebook and download a crystallographic structure from the RCSB Protein Data Bank over HTTPS"
+      - "Filter and inspect ATOM, HETATM, TER and altLoc records using grep, awk and shell pipelines"
+      - "Build Python dictionaries and classes that parse a multi-chain assembly into chains, residues and alternate conformers"
+      - "Calculate the net charge of a protein chain at pH 7.4 from the Henderson-Hasselbalch equation and standard pKa values, and locate its isoelectric point"
+      - "Identify the PETase catalytic triad in three dimensions and distinguish coordinate numbering from precursor numbering"
+
+  # NOTE: this notebook's filename contains spaces ("Databases - sequence
+  # -kinetics-..."), so both URLs below carry %20 escapes. Renaming the file
+  # to Databases-sequence-kinetics-student-notebook.ipynb before publishing
+  # would make these links match the pattern used by the other eight.
+  - title: "Part 2: Biomolecular Databases, Sequence Literacy, and Enzyme Kinetics"
+    description: "Students query UniProt, RCSB and NCBI programmatically, build sliding-window sequence profiles, then fit Michaelis-Menten parameters to PETase kinetics and diagnose inhibition mode by global non-linear fitting."
+    type: "notebook"
+    duration: "75 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Databases-sequence-kinetics/Databases%20-%20sequence%20-kinetics-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Databases-sequence-kinetics/Databases%20-%20sequence%20-kinetics-student-notebook.ipynb"
+    objectives:
+      - "Query and parse REST APIs and XML streams from UniProt, the PDB and NCBI Entrez from Python"
+      - "Reconcile sequence numbering between a UniProt precursor entry and a deposited structure across a signal-peptide offset"
+      - "Tabulate monomer properties across amino acids, ribonucleotides, fatty acids and monosaccharides, comparing charge, hydrogen-bond capacity and hydrophobicity"
+      - "Compute sliding-window Kyte-Doolittle hydrophobicity profiles for a protein and GC-content tracks for an RNA"
+      - "Extract Vmax, Km, kcat and catalytic efficiency from kinetic data by non-linear least squares with scipy.optimize.curve_fit"
+      - "Distinguish competitive from non-competitive inhibition by fitting a global model across multiple inhibitor and substrate concentrations, and read the corresponding Lineweaver-Burk diagnostic"
+
+  - title: "Part 3: Sequence Alignment, Scoring Matrices, and Phylogenetics"
+    description: "Students work through homology as an inferred hypothesis rather than a measurement, score pairwise alignments under explicit substitution matrices and affine gap models, build a multiple sequence alignment, and compare distance-based and character-based phylogenetic trees."
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Sequence-alignment/Sequence-alignment-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Sequence-alignment/Sequence-alignment-student-notebook.ipynb"
+    objectives:
+      - "State the operational difference between homology, sequence identity and similarity, and between orthology and paralogy"
+      - "Compute pairwise alignment scores under BLOSUM62 and PAM250 with affine gap penalties using Bio.Align.PairwiseAligner, and measure how the result responds to each parameter"
+      - "Build a multiple sequence alignment with MAFFT and render a colourblind-safe conservation heatmap with an accessible tabular equivalent"
+      - "Construct and compare Neighbor-Joining and Maximum Parsimony trees with Bio.Phylo, and root them on an outgroup"
+      - "Diagnose a zero-length polytomy and decide whether to de-duplicate or retain identical sequences"
+
+  - title: "Part 4: Force Fields and Energy Minimization"
+    description: "Students decompose a classical Class I potential energy function term by term, write a steepest-descent minimizer from scratch to relieve a Lennard-Jones clash, then parameterize and minimize a real enzyme in OpenMM and measure how far each residue moved."
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Force-Fields-Energy-Minimization/Force-Fields-Energy-Minimization-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Force-Fields-Energy-Minimization/Force-Fields-Energy-Minimization-student-notebook.ipynb"
+    objectives:
+      - "Write out the bonded and non-bonded terms of a classical force field and evaluate each one numerically for a given geometry"
+      - "Implement a steepest-descent minimizer in pure Python and use it to resolve a Lennard-Jones steric overlap"
+      - "Contrast the convergence behaviour of steepest descent with conjugate gradient and L-BFGS, and explain the two-stage minimization protocol that follows from it"
+      - "Build an OpenMM topology, parameterize a protein with the Amber14 force field, and minimize it in vacuum and in implicit solvent"
+      - "Quantify relaxation by computing per-residue displacement vectors and inspect the relaxed active site in an interactive 3D viewer"
+
+  - title: "Part 5: Solvation, Counter-Ions, and Molecular Dynamics System Preparation"
+    description: "Students compare implicit and explicit solvent models, calculate the exact ion counts needed for charge neutrality at physiological ionic strength, build a periodic simulation cell in OpenMM, and verify the resulting box dimensions and composition."
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Solvation-ions-md-preparation/Solvation-ions-md-preparation-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Solvation-ions-md-preparation/Solvation-ions-md-preparation-student-notebook.ipynb"
+    objectives:
+      - "State when generalized Born implicit solvent is adequate and when explicit water is required, in terms of what each model can and cannot represent"
+      - "Compare the geometry and charge distribution of 3-site and 4-site water models and explain what the off-atom charge centre buys"
+      - "Calculate the counter-ion and co-ion counts that give a neutral system at 150 mM NaCl, and reconcile that calculation against what the solvation routine actually builds"
+      - "Construct a periodic cell with OpenMM Modeller, solvate with explicit TIP3P water, and justify the minimum solute-to-wall clearance"
+      - "Explain why an unneutralized system is an artifact under Particle Mesh Ewald electrostatics, and describe counter-ion condensation along a polyanionic nucleic acid backbone"
+
+  - title: "Part 6: Molecular Dynamics, Ensembles, and Trajectory Analysis"
+    description: "Students work out why integration timestep is bounded by the fastest bond vibration, distinguish the NVE, NVT and NPT ensembles, run an equilibration pipeline in OpenMM, and extract RMSD, RMSF and radius of gyration from the trajectory."
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Molecular-Dynamics-trajectories/Molecular-Dynamics-trajectories-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Molecular-Dynamics-trajectories/Molecular-Dynamics-trajectories-student-notebook.ipynb"
+    objectives:
+      - "Write out the velocity-Verlet update and explain why rigid bond constraints are what permit a 2 fs timestep"
+      - "Contrast the NVE, NVT and NPT ensembles and explain why a Langevin middle integrator and a Monte Carlo barostat are the current standards"
+      - "Execute an NVT thermalization followed by NPT density relaxation in OpenMM and read the temperature and density traces critically"
+      - "Compute and plot RMSD, RMSF and radius of gyration over a trajectory, and use them to judge whether a simulation has converged"
+      - "Interpret the per-residue flexibility of a catalytic triad and a mobile aromatic clamp in terms of enzyme function"
+
+  - title: "Part 7: Molecular Docking, Scoring Functions, and Virtual Screening"
+    description: "Students prepare ligands in RDKit, define an active-site search box on the catalytic triad, score poses against a rigid receptor, and evaluate a screening campaign with ROC-AUC and early enrichment factors."
+    type: "notebook"
+    duration: "90 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Molecular-Docking/Molecular-Docking-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Molecular-Docking/Molecular-Docking-student-notebook.ipynb"
+    objectives:
+      - "Break an empirical docking score into its steric, hydrophobic, hydrogen-bonding and torsional-entropy components, and explain what a physics-based force field leaves out"
+      - "Prepare a small molecule in RDKit: parse SMILES, generate 3D conformers with ETKDG, count rotatable bonds, and compute molecular weight and logP"
+      - "Define an active-site search box by its centre and extents in Angstroms, anchored on named catalytic residues, and visualize it in three dimensions"
+      - "Explain why exhaustive conformational search is infeasible and what a rigid-receptor approximation costs in terms of induced fit"
+      - "Compute ROC-AUC and enrichment factors for a screening library and state what each metric does and does not tell you about a campaign"
+
+  - title: "Part 8: Protein Structure Prediction - Evoformer, Invariant Point Attention, and Confidence Metrics"
+    description: "Students implement the core tensor operations of the AlphaFold2 Evoformer and structure module in NumPy, verify SE(3) invariance numerically, and validate a predicted model against the experimental coordinates using pLDDT and predicted aligned error."
+    type: "notebook"
+    duration: "75 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Structure-Prediction/Structure-Prediction-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Structure-Prediction/Structure-Prediction-student-notebook.ipynb"
+    objectives:
+      - "Implement the outer-product-mean and triangular multiplicative update that couple the MSA and pair representations, and explain how the latter enforces the triangle inequality"
+      - "Represent each residue as a rigid-body frame in SE(3) and demonstrate numerically that Invariant Point Attention is invariant to global rotation and translation"
+      - "Interpret pLDDT bands and a predicted aligned error matrix, and distinguish local confidence from inter-domain uncertainty"
+      - "Superpose a predicted model on an experimental structure, compute per-residue and active-site deviations, and judge whether the reported accuracy is supported by the numbers"
+
+  - title: "Part 9: Peptide Binder Design with AfDesign"
+    description: "A GPU notebook in which students hallucinate a short peptide binder against a chosen protein target by optimizing interface contacts and binder confidence through AlphaFold, then inspect the designed sequence profile and structure."
+    type: "notebook"
+    duration: "75 min"
+    github_url: "https://github.com/act-cms/molecular-biochemistry/blob/main/Peptide-Binder-Design/Peptide-Binder-Design-student-notebook.ipynb"
+    colab_url: "https://colab.research.google.com/github/act-cms/molecular-biochemistry/blob/main/Peptide-Binder-Design/Peptide-Binder-Design-student-notebook.ipynb"
+    objectives:
+      - "Set up a binder hallucination run against a chosen target chain, choosing binder length, recycle count and the number of AlphaFold models"
+      - "Explain what the design objective actually optimizes - interface contact count and binder pLDDT - and why that is not the same as binding affinity"
+      - "Compare the available optimizers and describe how a sequence profile is used to bias a semi-greedy search"
+      - "Inspect the designed sequence, its per-position amino-acid probability profile, and the predicted complex in three dimensions"
+      - "Argue why a structure-prediction confidence score makes an unreliable design objective, and identify sequences that may be adversarial rather than genuinely binding"
+
+# ---------------------------------------------------------------------------
+# LEARNING OBJECTIVES (COLLECTION LEVEL)
+# ---------------------------------------------------------------------------
+scientific_objectives:
+  - "Relate the primary sequence and three-dimensional structure of an enzyme to its catalytic mechanism, using a serine hydrolase catalytic triad as the worked case"
+  - "Determine Michaelis-Menten parameters from kinetic data and distinguish competitive from non-competitive inhibition by global non-linear fitting"
+  - "Predict the ionization state, net charge and isoelectric point of a protein at physiological pH from its amino-acid composition"
+  - "Distinguish homology from similarity and orthology from paralogy, and infer an evolutionary tree from aligned sequences"
+  - "Decompose a molecular mechanics potential energy function into bonded and non-bonded contributions and relate each term to a physical interaction"
+  - "Explain solvation, charge neutralization, ionic strength and counter-ion condensation as requirements imposed jointly by the physics and the biology"
+  - "Interpret RMSD, RMSF and radius of gyration as measures of conformational stability and local flexibility"
+  - "Analyse protein-ligand recognition in thermodynamic terms, including the entropic cost of freezing rotatable bonds and the penalty for desolvation"
+  - "Evaluate a predicted protein structure against experimental coordinates and judge the reliability of its confidence metrics"
+
+cyberinfrastructure_objectives:
+  - "Work productively in a Linux shell, using POSIX streams and pipelines to filter and summarize scientific data files"
+  - "Parse structured scientific file formats, including legacy PDB and PDBx/mmCIF, with Biopython and gemmi"
+  - "Retrieve data programmatically from REST APIs and handle the failure modes of a network call"
+  - "Fit non-linear models to experimental data with SciPy and judge the quality of the fit"
+  - "Build, parameterize and run a molecular simulation in OpenMM, and select an appropriate compute platform for it"
+  - "Analyse simulation trajectories with MDAnalysis and NumPy"
+  - "Prepare and manipulate small molecules with RDKit cheminformatics tooling"
+  - "Implement tensor operations and rigid-body transformations in NumPy, including an attention mechanism and an SE(3) invariance check"
+  - "Produce interactive 3D molecular visualizations and accessible tabular equivalents for the same data"
+  - "Write reproducible notebooks by pinning dependency versions and fixing random seeds, and recognise when a result is not reproducible"
+  - "Select and use a GPU runtime, and reason about the memory and download cost of a deep-learning model"
+
+# ---------------------------------------------------------------------------
+# PREREQUISITES
+# ---------------------------------------------------------------------------
+scientific_prerequisites:
+  - "General chemistry, including acids, bases, pH and buffers"
+  - "Introductory biochemistry: amino acids, the peptide bond, protein secondary and tertiary structure, nucleic acid structure"
+  - "Familiarity with enzymes as catalysts; no prior exposure to kinetic modelling is assumed"
+  - "Introductory physics or physical chemistry: energy, force and the Boltzmann distribution are each reintroduced where used"
+
+programming_prerequisites:
+  - "Basic Python syntax: variables, conditionals, loops and function calls"
+  - "No prior command-line experience required; the shell is taught from the beginning in Part 1"
+  - "No prior experience with NumPy, linear algebra in code, or machine-learning frameworks required"
+
+# ---------------------------------------------------------------------------
+# PLATFORM SUPPORT
+# ---------------------------------------------------------------------------
+# Google Colab is the developed and tested platform. A local installation
+# works given OpenMM, RDKit, MDAnalysis and, for Part 9, a CUDA GPU with the
+# JAX stack. ChemCompute and CoCalc are not listed because the GPU and
+# large-model requirements of Parts 4 and 9 have not been verified there.
+platforms:
+  - "Google Colab"
+  - "Local Installation"
+
+recommended_platform: "Google Colab"
+
+# ---------------------------------------------------------------------------
+# METADATA
+# ---------------------------------------------------------------------------
+tags:
+  - "python"
+  - "biochemistry"
+  - "enzyme-kinetics"
+  - "protein-structure"
+  - "structural-biology"
+  - "bioinformatics"
+  - "sequence-alignment"
+  - "phylogenetics"
+  - "molecular-dynamics"
+  - "force-fields"
+  - "energy-minimization"
+  - "solvation"
+  - "molecular-docking"
+  - "virtual-screening"
+  - "protein-design"
+  - "machine-learning"
+  - "alphafold"
+  - "openmm"
+  - "rdkit"
+  - "visualization"
