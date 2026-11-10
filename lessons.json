@@ -116,6 +116,91 @@
     ]
   },
   {
+    "title": "AlphaFold2 Structure Prediction in Google Colab",
+    "description": "This lab will teach you how to use the AlphaFold2 protein structure prediction tool through a Google Colab notebook. You will learn how to input a protein sequence, run the AlphaFold2 pipeline, and interpret the predicted 3D structure output.",
+    "expanded_description": "This activity provides students with hands-on experience using the AlphaFold2 tool to predict protein structures, bridging their understanding of protein structure and function with their growing knowledge of cyberinfrastructure skills. This is a low-entry activity that includes aspects of a GUI (i.e., buttons and pull-down menus) environment with Python to introduce the students to the code. The major objective is to get students to be familiar enough with the notebook interface to run premade code, and possibly to modify it to meet their specific computational needs. | \n",
+    "programming_skill": "None",
+    "primary_course": "Foundational Module",
+    "also_for": [
+      "Biochemistry",
+      "Research Methods",
+      "Computational Biology",
+      "Structural Biology",
+      "Molecular Biology"
+    ],
+    "authors": [
+      "Dr. Lori D. Banks"
+    ],
+    "estimated_time": "1-2 hours",
+    "format": "Multi-Part Module",
+    "instructor_email": "ldbanks@pvamu.edu",
+    "student_level": "Undergraduate - Third or Fourth Year",
+    "students_piloted": 32,
+    "instructor_notes": "Additional context for instructors using this lesson:\n\n- This lesson was designed to introduce students to the relationship between protein structure and function through computational analysis. It assumes that students have had previous instruction in the basics of the biological functions of the molecules that they are observing.\n- Prerequisites for the course include General Inorganic Chemistry and General Biology for Biology majors\n- Consider assigning another protein (primary amino acid sequence) as homework rather than in-class work\n\nTiming notes:\n- The module was designed for a 110-minute class session, but may require additional time for students to complete the exercises and explore the output using other visualization programs.\n\nCommon student questions:\n- \"How does changing the prediction settings change the output?\" \n- \"What is the meaning/interpretation/units of the pLDDT score?\"\n- \"How can I interpret the results if the confidence is low? What can I do next to improve the prediction?\"\n",
+    "prerequisite_modules": [
+      "foundational-intro-python"
+    ],
+    "public_repo_url": "https://github.com/act-cms/protein-structure-function",
+    "materials": [
+      {
+        "title": "AlphaFold2Colab_Student.pdf",
+        "description": "Student version of the AlphaFold2 Colab notebook assignment with instructions for navigating the notebook",
+        "type": "worksheet",
+        "duration": "1 hour",
+        "colab_url": "https://colab.research.google.com/github/ldbanks/github-tutorial-mm-tools/blob/master/AlphaFold2_Lesson.ipynb#scrollTo=33g5IIegij5R",
+        "objectives": [
+          "Apply programming to solve biochemical problems",
+          "Understand non-covalent interactions and protein folding through computational analysis",
+          "Execute premade code in the notebook",
+          "Interpret results of computational molecular science calculations"
+        ]
+      }
+    ],
+    "scientific_objectives": [
+      "Apply programming to solve biochemical problems",
+      "Understand non-covalent interactions and protein folding through computational analysis",
+      "Execute premade code in the notebook",
+      "Interpret results of computational molecular science calculations"
+    ],
+    "cyberinfrastructure_objectives": [
+      "Create visualizations of molecular data",
+      "Debug common programming errors",
+      "Analyze and interpret computational results",
+      "Interpret and communicate computational results"
+    ],
+    "scientific_prerequisites": [
+      "General chemistry",
+      "Basic understanding of molecular structure",
+      "Basic understanding of protein structure",
+      "Basic understanding of molecular biology"
+    ],
+    "programming_prerequisites": [
+      "No prior programming experience required"
+    ],
+    "platforms": [
+      "Google Colab"
+    ],
+    "recommended_platform": "Google Colab",
+    "tags": [
+      "python",
+      "molecular structure",
+      "visualization",
+      "structural biology",
+      "structure prediction",
+      "molecular biology"
+    ],
+    "id": "protein-structure-function",
+    "instructor_repo": "act-cms/instructor-materials",
+    "instructor_repo_path": "protein-structure-function",
+    "learning_paths": [],
+    "prerequisite_lessons": [
+      {
+        "id": "foundational-intro-python",
+        "title": "Introduction to Programming for Molecular Scientists"
+      }
+    ]
+  },
+  {
     "title": "Basic Tasks Using a Jupyter Notebook with Code in Python for Analytical Chemistry Data Analysis",
     "description": "Generate code in Python to perform four basic tasks: Basic calculations; Entering data into NumPy arrays; Fitting data in NumPy arrays to a NumPy or SciPy nonlinear model function; Creating a Matplotlib graph of data in NumPy arrays and of a nonlinear model function.",
     "expanded_description": "This lesson can be used as an introduction to Analytical Chemistry Data Analysis tasks in Python.\nThe suggested context would be to walk through it together during the first week of Analytical Laboratory.\nAbout 45 minutes to an hour should be allocated to this lesson; an hour is best.\n",
