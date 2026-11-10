@@ -78,10 +78,6 @@ instructor_notes: |
   - "How can I interpret the results if the confidence is low? What can I do next to improve the prediction?"
 
 # Related lessons that complement this one
-related_modules:
-  - "protein structure visualization"
-  - "computational analysis of protein structure"
-  - "molecular dynamics simulations vs static structures"
 
 # OPTIONAL: Lessons students should complete BEFORE this one.
 # Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
