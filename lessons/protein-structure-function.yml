@@ -53,7 +53,7 @@ format: "Multi-Part Module"
 # INSTRUCTOR INFORMATION (OPTIONAL)
 # Contact email for instructor access requests (optional - will use default if not specified)
 instructor_email: "ldbanks@pvamu.edu"
-# Note: Instructor materials will be located at: instructor-repo/{lesson-filename}/
+# Note: Instructor materials will be located at: instructor-repo/protein-structure-function/
 # where {lesson-filename} matches this YAML file's name
 
 # INSTRUCTOR DETAILS (OPTIONAL)
@@ -97,7 +97,7 @@ prerequisite_modules:
 
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
-public_repo_url: "https://github.com/act-cms/protein-structure-function-repo"
+public_repo_url: "https://github.com/act-cms/protein-structure-function"
 
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
@@ -106,26 +106,18 @@ materials:
     description: "Student version of the AlphaFold2 Colab notebook assignment with instructions for navigating the notebook"
     type: "worksheet"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "1 hour"
-  - title: "AlphaFold2Colab_KeyWithScreenshots.pdf"
-    description: "Student version of the AlphaFold2 Colab notebook assignment with screenshots from key steps in the workflow and example answers for summary questions"
-    type: "PDF"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "N/A"
-  - title: "AlphaFold_Teaching_Notes_rev.pdf"
-    description: "Teaching notes and logistical considerations for instructors considering the module. Includes learning outcomes and station/interface preparations to be completed prior to execution of the module."
-    type: "PDF"  # Usually "notebook", could be "slides", "dataset", etc.
-    duration: "N/A"
     
     # REQUIRED: Include at least one URL (preferably both)
     # Direct link to notebook file on GitHub
-    github_url: "https://github.com/act-cms/your-lesson-repo/blob/main/01-intro.ipynb"
     # Google Colab launch link (recommended for accessibility)
-    colab_url: "https://gist.github.com/ldbanks/fa3fe5eec7cf615070993bac5bff7399#file-alphafold2_lesson-ipynb"
+    colab_url: "https://colab.research.google.com/github/ldbanks/github-tutorial-mm-tools/blob/master/AlphaFold2_Lesson.ipynb#scrollTo=33g5IIegij5R"
     
     # Learning objectives specific to this material
     objectives:
-      - "Specific skill students will develop"
-      - "Another concrete learning outcome"
-      - "Third measurable objective"
+      - "Apply programming to solve biochemical problems"
+      - "Understand non-covalent interactions and protein folding through computational analysis"
+      - "Execute premade code in the notebook"
+      - "Interpret results of computational molecular science calculations"
   
 # LEARNING OBJECTIVES (REQUIRED)
 # What molecular science concepts will students learn?
@@ -162,8 +154,6 @@ programming_prerequisites:
 # Any other value fails the build (no rendering template exists for it).
 platforms:
   - "Google Colab"
-  - "Local Installation"
-  - "ChemCompute"
 
 # Which platform do you recommend for most users?
 # Pick exactly ONE platform name, and it must match an entry in the `platforms`
