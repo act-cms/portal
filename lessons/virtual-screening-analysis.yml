@@ -35,7 +35,7 @@ primary_course: "Foundational Module"
 
 # List other courses where this lesson could be used (optional)
 also_for:
-  - "Biochemisitry"
+  - "Biochemistry"
 
 # List all authors
 # For titles, use European convention:
@@ -75,24 +75,6 @@ instructor_notes: |
   Common student questions:
   - "Why do we need to use a Jupyter notebook and ChemCompute"  - good opportunity to discuss other ways these tools can be used in future
 
-# Related lessons that complement this one
-#related_modules:
-  - "thermodynamics-fundamentals"
-  - "statistical-mechanics-intro"
-  - "computational-chemistry-basics"
-
-# OPTIONAL: Lessons students should complete BEFORE this one.
-# Values are lesson IDs (YAML filenames without .yml) — unlike the free-text
-# scientific_prerequisites/programming_prerequisites fields below, these are
-# strictly build-validated: unknown IDs, self-references, or circular
-# prerequisite chains FAIL the build. Machine-readable metadata (searchable
-# on the portal); ordered sequences are displayed via paths.yml instead.
-#prerequisite_modules:
-  - "foundational-intro-python"
-
-# NOTE: To add this lesson to an ordered learning path (or create a new one),
-# edit paths.yml at the repo root — step order is defined there, not here.
-
 # REPOSITORY URLS (REQUIRED)
 # Link to the repository containing your public material
 public_repo_url: "https:github.com/act-cms/virtual-screening-analysis"
@@ -100,7 +82,7 @@ public_repo_url: "https:github.com/act-cms/virtual-screening-analysis"
 # MATERIALS SECTION (REQUIRED)
 # List each notebook/material in logical order
 materials:
-  - title: "SubscoresScatterPlot_ChemCompute.ipynb"
+  - title: "SubscoresScatterPlot on ChemCompute"
     description: "Analysis of molecular docking scores"
     type: "notebook"  # Usually "notebook", could be "slides", "dataset", etc.
     duration: "20-30 min"
